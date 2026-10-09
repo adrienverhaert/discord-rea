@@ -1,0 +1,118 @@
+/* Recovered shipped factory. Module 249620.
+ * Source: recovered/web/assets/347897.7696a337bf0e947e.js
+ * UTF-16 property offsets: 1171148..1173303
+ * Raw property SHA-256: b14787f8dada7357926070afef78e183e16c2b6e561bea17e42a16208e513ca4
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, r) {
+  "use strict";
+  r.d(t, { e: () => d });
+  var n = r(961082),
+    i = r(256062),
+    o = r(184093),
+    a = r(957397),
+    s = r(560754),
+    l = r(721689),
+    u = r(114218),
+    c = r(209787),
+    f = r(582128),
+    p = r(572313);
+  function d(e, t, r) {
+    let {
+        isDisabled: d = !1,
+        isReadOnly: h = !1,
+        value: m,
+        name: v,
+        form: y,
+        children: g,
+        isRequired: b,
+        validationBehavior: w = "aria",
+        "aria-label": _,
+        "aria-labelledby": S,
+        "aria-describedby": E,
+        onPressStart: x,
+        onPressEnd: C,
+        onPressChange: k,
+        onPress: T,
+        onPressUp: M,
+        onClick: P,
+      } = e,
+      A = (0, p.KZ)({ ...e, value: t.isSelected }),
+      { isInvalid: I, validationErrors: O, validationDetails: R } = A.displayValidation;
+    (0, l.X)(e, A, r);
+    let { pressProps: L, isPressed: D } = (0, u.d)({
+        onPressStart: x,
+        onPressEnd: C,
+        onPressChange: k,
+        onPress: T,
+        onPressUp: M,
+        onClick: P,
+        isDisabled: d,
+      }),
+      [F, N] = (0, f.useState)(!1),
+      { pressProps: j } = (0, u.d)({
+        onPressStart(e) {
+          "keyboard" === e.pointerType || "virtual" === e.pointerType
+            ? e.continuePropagation()
+            : (x?.(e), k?.(!0), N(!0));
+        },
+        onPressEnd(e) {
+          "keyboard" === e.pointerType || "virtual" === e.pointerType
+            ? e.continuePropagation()
+            : (C?.(e), k?.(!1), N(!1));
+        },
+        onPressUp(e) {
+          "keyboard" === e.pointerType || "virtual" === e.pointerType
+            ? e.continuePropagation()
+            : M?.(e);
+        },
+        onClick: P,
+        onPress(n) {
+          if ("keyboard" === n.pointerType || "virtual" === n.pointerType)
+            return void n.continuePropagation();
+          (T?.(n), t.toggle(), r.current?.focus());
+          let { [p.Lf]: i } = e,
+            { commitValidation: o } = i || A;
+          o();
+        },
+        isDisabled: d || h,
+      }),
+      { focusableProps: B } = (0, a.Wc)(e, r),
+      K = (0, o.v)(L, B),
+      U = (0, n.$)(e, { labelable: !0 });
+    (0, s.F)(r, t.defaultSelected, t.setSelected);
+    let V = (0, c.L)(),
+      $ = (0, c.L)();
+    return {
+      labelProps: (0, o.v)(j, { onClick: (e) => e.preventDefault() }),
+      inputProps: (0, o.v)(U, {
+        checked: t.isSelected,
+        "aria-required": (b && "aria" === w) || void 0,
+        required: b && "native" === w,
+        "aria-invalid": I || "invalid" === e.validationState || void 0,
+        "aria-errormessage": e["aria-errormessage"],
+        "aria-controls": e["aria-controls"],
+        "aria-readonly": h || void 0,
+        "aria-describedby": [V.id, $.id, E].filter(Boolean).join(" ") || void 0,
+        onChange: (e) => {
+          (e.stopPropagation(), t.setSelected((0, i.wt)(e).checked));
+        },
+        disabled: d,
+        ...(null == m ? {} : { value: m }),
+        name: v,
+        form: y,
+        type: "checkbox",
+        ...K,
+      }),
+      descriptionProps: V,
+      errorMessageProps: $,
+      isSelected: t.isSelected,
+      isPressed: D || F,
+      isDisabled: d,
+      isReadOnly: h,
+      isInvalid: I || "invalid" === e.validationState,
+      validationErrors: O,
+      validationDetails: R,
+    };
+  }
+}

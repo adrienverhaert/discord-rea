@@ -1,0 +1,118 @@
+/* Recovered shipped factory. Module 696354.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 762..3886
+ * Raw property SHA-256: 60abfbd01dc76bd946ca6e130ffab056fcea832fe649644eb986c1c5e2f780cf
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  var i = {
+    "./activity_end.mp3": "440261",
+    "./activity_launch.mp3": "902775",
+    "./activity_user_join.mp3": "151226",
+    "./activity_user_left.mp3": "536617",
+    "./asmr_message1.mp3": "746630",
+    "./bit_message1.mp3": "44226",
+    "./bop_message1.mp3": "918952",
+    "./call_calling.mp3": "453318",
+    "./call_ringing.mp3": "561771",
+    "./call_ringing_beat.mp3": "368674",
+    "./call_ringing_snow_halation.mp3": "69384",
+    "./call_ringing_snowsgiving.mp3": "708816",
+    "./camera_off.mp3": "679283",
+    "./camera_on.mp3": "423967",
+    "./clip_error.mp3": "317677",
+    "./clip_save.mp3": "120978",
+    "./ddr-down.mp3": "979959",
+    "./ddr-left.mp3": "917180",
+    "./ddr-right.mp3": "739079",
+    "./ddr-up.mp3": "825964",
+    "./deafen.mp3": "769869",
+    "./discodo.mp3": "558133",
+    "./disconnect.mp3": "898998",
+    "./doggo_bark.mp3": "500653",
+    "./doggo_cat.mp3": "753561",
+    "./doggo_cat_hurt.mp3": "138319",
+    "./doggo_death.mp3": "128683",
+    "./doggo_dog_death.mp3": "909496",
+    "./doggo_dog_hurt.mp3": "682297",
+    "./doggo_human_hit.mp3": "823688",
+    "./doggo_music.mp3": "732604",
+    "./doggo_rat.mp3": "628912",
+    "./doggo_rat_hit.mp3": "870326",
+    "./doggo_skeleton.mp3": "929266",
+    "./doggo_skeleton_die.mp3": "333925",
+    "./doggo_skeleton_hit.mp3": "374132",
+    "./doggo_slash.mp3": "161558",
+    "./doggo_zombie.mp3": "136601",
+    "./doggo_zombie_hit.mp3": "365243",
+    "./ducky_message1.mp3": "785297",
+    "./halloween_call_calling.mp3": "822537",
+    "./halloween_call_ringing.mp3": "298555",
+    "./halloween_deafen.mp3": "170973",
+    "./halloween_defean.mp3": "549103",
+    "./halloween_disconnect.mp3": "478022",
+    "./halloween_message1.mp3": "603566",
+    "./halloween_mute.mp3": "777359",
+    "./halloween_undeafen.mp3": "471776",
+    "./halloween_undefean.mp3": "176994",
+    "./halloween_unmute.mp3": "918502",
+    "./halloween_user_join.mp3": "87636",
+    "./halloween_user_leave.mp3": "822157",
+    "./hang_status_select.mp3": "159944",
+    "./human_man.mp3": "549018",
+    "./lofi_message1.mp3": "424285",
+    "./mention1.mp3": "369135",
+    "./mention2.mp3": "848888",
+    "./mention3.mp3": "918877",
+    "./message1.mp3": "31742",
+    "./message2.mp3": "720529",
+    "./message3.mp3": "146316",
+    "./mute.mp3": "645951",
+    "./overlayunlock.mp3": "546612",
+    "./poggermode_achievement_unlock.mp3": "682432",
+    "./poggermode_applause.mp3": "901453",
+    "./poggermode_enabled.mp3": "419803",
+    "./poggermode_message_send.mp3": "667150",
+    "./ptt_start.mp3": "81025",
+    "./ptt_stop.mp3": "79851",
+    "./reconnect.mp3": "504979",
+    "./robot_man.mp3": "333769",
+    "./stage_waiting.mp3": "701186",
+    "./stream_ended.mp3": "922885",
+    "./stream_started.mp3": "860586",
+    "./stream_user_joined.mp3": "998282",
+    "./stream_user_left.mp3": "272130",
+    "./success.mp3": "199541",
+    "./undeafen.mp3": "968240",
+    "./unmute.mp3": "112694",
+    "./user_join.mp3": "191972",
+    "./user_leave.mp3": "99997",
+    "./user_moved.mp3": "225713",
+    "./vibing_wumpus.mp3": "500639",
+    "./winter_call_calling.mp3": "460899",
+    "./winter_call_ringing.mp3": "236485",
+    "./winter_deafen.mp3": "517939",
+    "./winter_disconnect.mp3": "153284",
+    "./winter_mute.mp3": "181213",
+    "./winter_undeafen.mp3": "227890",
+    "./winter_unmute.mp3": "613448",
+    "./winter_user_join.mp3": "118630",
+    "./winter_user_leave.mp3": "348371",
+  };
+  function r(e) {
+    return n(a(e));
+  }
+  function a(e) {
+    if (!n.o(i, e)) {
+      var t = Error("Cannot find module '" + e + "'");
+      throw ((t.code = "MODULE_NOT_FOUND"), t);
+    }
+    return i[e];
+  }
+  ((r.keys = function () {
+    return Object.keys(i);
+  }),
+    (r.resolve = a),
+    (e.exports = r),
+    (r.id = 696354));
+}

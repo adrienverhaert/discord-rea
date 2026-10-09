@@ -1,0 +1,81 @@
+/* Recovered shipped factory. Module 838460.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 6529005..6530257
+ * Raw property SHA-256: cc8c5e11a3387fa986e025aba1a3a2602e96fd52036b51bdfcfae94c7e8ad3d6
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  let i;
+  n.d(t, { A: () => f });
+  var r = n(477900);
+  n(582128);
+  var a = n(192308),
+    s = n(439372),
+    l = n(695515),
+    o = n(794364),
+    d = n(577517),
+    c = n(748209),
+    u = n(191627);
+  function _(e) {
+    return e.some((e) => e.link_status === u.Ef.ACTIVE && e.link_type === u.QM.PARENT);
+  }
+  function E(e) {
+    let t = e?.daysRemaining;
+    !(
+      e?.surfaces?.includes(c.x.MODAL) === !0 &&
+      null != t &&
+      t >= 0 &&
+      !d.A.hasShownModalToday() &&
+      !_(Object.values(l.A.getLinkedUsers()))
+    ) ||
+      (0, a.hasAnyModalOpen)() ||
+      (0, a.openModalLazy)(
+        async () => {
+          let { default: e } = await Promise.all([n.e("454048"), n.e("144947")]).then(
+            n.bind(n, 145662),
+          );
+          return (n) => (0, r.jsx)(e, { ...n, daysRemaining: t });
+        },
+        { modalKey: "ParentalConsentWarningModal" },
+      );
+  }
+  function A() {
+    d.A.shouldFetchToday() || E(d.A.getWarning());
+  }
+  class h extends s.A {
+    actions = {
+      PARENTAL_CONSENT_WARNING_FETCH_SUCCESS: (e) => {
+        let { warning: t } = e;
+        E(t);
+      },
+      POST_CONNECTION_OPEN: () => {
+        ((i = _(Object.values(l.A.getLinkedUsers()))), (0, o.PU)(), A());
+      },
+      WINDOW_FOCUS: (e) => {
+        let { focused: t } = e;
+        t && ((0, o.PU)(), A());
+      },
+      WINDOW_VISIBILITY_CHANGE: (e) => {
+        let { visible: t } = e;
+        t && ((0, o.PU)(), A());
+      },
+      CURRENT_USER_UPDATE: (e) => {
+        let { user: t } = e;
+        if (void 0 === t.linked_users) return;
+        let n = _(t.linked_users),
+          r = i;
+        ((i = n),
+          void 0 !== r &&
+            r !== n &&
+            (n
+              ? d.A.getWarning()?.surfaces?.includes(c.x.BANNER) === !0 && (0, o.QX)()
+              : (0, o.QX)()));
+      },
+      LOGOUT: () => {
+        ((i = void 0), (0, o.Ld)());
+      },
+    };
+  }
+  let f = new h();
+}

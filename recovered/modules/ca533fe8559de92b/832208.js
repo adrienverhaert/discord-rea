@@ -1,0 +1,93 @@
+/* Recovered shipped factory. Module 832208.
+ * Source: recovered/web/assets/ca533fe8559de92b.js
+ * UTF-16 property offsets: 11292..12713
+ * Raw property SHA-256: bbceca218a6c229b10e73660229ceb6bade136b450e5a4d26ec320c6a39450ce
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { A: () => d });
+  var l = n(477900),
+    i = n(582128),
+    r = n(503698),
+    a = n.n(r),
+    s = n(452027),
+    o = n(235986),
+    u = n(782328);
+  class c extends i.PureComponent {
+    state = { changedSinceError: new Set() };
+    componentDidUpdate(e) {
+      if (this.props.formError !== e.formError) this.setState({ changedSinceError: new Set() });
+      else if (null != this.props.formError) {
+        let { changedSinceError: t } = this.state;
+        (this.getChangedValues(e).forEach((e) => t.add(e)),
+          this.setState({ changedSinceError: t }));
+      }
+    }
+    getChangedValues(e) {
+      let { values: t } = this.props,
+        { values: n } = e;
+      return Object.keys(t).filter((e) => t[e] !== n[e]);
+    }
+    getError(e) {
+      let { errors: t, formError: n } = this.props;
+      return null != t[e]
+        ? t[e]
+        : null == n || this.state.changedSinceError.has(e)
+          ? null
+          : n.getFieldMessage(e);
+    }
+    renderFormSection = (e) => {
+      let {
+          values: t,
+          onFieldChange: n,
+          onFieldFocus: i,
+          onFieldBlur: r,
+          layout: o,
+          ...u
+        } = this.props,
+        {
+          getClassNameForLayout: c,
+          renderInput: d,
+          title: p,
+          name: m,
+          id: h,
+          placeholder: C,
+          helperText: f,
+          ...S
+        } = e,
+        E = {
+          ...S,
+          placeholder: C?.(),
+          error: this.getError(m),
+          value: t[m],
+          name: m,
+          "aria-labelledby": h,
+          onChange: n,
+          onFocus: i,
+          onBlur: r,
+        };
+      return (0, l.jsx)(
+        "div",
+        {
+          className: a()(c?.(o)),
+          children: (0, l.jsx)(s.D, { id: h, label: p(), helperText: f?.(), children: d(E, u, o) }),
+        },
+        m,
+      );
+    };
+    renderFormRow = (e) => {
+      let t = e.fields.map(this.renderFormSection);
+      return (0, l.jsx)(
+        o.A,
+        { className: a()(u.nM, e.className), children: t },
+        e.fields.map((e) => e.name).join(""),
+      );
+    };
+    render() {
+      let { form: e, className: t } = this.props,
+        n = e.map(this.renderFormRow);
+      return (0, l.jsx)("div", { className: t, children: n });
+    }
+  }
+  let d = c;
+}

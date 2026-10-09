@@ -1,0 +1,237 @@
+/* Recovered shipped factory. Module 323073.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 2762724..2767801
+ * Raw property SHA-256: 9d88db7bc71c9af6845a453ee1753840c9d32b2ded97e0544d1b9e417e5dc3f1
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    $v: () => G,
+    Bc: () => C,
+    F2: () => b,
+    Gc: () => U,
+    Gn: () => y,
+    Jm: () => w,
+    Tv: () => M,
+    UK: () => v,
+    k$: () => L,
+    kK: () => P,
+    ni: () => F,
+    p5: () => B,
+    qR: () => x,
+    sP: () => V,
+    vL: () => k,
+    xq: () => O,
+    zS: () => R,
+  });
+  var i = n(687123),
+    r = n(17928),
+    a = n(306537),
+    s = n(36149),
+    l = n(207560),
+    o = n(288254),
+    d = n(272767),
+    c = n(260509),
+    u = n(734057),
+    _ = n(517019),
+    E = n(71393),
+    A = n(287809),
+    h = n(975571),
+    f = n(935208),
+    I = n(612200),
+    p = n(597306),
+    T = n(204925),
+    m = n(652215),
+    g = n(660183);
+  let S = new Date("06/16/2020"),
+    N = [m.ftr.AGE_RESTRICTED, m.ftr.EXPLICIT],
+    C = new Set([T.w_.NSFW_SERVER, T.w_.NSFW_SERVER_INVITE, T.w_.NSFW_SERVER_INVITE_EMBED]);
+  function O() {
+    let e = A.default.getCurrentUser();
+    return null != e && f.default.extractTimestamp(e.id) > S.getTime() && null == e.nsfwAllowed;
+  }
+  function R(e) {
+    return N.includes(e.nsfwLevel);
+  }
+  function L(e) {
+    let t = (0, s.b8)(),
+      n = (0, c.wh)(e),
+      o = (0, r.bG)([A.default], () => A.default.getCurrentUser()?.nsfwAllowed === !1),
+      u = (0, p.a)(),
+      _ = (function (e) {
+        if (!(0, l.aX)(i.t.AGE_GATED_SPACES)) return null;
+        let t = (0, c.wh)(e),
+          n = e?.name ?? "";
+        return t || "" !== n ? (0, d.f)(t, n) : null;
+      })(e),
+      E = {
+        adult: g.intl.string(n ? g.t.ZtuRts : g.t.E4Cd5I),
+        teen: n ? g.intl.format(g.t["8tk6bB"], {}) : g.intl.format(g.t.XQZvwn, {}),
+        unverified: n ? g.intl.string(g.t.V6Gmu9) : g.intl.string(g.t["5rygLk"]),
+      },
+      f = g.intl.string(n ? g.t.xi46lg : g.t.ZmwvDc);
+    return u
+      ? t
+        ? {
+            title: f,
+            description: _?.teen ?? E.teen,
+            agreement: g.intl.string(null != _ ? g.t.FDSSia : g.t.Zt4Mf4),
+            modalType: a.A5.NSFW_CHANNEL_AGE_VERIFY,
+            emphasiseDisagree: null != _,
+          }
+        : {
+            title: f,
+            description: _?.unverified ?? E.unverified,
+            agreement: g.intl.string(g.t.FDSSia),
+            modalType: a.A5.NSFW_CHANNEL_AGE_VERIFY,
+          }
+      : o
+        ? {
+            title: g.intl.string(n ? g.t["H0SG/g"] : g.t.NEabBa),
+            description: g.intl.format(n ? g.t["6++3cX"] : g.t["2kHZes"], {
+              helpURL: h.A.getArticleURL(m.MVz.NSFW_AGE_GATING),
+            }),
+            agreement: null,
+            modalType: a.A5.NSFW_CHANNEL_UNDERAGE,
+          }
+        : {
+            title: f,
+            description: _?.adult ?? E.adult,
+            agreement: g.intl.string(g.t.wVq7uo),
+            modalType: a.A5.NSFW_CHANNEL_VERIFIED,
+          };
+  }
+  function y(e) {
+    let t = (0, s.b8)(),
+      n = (0, p.a)(),
+      a =
+        e === T.w_.NSFW_SERVER ||
+        e === T.w_.NSFW_SERVER_INVITE ||
+        e === T.w_.NSFW_SERVER_INVITE_EMBED,
+      o = (0, r.bG)([A.default], () => A.default.getCurrentUser()?.nsfwAllowed === !1),
+      c = (0, l.aX)(i.t.AGE_GATED_SPACES) && a ? (0, d.f)(!0, "") : null;
+    if (e === T.w_.JOIN_LARGE_GUILD_UNDERAGE || e === T.w_.ACCESS_LARGE_GUILD_UNDERAGE) {
+      let n = e === T.w_.JOIN_LARGE_GUILD_UNDERAGE ? g.t["u/xsK9"] : g.t.MjQbfi,
+        i = {
+          description: t ? g.intl.string(g.t.SAoMVJ) : g.intl.string(g.t.SxY4IW),
+          agreement: t ? g.intl.string(g.t.Zt4Mf4) : g.intl.string(g.t.FDSSia),
+        };
+      return {
+        verifyTitle: g.intl.string(n),
+        verifyGateDescription: i.description,
+        verifyAgreementButtonText: i.agreement,
+      };
+    }
+    return t
+      ? {
+          verifyAgreementButtonText: g.intl.string(null != c ? g.t.FDSSia : g.t.Zt4Mf4),
+          verifyGateDescription:
+            c?.teen ?? (a ? g.intl.format(g.t["8tk6bB"], {}) : g.intl.format(g.t.XQZvwn, {})),
+          verifyTitle: a ? g.intl.string(g.t.xi46lg) : g.intl.string(g.t.ZmwvDc),
+          verifyDisagreementButtonText: g.intl.string(null != c ? g.t["/g10LC"] : g.t.f3Pet9),
+          verifyEmphasiseDisagree: null != c,
+        }
+      : e === T.w_.LARGE_GUILD
+        ? {
+            verifyTitle: g.intl.string(g.t["7ymzsL"]),
+            verifyGateDescription: g.intl.string(g.t.SxY4IW),
+            verifyAgreementButtonText: g.intl.string(g.t.FDSSia),
+          }
+        : o && a && !n
+          ? {
+              verifyTitle: g.intl.string(g.t["H0SG/g"]),
+              verifyGateDescription: g.intl.format(g.t["6++3cX"], {
+                helpURL: h.A.getArticleURL(m.MVz.AGE_GATE),
+              }),
+              verifyAgreementButtonText: null,
+            }
+          : {
+              verifyAgreementButtonText: g.intl.string(g.t.FDSSia),
+              verifyGateDescription:
+                c?.unverified ?? (a ? g.intl.string(g.t.V6Gmu9) : g.intl.string(g.t["5rygLk"])),
+              verifyTitle: a ? g.intl.string(g.t.xi46lg) : g.intl.string(g.t.ZmwvDc),
+              verifyDisagreementButtonText: g.intl.string(null != c ? g.t["/g10LC"] : g.t.f3Pet9),
+            };
+  }
+  function D() {
+    let e = A.default.getCurrentUser();
+    if (null == e) return !1;
+    let t = (0, p.r)();
+    return !0 !== e.nsfwAllowed || t;
+  }
+  function v(e) {
+    return !!D() && null != e && x(u.A.getChannel(e));
+  }
+  function b(e) {
+    return (0, p.r)() && v(e);
+  }
+  function M(e) {
+    return !!b(e) && ((0, I.yO)(T.w_.NSFW_VOICE_CHANNEL, e), !0);
+  }
+  function P(e, t, n) {
+    let i;
+    if (
+      (function (e) {
+        if (!D() || null == e) return !1;
+        let t = E.A.getGuild(e);
+        return null != t && (0, c.wh)(t);
+      })(e)
+    ) {
+      let e = null != n && C.has(n) ? n : T.w_.NSFW_SERVER;
+      (0, I.yO)(e);
+      return;
+    }
+    if (null != (i = A.default.getCurrentUser()) && null == i.nsfwAllowed && v(t))
+      return void (0, I.yO)(n ?? T.w_.NSFW_CHANNEL);
+  }
+  function U(e) {
+    return null != e && (e.isNSFW() || (0, c.wh)(E.A.getGuild(e.guild_id)));
+  }
+  function w(e) {
+    if (null == e) return !1;
+    let t = (0, s.p9)();
+    return U(e) && t;
+  }
+  function G(e) {
+    if (null == e) return !1;
+    let t = A.default.getCurrentUser()?.nsfwAllowed === !0;
+    return U(e) && !t;
+  }
+  function x(e) {
+    if (null == e) return !1;
+    let t = _.A.didAgree(e.guild_id),
+      n = A.default.getCurrentUser()?.nsfwAllowed === !1,
+      r = (0, l.d6)(i.t.AGE_GATED_SPACES),
+      a = (0, s.p9)(),
+      o = !(t && !n) || (a && r);
+    if (e.isNSFW() && o) return !0;
+    let d = e.guild_id,
+      u = E.A.getGuild(d);
+    return null != u && (0, c.wh)(u) && o;
+  }
+  function k(e) {
+    let t = (0, s.i2)(),
+      n = (0, r.bG)([_.A], () => _.A.didAgree(e?.guild_id)),
+      a = (0, r.bG)([A.default], () => A.default.getCurrentUser()?.nsfwAllowed === !1),
+      o = (0, l.aX)(i.t.AGE_GATED_SPACES),
+      d = (0, r.bG)([E.A], () => E.A.getGuild(e?.guild_id)),
+      u = !(n && !a) || (o && t);
+    return null != e && ((!!e.isNSFW() && !!u) || (null != d && !!(0, c.wh)(d) && !!u));
+  }
+  function F(e) {
+    let t = k(e),
+      n = (0, o.IL)(e);
+    return t || n;
+  }
+  function B() {
+    let e = (0, l.d6)(i.t.COMMANDS_TOGGLE),
+      t = (0, s.p9)();
+    return e && t;
+  }
+  function V() {
+    let e = (0, l.aX)(i.t.COMMANDS_TOGGLE),
+      t = (0, s.i2)();
+    return e && t;
+  }
+}

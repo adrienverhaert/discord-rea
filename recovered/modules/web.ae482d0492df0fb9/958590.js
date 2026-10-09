@@ -1,0 +1,139 @@
+/* Recovered shipped factory. Module 958590.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8971972..8974450
+ * Raw property SHA-256: 61b51b26a68fd05515207415b87326322326bc42772a6407bfb4bb04abe0c71d
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  let i;
+  n.d(t, { A: () => O });
+  var r = n(189613),
+    a = n.n(r),
+    s = n(641733),
+    l = n.n(s),
+    o = n(63494),
+    d = n.n(o),
+    c = n(17928),
+    u = n(73153),
+    _ = n(671759),
+    E = n(172799);
+  let A = {},
+    h = {},
+    f = {},
+    I = {},
+    p = !1,
+    T = !1,
+    m = !1,
+    g = new Map();
+  function S(e) {
+    return e.toLowerCase();
+  }
+  function N(e) {
+    let { inviteCode: t } = e,
+      n = S(t);
+    if (!g.has(n)) return !1;
+    (g = new Map(g)).delete(n);
+  }
+  class C extends c.Ay.Store {
+    static displayName = "InstantInviteStore";
+    getInvite(e) {
+      let {
+        targetType: t,
+        targetUserId: n,
+        targetApplicationId: i,
+      } = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+      return t === E.yV.STREAM && null != n
+        ? h[e]?.[n]
+        : t === E.yV.EMBEDDED_APPLICATION && null != i
+          ? f[e]?.[i]
+          : A[e];
+    }
+    getFriendInvite() {
+      return i;
+    }
+    getFriendInvitesFetching() {
+      return p;
+    }
+    canRevokeFriendInvite() {
+      return null != i && !T && !m;
+    }
+    getReceivedInstallationIdForInviteCode(e) {
+      return g.get(S(e));
+    }
+  }
+  let O = new C(u.h, {
+    CONNECTION_OPEN: function () {
+      ((A = {}), (h = {}), (f = {}), (I = {}), (i = null), (T = !1), (m = !1), (p = !1));
+    },
+    CHANNEL_DELETE: function (e) {
+      let { channel: t } = e;
+      (delete A[t.id], delete h[t.id], delete f[t.id]);
+    },
+    FRIEND_INVITE_CREATE_SUCCESS: function (e) {
+      ((I[e.invite.code] = _.A.createFromServer(e.invite)),
+        (i = a()(l()(d()(Object.values(I), "createdAt"))) ?? null),
+        (m = !1));
+    },
+    FRIEND_INVITE_CREATE_FAILURE: function () {
+      m = !1;
+    },
+    FRIEND_INVITE_REVOKE_SUCCESS: function (e) {
+      (null != e.invites &&
+        e.invites.forEach((e) => {
+          null != I[e.code] && delete I[e.code];
+        }),
+        (i = a()(l()(d()(Object.values(I), "createdAt"))) ?? null),
+        (T = !1));
+    },
+    INSTANT_INVITE_CREATE_SUCCESS: function (e) {
+      let { channelId: t, invite: n } = e,
+        i = _.A.createFromServer(n);
+      i.targetType === E.yV.STREAM && null != i.targetUser
+        ? (null == h[t] && (h[t] = {}), (h[t][String(i.targetUser.id)] = i))
+        : i.targetType === E.yV.EMBEDDED_APPLICATION && null != i.targetApplication
+          ? (null == f[t] && (f[t] = {}), (f[t][i.targetApplication.id] = i))
+          : (A[t] = i);
+    },
+    INSTANT_INVITE_CREATE_FAILURE: function (e) {
+      let { channelId: t } = e;
+      A[t] = null;
+    },
+    INSTANT_INVITE_REVOKE_SUCCESS: function (e) {
+      let { channelId: t } = e;
+      A[t] = null;
+    },
+    FRIEND_INVITE_REVOKE_REQUEST: function () {
+      T = !0;
+    },
+    FRIEND_INVITE_CREATE_REQUEST: function () {
+      m = !0;
+    },
+    FRIEND_INVITES_FETCH_REQUEST: function () {
+      p = !0;
+    },
+    FRIEND_INVITES_FETCH_RESPONSE: function (e) {
+      ((I = {}),
+        e.invites.forEach((e) => {
+          I[e.code] = _.A.createFromServer(e);
+        }),
+        (i = a()(l()(d()(Object.values(I), "createdAt"))) ?? null),
+        (p = !1));
+    },
+    INSTANT_INVITE_CLEAR: function (e) {
+      delete A[e.channelId];
+    },
+    INSTANT_INVITE_RECEIVED_INSTALLATION_ID_SET: function (e) {
+      (g = new Map(g)).set(S(e.inviteCode), e.receivedInstallationId);
+    },
+    INSTANT_INVITE_RECEIVED_INSTALLATION_ID_CLEAR: N,
+    INVITE_MODAL_CLOSE: function (e) {
+      let { inviteCode: t } = e;
+      return null != t && N({ inviteCode: t });
+    },
+    LOGOUT: function () {
+      if (0 === g.size) return !1;
+      g = new Map();
+    },
+  });
+}

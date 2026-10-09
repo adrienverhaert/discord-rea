@@ -1,0 +1,146 @@
+/* Recovered shipped factory. Module 997013.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 4786300..4789384
+ * Raw property SHA-256: 018c97bd6ab717858f27c9ed4f3c020c78ba740528e76c7f25a3ddcf8d2c5bdf
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => d });
+  var i = n(155718),
+    r = n(315069),
+    a = n(395671),
+    s = n(486020),
+    l = n(403362),
+    o = n(744700);
+  class d extends r.A {
+    id;
+    name;
+    description;
+    aliases;
+    executables;
+    overlay;
+    overlayWarn;
+    overlayCompatibilityHook;
+    hook;
+    supportsOutOfProcessOverlay;
+    thirdPartySkus;
+    themes;
+    linkedApplications;
+    genres;
+    platforms;
+    platformAvailability;
+    websites;
+    companies;
+    screenshotHashes;
+    screenshotUrls;
+    trailers;
+    l30Rank;
+    summaryLocalized;
+    media;
+    firstReleaseDate;
+    shopCollectionIds;
+    communityGuildIds;
+    steamReleaseStatus;
+    reviews;
+    opencriticUrl;
+    gameFlags;
+    contentClassification;
+    getOfficialApplicationId() {
+      return this.linkedApplications?.find((e) => e.type === i.Mh.OFFICIAL)?.id;
+    }
+    constructor(e) {
+      (super(),
+        (this.id = e.id),
+        (this.name = e.name),
+        (this.description = e.description),
+        (this.aliases = e.aliases ?? []),
+        (this.executables = (e.executables ?? []).map(a.lg)),
+        (this.overlay = e.overlay ?? !1),
+        (this.overlayWarn = e.overlay_warn ?? !1),
+        (this.overlayCompatibilityHook = e.overlay_compatibility_hook ?? !1),
+        (this.hook = e.hook ?? !0),
+        (this.supportsOutOfProcessOverlay = a.Ay.supportsOutOfProcessOverlay(e.overlay_methods)),
+        (this.thirdPartySkus = e.third_party_skus ?? []),
+        (this.themes = e.themes ?? []),
+        (this.linkedApplications = e.linked_applications),
+        (this.genres = e.genres ?? []),
+        (this.platforms = e.platforms ?? []),
+        (this.platformAvailability = e.platform_availability ?? []),
+        (this.websites = e.websites ?? []),
+        (this.companies = e.companies),
+        (this.screenshotHashes = e.screenshot_hashes),
+        (this.screenshotUrls = e.screenshot_urls),
+        (this.trailers = e.trailers),
+        (this.l30Rank = e.l30_rank),
+        (this.summaryLocalized = e.summary_localized),
+        (this.media = e.media),
+        (this.firstReleaseDate = e.first_release_date),
+        (this.shopCollectionIds = e.shop_collection_ids),
+        (this.communityGuildIds = e.community_guild_ids),
+        (this.steamReleaseStatus = e.steam_release_status),
+        (this.reviews = (function (e) {
+          if (e?.steam != null || e?.opencritic != null)
+            return {
+              steam:
+                null != e.steam
+                  ? {
+                      rating: e.steam.rating,
+                      ratingCount: e.steam.rating_count,
+                      recentRating: e.steam.recent_rating,
+                      recentRatingCount: e.steam.recent_rating_count,
+                      localizedRating: e.steam.localized_rating,
+                      localizedRatingCount: e.steam.localized_rating_count,
+                    }
+                  : void 0,
+              opencritic:
+                null != e.opencritic
+                  ? {
+                      topCriticRating: e.opencritic.top_critic_rating,
+                      topCriticRatingCount: e.opencritic.top_critic_rating_count,
+                      tier: e.opencritic.tier,
+                    }
+                  : void 0,
+            };
+        })(e.reviews)),
+        (this.opencriticUrl = e.opencritic_url),
+        (this.gameFlags = e.game_flags ?? 0),
+        (this.contentClassification = e.content_classification));
+    }
+    getIconURL(e, t) {
+      return (0, o.A)(this.id, this.media?.icon, { size: e, format: t });
+    }
+    getBannerURL(e) {
+      return (0, o.A)(this.id, this.media?.banner, { keepAspectRatio: !0, size: e });
+    }
+    getCoverURL(e) {
+      return (0, o.A)(this.id, this.media?.cover, {
+        keepAspectRatio: !0,
+        format: s.QB ? "webp" : "png",
+        size: e,
+      });
+    }
+    getArtworkURLs(e) {
+      let t = s.QB ? "webp" : null;
+      return (this.media?.artwork ?? [])
+        .map((n) => (0, o.A)(this.id, n, { size: e, format: t, keepAspectRatio: !0 }))
+        .filter(l.Vq);
+    }
+    getScreenshotURL(e, t) {
+      let n = this.screenshotUrls?.[e];
+      return null == n
+        ? null
+        : (0, o.A)(
+            this.id,
+            { type: "url", value: n },
+            { size: t, format: s.QB ? "webp" : null, keepAspectRatio: !0 },
+          );
+    }
+    getScreenshotURLs(e) {
+      return (this.screenshotUrls ?? []).map((t, n) => this.getScreenshotURL(n, e)).filter(l.Vq);
+    }
+    getCompanyByRole(e) {
+      return this.companies?.filter((t) => t.roles.includes(e)) ?? [];
+    }
+  }
+}

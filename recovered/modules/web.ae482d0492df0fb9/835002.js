@@ -1,0 +1,48 @@
+/* Recovered shipped factory. Module 835002.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7330337..7331773
+ * Raw property SHA-256: 90a38808132e7eb01daefe199b39736543fff9310e7aa4aaef085603a2284031
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { OB: () => s, YA: () => l, YX: () => o });
+  var i,
+    r,
+    a,
+    s =
+      (((i = {}).IGNORE_SUCCESS = "IGNORE_SUCCESS"),
+      (i.UNIGNORE_SUCCESS = "UNIGNORE_SUCCESS"),
+      (i.BLOCK_SUCCESS = "BLOCK_SUCCESS"),
+      (i.UNBLOCK_SUCCESS = "UNBLOCK_SUCCESS"),
+      (i.MUTE_SUCCESS = "MUTE_SUCCESS"),
+      (i.UNMUTE_SUCCESS = "UNMUTE_SUCCESS"),
+      (i.REPORT_SUCCESS = "REPORT_SUCCESS"),
+      (i.TIGGER_PAWTECT_ERROR = "TIGGER_PAWTECT_ERROR"),
+      (i.TIGGER_PAWTECT_VERIFIED = "TIGGER_PAWTECT_VERIFIED"),
+      (i.AGE_VERIFICATION_FAE_FAILED = "AGE_VERIFICATION_FAE_FAILED"),
+      (i.AGE_VERIFICATION_ID_FAILED = "AGE_VERIFICATION_ID_FAILED"),
+      (i.AGE_VERIFICATION_UNDERAGE = "AGE_VERIFICATION_UNDERAGE"),
+      (i.GENERIC_ERROR = "GENERIC_ERROR"),
+      (i.REPORT_TO_MOD_SUCCESS = "REPORT_TO_MOD_SUCCESS"),
+      (i.SAFETY_FEEDBACK_SUCCESS = "SAFETY_FEEDBACK_SUCCESS"),
+      (i.EXISTING_USER_AGE_GATE_SUCCESS = "EXISTING_USER_AGE_GATE_SUCCESS"),
+      (i.AGE_VERIFICATION_METHOD_UNAVAILABLE = "AGE_VERIFICATION_METHOD_UNAVAILABLE"),
+      i),
+    l =
+      (((r = {}).SENSITIVE_CONTENT_FILTER_AGE_VERIFICATION_NOTICE =
+        "sensitive_content_filter_age_verification_notice"),
+      (r.SENSITIVE_CONTENT_FILTER_TEEN_NOTICE = "sensitive_content_filter_teen_notice"),
+      (r.RESTRICTED_ACCOUNTS_SETTING_NOTICE = "restricted_accounts_setting_notice"),
+      (r.CONTENT_AND_SOCIAL_PARENTAL_CONTROLS_NOTICE =
+        "content_and_social_parental_controls_notice"),
+      (r.AGE_CONFIRMATION_NOTICE = "age_confirmation_notice"),
+      (r.CONTENT_AND_SOCIAL_NOTICE = "content_and_social_notice"),
+      r),
+    o =
+      (((a = {}).DISMISS = "dismiss"),
+      (a.VIEWED = "viewed"),
+      (a.LEARN_MORE = "learn_more"),
+      (a.CONFIRM_AGE = "confirm_age"),
+      a);
+}

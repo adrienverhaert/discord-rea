@@ -1,0 +1,284 @@
+/* Recovered shipped factory. Module 207913.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7367845..7372192
+ * Raw property SHA-256: a3ee37a0a384d5de16b3b2a61762c11954cf274b1114358671800f1fd3202948
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => k });
+  var i = n(962929),
+    r = n.n(i),
+    a = n(17928),
+    s = n(73153),
+    l = n(739010),
+    o = n(239093);
+  let d = {},
+    c = {},
+    u = { state: l.PN.ALL_GOOD },
+    _ = !1,
+    E = !1,
+    A = null,
+    h = null,
+    f = !1,
+    I = !1,
+    p = [],
+    T = !1,
+    m = !1,
+    g = !1,
+    S = !1,
+    N = !1,
+    C = null,
+    O = o.Iv.DIDNT_VIOLATE_POLICY,
+    R = "",
+    L = "",
+    y = "",
+    D = 0,
+    v = null,
+    b = !1,
+    M = o.qN.NONE,
+    P = null;
+  function U(e) {
+    let {} = e;
+    ((y = ""), (v = null), (b = !1));
+  }
+  let w = {
+    [o.aC.PENDING]: o.qN.LOADING,
+    [o.aC.UNBANNED]: o.qN.VERIFIED,
+    [o.aC.VERIFIED_OTHER_VIOLATIONS_REMAIN]: o.qN.VERIFIED_OTHER_VIOLATIONS_REMAIN,
+    [o.aC.UNDERAGE]: o.qN.UNDERAGE,
+    [o.aC.UNDERAGE_MANUAL_REVIEW]: o.qN.UNDERAGE_MANUAL_REVIEW,
+  };
+  function G() {
+    ((_ = !1),
+      (d = {}),
+      (u = { state: l.PN.ALL_GOOD }),
+      (h = null),
+      (O = o.Iv.DIDNT_VIOLATE_POLICY),
+      (R = ""),
+      (p = []),
+      (m = !1),
+      (g = !1),
+      (M = o.qN.NONE),
+      (D = 0),
+      (P = null));
+  }
+  class x extends a.Ay.Store {
+    static displayName = "SafetyHubStore";
+    isFetching() {
+      return _;
+    }
+    getClassifications() {
+      return Object.values(d);
+    }
+    getClassification(e) {
+      return d[e];
+    }
+    getAccountStanding() {
+      return u;
+    }
+    getFetchError() {
+      return A;
+    }
+    isInitialized() {
+      return E;
+    }
+    getClassificationRequestState(e) {
+      return c[e];
+    }
+    getAppealClassificationId() {
+      return h;
+    }
+    getIsDsaEligible() {
+      return f;
+    }
+    getIsAppealEligible() {
+      return I;
+    }
+    getAppealEligibility() {
+      return p;
+    }
+    getIsExpressiveModalV2Enabled() {
+      return T;
+    }
+    getShowExpressiveModalSubtitleAlt() {
+      return m;
+    }
+    getIsManualReviewFallbackEnabled() {
+      return g;
+    }
+    getIsManualReviewDecidedUnderage() {
+      return S;
+    }
+    getAppealSignal() {
+      return O;
+    }
+    getFreeTextAppealReason() {
+      return R;
+    }
+    getIsSubmitting() {
+      return N;
+    }
+    getSubmitError() {
+      return C;
+    }
+    getUsername() {
+      return L;
+    }
+    getAgeVerificationWebviewUrl() {
+      return y;
+    }
+    getAgeVerificationError() {
+      return v;
+    }
+    getIsLoadingAgeVerification() {
+      return b;
+    }
+    getAgeCheckStatus() {
+      return M;
+    }
+    getAgeCheckError() {
+      return P;
+    }
+    getAgeCheckAttempts() {
+      return D;
+    }
+  }
+  let k = new x(s.h, {
+    SAFETY_HUB_FETCH_START: function (e) {
+      _ = !0;
+    },
+    SAFETY_HUB_FETCH_SUCCESS: function (e) {
+      let {
+        classifications: t,
+        accountStanding: n,
+        isDsaEligible: i,
+        isAppealEligible: a,
+        username: s,
+        appealEligibility: l,
+        expressiveModalV2Enabled: o,
+        showExpressiveModalSubtitleAlt: c,
+        manualReviewFallbackEnabled: h,
+        manualReviewDecidedUnderage: N,
+      } = e;
+      ((d = r()(t, "id")),
+        (u = n),
+        (f = i),
+        (I = a),
+        (_ = !1),
+        (E = !0),
+        (A = null),
+        (L = s),
+        (p = l),
+        (T = o),
+        (m = c),
+        (g = h),
+        (S = N));
+    },
+    SAFETY_HUB_FETCH_FAILURE: function (e) {
+      let { error: t } = e;
+      ((_ = !1), (E = !1), (A = t));
+    },
+    SAFETY_HUB_FETCH_CLASSIFICATION_START: function (e) {
+      ((c[e.classificationId] = l.nU.PENDING), (_ = !0));
+    },
+    SAFETY_HUB_FETCH_CLASSIFICATION_SUCCESS: function (e) {
+      let {
+        classification: t,
+        accountStanding: n,
+        isDsaEligible: i,
+        username: r,
+        isAppealEligible: a,
+      } = e;
+      ((d[t.id] = t),
+        (c[t.id] = l.nU.SUCCESS),
+        (u = n),
+        (_ = !1),
+        (A = null),
+        (f = i),
+        (I = a),
+        (E = !0),
+        (L = r));
+    },
+    SAFETY_HUB_FETCH_CLASSIFICATION_FAILURE: function (e) {
+      let { error: t, classificationId: n } = e;
+      ((_ = !1), (A = t), (c[n] = l.nU.FAILED), (E = !1));
+    },
+    SAFETY_HUB_APPEAL_OPEN: function (e) {
+      let { classificationId: t } = e;
+      h = t;
+    },
+    SAFETY_HUB_APPEAL_CLOSE: function () {
+      ((h = null), (O = o.Iv.DIDNT_VIOLATE_POLICY), (R = ""));
+    },
+    SAFETY_HUB_APPEAL_SIGNAL_SELECT: function (e) {
+      let { signal: t } = e;
+      O = t;
+    },
+    SAFETY_HUB_APPEAL_SIGNAL_CUSTOM_INPUT_CHANGE: function (e) {
+      let { userInput: t } = e;
+      R = t;
+    },
+    SAFETY_HUB_REQUEST_REVIEW_START: function (e) {
+      let {} = e;
+      ((N = !0), (C = null));
+    },
+    SAFETY_HUB_REQUEST_REVIEW_SUCCESS: function (e) {
+      let { classificationId: t } = e;
+      ((N = !1), (C = null), (d[t].appeal_status = { status: l.Wi.REVIEW_PENDING }));
+    },
+    SAFETY_HUB_REQUEST_REVIEW_FAILURE: function (e) {
+      let { error: t } = e;
+      ((N = !1), (C = t));
+    },
+    SAFETY_HUB_REQUEST_AUTOMATED_UNDERAGE_APPEAL_START: function (e) {
+      let {} = e;
+      ((y = ""), (v = null), (b = !0));
+    },
+    SAFETY_HUB_REQUEST_AUTOMATED_UNDERAGE_APPEAL_SUCCESS: function (e) {
+      let { verificationWebviewUrl: t } = e;
+      ((y = t), (v = null), (b = !1));
+    },
+    SAFETY_HUB_REQUEST_AUTOMATED_UNDERAGE_APPEAL_FAILURE: function (e) {
+      let { error: t } = e;
+      ((y = ""), (v = t), (b = !1));
+    },
+    SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_MODAL_OPEN: U,
+    SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_MODAL_CLOSE: U,
+    SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_SUBMIT_SUCCESS: function (e) {
+      let {} = e;
+      for (let e in ((M = o.qN.LOADING), d))
+        d[e].is_coppa && (d[e].appeal_status = { status: l.Wi.REVIEW_PENDING });
+    },
+    SAFETY_HUB_EXPRESSIVE_MODAL_V2_VERIFICATION_SUBMITTED: function (e) {
+      let {} = e;
+      M = o.qN.LOADING;
+    },
+    SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_START_POLL: function (e) {
+      let {} = e;
+      ((M = o.qN.LOADING), (P = null));
+    },
+    SAFETY_HUB_CHECK_AUTOMATED_UNDERAGE_APPEAL_START: function (e) {
+      let {} = e;
+      ((M = o.qN.LOADING), (P = null), (D += 1));
+    },
+    SAFETY_HUB_CHECK_AUTOMATED_UNDERAGE_APPEAL_SUCCESS: function (e) {
+      let { success: t } = e;
+      ((M = t ? o.qN.SUCCESS : D < o.ti ? o.qN.LOADING : o.qN.FAILURE), (P = null));
+    },
+    SAFETY_HUB_CHECK_AUTOMATED_UNDERAGE_APPEAL_SUCCESS_V2: function (e) {
+      let { status: t } = e;
+      ((M = w[t]), (P = null));
+    },
+    SAFETY_HUB_CHECK_AUTOMATED_UNDERAGE_APPEAL_FAILURE: function (e) {
+      let { error: t } = e;
+      ((M = o.qN.ERROR), (P = t));
+    },
+    SAFETY_HUB_RESET_AGE_CHECK_STATUS: function (e) {
+      let {} = e;
+      ((M = o.qN.NONE), (D = 0), (P = null));
+    },
+    LOGOUT: G,
+    LOGIN_SUSPENDED_USER: G,
+  });
+}

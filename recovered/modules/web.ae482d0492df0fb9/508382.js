@@ -1,0 +1,193 @@
+/* Recovered shipped factory. Module 508382.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10329690..10332586
+ * Raw property SHA-256: a59ece755cf79246d81d5f59a3d56ba3a0585d665cf646037c1c3107c73ffac5
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.d(t, { $Y: () => I, IP: () => _, Ow: () => h, Pv: () => f, jQ: () => E }), n(321073));
+  var i = n(477900),
+    r = n(582128),
+    a = n(458265),
+    s = n(499957),
+    l = n(38339),
+    o = n(503698),
+    d = n.n(o),
+    c = n(337836),
+    u = n(391878);
+  let _ = "data-popover-layer",
+    E = r.createContext(null);
+  function A(e) {
+    let t,
+      {
+        focus: n = "none",
+        returnFocusElement: o,
+        ownerDocument: A = document,
+        open: h,
+        onOpenChange: f,
+        id: I,
+        className: p,
+        reference: T,
+        overrideTargetRect: m,
+        placement: g = "bottom",
+        spacing: S = 8,
+        alignmentSpacing: N,
+        autoFlip: C = !0,
+        crossAccessFlip: O = !0,
+        autoShift: R = !0,
+        strategy: L = "fixed",
+        portal: y = !0,
+        blockPointerEvents: D = !1,
+        children: v,
+        renderLayer: b,
+        viewportPadding: M = 8,
+        shiftPadding: P,
+        maxHeight: U,
+        trigger: w = "click",
+        hoverDelay: G = 100,
+        autoUpdate: x = !1,
+      } = e,
+      k = r.useRef(o ?? null);
+    r.useLayoutEffect(() => {
+      k.current = o ?? null;
+    }, [o]);
+    let F = r.useMemo(() => {
+        let e = [(0, a.cY)({ mainAxis: S, alignmentAxis: N })];
+        return (
+          C && e.push((0, a.UU)({ crossAxis: O, padding: M, boundary: A.body })),
+          R && e.push((0, a.BN)({ padding: P ?? M, limiter: (0, a.ER)(), boundary: A.body })),
+          e.push((0, a.jD)({ strategy: "referenceHidden" })),
+          null != U &&
+            e.push(
+              (0, a.Ej)({
+                padding: M,
+                boundary: A.body,
+                apply(e) {
+                  let { availableHeight: t, elements: n } = e,
+                    i = Math.min(U, t);
+                  n.floating.style.setProperty("--custom-floating-layer-max-height", `${i}px`);
+                },
+              }),
+            ),
+          e
+        );
+      }, [S, N, C, R, M, P, O, A, U]),
+      B = (0, s.fI)(),
+      {
+        refs: V,
+        floatingStyles: H,
+        placement: j,
+        middlewareData: W,
+        update: Y,
+        context: K,
+      } = (0, s.we)({
+        nodeId: B,
+        placement: g,
+        open: h,
+        onOpenChange: f,
+        strategy: L,
+        middleware: F,
+        whileElementsMounted: x
+          ? (e, t, n) =>
+              (0, l.ll)(e, t, n, {
+                ancestorScroll: null == m,
+                ancestorResize: null == m,
+                layoutShift: null == m,
+              })
+          : void 0,
+      });
+    r.useLayoutEffect(() => {
+      null != m
+        ? V.setPositionReference({ getBoundingClientRect: () => m })
+        : null != T && V.setReference(T);
+    }, [V, m, T]);
+    let $ = (0, s.s9)(K),
+      z = (0, s.Mk)(K, {
+        restMs: G,
+        delay: { open: G, close: 0 },
+        enabled: "hover" === w,
+        handleClose: (0, s.iB)(),
+      }),
+      { getReferenceProps: X, getFloatingProps: Z } = (0, s.bv)([$, z]),
+      q = W.hide?.referenceHidden ? "hidden" : "visible",
+      Q = y ? c.sM : r.Fragment,
+      J = r.useMemo(() => ({ focus: n }), [n]);
+    return (0, i.jsxs)(i.Fragment, {
+      children: [
+        v({ ref: V.setReference, props: X() }),
+        (0, i.jsx)(s.$c, {
+          id: B,
+          children:
+            h &&
+            (0, i.jsxs)(Q, {
+              ownerDocument: A,
+              children: [
+                D ? (0, i.jsx)(s.zR, { lockScroll: !0 }) : null,
+                ((t = (0, i.jsx)("div", {
+                  id: I,
+                  className: d()(p, u.q),
+                  [_]: !0,
+                  style: { ...H, visibility: q },
+                  ref: V.setFloating,
+                  ...Z(),
+                  children: (0, i.jsx)(E.Provider, {
+                    value: J,
+                    children: b({
+                      placement: j,
+                      update: Y,
+                      hidden: "hidden" === q,
+                      shift: W.shift,
+                    }),
+                  }),
+                })),
+                "none" === n
+                  ? t
+                  : (0, i.jsx)(s.s3, {
+                      context: K,
+                      modal: "modal" === n,
+                      returnFocus: k,
+                      children: t,
+                    })),
+              ],
+            }),
+        }),
+      ],
+    });
+  }
+  function h(e) {
+    return null == (0, s.R1)()
+      ? (0, i.jsx)(s.P6, { children: (0, i.jsx)(A, { ...e }) })
+      : (0, i.jsx)(A, { ...e });
+  }
+  function f(e, t) {
+    switch (e) {
+      case "center":
+      case "window_center":
+      default:
+        return "top";
+      case "top":
+      case "bottom":
+        if ("left" === t) return `${e}-start`;
+        if ("right" === t) return `${e}-end`;
+        return e;
+      case "left":
+      case "right":
+        if ("top" === t) return `${e}-start`;
+        if ("bottom" === t) return `${e}-end`;
+        return e;
+    }
+  }
+  function I(e) {
+    let t = e.split("-")[0];
+    switch (t) {
+      case "top":
+      case "bottom":
+      case "left":
+      case "right":
+        return t;
+      default:
+        return "top";
+    }
+  }
+}

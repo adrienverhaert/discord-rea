@@ -1,0 +1,309 @@
+/* Recovered shipped factory. Module 453903.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 893077..900625
+ * Raw property SHA-256: cd09af9807b7a778c42c35e4624214dda8c61e6a34fcdafcf5a05ec849e863ed
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { $: () => N, o: () => g });
+  var i = n(477900),
+    r = n(582128),
+    a = n(64015),
+    s = n.n(a),
+    l = n(277057),
+    o = n.n(l),
+    d = n(621466),
+    c = n(707554),
+    u = n(365912),
+    _ = n(623646),
+    E = n(451988),
+    A = n(192308),
+    h = n(750506),
+    f = n(267102),
+    I = n(712687),
+    p = n(38405),
+    T = n(292036),
+    m = n(652215);
+  let g = Symbol("POPOUT_PREVENT_CLOSE"),
+    S = new Set(["Spacebar", " ", "Enter"]);
+  class N extends r.Component {
+    static defaultProps = {
+      autoInvert: !1,
+      nudgeAlignIntoViewport: !1,
+      spacing: 0,
+      loadingComponent: (0, i.jsx)(T.s, {}),
+      closeOnClickOutside: !0,
+    };
+    domElementRef = r.createRef();
+    layerRef = r.createRef();
+    popoutRef = r.createRef();
+    popoutId = `popout_${o()()}`;
+    loadingTimeout = new E.Ep();
+    validClickTimeout = new E.Ep();
+    isValidClickStart = !1;
+    modalsAtOpen = new Set();
+    unsubscribeModalChanges = null;
+    static contextType = f.Ay;
+    state = {
+      renderedPosition: this.props.position,
+      shouldShowPopout: !1,
+      shouldShowLoadingState: !1,
+      isLoading: !1,
+      isModalStackedOnTop: !1,
+    };
+    shouldShowPopout(e, t) {
+      return null != e.shouldShow ? e.shouldShow : t.shouldShowPopout;
+    }
+    componentDidMount() {
+      this.shouldShowPopout(this.props, this.state) && this.setupShowPopout();
+    }
+    componentDidUpdate(e, t) {
+      (e.shouldShow, this.props.shouldShow);
+      let n = this.shouldShowPopout(this.props, this.state),
+        i = this.shouldShowPopout(e, t);
+      if (
+        ((i !== n ||
+          t.isLoading !== this.state.isLoading ||
+          e.ignoreModalClicks !== this.props.ignoreModalClicks) &&
+          (n ? this.setupShowPopout(!i) : this.unsubscribe()),
+        this.props.scrollBehavior !== e.scrollBehavior)
+      ) {
+        let e = this.getDomElement();
+        if (null == e) return;
+        (e.ownerDocument?.removeEventListener("scroll", this.handleScroll, !0),
+          e.ownerDocument?.removeEventListener("scroll", this.handleStickyScroll, !0),
+          "close" === this.props.scrollBehavior
+            ? e.ownerDocument?.addEventListener("scroll", this.handleScroll, !0)
+            : "sticky" === this.props.scrollBehavior &&
+              e.ownerDocument?.addEventListener("scroll", this.handleStickyScroll, !0));
+      }
+    }
+    getDomElement() {
+      let e = this.props.targetElementRef?.current;
+      if (!(0, d.vq)(e)) {
+        let e = Error("Popout cannot find DOM node");
+        return (console.error(e), p.A.captureException(e), null);
+      }
+      return e;
+    }
+    get closeAction() {
+      return this.props.ignoreModalClicks ? m.jej.POPOUT_CLOSE_AFTER_MODALS : m.jej.POPOUT_CLOSE;
+    }
+    setupShowPopout() {
+      let e = !(arguments.length > 0) || void 0 === arguments[0] || arguments[0],
+        t = this.getDomElement();
+      null != t &&
+        (t.ownerDocument?.addEventListener("mousedown", this.handleDocumentMouseDown, !0),
+        t.ownerDocument?.addEventListener("mouseup", this.handleDocumentMouseUp, !0),
+        "close" === this.props.scrollBehavior
+          ? t.ownerDocument?.addEventListener("scroll", this.handleScroll, !0)
+          : "sticky" === this.props.scrollBehavior &&
+            t.ownerDocument?.addEventListener("scroll", this.handleStickyScroll, !0),
+        this.context.windowDispatch.subscribe(this.closeAction, this.handleEscapeClose),
+        (this.domElementRef.current = t),
+        (this.isValidClickStart = !1),
+        e && (this.modalsAtOpen = (0, A.getOpenModalKeys)()),
+        this.subscribeToModalStack(),
+        this.forceUpdate());
+    }
+    subscribeToModalStack() {
+      !0 === this.props.clickTrap &&
+        (this.updateModalStackedOnTop(),
+        null == this.unsubscribeModalChanges &&
+          (this.unsubscribeModalChanges = (0, A.subscribeToModalChanges)(
+            this.updateModalStackedOnTop,
+          )));
+    }
+    updateModalStackedOnTop = () => {
+      let e = (0, A.hasModalOpenedSince)(this.modalsAtOpen);
+      this.state.isModalStackedOnTop !== e && this.setState({ isModalStackedOnTop: e });
+    };
+    unsubscribe() {
+      let e = this.domElementRef.current;
+      (null != e &&
+        (e.ownerDocument?.removeEventListener("mousedown", this.handleDocumentMouseDown, !0),
+        e.ownerDocument?.removeEventListener("mouseup", this.handleDocumentMouseUp, !0),
+        e.ownerDocument?.removeEventListener("scroll", this.handleScroll, !0),
+        e.ownerDocument?.removeEventListener("scroll", this.handleStickyScroll, !0)),
+        this.context.windowDispatch.unsubscribe(m.jej.POPOUT_CLOSE, this.handleEscapeClose),
+        this.context.windowDispatch.unsubscribe(
+          m.jej.POPOUT_CLOSE_AFTER_MODALS,
+          this.handleEscapeClose,
+        ),
+        this.unsubscribeModalChanges?.(),
+        (this.unsubscribeModalChanges = null));
+    }
+    componentWillUnmount() {
+      (this.unsubscribe(),
+        (this.domElementRef.current = null),
+        this.loadingTimeout.stop(),
+        this.validClickTimeout.stop());
+    }
+    render() {
+      let { children: e, useMouseEnter: t } = this.props,
+        n = this.shouldShowPopout(this.props, this.state);
+      return (0, i.jsxs)(r.Fragment, {
+        children: [
+          e(
+            {
+              onMouseDown: this.handlePreload,
+              ...(t ? { onMouseEnter: this.handleMouseEnter } : {}),
+              onKeyDown: this.handleKeyboardPreload,
+              onClick: this.handleClick,
+              "aria-controls": n ? this.popoutId : void 0,
+              "aria-expanded": n,
+            },
+            { isShown: n, position: this.state.renderedPosition },
+          ),
+          (0, i.jsx)(c.F, { forceLevel: 2, children: this.renderLayer() }),
+        ],
+      });
+    }
+    renderLayer() {
+      if (!this.shouldShowPopout(this.props, this.state) || null == this.domElementRef.current)
+        return null;
+      let {
+          position: e,
+          align: t,
+          nudgeAlignIntoViewport: n,
+          avoidancePadding: r,
+          useRawTargetDimensions: a,
+          spacing: s,
+          offset: l,
+          autoInvert: o,
+          fixed: d,
+          positionKey: c,
+          disablePointerEvents: E,
+          layerContext: A,
+          clickTrap: f = !1,
+        } = this.props,
+        { isLoading: I, shouldShowLoadingState: p } = this.state;
+      return I && !p
+        ? null
+        : (0, i.jsx)(u.Wd, {
+            layerContext: A ?? h.uY,
+            children: (0, i.jsx)(_.Q, {
+              ref: this.layerRef,
+              onMount: this.handlePopoutShow,
+              onUnmount: this.handlePopoutHide,
+              id: this.popoutId,
+              targetRef: this.domElementRef,
+              position: e,
+              align: t,
+              nudgeAlignIntoViewport: n,
+              avoidancePadding: r,
+              useRawTargetDimensions: a,
+              spacing: s,
+              offset: l,
+              autoInvert: o,
+              fixed: d,
+              positionKey: c,
+              disablePointerEvents: E,
+              onPositionChange: this.handlePopoutPositionChange,
+              clickTrap: f && !this.state.isModalStackedOnTop,
+              children: this.renderPopout,
+            }),
+          });
+    }
+    handlePopoutShow = () => {
+      this.context.windowDispatch.dispatch(m.jej.POPOUT_SHOW, this.props.popoutKey);
+    };
+    handlePopoutHide = () => {
+      this.context.windowDispatch.dispatch(m.jej.POPOUT_HIDE, this.props.popoutKey);
+    };
+    handleSetPopoutRef = (e) => {
+      null != e && (this.popoutRef.current = e);
+    };
+    renderPopout = (e, t) => {
+      let { renderPopout: n } = this.props;
+      return this.state.isLoading
+        ? this.props.loadingComponent
+        : n({
+            ...e,
+            updatePosition: t,
+            closePopout: this.close,
+            setPopoutRef: this.handleSetPopoutRef,
+          });
+    };
+    toggleShow(e) {
+      this.state.shouldShowPopout !== e && this.setState({ shouldShowPopout: e });
+    }
+    close = (e, t) => {
+      let { onRequestClose: n, shouldShow: i } = this.props;
+      n?.(e, t) === g || (null == i && this.toggleShow(!1));
+    };
+    handleClick = (e) => {
+      let { onShiftClick: t, shouldShow: n, onRequestOpen: i, onRequestClose: r } = this.props;
+      if (e?.shiftKey && null != t) return void t(e);
+      let a = null != n;
+      ((a ? n : this.state.shouldShowPopout) ? r?.(e?.nativeEvent, "user:explicit") : i?.(),
+        a ||
+          this.setState((e) => {
+            let { shouldShowPopout: t } = e;
+            return { shouldShowPopout: !t };
+          }));
+    };
+    handleMouseEnter = () => {
+      let { onRequestOpen: e } = this.props;
+      (e?.(), this.setState({ shouldShowPopout: !0 }));
+    };
+    handlePreload = async () => {
+      let { preload: e } = this.props;
+      if (null != e) {
+        (this.setState({ isLoading: !0 }),
+          this.loadingTimeout.start(250, () => this.setState({ shouldShowLoadingState: !0 }), !1));
+        try {
+          await e();
+        } finally {
+          this.setState({ isLoading: !1 });
+        }
+      }
+    };
+    handleKeyboardPreload = (e) => {
+      S.has(e.key) && this.handlePreload();
+    };
+    handleDocumentMouseDown = (e) => {
+      let { ignoreModalClicks: t, closeOnClickOutside: n } = this.props;
+      if (!1 === n) return;
+      let i = e.target,
+        r = this.domElementRef.current;
+      if (null != r) {
+        if ((0, _.H)(r, i) || I.A.isOpen() || (t && (0, A.hasModalOpenedSince)(this.modalsAtOpen)))
+          return;
+        this.isValidClickStart = !0;
+      }
+    };
+    handleDocumentMouseUp = (e) => {
+      this.isValidClickStart &&
+        ((this.isValidClickStart = !1), this.close(e, "system:click_outside"));
+    };
+    handlePopoutPositionChange = (e) => {
+      this.setState({ renderedPosition: e });
+    };
+    handleScroll = (e) => {
+      let t = e.target;
+      t?.contains(this.domElementRef.current) && this.close(void 0, "system:scroll");
+    };
+    handleEscapeClose = (e) => {
+      this.close(e, "user:escape");
+    };
+    handleStickyScroll = s()(() => {
+      requestAnimationFrame(() => {
+        var e;
+        let t,
+          n,
+          i,
+          r = this.popoutRef.current;
+        null == r ||
+          (this.shouldShowPopout(this.props, this.state) &&
+            ((t = (e = r).getBoundingClientRect()),
+            (n = e.ownerDocument?.defaultView?.innerHeight ?? 0),
+            (i = e.ownerDocument?.defaultView?.innerWidth ?? 0),
+            (t.top < n && t.bottom > 0 && t.left < i && t.right > 0) ||
+              this.close(void 0, "system:viewport_exit"),
+            this.layerRef.current?.updatePosition()));
+      });
+    }, 1e3 / 60);
+  }
+}

@@ -1,0 +1,1 @@
+"use strict";(this.webpackChunkdiscord_app=this.webpackChunkdiscord_app||[]).push([["234052"],{50031(s,p,e){s.exports={D:"resizeHandle__4b144"}}}]);

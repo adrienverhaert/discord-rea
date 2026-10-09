@@ -1,0 +1,132 @@
+/* Recovered shipped factory. Module 6151.
+ * Source: recovered/web/assets/3ef6861df6635ca9.js
+ * UTF-16 property offsets: 9321..11200
+ * Raw property SHA-256: 3325da402a972552e9f7618d53baa1bf53234be12ef64f0646cbc8efb0ebf3cb
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  (n.d(t, { a: () => E, v: () => N }), n(321073));
+  var l = n(477900),
+    a = n(582128),
+    r = n(661531),
+    s = n(355522),
+    i = n(37766),
+    o = n(637956),
+    c = n(352224),
+    d = n(866665),
+    u = n(885574),
+    m = n(691885),
+    x = n(834730),
+    f = n(939249),
+    h = n(46054),
+    p = n(812745),
+    j = n(649975),
+    v = n(660183),
+    g = n(381909);
+  let E = "new_payment_source_id";
+  function N(e) {
+    let {
+        value: t,
+        options: n,
+        onChange: N,
+        onNew: T,
+        noticeMessage: b,
+        newPaymentMethodOptionLabel: A,
+        disabled: I = !1,
+        error: C,
+      } = e,
+      _ = a.useMemo(() => {
+        let e = n.map((e) => {
+          let t =
+              null != e.icon
+                ? e.icon === p.Be.BANK
+                  ? (0, l.jsx)(s.M, { className: g.s7 })
+                  : e.icon === p.Be.GIFT_CARD
+                    ? (0, l.jsx)(i._, { className: g.s7 })
+                    : e.icon === p.Be.PIX
+                      ? (0, l.jsx)(o.W, { className: g.s7 })
+                      : e.icon === p.Be.IDEAL
+                        ? (0, l.jsx)(c.E, { className: g.s7 })
+                        : (0, l.jsx)("img", { src: (0, p.Nj)(e.icon), alt: "", className: g.s7 })
+                : void 0,
+            n =
+              null != e.tooltipText
+                ? (0, l.jsx)(d.m, {
+                    text: e.tooltipText,
+                    asContainer: !0,
+                    children: (0, l.jsx)(u.CircleInformationIcon, {
+                      size: "xs",
+                      color: r.A.colors.TEXT_MUTED,
+                    }),
+                  })
+                : void 0;
+          return {
+            id: e.id,
+            value: e.id,
+            label: e.label,
+            leading: t,
+            trailing: n,
+            description: e.description,
+            disabled: e.disabled,
+          };
+        });
+        return (
+          e.push({
+            id: E,
+            value: E,
+            label: A ?? v.intl.string(j.default.rNF29q),
+            leading: void 0,
+            description: void 0,
+          }),
+          e
+        );
+      }, [n, A]),
+      y = a.useCallback(
+        (e) => {
+          e === E ? T() : null != e && N(e);
+        },
+        [T, N],
+      ),
+      D = (0, l.jsxs)(l.Fragment, {
+        children: [
+          (0, l.jsx)(m.l, {
+            label: v.intl.string(v.t["u+Cw58"]),
+            hideLabel: !0,
+            placeholder: v.intl.string(j.default.rNF29q),
+            value: t,
+            options: _,
+            onSelectionChange: y,
+            selectionMode: "single",
+            disabled: I || 0 === n.length,
+            errorMessage: C,
+            fullWidth: !0,
+            variant: "unsupported_payment_modal_card",
+          }),
+          null != b
+            ? (0, l.jsxs)("div", {
+                className: g.T4,
+                children: [
+                  (0, l.jsx)(u.CircleInformationIcon, {
+                    size: "xs",
+                    color: r.A.colors.TEXT_FEEDBACK_INFO,
+                  }),
+                  (0, l.jsx)(x.E, {
+                    variant: "text-xs/normal",
+                    color: "text-feedback-info",
+                    children: "string" == typeof b ? h.A.parse(b, !1, { allowLinks: !0 }) : b,
+                  }),
+                ],
+              })
+            : null,
+        ],
+      });
+    return 0 !== n.length || I
+      ? D
+      : (0, l.jsx)(f.D, {
+          onClick: T,
+          "aria-label": v.intl.string(j.default.rNF29q),
+          className: g.OV,
+          children: D,
+        });
+  }
+}

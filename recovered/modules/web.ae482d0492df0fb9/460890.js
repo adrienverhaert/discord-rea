@@ -1,0 +1,100 @@
+/* Recovered shipped factory. Module 460890.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10358620..10361303
+ * Raw property SHA-256: f5a4fe8573a45d0a7bf2e848f3dce2d38884d51fcd872c58f3eb8f62c687c0cf
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { G9: () => o, GE: () => d, VO: () => l });
+  var i = n(477900),
+    r = n(582128),
+    a = n(366632);
+  let s = {
+      i18n: {
+        CANCEL: "Cancel",
+        BACK: "Back",
+        NEXT: "Next",
+        SUBMIT: "Submit",
+        SPINNER_LOADING_LABEL: "Loading",
+        BUTTON_LOADING_STARTED_LABEL: "Loading",
+        BUTTON_LOADING_FINISHED_LABEL: "Loading",
+        CLOSE_BUTTON_LABEL: "Close",
+        DISMISS_BUTTON_LABEL: "Dismiss",
+        PLAY_BUTTON_LABEL: "Play",
+        PAUSE_BUTTON_LABEL: "Pause",
+        NEW: "New",
+        BETA: "Beta",
+        EARLY_ACCESS: "Early Access",
+        BILLING_TRIAL_FREE_TRIAL_TEXT: "Free Trial",
+        MODAL_DONT_SHOW_AGAIN: "Don't show again",
+        SEARCH: "Search",
+        AUTOCOMPLETE_NO_RESULTS_HEADER: "Nope!",
+        AUTOCOMPLETE_NO_RESULTS_BODY: "Did you make a typo?",
+        LISTBOX_EMPTY_STATE: "No items to show",
+        LISTBOX_EMPTY_STATE_WITH_QUERY: (e) => `No results for \u{2018}${e}\u{2019}`,
+        KEY_CTRL_A11Y_LABEL: "Ctrl",
+        KEY_CMD_A11Y_LABEL: "Cmd",
+        KEY_ALT_A11Y_LABEL: "Alt",
+        KEY_OPTION_A11Y_LABEL: "Option",
+        KEY_SHIFT_A11Y_LABEL: "Shift",
+        KEY_UP_A11Y_LABEL: "Up",
+        KEY_DOWN_A11Y_LABEL: "Down",
+        KEY_LEFT_A11Y_LABEL: "Left",
+        KEY_RIGHT_A11Y_LABEL: "Right",
+        KEY_PAGEUP: "Page Up",
+        KEY_PAGEDOWN: "Page Down",
+        KEY_ANY: "Any",
+        KEY_ENTER: "Enter",
+        KEY_ENTER_A11Y_LABEL: "Enter",
+        KEY_RETURN_A11Y_LABEL: "Return",
+        KEY_ESCAPE: "Escape",
+        KEY_ESCAPE_A11Y_LABEL: "Escape",
+        KEY_BACKSPACE: "Backspace",
+        KEY_BACKSPACE_A11Y_LABEL: "Backspace",
+        KEY_DELETE_A11Y_LABEL: "Delete",
+        KEY_SHIFT: "Shift",
+        DATE_INPUT_OPEN_CALENDAR_LABEL: "Open calendar",
+        CALENDAR_PREVIOUS_MONTH_LABEL: "Previous month",
+        CALENDAR_NEXT_MONTH_LABEL: "Next month",
+        INLINE_NOTICE_GENERIC_ERROR: "Something went wrong. Please try again later.",
+        FEEDBACK_CRITICAL_ICON_A11Y_LABEL: "Error",
+        FEEDBACK_WARNING_ICON_A11Y_LABEL: "Warning",
+        FEEDBACK_INFO_ICON_A11Y_LABEL: "Info",
+        FEEDBACK_POSITIVE_ICON_A11Y_LABEL: "Success",
+        STEP_INDICATOR: (e, t) => `Step ${e} of ${t}`,
+        SELECT_PLACEHOLDER: "Select...",
+        CLEAR_SELECTION: "Clear",
+        SELECTED_TAGS_HEADING: "Selected",
+        PRESS_DELETE_TO_REMOVE_TAG: "Press Delete to remove tag",
+        PERCENT_COMPLETE: (e) => `${e} percent complete`,
+        TEXT_INPUT_CLEAR: "Clear",
+        CHARACTER_COUNT_LIMIT_REACHED: "Character limit reached",
+        CHARACTER_COUNT_A11Y_LABEL: (e) =>
+          `Character count, ${e} ${1 === e ? "character" : "characters"} remaining`,
+        MINIMUM_LENGTH_ERROR: (e) => `Must be ${e} characters or more in length.`,
+        MAXIMUM_LENGTH_ERROR: (e) => `Must be ${e} characters or fewer in length.`,
+        MINIMUM_VALUE_ERROR: (e) => `Must be ${e} or more.`,
+        MAXIMUM_VALUE_ERROR: (e) => `Must be ${e} or less.`,
+      },
+      theme: n(505124).NJ.LIGHT,
+      locale: "en-US",
+      saturation: 0.5,
+      defaultLayerContext: void 0,
+      trackImpression: void 0,
+      isWindowFocused: void 0,
+      isMainWindowVisible: void 0,
+      dynamicGraphicComponents: void 0,
+    },
+    l = r.createContext(s);
+  function o() {
+    return r.useContext(l);
+  }
+  function d(e) {
+    let { children: t, value: n } = e;
+    return (0, i.jsx)(l.Provider, {
+      value: n,
+      children: (0, i.jsx)(a.C, { locale: n.locale, children: t }),
+    });
+  }
+}

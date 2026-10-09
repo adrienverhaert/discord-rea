@@ -1,0 +1,29 @@
+/* Recovered shipped factory. Module 254828.
+ * Source: recovered/web/assets/5faeccf6704719be.js
+ * UTF-16 property offsets: 590..937
+ * Raw property SHA-256: d2c679855f76747ea81c25d82bbac27ef56e10b529e700c98d1734886f196de7
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (t, i, s) {
+  s.d(i, { A: () => d });
+  var e = s(477900),
+    a = s(17928),
+    r = s(123292),
+    n = s(885386),
+    c = s(994500),
+    l = s(660183);
+  function d(t) {
+    let { userId: i, onClick: s } = t;
+    return (0, a.bG)([c.A], () => c.A.isIgnored(i))
+      ? (0, e.jsx)(r.Q, {
+          onClick: function () {
+            (n.j0.updateSetting(!0), s());
+          },
+          variant: "primary",
+          size: "sm",
+          textVariant: "text-sm/medium",
+          text: l.intl.string(l.t.QbcRCJ),
+        })
+      : null;
+  }
+}

@@ -1,0 +1,66 @@
+/* Recovered shipped factory. Module 154323.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 4181018..4182609
+ * Raw property SHA-256: 91cd2f9aa6739910defc870d0a8e557c66258e7c4373946dc4df487dbb40b7b6
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => o });
+  var i = n(17928),
+    r = n(73153);
+  let a = {
+      highlight_mana_buttons: "Highlight mana buttons",
+      highlight_mana_components: "Highlight mana components",
+      highlight_mana_text: "Mana Text Migration Highlighter",
+      highlight_mana_text_overrides:
+        "Mana Text Migration Highlighter \u2014 audit overridden Text (dashed red)",
+      highlight_void_toggleables:
+        "Highlight toggleable components (Checkbox, VoidRadioGroup, Switch)",
+      highlight_void_buttons: "Highlight void buttons",
+      use_topic_dividers_in_chat:
+        "Use summary topics as divider content in chat instead of string formatted dates.",
+      highlight_redesigned_icons: "Highlight redesigned icons",
+      alt_clips_1: "Use alt clip icon 1",
+      alt_clips_2: "Use alt clip icon 2",
+      shop_disable_cache: "Shop: Disable shop cache",
+      shop_include_unpublished: "Shop: Show unpublished items in the shop",
+      lottie_hover_multiple_loop:
+        "Lotties - continue playing the hover animation after mouse enter",
+      ss01: "Italic - straight forms (K,R,k)",
+      ss02: "Italic - straight l",
+      ss03: "Italic - full height forms (W,M)",
+      ss04: "Italic - alternate figures (3,4,5,6,7,8,9)",
+    },
+    s = {};
+  class l extends i.Ay.DeviceSettingsStore {
+    static displayName = "DevToolsDesignTogglesStore";
+    static persistKey = "DevToolsDesignTogglesStore";
+    getUserAgnosticState() {
+      return { toggleStates: s };
+    }
+    initialize(e) {
+      for (var t in a) {
+        let n = e?.toggleStates?.[t] ?? !1;
+        n && (s[t] = n);
+      }
+    }
+    get(e) {
+      return s[e] ?? !1;
+    }
+    enabled() {
+      return s;
+    }
+    allWithDescriptions() {
+      return Object.entries(a).map((e) => {
+        let [t, n] = e;
+        return [t, s[t] ?? !1, n];
+      });
+    }
+  }
+  let o = new l(r.h, {
+    DEV_TOOLS_DESIGN_TOGGLE_WEB_SET: function (e) {
+      !1 === e.value ? delete s[e.toggle] : (s[e.toggle] = e.value);
+    },
+  });
+}

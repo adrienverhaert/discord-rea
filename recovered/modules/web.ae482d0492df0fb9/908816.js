@@ -1,0 +1,54 @@
+/* Recovered shipped factory. Module 908816.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7214736..7215725
+ * Raw property SHA-256: c40e37bbc83579b60c9f026850cfcd2417fd3d0cfb3bbfa0271019ee9261f359
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => f });
+  var i = n(765178),
+    r = n(439372),
+    a = n(308528),
+    s = n(711950),
+    l = n(264686),
+    o = n(793574),
+    d = n(486020),
+    c = n(652215),
+    u = n(660183);
+  function _(e, t, n) {
+    l.default.showNotification(
+      d.Ay.getUserAvatarURL(e),
+      e.username,
+      t,
+      {},
+      { omitViewTracking: !0, omitClickTracking: !0, tag: e.id, onClick: n, isUserAvatar: !0 },
+    );
+  }
+  function E(e) {
+    let { relationship: t } = e,
+      r = t.userIgnored;
+    if (t.type === c.eA$.PENDING_INCOMING && !r) {
+      var a;
+      (i.O.announce(u.intl.formatToPlainString(u.t.zH0kC7, { username: t.user.username })),
+        _((a = t.user), u.intl.string(u.t["t3+Af3"]), () => {
+          {
+            let { openUserProfileModal: e } = n(402860);
+            e({ userId: a.id, sourceAnalyticsLocations: [o.A.FRIEND_REQUEST_NOTIFICATION] });
+          }
+          s.A.transitionToSection(c.m3P.PENDING, { explicit: !0 });
+        }));
+    }
+  }
+  function A(e) {
+    let { user: t } = e;
+    (i.O.announce(u.intl.formatToPlainString(u.t["/+7xky"], { username: t.username })),
+      _(t, u.intl.string(u.t.MYr3Ka), () => {
+        a.A.openPrivateChannel({ recipientIds: t.id });
+      }));
+  }
+  class h extends r.A {
+    actions = { RELATIONSHIP_ADD: E, FRIEND_REQUEST_ACCEPTED: A };
+  }
+  let f = new h();
+}

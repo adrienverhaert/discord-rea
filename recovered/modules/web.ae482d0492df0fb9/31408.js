@@ -1,0 +1,103 @@
+/* Recovered shipped factory. Module 31408.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 6641273..6642311
+ * Raw property SHA-256: 531219f437265f7821d185f16b1c6ffb15286cb0b4402651418fddd878e6e82a
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { MO: () => u, dw: () => c, fZ: () => o, k: () => s, uD: () => l });
+  var i,
+    r,
+    a,
+    s =
+      (((i = {})[(i.CHAT_INPUT = 0)] = "CHAT_INPUT"),
+      (i[(i.REACTION = 1)] = "REACTION"),
+      (i[(i.MEMBER_USER = 2)] = "MEMBER_USER"),
+      (i[(i.CALL_TILE = 3)] = "CALL_TILE"),
+      i),
+    l =
+      (((r = {})[(r.CHAT_INPUT = 0)] = "CHAT_INPUT"),
+      (r[(r.VOICE_USER = 1)] = "VOICE_USER"),
+      (r[(r.MENTION = 2)] = "MENTION"),
+      r),
+    o =
+      (((a = {})[(a.LEVEL_1 = 0)] = "LEVEL_1"),
+      (a[(a.LEVEL_2 = 1)] = "LEVEL_2"),
+      (a[(a.LEVEL_3 = 2)] = "LEVEL_3"),
+      (a[(a.LEVEL_4 = 3)] = "LEVEL_4"),
+      (a[(a.LEVEL_5 = 4)] = "LEVEL_5"),
+      a);
+  let d = {
+      0: [
+        [1, 1e-4],
+        [25, 0.05],
+        [50, 0.1],
+        [100, 0.5],
+        [250, 1],
+        [500, 2],
+        [1e3, 3],
+        [9001, 4],
+      ],
+      1: [
+        [1, 1e-4],
+        [25, 0.25],
+        [50, 0.5],
+        [100, 1],
+        [250, 2.5],
+        [500, 5],
+        [1e3, 7.5],
+        [9001, 10],
+      ],
+      2: [
+        [1, 0.001],
+        [25, 0.5],
+        [50, 1],
+        [100, 2],
+        [250, 4],
+        [500, 8],
+        [1e3, 12],
+        [9001, 16],
+      ],
+      3: [
+        [1, 0.25],
+        [25, 0.75],
+        [50, 1],
+        [100, 2],
+        [250, 4],
+        [500, 8],
+        [1e3, 20],
+        [9001, 50],
+      ],
+      4: [
+        [1, 0.001],
+        [25, 0.5],
+        [50, 1],
+        [100, 2],
+        [250, 5],
+        [500, 10],
+        [1e3, 100],
+        [9001, 1e4],
+      ],
+    },
+    c = Object.keys(d).reduce(
+      (e, t) => ({
+        ...e,
+        [t]: d[t].map((e) => {
+          let [t] = e;
+          return t;
+        }),
+      }),
+      { 0: [], 1: [], 2: [], 3: [], 4: [] },
+    ),
+    u = Object.keys(d).reduce(
+      (e, t) => ({
+        ...e,
+        [t]: d[t].map((e) => {
+          let [t, n] = e;
+          return n;
+        }),
+      }),
+      { 0: [], 1: [], 2: [], 3: [], 4: [] },
+    );
+}

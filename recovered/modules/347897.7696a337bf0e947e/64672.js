@@ -1,0 +1,104 @@
+/* Recovered shipped factory. Module 64672.
+ * Source: recovered/web/assets/347897.7696a337bf0e947e.js
+ * UTF-16 property offsets: 804642..808004
+ * Raw property SHA-256: 7e519eb6285706d11ac161bc64ff746fe3d8339ee5a64a5f062d81ee402d88f0
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, r) {
+  let { MAX_SAFE_COMPONENT_LENGTH: n, MAX_SAFE_BUILD_LENGTH: i, MAX_LENGTH: o } = r(376780),
+    a = r(692714),
+    s = ((t = e.exports = {}).re = []),
+    l = (t.safeRe = []),
+    u = (t.src = []),
+    c = (t.t = {}),
+    f = 0,
+    p = "[a-zA-Z0-9-]",
+    d = [
+      ["\\s", 1],
+      ["\\d", o],
+      [p, i],
+    ],
+    h = (e, t, r) => {
+      let n = ((e) => {
+          for (let [t, r] of d)
+            e = e.split(`${t}*`).join(`${t}{0,${r}}`).split(`${t}+`).join(`${t}{1,${r}}`);
+          return e;
+        })(t),
+        i = f++;
+      (a(e, i, t),
+        (c[e] = i),
+        (u[i] = t),
+        (s[i] = new RegExp(t, r ? "g" : void 0)),
+        (l[i] = new RegExp(n, r ? "g" : void 0)));
+    };
+  (h("NUMERICIDENTIFIER", "0|[1-9]\\d*"),
+    h("NUMERICIDENTIFIERLOOSE", "\\d+"),
+    h("NONNUMERICIDENTIFIER", `\\d*[a-zA-Z-]${p}*`),
+    h(
+      "MAINVERSION",
+      `(${u[c.NUMERICIDENTIFIER]})\\.(${u[c.NUMERICIDENTIFIER]})\\.(${u[c.NUMERICIDENTIFIER]})`,
+    ),
+    h(
+      "MAINVERSIONLOOSE",
+      `(${u[c.NUMERICIDENTIFIERLOOSE]})\\.(${u[c.NUMERICIDENTIFIERLOOSE]})\\.(${u[c.NUMERICIDENTIFIERLOOSE]})`,
+    ),
+    h("PRERELEASEIDENTIFIER", `(?:${u[c.NUMERICIDENTIFIER]}|${u[c.NONNUMERICIDENTIFIER]})`),
+    h(
+      "PRERELEASEIDENTIFIERLOOSE",
+      `(?:${u[c.NUMERICIDENTIFIERLOOSE]}|${u[c.NONNUMERICIDENTIFIER]})`,
+    ),
+    h("PRERELEASE", `(?:-(${u[c.PRERELEASEIDENTIFIER]}(?:\\.${u[c.PRERELEASEIDENTIFIER]})*))`),
+    h(
+      "PRERELEASELOOSE",
+      `(?:-?(${u[c.PRERELEASEIDENTIFIERLOOSE]}(?:\\.${u[c.PRERELEASEIDENTIFIERLOOSE]})*))`,
+    ),
+    h("BUILDIDENTIFIER", `${p}+`),
+    h("BUILD", `(?:\\+(${u[c.BUILDIDENTIFIER]}(?:\\.${u[c.BUILDIDENTIFIER]})*))`),
+    h("FULLPLAIN", `v?${u[c.MAINVERSION]}${u[c.PRERELEASE]}?${u[c.BUILD]}?`),
+    h("FULL", `^${u[c.FULLPLAIN]}$`),
+    h("LOOSEPLAIN", `[v=\\s]*${u[c.MAINVERSIONLOOSE]}${u[c.PRERELEASELOOSE]}?${u[c.BUILD]}?`),
+    h("LOOSE", `^${u[c.LOOSEPLAIN]}$`),
+    h("GTLT", "((?:<|>)?=?)"),
+    h("XRANGEIDENTIFIERLOOSE", `${u[c.NUMERICIDENTIFIERLOOSE]}|x|X|\\*`),
+    h("XRANGEIDENTIFIER", `${u[c.NUMERICIDENTIFIER]}|x|X|\\*`),
+    h(
+      "XRANGEPLAIN",
+      `[v=\\s]*(${u[c.XRANGEIDENTIFIER]})(?:\\.(${u[c.XRANGEIDENTIFIER]})(?:\\.(${u[c.XRANGEIDENTIFIER]})(?:${u[c.PRERELEASE]})?${u[c.BUILD]}?)?)?`,
+    ),
+    h(
+      "XRANGEPLAINLOOSE",
+      `[v=\\s]*(${u[c.XRANGEIDENTIFIERLOOSE]})(?:\\.(${u[c.XRANGEIDENTIFIERLOOSE]})(?:\\.(${u[c.XRANGEIDENTIFIERLOOSE]})(?:${u[c.PRERELEASELOOSE]})?${u[c.BUILD]}?)?)?`,
+    ),
+    h("XRANGE", `^${u[c.GTLT]}\\s*${u[c.XRANGEPLAIN]}$`),
+    h("XRANGELOOSE", `^${u[c.GTLT]}\\s*${u[c.XRANGEPLAINLOOSE]}$`),
+    h("COERCEPLAIN", `(^|[^\\d])(\\d{1,${n}})(?:\\.(\\d{1,${n}}))?(?:\\.(\\d{1,${n}}))?`),
+    h("COERCE", `${u[c.COERCEPLAIN]}(?:$|[^\\d])`),
+    h(
+      "COERCEFULL",
+      u[c.COERCEPLAIN] + `(?:${u[c.PRERELEASE]})?` + `(?:${u[c.BUILD]})?` + "(?:$|[^\\d])",
+    ),
+    h("COERCERTL", u[c.COERCE], !0),
+    h("COERCERTLFULL", u[c.COERCEFULL], !0),
+    h("LONETILDE", "(?:~>?)"),
+    h("TILDETRIM", `(\\s*)${u[c.LONETILDE]}\\s+`, !0),
+    (t.tildeTrimReplace = "$1~"),
+    h("TILDE", `^${u[c.LONETILDE]}${u[c.XRANGEPLAIN]}$`),
+    h("TILDELOOSE", `^${u[c.LONETILDE]}${u[c.XRANGEPLAINLOOSE]}$`),
+    h("LONECARET", "(?:\\^)"),
+    h("CARETTRIM", `(\\s*)${u[c.LONECARET]}\\s+`, !0),
+    (t.caretTrimReplace = "$1^"),
+    h("CARET", `^${u[c.LONECARET]}${u[c.XRANGEPLAIN]}$`),
+    h("CARETLOOSE", `^${u[c.LONECARET]}${u[c.XRANGEPLAINLOOSE]}$`),
+    h("COMPARATORLOOSE", `^${u[c.GTLT]}\\s*(${u[c.LOOSEPLAIN]})$|^$`),
+    h("COMPARATOR", `^${u[c.GTLT]}\\s*(${u[c.FULLPLAIN]})$|^$`),
+    h("COMPARATORTRIM", `(\\s*)${u[c.GTLT]}\\s*(${u[c.LOOSEPLAIN]}|${u[c.XRANGEPLAIN]})`, !0),
+    (t.comparatorTrimReplace = "$1$2$3"),
+    h("HYPHENRANGE", `^\\s*(${u[c.XRANGEPLAIN]})\\s+-\\s+(${u[c.XRANGEPLAIN]})\\s*$`),
+    h(
+      "HYPHENRANGELOOSE",
+      `^\\s*(${u[c.XRANGEPLAINLOOSE]})\\s+-\\s+(${u[c.XRANGEPLAINLOOSE]})\\s*$`,
+    ),
+    h("STAR", "(<|>)?=?\\s*\\*"),
+    h("GTE0", "^\\s*>=\\s*0\\.0\\.0\\s*$"),
+    h("GTE0PRE", "^\\s*>=\\s*0\\.0\\.0-0\\s*$"));
+}

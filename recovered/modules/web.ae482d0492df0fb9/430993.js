@@ -1,0 +1,122 @@
+/* Recovered shipped factory. Module 430993.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10366351..10368490
+ * Raw property SHA-256: c0729c1860cf0d069453844c74c0758ffab9646aeec64300eb4198c825f6bde4
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { c: () => f, y: () => h });
+  var i = n(477900),
+    r = n(582128),
+    a = n(503698),
+    s = n.n(a),
+    l = n(64015),
+    o = n.n(l),
+    d = n(612324),
+    c = n(707554),
+    u = n(475825),
+    _ = n(689175),
+    E = n(834730),
+    A = n(592551);
+  function h(e) {
+    return r.Children.toArray(e).filter(Boolean).length > 0;
+  }
+  function f(e) {
+    let { controls: t, children: n, listProps: r, onScroll: a, scrollerRef: s } = e;
+    if (!h(n) && null == t && null == r) return null;
+    let l =
+      "string" == typeof n
+        ? (0, i.jsx)(E.E, { variant: "text-md/normal", color: "text-subtle", children: n })
+        : n;
+    return (0, i.jsx)(I, { controls: t, children: l, listProps: r, onScroll: a, scrollerRef: s });
+  }
+  function I(e) {
+    let { controls: t, children: n, listProps: a, onScroll: l, scrollerRef: E } = e,
+      [h, f] = r.useState(!1),
+      [I, p] = r.useState(!0),
+      [T, m] = r.useState(null != a),
+      g = r.useRef(null),
+      S = (0, d.A)(g, a?.ref, E),
+      N = r.useRef(null),
+      C = r.useRef(void 0),
+      O = null != t;
+    r.useEffect(
+      () => (
+        (C.current = o()(() => {
+          g?.current != null &&
+            (O && f(g.current?.getDistanceFromTop() > 12),
+            p(g.current?.getDistanceFromBottom() > 12));
+        }, 200)),
+        () => {
+          C.current?.cancel();
+        }
+      ),
+      [O],
+    );
+    let R = r.useCallback(() => {
+      (null != C.current && C.current(), null != l && l());
+    }, [C, l]);
+    r.useEffect(() => {
+      C.current?.();
+    });
+    let L = null != a;
+    return (
+      r.useLayoutEffect(() => {
+        let e = new ResizeObserver(() => {
+            if (L) return void m(!0);
+            let e = g?.current?.getScrollerNode() ?? null;
+            if (null == e || N?.current == null) return;
+            let t = e.getBoundingClientRect();
+            m(N.current.getBoundingClientRect().height > t.height);
+          }),
+          t = g?.current?.getScrollerNode() ?? null;
+        return (
+          null != t && e.observe(t),
+          N?.current != null && e.observe(N.current),
+          () => e.disconnect()
+        );
+      }, [L]),
+      (0, i.jsxs)(c.F, {
+        children: [
+          (0, i.jsx)("div", {
+            className: s()(A.bodySpacerTop, { [A.bodySpacerTopBorder]: T && null == t }),
+          }),
+          null != t &&
+            (0, i.jsx)("header", {
+              className: s()(A.bodyControls, { [A.showFade]: h }),
+              children: t,
+            }),
+          null != a
+            ? (0, i.jsx)(u.Ei, {
+                ...a,
+                className: A.bodyList,
+                innerAriaOrientation: a.innerAriaOrientation ?? "vertical",
+                innerRole: a.innerRole ?? "listbox",
+                ref: S,
+                onScroll: (e) => {
+                  (R(), a.onScroll?.(e));
+                },
+              })
+            : (0, i.jsx)(_.Gt, {
+                ref: S,
+                className: A.body,
+                onScroll: R,
+                disableFocusRingScope: !0,
+                children: (0, i.jsx)("main", {
+                  ref: N,
+                  className: s()(A.bodyInner, { [A.bodyInnerShouldScroll]: T }),
+                  children: n,
+                }),
+              }),
+          (0, i.jsx)("div", {
+            className: s()(A.bodySpacerBottom, {
+              [A.bodyScrollingSpacerBottom]: T,
+              [A.showFade]: I,
+            }),
+          }),
+        ],
+      })
+    );
+  }
+}

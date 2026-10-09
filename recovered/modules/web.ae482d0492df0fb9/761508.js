@@ -1,0 +1,255 @@
+/* Recovered shipped factory. Module 761508.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10451114..10455807
+ * Raw property SHA-256: e67fe67d2e01800d92c1c160a3a63f93ae50231e1b39f135ca20619919b585a3
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { V: () => g });
+  var i = n(477900),
+    r = n(582128),
+    a = n(503698),
+    s = n.n(a),
+    l = n(52724),
+    o = n(317097),
+    d = n(661531),
+    c = n(939249),
+    u = n(834730),
+    _ = n(650583),
+    E = n(516580);
+  let A = { side: E.Cf, top: E.Mn, "top-pill": E.vO };
+  function h(e) {
+    let {
+      className: t,
+      onClick: n,
+      children: r,
+      "aria-expanded": a,
+      "aria-controls": l,
+      ref: o,
+    } = e;
+    return null == n
+      ? (0, i.jsx)("div", {
+          className: s()(E.wx, t),
+          children: (0, i.jsx)(u.E, {
+            variant: "eyebrow",
+            color: "none",
+            className: E.TK,
+            ref: o,
+            children: r,
+          }),
+        })
+      : (0, i.jsx)(c.D, {
+          innerRef: o,
+          className: s()(E.wx, t),
+          onClick: n,
+          "aria-expanded": a,
+          "aria-controls": l,
+          focusProps: { offset: { top: -6 } },
+          children: (0, i.jsx)(u.E, {
+            variant: "eyebrow",
+            color: "none",
+            className: E.TK,
+            children: r,
+          }),
+        });
+  }
+  function f(e) {
+    let { style: t } = e;
+    return (0, i.jsx)("div", { className: E.me, style: t });
+  }
+  let I = function (e) {
+    let { children: t, id: n, ref: r, ...a } = e;
+    return (0, i.jsx)("div", {
+      ...a,
+      ref: r,
+      role: "tabpanel",
+      id: p(n),
+      tabIndex: -1,
+      children: t,
+    });
+  };
+  function p(e) {
+    return `${e.replace(/\s+/g, "-").toLowerCase()}-tab`;
+  }
+  function T(e, t) {
+    if (null == e) return;
+    let n = {};
+    return (
+      "Selected" === t
+        ? ((n.backgroundColor = e), (n.color = d.A.unsafe_rawColors.WHITE.css))
+        : ("Hover" === t && (n.backgroundColor = (0, o.xp)(e, 0.1)), (n.color = e)),
+      n
+    );
+  }
+  class m extends r.Component {
+    static defaultProps = { disabled: !1, look: "grey", disableItemStyles: !1 };
+    state = { hover: !1, active: !1 };
+    handleClick = (e) => {
+      let { disabled: t, onClick: n, id: i, onItemSelect: r } = this.props;
+      t || (null != n ? n(e) : null != r && r(i));
+    };
+    handleMouseDown = () => {
+      let { color: e } = this.props;
+      null != e && this.setState({ active: !0 });
+    };
+    handleMouseUp = () => {
+      this.setState({ active: !1 });
+    };
+    handleMouseOver = (e) => {
+      let { color: t, onMouseEnter: n } = this.props;
+      (null != t && this.setState({ hover: !0 }), n?.(e));
+    };
+    handleMouseOut = (e) => {
+      let { color: t, onMouseLeave: n } = this.props;
+      (null != t && this.setState({ hover: !1, active: !1 }), n?.(e));
+    };
+    getStyle() {
+      let { color: e, id: t, selectedItem: n, itemType: i } = this.props,
+        { hover: r, active: a } = this.state;
+      if (null != e) {
+        if ("side" === i)
+          return (null != t && n === t) || a ? T(e, "Selected") : r ? T(e, "Hover") : T(e);
+        if ("top" === i)
+          if (n === t) return { borderColor: e, color: e };
+          else if (r) return { borderColor: (0, o.xp)(e, 0.1), color: (0, o.xp)(e, 0.6) };
+          else return { borderColor: "transparent", color: (0, o.xp)(e, 0.4) };
+        if ("top-pill" === i)
+          if (n === t) return { backgroundColor: (0, o.xp)(e, 0.2), color: e };
+          else return { backgroundColor: e, color: d.A.unsafe_rawColors.WHITE.css };
+      }
+    }
+    render() {
+      let {
+          children: e,
+          className: t,
+          id: n,
+          selectedItem: r,
+          color: a,
+          variant: l,
+          disabled: o,
+          onContextMenu: d,
+          clickableRef: _,
+          innerRef: A,
+          look: h,
+          disableItemStyles: f,
+          role: I = "tab",
+          onFocus: T,
+          onBlur: m,
+        } = this.props,
+        g = this.props["aria-label"],
+        S = r === n,
+        N = "button" === I;
+      return (0, i.jsx)(c.D, {
+        className: s()(t, {
+          [E.AS]: !f,
+          [E.wk]: "brand" === h,
+          [E.wH]: null == a && S,
+          [E.Sp]: "grey" === h,
+          [E.r9]: null == a && o,
+          [E.RD]: "destructive" === l,
+        }),
+        style: this.getStyle(),
+        role: I,
+        "aria-selected": N ? void 0 : S,
+        "aria-controls": N ? void 0 : S ? p(`${n}`) : void 0,
+        "aria-disabled": o,
+        tabIndex: N ? (!0 === o ? -1 : 0) : S ? 0 : -1,
+        onMouseEnter: this.handleMouseOver,
+        onClick: this.handleClick,
+        onMouseLeave: this.handleMouseOut,
+        onMouseUp: null != a ? this.handleMouseUp : void 0,
+        onMouseDown: this.handleMouseDown,
+        onContextMenu: d,
+        onFocus: T,
+        onBlur: m,
+        "aria-label": g,
+        innerRef: A,
+        ref: _,
+        children: (0, i.jsx)(u.E, {
+          variant: "top" === this.props.itemType ? "text-sm/semibold" : "text-md/medium",
+          color: "none",
+          className: E.rv,
+          children: e,
+        }),
+      });
+    }
+  }
+  class g extends r.Component {
+    static Header = h;
+    static Item = m;
+    static Separator = f;
+    static Panel = I;
+    tabBarRef = r.createRef();
+    focusManager = (0, l.C)({
+      getFocusableElements: () => {
+        let e = this.tabBarRef.current;
+        return null != e ? Array.from(e.querySelectorAll('[role="tab"]')) : [];
+      },
+      getActiveElement: () => this.tabBarRef.current?.ownerDocument.activeElement,
+    });
+    renderChildren = (e) => {
+      let { selectedItem: t, onItemSelect: n, type: i = "side", look: a = "grey" } = this.props,
+        s = !1;
+      return r.Children.toArray(e).map((e, l) => {
+        if (!r.isValidElement(e)) return null;
+        let o = t;
+        return (
+          null != t ||
+            s ||
+            e.type !== m ||
+            null == e.props.id ||
+            !0 === e.props.disabled ||
+            ((o = e.props.id), (s = !0)),
+          r.cloneElement(e, {
+            key: e.key ?? l,
+            selectedItem: o,
+            onItemSelect: n,
+            itemType: i,
+            look: a,
+          })
+        );
+      });
+    };
+    getNodeForKeydownEvent = async (e) => {
+      let { orientation: t = "horizontal" } = this.props,
+        n = "vertical" === t ? _.dh.ARROW_UP : _.dh.ARROW_LEFT,
+        i = "vertical" === t ? _.dh.ARROW_DOWN : _.dh.ARROW_RIGHT;
+      switch (e.key) {
+        case n:
+          return this.focusManager.getPreviousFocusableElement();
+        case i:
+          return this.focusManager.getNextFocusableElement();
+        case _.dh.HOME:
+          return this.focusManager.getFirstFocusableElement();
+        case _.dh.END:
+          return this.focusManager.getLastFocusableElement();
+      }
+      return null;
+    };
+    handleKeyDown = async (e) => {
+      let t = await this.getNodeForKeydownEvent(e);
+      null != t && (e.preventDefault(), t.focus());
+    };
+    render() {
+      let {
+        className: e,
+        children: t,
+        type: n = "side",
+        style: r,
+        "aria-label": a,
+        orientation: l = "horizontal",
+      } = this.props;
+      return (0, i.jsx)("div", {
+        ref: this.tabBarRef,
+        className: s()(e, A[n]),
+        style: r,
+        role: "tablist",
+        "aria-orientation": l,
+        onKeyDown: this.handleKeyDown,
+        "aria-label": a,
+        children: null != t ? this.renderChildren(t) : null,
+      });
+    }
+  }
+}

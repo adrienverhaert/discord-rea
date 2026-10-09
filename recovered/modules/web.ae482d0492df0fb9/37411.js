@@ -1,0 +1,57 @@
+/* Recovered shipped factory. Module 37411.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7791062..7792030
+ * Raw property SHA-256: 28dc73663873ddf084cde9bff398145882bb73a017bae9d41879111b024015d5
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    $j: () => I,
+    CP: () => _,
+    EU: () => A,
+    F4: () => f,
+    H9: () => E,
+    Td: () => c,
+    az: () => h,
+    cM: () => l,
+    kl: () => o,
+    oR: () => u,
+    su: () => d,
+  });
+  var i,
+    r,
+    a = n(652215),
+    s = n(660183);
+  let l = 4320,
+    o = 50,
+    d = 1e5,
+    c = 50,
+    u = 25,
+    _ = { HAS_INTERACTED: 1, ALL_MESSAGES: 2, ONLY_MENTIONS: 4, NO_MESSAGES: 8 };
+  var E =
+    (((i = {}).EMBED = "Embed"),
+    (i.BROWSER = "Thread Browser"),
+    (i.POPOUT = "Active Threads Popout"),
+    (i.CHANNEL_LIST = "Channel List"),
+    (i.GUILD_ACTIVE_THREADS_MODAL = "Guild Active Threads Modal"),
+    (i.INBOX = "Inbox"),
+    (i.FORUM = "Forum"),
+    (i.VOICE_AUTO_OPEN = "Voice Auto Open"),
+    i);
+  function A() {
+    return [
+      { setting: _.ALL_MESSAGES, label: s.intl.string(s.t["n/bTaY"]) },
+      { setting: _.ONLY_MENTIONS, label: s.intl.format(s.t.L2hmYy, {}) },
+      { setting: _.NO_MESSAGES, label: s.intl.string(s.t.CtVGyQ) },
+    ];
+  }
+  var h = (((r = {}).LATEST_ACTIVITY = "Last Message"), (r.CREATION_DATE = "Creation"), r);
+  let f = new Set([
+      a.t02.TOO_MANY_ATTACHMENTS,
+      a.t02.EXPLICIT_CONTENT,
+      a.t02.ENTITY_TOO_LARGE,
+      a.t02.EXPLICIT_CONTENT,
+    ]),
+    I = new Set([a.t02.AUTOMOD_MESSAGE_BLOCKED, a.t02.AUTOMOD_TITLE_BLOCKED]);
+}

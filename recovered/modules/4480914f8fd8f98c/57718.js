@@ -1,0 +1,104 @@
+/* Recovered shipped factory. Module 57718.
+ * Source: recovered/web/assets/4480914f8fd8f98c.js
+ * UTF-16 property offsets: 8569..10028
+ * Raw property SHA-256: 999d61fd0d4ec96347c61508674c711ae556097f77d7e39a4e27b312ea750230
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (t, e, n) {
+  n.d(e, { Ay: () => T, C8: () => I });
+  var s,
+    i = n(477900);
+  n(582128);
+  var r = n(503698),
+    o = n.n(r),
+    a = n(202091),
+    l = n(661531),
+    u = n(462887),
+    c = n(401432),
+    C = n(866157),
+    d = n(291749),
+    E = n(557637),
+    x = n(652215),
+    A = n(935250),
+    I = (((s = {})[(s.SMALL = 2)] = "SMALL"), (s[(s.MEDIUM = 8)] = "MEDIUM"), s);
+  let T = function (t) {
+    let {
+        className: e,
+        logotypeClassName: n,
+        gameTileSize: s = 24,
+        quest: r,
+        separatorSpacing: I = 2,
+        theme: T = x.NJ8.DARK,
+        withCosponsor: f = !0,
+        withGameTile: O = !0,
+        logotypeStyle: _,
+        onLoadComplete: L,
+      } = t,
+      N = (0, u.M)(T) ? x.NJ8.DARK : x.NJ8.LIGHT,
+      y = (0, C.a5)(r.id, N),
+      g = f && null != r.config.cosponsorMetadata && null != y;
+    return (0, i.jsxs)("div", {
+      className: o()(A.Iu, e),
+      children: [
+        O &&
+          (0, i.jsx)(E._M, {
+            id: "QuestPartnerBranding_gameTile",
+            children: (t) =>
+              (0, i.jsx)("img", {
+                ref: t,
+                className: A._Y,
+                alt: "",
+                src: (0, d.tW)(r, d.fY.GAME_TILE, N).url,
+                style: {
+                  borderRadius: (function (t) {
+                    switch (t) {
+                      case 24:
+                        return 3;
+                      case 32:
+                        return 4;
+                    }
+                  })(s),
+                  width: s,
+                  height: s,
+                },
+                onLoad: L,
+              }),
+          }),
+        (0, i.jsx)(E._M, {
+          id: "QuestPartnerBranding_gameLogotype",
+          children: (t) =>
+            (0, i.jsx)(a.animated.img, {
+              ref: t,
+              className: o()(A.lW, n, { [A.TO]: g }),
+              style: _,
+              alt: r.config.messages.gameTitle,
+              src: (0, d.tW)(r, d.fY.LOGO_TYPE, N).url,
+              onLoad: L,
+            }),
+        }),
+        g &&
+          (0, i.jsxs)(i.Fragment, {
+            children: [
+              (0, i.jsx)("div", {
+                className: A.ub,
+                style: { margin: `0 ${I}px` },
+                children: (0, i.jsx)(c.a, { className: A.JB, color: l.A.colors.WHITE }),
+              }),
+              (0, i.jsx)(E._M, {
+                id: "QuestPartnerBranding_cosponsorLogotype",
+                children: (t) =>
+                  (0, i.jsx)(a.animated.img, {
+                    ref: t,
+                    className: o()(A.lW, A.TO, n),
+                    style: _,
+                    alt: r.config.cosponsorMetadata?.name ?? "",
+                    src: y.url,
+                    onLoad: L,
+                  }),
+              }),
+            ],
+          }),
+      ],
+    });
+  };
+}

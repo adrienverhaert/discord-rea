@@ -1,0 +1,50 @@
+/* Recovered shipped factory. Module 450030.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10161129..10162059
+ * Raw property SHA-256: 3ad82c9792f137689bdae6b4675a6eccde101a4ece1cd74d15b25bd311f6cbc3
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { U: () => l });
+  var i = n(477900);
+  n(582128);
+  var r = n(661531),
+    a = n(996682),
+    s = n(27989);
+  function l(e) {
+    let {
+        size: t = "md",
+        width: n,
+        height: l,
+        color: o = r.A.colors.INTERACTIVE_ICON_DEFAULT,
+        colorClass: d = "",
+        ...c
+      } = e,
+      u = (0, s.J)(t),
+      _ = u?.width ?? n,
+      E = u?.height ?? l;
+    return (0, i.jsxs)("svg", {
+      ...(0, a.A)(c),
+      xmlns: "http://www.w3.org/2000/svg",
+      width: _,
+      height: E,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      children: [
+        (0, i.jsx)("path", {
+          fill: "string" == typeof o ? o : o.css,
+          d: "M16.4 8.63c0-.63.5-1.13 1.1-1.13.6 0 1.1.5 1.1 1.13v6.74c0 .63-.5 1.13-1.1 1.13-.6 0-1.1-.5-1.1-1.13V8.63Z",
+          className: d,
+        }),
+        (0, i.jsx)("path", {
+          fill: "string" == typeof o ? o : o.css,
+          fillRule: "evenodd",
+          d: "M19.7 21H4.13A3.34 3.34 0 0 1 1 17.62V6.38A3.34 3.34 0 0 1 4.3 3h15.4C21.52 3 23 4.51 23 6.38v11.25c0 1.8-1.39 3.28-3.13 3.37h-.17Zm0-2.25H4.3c-.6 0-1.1-.5-1.1-1.13V6.38c0-.62.5-1.12 1.1-1.12h15.4c.6 0 1.1.5 1.1 1.13v11.25c0 .62-.5 1.12-1.1 1.12Z",
+          clipRule: "evenodd",
+          className: d,
+        }),
+      ],
+    });
+  }
+}

@@ -1,0 +1,197 @@
+/* Recovered shipped factory. Module 128783.
+ * Source: recovered/web/assets/f91527a5010ff598.js
+ * UTF-16 property offsets: 44797..48123
+ * Raw property SHA-256: 3ebfabc5a91e545a658212d6176b9db9c01f746f56059d77dd11bc056e54d970
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { A: () => U });
+  var l = n(477900),
+    i = n(582128),
+    s = n(675171),
+    a = n(17928),
+    r = n(95701),
+    o = n(769591),
+    c = n(517092),
+    d = n(834730),
+    u = n(821609),
+    h = n(744898),
+    m = n(562708),
+    g = n(139286);
+  function p(e) {
+    return (
+      (0, g.A)(
+        { type: m.ImpressionTypes.VIEW, name: m.ImpressionNames.NOTIFICATION_SETTING_UNREAD_NUDGE },
+        void 0,
+        [e.id],
+      ),
+      null
+    );
+  }
+  var A = n(832712),
+    f = n(543465),
+    x = n(477427),
+    C = n(393432),
+    E = n(652215),
+    S = n(790782),
+    I = n(355097),
+    j = n(660183),
+    y = n(113528);
+  function v(e) {
+    let { channel: t, clearUnreadsNotice: n } = e;
+    return (0, l.jsxs)("div", {
+      className: y.l,
+      children: [
+        (0, l.jsx)(p, { id: t.id }),
+        (0, l.jsx)("div", {
+          className: y.p,
+          children: (0, l.jsx)(d.E, {
+            variant: "text-sm/medium",
+            children: j.intl.format(j.t.P6Y2N1, {}),
+          }),
+        }),
+        (0, l.jsx)(u.$, {
+          variant: "secondary",
+          text: j.intl.string(j.t.KyUKhT),
+          icon: h.e,
+          size: "sm",
+          onClick: () => {
+            var e, l, i;
+            ((e = t.guild_id),
+              (l = t.id),
+              (i = I.vv.UNREADS_ONLY_MENTIONS),
+              A.A.updateChannelOverrideSettings({
+                guildId: e,
+                channelId: l,
+                settings: { flags: (0, C.mD)(f.Ay.getChannelIdFlags(e, l), i) },
+                label: x.G_.unreads(
+                  i === I.vv.UNREADS_ALL_MESSAGES ? S.e.ALL_MESSAGES : S.e.ONLY_MENTIONS,
+                ),
+                location: { object: E.ZSU.NOTIFICATION_SETTING_UNREAD_NOTICE },
+              }),
+              n());
+          },
+        }),
+      ],
+    });
+  }
+  var _ = n(228098),
+    b = n(157259),
+    N = n(503698),
+    T = n.n(N),
+    M = n(666860),
+    R = n(174459),
+    D = n(867455),
+    L = n(406704),
+    k = n(215741);
+  function P(e) {
+    let { channel: t, narrow: n } = e,
+      s = (0, L.lK)(t);
+    return (
+      i.useEffect(() => {
+        R.default.track(E.HAw.CHANNEL_BANNER_VIEWED, {
+          ...(0, M.H$)(t.getGuildId()),
+          ...(0, M.dI)(t),
+          banner_type: "thread",
+        });
+      }, [t]),
+      (0, l.jsxs)("div", {
+        className: T()(k.JD, { [k.sc]: n }),
+        children: [
+          (0, l.jsx)(d.E, {
+            className: k.E5,
+            variant: "text-sm/normal",
+            color: "text-default",
+            children: t.isForumPost() ? j.intl.string(j.t["833FDn"]) : j.intl.string(j.t.rEeodK),
+          }),
+          s
+            ? (0, l.jsx)(u.$, {
+                variant: "secondary",
+                text: j.intl.string(j.t["0dvvEi"]),
+                onClick: function () {
+                  (R.default.track(E.HAw.CHANNEL_BANNER_CTA_CLICKED, {
+                    ...(0, M.H$)(t.getGuildId()),
+                    ...(0, M.dI)(t),
+                    banner_type: "thread",
+                    cta_type: "unarchive",
+                  }),
+                    D.A.unarchiveThread(t, !1));
+                },
+                size: "sm",
+              })
+            : null,
+        ],
+      })
+    );
+  }
+  function O(e) {
+    let { channel: t, narrow: n } = e,
+      s = (0, L.H_)(t);
+    return (
+      i.useEffect(() => {
+        R.default.track(E.HAw.CHANNEL_BANNER_VIEWED, {
+          ...(0, M.H$)(t.getGuildId()),
+          ...(0, M.dI)(t),
+          banner_type: "thread",
+        });
+      }, [t]),
+      (0, l.jsxs)("div", {
+        className: T()(k.JD, { [k.sc]: n }),
+        children: [
+          (0, l.jsx)(d.E, {
+            className: k.E5,
+            variant: "text-sm/normal",
+            color: "text-default",
+            children: t.isForumPost() ? j.intl.string(j.t.E7oO8u) : j.intl.string(j.t["V/JF2N"]),
+          }),
+          s
+            ? (0, l.jsx)(u.$, {
+                variant: "secondary",
+                text: j.intl.string(j.t.zA9d1J),
+                onClick: function () {
+                  (R.default.track(E.HAw.CHANNEL_BANNER_CTA_CLICKED, {
+                    ...(0, M.H$)(t.getGuildId()),
+                    ...(0, M.dI)(t),
+                    banner_type: "thread",
+                    cta_type: "unlock",
+                  }),
+                    D.A.unlockThread(t));
+                },
+                size: "sm",
+              })
+            : null,
+        ],
+      })
+    );
+  }
+  var G = n(626360);
+  let U = i.memo(function (e) {
+    let { channel: t, narrow: n } = e,
+      d = (0, _.A)(t),
+      u = (0, s.A)(),
+      { showUnreadsNotice: h, clearUnreadsNotice: m } = (function (e) {
+        let t = (0, o.os)("useShouldRenderBanner"),
+          [n, l] = i.useState("");
+        i.useEffect(() => {
+          l("");
+        }, [e.id]);
+        let s = (0, a.bG)([c.A], () => c.A.getLastActionTime(e.id));
+        i.useEffect(() => {
+          !r.B4.has(e.type) || n === e.id || (t && c.A.maybeAutoUpgradeChannel(e.id) && l(e.id));
+        }, [n, t, s, e]);
+        let d = i.useCallback(() => l(""), []);
+        return { showUnreadsNotice: n === e.id, clearUnreadsNotice: d };
+      })(t);
+    return t.isMediaThread()
+      ? null
+      : t.isArchivedLockedThread()
+        ? (0, l.jsx)(P, { channel: t, narrow: n })
+        : t.isLockedThread()
+          ? (0, l.jsx)(O, { channel: t, narrow: n })
+          : h
+            ? (0, l.jsx)(v, { channel: t, clearUnreadsNotice: m })
+            : d && u.includes(G.i.OPT_IN_CHANNEL)
+              ? (0, l.jsx)(b.A, { channel: t, narrow: n })
+              : null;
+  });
+}

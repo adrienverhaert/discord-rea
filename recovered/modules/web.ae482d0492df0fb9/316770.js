@@ -1,0 +1,77 @@
+/* Recovered shipped factory. Module 316770.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8093480..8094585
+ * Raw property SHA-256: 9331709295c0652828ee16f738dde8fa40eb5a1425300bc20abc53f788e561c1
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => S });
+  var i = n(477900),
+    r = n(503698),
+    a = n.n(r),
+    s = n(17928),
+    l = n(939249),
+    o = n(834730),
+    d = n(661531),
+    c = n(730852),
+    u = n(963027),
+    _ = n(47167),
+    E = n(378570),
+    A = n(345942),
+    h = n(747376),
+    f = n(576705),
+    I = n(531648),
+    p = n(10862),
+    T = n(818348),
+    m = n(660183),
+    g = n(260155);
+  function S(e) {
+    let { channel: t, guild: n, onAction: r, onClose: S } = e,
+      N = (0, _.Ay)(t),
+      C = (0, s.bG)([f.A], () => t.isPrivate() || f.A.can(T.xB.CONNECT, t));
+    return (0, i.jsxs)("div", {
+      children: [
+        (0, i.jsxs)(o.E, {
+          tag: "div",
+          variant: "heading-sm/semibold",
+          color: "text-default",
+          className: g.CT,
+          children: [
+            (0, i.jsx)(p.A, {
+              channel: t,
+              size: "xxs",
+              color: d.A.colors.TEXT_DEFAULT,
+              className: g.Ow,
+            }),
+            C
+              ? (0, i.jsx)(l.D, {
+                  className: a()(g.sd, g.mG),
+                  onClick: (e) => {
+                    (e.stopPropagation(),
+                      t.isGuildStageVoice()
+                        ? (0, h.av)(t)
+                        : (c.default.selectVoiceChannel(t.id), (0, E.iN)(t.id)),
+                      r?.({ action: "OPEN_VOICE_CHANNEL" }),
+                      S?.());
+                  },
+                  "aria-label": (0, u.Ay)({ channel: t }),
+                  children: N,
+                })
+              : N,
+          ],
+        }),
+        null == n
+          ? null
+          : (0, i.jsx)(I.A, {
+              variant: "text-xs/normal",
+              text: m.intl.formatToPlainString(m.t["hq/Qze"], { guildName: n.name }),
+              onClick: (e) => {
+                (e.stopPropagation(), (0, A.u)(n.id), r?.({ action: "OPEN_VOICE_GUILD" }), S?.());
+              },
+              className: g.J5,
+            }),
+      ],
+    });
+  }
+}

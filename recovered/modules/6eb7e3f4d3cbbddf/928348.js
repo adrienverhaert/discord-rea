@@ -1,0 +1,123 @@
+/* Recovered shipped factory. Module 928348.
+ * Source: recovered/web/assets/6eb7e3f4d3cbbddf.js
+ * UTF-16 property offsets: 3904..5509
+ * Raw property SHA-256: dd4de4cd4ebc7dc911bbe93d55d8cc0b04533f9d07afbe34855727ea1ce73c05
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  (n.d(t, { H6: () => h, p3: () => f, qv: () => _, wP: () => p }), n(321073));
+  var r = n(582128),
+    i = n(462180),
+    u = n(882035),
+    a = n(121894),
+    l = n(913122),
+    o = n(995786),
+    E = n(904813),
+    s = n(243277),
+    A = n(652215);
+  let S = {},
+    c = (0, u.h)((e, t) => ({
+      rules: {},
+      fetching: !1,
+      error: null,
+      updateRule: (n) => {
+        let { guildId: r, id: i, triggerType: u } = n,
+          { rules: l } = t(),
+          o = l[r] ?? {},
+          s = o[u] ?? [],
+          A = s.some((e) => e.id === i),
+          S = s.filter((e) => !(0, E.R)(e.id) || e.triggerType !== u),
+          c = A ? S.map((e) => (e.id === i ? n : e)) : [...S, n];
+        (0, a.r)(() => {
+          e({ rules: { ...l, [r]: { ...o, [u]: c } }, error: null });
+        });
+      },
+      removeRule: (n, r) => {
+        let { rules: i } = t(),
+          u = i[r],
+          l = Object.keys(u).reduce((e, t) => {
+            let r = Number(t),
+              i = u[r] ?? [];
+            return ((e[r] = i.filter((e) => e.id !== n)), e);
+          }, {});
+        (0, a.r)(() => {
+          e({ rules: { ...i, [r]: l }, error: null });
+        });
+      },
+      syncRules: async (n) => {
+        var r;
+        let i;
+        if (((i = Date.now()), i - (S[n] ?? 0) > 2e4)) {
+          S[n] = Date.now();
+          try {
+            let i,
+              u =
+                ((r = await (0, o.H0)(n)),
+                (i = {
+                  [s.uh.KEYWORD]: [],
+                  [s.uh.ML_SPAM]: [],
+                  [s.uh.DEFAULT_KEYWORD_LIST]: [],
+                  [s.uh.MENTION_SPAM]: [],
+                  [s.uh.USER_PROFILE]: [],
+                  [s.uh.SERVER_POLICY]: [],
+                  [s.uh.APPLICATION]: [],
+                }),
+                r.forEach((e) => {
+                  let { triggerType: t } = e;
+                  i[t]?.push(e);
+                }),
+                i),
+              l = t().rules;
+            (0, a.r)(() => {
+              e({ rules: { ...l, [n]: u }, error: null });
+            });
+          } catch (n) {
+            let t = new l.LG(n);
+            (0, a.r)(() => {
+              e({ error: t });
+            });
+          }
+        }
+      },
+    }));
+  function f(e, t) {
+    let n = c.getState().rules;
+    return (n[e]?.[t] ?? []).length;
+  }
+  function h(e) {
+    let [t, n] = r.useState(!1),
+      [u, a] = c((e) => [e.syncRules, e.fetching], i.x);
+    return [
+      t,
+      r.useCallback(async () => {
+        if (!a && null != e)
+          try {
+            (n(!0), await u(e));
+          } finally {
+            n(!1);
+          }
+      }, [e, a, u]),
+    ];
+  }
+  function _(e) {
+    let [t, n] = h(e);
+    return (
+      r.useEffect(() => {
+        (async () => {
+          await n();
+        })();
+      }, [e, n]),
+      [t, n]
+    );
+  }
+  function p(e) {
+    return c(
+      (t) => ({
+        rulesByTriggerType: t.rules[e ?? A.dJq] ?? {},
+        updateRule: t.updateRule,
+        removeRule: t.removeRule,
+      }),
+      i.x,
+    );
+  }
+}

@@ -1,0 +1,92 @@
+/* Recovered shipped factory. Module 608960.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 4355497..4357162
+ * Raw property SHA-256: 3d3056735bb3dc06decde3a52a22e46790cdbfa7514144dd81c139d434b00559
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => c });
+  var i = n(810531),
+    r = n(892842),
+    a = n(137903),
+    s = n(770335);
+  function l(e, t) {
+    let n = {};
+    for (let r of t)
+      n[r.id] = {
+        [i.L]: "RawGuildEmoji",
+        guildId: e,
+        id: r.id,
+        animated: r.animated,
+        name: r.name,
+        require_colons: r.require_colons,
+        available: r.available,
+        roles: r.roles,
+        managed: r.managed,
+        version: r.version,
+        type: s.i.GUILD,
+      };
+    return n;
+  }
+  class o extends a.yW {
+    static displayName = "RawGuildEmojiStore";
+    database = this.addKKVDatabase("guild_emojis");
+    stateWrapper() {
+      return this.database;
+    }
+    getGuildEmojis(e) {
+      return this.database.getNullablePartition(e);
+    }
+  }
+  function d(e, t, n) {
+    if ("full_sync" === t.op) n.setPartition(e, l(e, t.items));
+    else {
+      let i = n.getNullablePartition(e);
+      if (null == i) n.setPartition(e, l(e, t.writes));
+      else if (t.writes.length > 0 || t.deletes.length > 0) {
+        let r = { ...i };
+        for (let e of t.deletes) delete r[e];
+        for (let n of t.writes) Object.assign(r, l(e, [n]));
+        n.setPartition(e, r);
+      }
+    }
+  }
+  let c = new o(
+    {
+      LOGOUT: (e, t) => t.clear(),
+      BACKGROUND_SYNC: (e, t) => t.clear(),
+      RESET_SOCKET: (e, t) => t.clear(),
+      CONNECTION_OPEN: (e, t) => {
+        let { guilds: n, unavailableGuilds: i } = e,
+          r = new Set(n.map((e) => e.id));
+        for (let e of i) r.add(e);
+        for (let e of t.getPartitionKeys()) r.has(e) || t.removePartition(e);
+        for (let e of n) d(e.id, e.emojis, t);
+      },
+      OVERLAY_INITIALIZE: (e, t) => {
+        (t.clear(),
+          Object.entries(e.emojis).forEach((e) => {
+            let [n, i] = e;
+            t.setPartition(n, l(n, i));
+          }));
+      },
+      CACHED_EMOJIS_LOADED: (e, t) => {
+        for (let [n, i] of e.emojis) t.setPartition(n, l(n, i));
+      },
+      GUILD_CREATE: (e, t) => {
+        d(e.guild.id, e.guild.emojis, t);
+      },
+      GUILD_UPDATE: (e, t) => {
+        t.setPartition(e.guild.id, l(e.guild.id, e.guild.emojis));
+      },
+      GUILD_EMOJIS_UPDATE: (e, t) => {
+        t.setPartition(e.guildId, l(e.guildId, e.emojis));
+      },
+      GUILD_DELETE: (e, t) => {
+        t.removePartition(e.guild.id);
+      },
+    },
+    r.P4.getCachedBridgedStoreMode(),
+  );
+}

@@ -1,0 +1,67 @@
+/* Recovered shipped factory. Module 384059.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 3197882..3199166
+ * Raw property SHA-256: 73f91c1d27cf2dc4a9fab47d676b9503e8a35fba672cb96ae1d6ab85b00275a8
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { O: () => o, X: () => d });
+  var i,
+    r = n(734057),
+    a = n(763827),
+    s = n(174459),
+    l = n(652215),
+    o =
+      (((i = {}).MIC = "Mic"),
+      (i.CAMERA = "Camera"),
+      (i.DEAFEN = "Deafen"),
+      (i.STREAM = "Stream"),
+      (i.ACTIVITY = "Activity"),
+      (i.SOUNDBOARD = "Soundboard"),
+      (i.GIFTING = "Gifting"),
+      (i.EMOJI = "Emoji"),
+      (i.DISCONNECT = "Disconnect"),
+      (i.LEAVE_ACTIVITY = "Leave Activity"),
+      (i.STOP_WATCHING = "Stop Watching"),
+      (i.POPOUT = "Popout"),
+      (i.POPOUT_RETURN = "Popout Return"),
+      (i.STAY_ON_TOP = "Stay On Top"),
+      (i.FULL_SCREEN = "Full Screen"),
+      (i.JOIN_CALL = "Join Call"),
+      (i.JOIN_VIDEO_CALL = "Join Video Call"),
+      (i.MORE = "More"),
+      (i.CHAT = "Chat"),
+      (i.INVITE = "Invite"),
+      (i.FOCUS = "Focus"),
+      (i.GRID = "Grid"),
+      (i.CLIP = "Clip"),
+      (i.VOLUME = "Volume"),
+      (i.REQUEST_TO_SPEAK = "Request To Speak"),
+      (i.SPEAK_ON_STAGE = "Speak on Stage"),
+      (i.MOVE_TO_AUDIENCE = "Move to Audience"),
+      (i.JOIN_STAGE = "Join Stage"),
+      (i.LEAVE_STAGE = "Leave Stage"),
+      (i.STAGE_MUSIC = "Stage Music"),
+      (i.OPEN_REQUEST_TO_SPEAK_SIDEBAR = "Open Request To Speak Sidebar"),
+      (i.KRISP = "Krisp"),
+      (i.SPATIAL_AUDIO = "Spatial Audio"),
+      (i.CHANNEL_LINK = "Channel Link"),
+      (i.CONNECTION_STATUS = "Connection Status"),
+      (i.VOICE_USER = "Voice User"),
+      (i.STREAM_SETTINGS = "Stream Settings"),
+      i);
+  function d(e, t, n) {
+    let i = a.A.getChannelId(),
+      o = a.A.getGuildId(),
+      d = r.A.getChannel(i)?.type;
+    s.default.track(l.HAw.CALL_BUTTON_CLICKED, {
+      location: e,
+      button_name: t,
+      toggled_active: n,
+      guild_id: o,
+      channel_id: i,
+      channel_type: d,
+    });
+  }
+}

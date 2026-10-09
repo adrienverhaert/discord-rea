@@ -1,0 +1,36 @@
+/* Recovered shipped factory. Module 104886.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7005611..7006325
+ * Raw property SHA-256: 20ccf5ea7b646ad4540ebfa649e1f3099d3b2efd04386f206f99d4e34f64fa7d
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { E5: () => l, kI: () => a });
+  var i,
+    r = n(945810),
+    a =
+      (((i = {})[(i.STEP_1_LOADED = 0)] = "STEP_1_LOADED"),
+      (i[(i.STEP_2_CLICKED_INTERNAL = 1)] = "STEP_2_CLICKED_INTERNAL"),
+      (i[(i.STEP_3_CLICKED_EXTERNAL = 2)] = "STEP_3_CLICKED_EXTERNAL"),
+      (i[(i.STEP_4_VIEWED_NON_IMPRESSION = 3)] = "STEP_4_VIEWED_NON_IMPRESSION"),
+      (i[(i.STEP_5_VIEWED_IMPRESSION = 4)] = "STEP_5_VIEWED_IMPRESSION"),
+      i);
+  let s = (0, r.mj)({
+    name: "2026-05-use-ad-analytics-interface",
+    kind: "user",
+    defaultConfig: { enabled: !1, maxStep: -1 },
+    variations: {
+      0: { enabled: !1, maxStep: -1 },
+      1: { enabled: !0, maxStep: 0 },
+      2: { enabled: !0, maxStep: 1 },
+      3: { enabled: !0, maxStep: 2 },
+      4: { enabled: !0, maxStep: 3 },
+      5: { enabled: !0, maxStep: 4 },
+    },
+  });
+  function l(e, t) {
+    let n = s.getConfig({ location: t });
+    return n.enabled && e <= n.maxStep;
+  }
+}

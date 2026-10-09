@@ -1,0 +1,77 @@
+/* Recovered shipped factory. Module 671759.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8764917..8766147
+ * Raw property SHA-256: 8b1443a5146e324d87744d6fcf930e325d3a5f5dd9a348deef2e4a05a966862c
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.d(t, { A: () => l }), n(938796));
+  var i = n(536637),
+    r = n.n(i),
+    a = n(315069),
+    s = n(889227);
+  class l extends a.A {
+    code;
+    temporary;
+    revoked;
+    uses;
+    maxUses;
+    maxAge;
+    createdAt;
+    channel;
+    guild;
+    inviter;
+    targetType;
+    targetUser;
+    targetApplication;
+    type;
+    flags;
+    roles;
+    constructor(e) {
+      (super(),
+        (this.code = e.code || ""),
+        (this.temporary = e.temporary || !1),
+        (this.revoked = e.revoked || !1),
+        (this.uses = e.uses || 0),
+        (this.maxUses = e.maxUses || 0),
+        (this.maxAge = e.maxAge || 0),
+        (this.createdAt = e.createdAt || new Date()),
+        (this.channel = e.channel),
+        (this.guild = e.guild),
+        (this.inviter =
+          null != e.inviter
+            ? (function (e) {
+                return e instanceof s.A ? e : new s.A(e);
+              })(e.inviter)
+            : null),
+        (this.targetType = e.targetType || null),
+        (this.targetUser = e.targetUser || null),
+        (this.targetApplication = e.targetApplication || null),
+        (this.type = e.type || null),
+        (this.flags = e.flags || 0),
+        (this.roles = e.roles || []));
+    }
+    static createFromServer(e) {
+      return new l({
+        ...e,
+        maxUses: e.max_uses,
+        maxAge: e.max_age,
+        createdAt: r()(e.created_at ?? void 0),
+        targetType: e.target_type,
+        targetUser: e.target_user,
+        targetApplication: e.target_application,
+      });
+    }
+    isExpired() {
+      let e = this.maxAge;
+      return !!(e > 0 && r()(this.createdAt).add(e, "seconds").isBefore(Date.now())) || !1;
+    }
+    getExpiresAt() {
+      return this.maxAge > 0 ? r()(this.createdAt).add(this.maxAge, "seconds").toDate() : 1 / 0;
+    }
+    toString() {
+      return this.code;
+    }
+  }
+}

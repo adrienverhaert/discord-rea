@@ -1,0 +1,26 @@
+/* Recovered shipped factory. Module 233680.
+ * Source: recovered/web/assets/803966.5faf6f2d24f1503a.js
+ * UTF-16 property offsets: 694..1151
+ * Raw property SHA-256: 330809767a13a43c6bce4a3c0ac3c28f3088edf55d46c1fc9963ce5c2664c7e3
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, _, t) {
+  e.exports = {
+    YL: "tooltip_c36707",
+    Cy: "tooltipDisablePointerEvents_c36707",
+    xQ: "tooltipPointer_c36707",
+    rv: "tooltipContent_c36707",
+    u2: "tooltipContentAllowOverflow_c36707",
+    dn: "tooltipTop_c36707",
+    L_: "tooltipBottom_c36707",
+    F6: "tooltipCenter_c36707",
+    Lf: "tooltipLeft_c36707",
+    Uu: "tooltipRight_c36707",
+    A4: "tooltipPrimary_c36707",
+    F7: "tooltipGrey_c36707",
+    ZE: "tooltipBrand_c36707",
+    Rp: "tooltipRed_c36707",
+    x7: "tooltipGreen_c36707",
+    yH: "tooltipPointerBg_c36707",
+  };
+}

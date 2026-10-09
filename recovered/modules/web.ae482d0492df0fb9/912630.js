@@ -1,0 +1,96 @@
+/* Recovered shipped factory. Module 912630.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8302699..8304361
+ * Raw property SHA-256: ed3009ff3b0411ec424dc2e538b04da5ed58b14f919612705079da4982b93fbd
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => S });
+  var i = n(17928),
+    r = n(205693),
+    a = n(73153),
+    s = n(964404),
+    l = n(617617),
+    o = n(192820),
+    d = n(309010),
+    c = n(287809),
+    u = n(965162);
+  let _ = !1,
+    E = null,
+    A = !1,
+    h = !1,
+    f = {},
+    I = !1,
+    p = !1;
+  function T(e) {
+    let t = c.default.getCurrentUser();
+    if (null == t) return !1;
+    let n = e;
+    return (
+      null == n && (n = (0, u.Hk)(l.A.settings.voiceAndVideo?.videoBackgroundFilterDesktop, t.id)),
+      null != d.Ay.getVoiceChannelId() && o.Ay.isVideoEnabled() && null != n
+    );
+  }
+  function m() {
+    (E !== d.Ay.getVoiceChannelId() && ((A = !1), (I = !1), (p = !1)),
+      T() && (A = !0),
+      (E = d.Ay.getVoiceChannelId()));
+  }
+  class g extends i.Ay.Store {
+    static displayName = "VideoBackgroundStore";
+    initialize() {
+      (this.waitFor(o.Ay, d.Ay, s.Ay, l.A, c.default), this.syncWith([d.Ay, o.Ay], m));
+    }
+    get videoFilterAssets() {
+      return f;
+    }
+    get hasBeenApplied() {
+      return _;
+    }
+    get hasUsedBackgroundInCall() {
+      return A;
+    }
+    get liveBackgroundEnabled() {
+      return h;
+    }
+    get videoBackgroundUnavailable() {
+      return I;
+    }
+    get videoBackgroundPreviewUnavailable() {
+      return p;
+    }
+  }
+  let S = new g(a.h, {
+    VIDEO_FILTER_ASSETS_FETCH_SUCCESS: function (e) {
+      let { assets: t } = e,
+        n = {};
+      (t.forEach((e) => (n[e.id] = e)), (f = n));
+    },
+    VIDEO_FILTER_ASSET_UPLOAD_SUCCESS: function (e) {
+      let { videoFilterAsset: t } = e;
+      f = { ...f, [t.id]: t };
+    },
+    VIDEO_FILTER_ASSET_DELETE_SUCCESS: function (e) {
+      let { videoFilterAsset: t } = e;
+      ((f = { ...f }), delete f[t.id]);
+    },
+    VIDEO_SAVE_LAST_USED_BACKGROUND_OPTION: function (e) {
+      let { backgroundOption: t } = e;
+      T(t) && (A = !0);
+    },
+    MEDIA_ENGINE_APPLY_MEDIA_FILTER_SETTINGS: function (e) {
+      let { settings: t } = e;
+      (r.Tr.CAMERA_BACKGROUND_LIVE in t &&
+        ((_ = !0), (I = !1), (h = t[r.Tr.CAMERA_BACKGROUND_LIVE]?.graph !== r.gO.NONE)),
+        r.Tr.CAMERA_BACKGROUND_PREVIEW in t && (p = !1));
+    },
+    MEDIA_ENGINE_VIDEO_FILTER_ERROR: function (e) {
+      let { target: t } = e;
+      "live" === t ? ((I = !0), (h = !1)) : (p = !0);
+    },
+    LOGOUT: function () {
+      ((_ = !1), (A = !1), (E = null), (f = {}), (I = !1), (p = !1), (h = !1));
+    },
+  });
+}

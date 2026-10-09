@@ -1,0 +1,80 @@
+/* Recovered shipped factory. Module 931959.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7680137..7681376
+ * Raw property SHA-256: fb921f8a1fd55d7d5b9f073a003d0e17dd0a308e8add716f1e9d47c3fc0011ea
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.d(t, { A: () => p }), n(321073));
+  var i = n(435558),
+    r = n.n(i),
+    a = n(17928),
+    s = n(73153),
+    l = n(283047),
+    o = n(617617),
+    d = n(927813),
+    c = n(750385),
+    u = n(355097);
+  let _ = { pendingUsages: [] };
+  d.A.Millis.DAY;
+  let E = new l.A({
+    computeBonus: () => 100,
+    lookupKey: (e) => c.A.getStickerById(e),
+    afterCompute: () => {},
+    numFrequentlyItems: 20,
+  });
+  function A() {
+    c.A.isLoaded && E.compute();
+  }
+  function h() {
+    A();
+  }
+  function f() {
+    let e = o.A.frecencyWithoutFetchingLatest.stickerFrecency?.stickers;
+    if (null == e) return !1;
+    E.overwriteHistory(
+      r().mapValues(e, (e) => ({
+        ...e,
+        recentUses: e.recentUses.map(Number).filter((e) => e > 0),
+      })),
+      _.pendingUsages,
+    );
+  }
+  class I extends a.Ay.PersistedStore {
+    static displayName = "StickersPersistedStore";
+    static persistKey = "StickersPersistedStoreV2";
+    initialize(e) {
+      (this.waitFor(c.A, o.A),
+        null != e && (_ = e),
+        this.syncWith([c.A], h),
+        this.syncWith([o.A], f));
+    }
+    getState() {
+      return _;
+    }
+    hasPendingUsage() {
+      return _.pendingUsages.length > 0;
+    }
+    get stickerFrecencyWithoutFetchingLatest() {
+      return E;
+    }
+  }
+  let p = new I(s.h, {
+    STICKER_TRACK_USAGE: function (e) {
+      let { stickerIds: t } = e;
+      (t?.forEach((e) => {
+        (E.track(e), _.pendingUsages.push({ key: e, timestamp: Date.now() }));
+      }),
+        A());
+    },
+    USER_SETTINGS_PROTO_UPDATE: function (e) {
+      let {
+        settings: { type: t },
+        wasSaved: n,
+      } = e;
+      if (t !== u.oD.FRECENCY_AND_FAVORITES_SETTINGS || !n) return !1;
+      _.pendingUsages = [];
+    },
+  });
+}

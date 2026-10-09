@@ -1,0 +1,100 @@
+/* Recovered shipped factory. Module 680646.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 4968911..4971101
+ * Raw property SHA-256: 528b898d1c28e0849778287d59d001a03e96d916014de562ef0903779aa65d46
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => u, e: () => l });
+  var i,
+    r = n(17928),
+    a = n(73153),
+    s = n(927813),
+    l =
+      (((i = {})[(i.NOT_FETCHED = 0)] = "NOT_FETCHED"),
+      (i[(i.FETCHING = 1)] = "FETCHING"),
+      (i[(i.FETCHED = 2)] = "FETCHED"),
+      (i[(i.ERROR = 3)] = "ERROR"),
+      i);
+  let o = {
+    applicationIdToGuildIds: {},
+    lastFetchTimeMs: null,
+    nextFetchRetryTimeMs: null,
+    fetchState: 0,
+  };
+  function d(e) {
+    let { applicationId: t, guildId: n } = e;
+    (null == o.applicationIdToGuildIds[t] && (o.applicationIdToGuildIds[t] = new Set()),
+      o.applicationIdToGuildIds[t].add(n),
+      (o.applicationIdToGuildIds[t] = new Set(o.applicationIdToGuildIds[t])));
+  }
+  class c extends r.Ay.PersistedStore {
+    static displayName = "MyGuildApplicationsStore";
+    static persistKey = "MyGuildApplicationsStore";
+    initialize(e) {
+      if (null != e)
+        for (let t in ((o.lastFetchTimeMs = e.lastFetchTimeMs),
+        (o.nextFetchRetryTimeMs = e.nextFetchRetryTimeMs),
+        (o.fetchState = e.fetchState),
+        e.applicationIdToGuildIds))
+          o.applicationIdToGuildIds[t] = new Set(e.applicationIdToGuildIds[t]);
+    }
+    getState() {
+      return o;
+    }
+    getGuildIdsForApplication(e) {
+      if (null != e) return o.applicationIdToGuildIds[e];
+    }
+    getLastFetchTimeMs() {
+      return o.lastFetchTimeMs;
+    }
+    getNextFetchRetryTimeMs() {
+      return o.nextFetchRetryTimeMs;
+    }
+    getFetchState() {
+      return o.fetchState;
+    }
+  }
+  let u = new c(a.h, {
+    LOGOUT: function () {
+      ((o.applicationIdToGuildIds = {}),
+        (o.lastFetchTimeMs = null),
+        (o.nextFetchRetryTimeMs = null),
+        (o.fetchState = 0));
+    },
+    FETCH_INTEGRATION_APPLICATION_IDS_FOR_MY_GUILDS: function () {
+      o.fetchState = 1;
+    },
+    FETCH_INTEGRATION_APPLICATION_IDS_FOR_MY_GUILDS_SUCCESS: function (e) {
+      let { guildIdToApplicationIds: t } = e;
+      for (let e in ((o.fetchState = 2),
+      (o.lastFetchTimeMs = Date.now()),
+      (o.applicationIdToGuildIds = {}),
+      (o.nextFetchRetryTimeMs = null),
+      t))
+        for (let n of t[e]) d({ applicationId: n, guildId: e });
+    },
+    FETCH_INTEGRATION_APPLICATION_IDS_FOR_MY_GUILDS_FAILURE: function (e) {
+      let { retryAfterSeconds: t } = e;
+      if (((o.fetchState = 3), null != t)) {
+        let e = t * s.A.Millis.SECOND;
+        o.nextFetchRetryTimeMs = Date.now() + e;
+      }
+    },
+    INTEGRATION_CREATE: function (e) {
+      let { application: t, guildId: n } = e;
+      null != t && d({ applicationId: t.id, guildId: n });
+    },
+    INTEGRATION_DELETE: function (e) {
+      let { applicationId: t, guildId: n } = e;
+      null != t &&
+        (function (e) {
+          let { applicationId: t, guildId: n } = e;
+          null != o.applicationIdToGuildIds[t] &&
+            (o.applicationIdToGuildIds[t].delete(n),
+            (o.applicationIdToGuildIds[t] = new Set(o.applicationIdToGuildIds[t])));
+        })({ applicationId: t, guildId: n });
+    },
+  });
+}

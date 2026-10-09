@@ -1,0 +1,120 @@
+/* Recovered shipped factory. Module 670455.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 4555712..4557924
+ * Raw property SHA-256: 7f4c2b5886d1142139d06d3ecca4d6163066d85bd53feb33995766fdacc42e4c
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    AO: () => S,
+    CW: () => C,
+    Eq: () => T,
+    MW: () => _.iL,
+    P0: () => E,
+    Rj: () => I,
+    UV: () => O,
+    X: () => g,
+    bO: () => m,
+    fs: () => p,
+    h0: () => h,
+    j6: () => N,
+    u0: () => A,
+    uf: () => f,
+  });
+  var i,
+    r,
+    a,
+    s,
+    l,
+    o,
+    d,
+    c,
+    u,
+    _ = n(873298),
+    E = (((i = {}).BAD = "bad"), (i.NEUTRAL = "neutral"), (i.GOOD = "good"), i);
+  let A = 1024;
+  var h =
+    (((r = {}).AV = "AV"),
+    (r.SOCIAL = "SOCIAL"),
+    (r.SEARCH = "SEARCH"),
+    (r.SAFETY = "SAFETY"),
+    (r.BUILDER = "BUILDER"),
+    r);
+  let f = [
+      _.iL.VIDEO_BACKGROUND,
+      _.iL.STREAM,
+      _.iL.ACTIVITY,
+      _.iL.VOICE,
+      _.iL.IN_APP_REPORTS,
+      _.iL.SEARCH_RESULTS,
+      _.iL.VIBEGRATIONS,
+    ].reduce((e, t, n) => ({ ...e, [t]: n }), {}),
+    I = ["bad", "neutral", "good"],
+    p = 864e13;
+  var T =
+      (((a = {}).CONNECTION = "CONNECTION"),
+      (a.AUDIO = "AUDIO"),
+      (a.VIDEO = "VIDEO"),
+      (a.STREAMING = "STREAMING"),
+      (a.STREAM_WATCHING = "STREAM_WATCHING"),
+      (a.PEOPLE = "PEOPLE"),
+      a),
+    m =
+      (((s = {}).FREEFORM = "FREEFORM"),
+      (s.COULD_NOT_CONNECT = "COULD_NOT_CONNECT"),
+      (s.HIGH_TTC = "HIGH_TTC"),
+      (s.HIGH_LATENCY = "HIGH_LATENCY"),
+      (s.ROBOT_VOICE = "ROBOT_VOICE"),
+      (s.DESYNC = "DESYNC"),
+      (s.CUTTING = "CUTTING"),
+      s),
+    g =
+      (((l = {}).FREEFORM = "FREEFORM"),
+      (l.NO_AUDIO = "NO_AUDIO"),
+      (l.LOW_QUALITY_AUDIO = "LOW_QUALITY_AUDIO"),
+      (l.ROBOT_VOICE = "ROBOT"),
+      (l.ECHO = "ECHO"),
+      (l.TOO_QUIET = "TOO_QUIET"),
+      (l.TOO_LOUD = "TOO_LOUD"),
+      (l.TOO_QUIET_OR_LOUD = "TOO_QUIET_OR_LOUD"),
+      (l.CUTTING = "CUTTING"),
+      (l.DELAYED = "DELAYED"),
+      (l.BACKGROUND_NOISE = "BACKGROUND_NOISE"),
+      (l.UNABLE_TO_FIND_DEVICE = "UNABLE_TO_FIND_DEVICE"),
+      (l.UNABLE_TO_FIND_INPUT_DEVICE = "UNABLE_TO_FIND_INPUT_DEVICE"),
+      (l.UNABLE_TO_FIND_OUTPUT_DEVICE = "UNABLE_TO_FIND_OUTPUT_DEVICE"),
+      (l.TROUBLE_WITH_SPEAKERPHONE = "TROUBLE_WITH_SPEAKERPHONE"),
+      (l.COMPLAINTS = "COMPLAINTS"),
+      (l.NO_GAME_AUDIO = "NO_GAME_AUDIO"),
+      l),
+    S =
+      (((o = {}).FREEFORM = "FREEFORM"),
+      (o.NO_VIDEO = "NO_VIDEO"),
+      (o.FREEZING_OR_HITCHING = "FREEZING_OR_HITCHING"),
+      (o.BLURRY_OR_PIXELATED = "BLURRY_OR_PIXELATED"),
+      (o.UNABLE_TO_ENABLE_DEVICE = "UNABLE_TO_ENABLE_DEVICE"),
+      (o.DESYNC = "DESYNC"),
+      o),
+    N =
+      (((d = {}).FREEFORM = "FREEFORM"),
+      (d.COULD_NOT_LOAD = "COULD_NOT_LOAD"),
+      (d.BLACK_SCREEN = "BLACK_SCREEN"),
+      (d.FREEZING_OR_HITCHING = "FREEZING_OR_HITCHING"),
+      (d.LAG = "LAG"),
+      (d.BLURRY_OR_PIXELATED = "BLURRY_OR_PIXELATED"),
+      (d.NO_AUDIO = "NO_AUDIO"),
+      (d.BAD_AUDIO = "BAD_AUDIO"),
+      (d.STOPPED_UNEXPECTEDLY = "STOPPED_UNEXPECTEDLY"),
+      (d.DESYNC = "DESYNC"),
+      (d.NO_GAME_AUDIO = "NO_GAME_AUDIO"),
+      d),
+    C =
+      (((c = {}).FREEFORM = "FREEFORM"), (c.TOXIC_OR_INAPPROPRIATE = "TOXIC_OR_INAPPROPRIATE"), c),
+    O =
+      (((u = {}).UNSPECIFIED = "UNSPECIFIED"),
+      (u.SELF = "SELF"),
+      (u.SOMEONE = "SOMEONE"),
+      (u.OTHERS = "OTHERS"),
+      u);
+}

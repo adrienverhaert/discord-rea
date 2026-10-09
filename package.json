@@ -1,0 +1,31 @@
+{
+  "name": "discord-rea",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
+    "extract:desktop": "node scripts/extract-desktop.mjs",
+    "capture:web": "node scripts/capture-web.mjs",
+    "recover:modules": "node scripts/recover-modules.mjs",
+    "verify:sources": "node scripts/verify-sources.mjs",
+    "capture:lazy": "node scripts/capture-lazy.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "acorn": "^8.15.0",
+    "acorn-walk": "^8.3.4",
+    "postcss": "^8.5.29",
+    "prettier": "^3.6.2",
+    "vite": "^7.1.0"
+  }
+}

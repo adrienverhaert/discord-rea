@@ -1,0 +1,56 @@
+/* Recovered shipped factory. Module 315290.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7912723..7913914
+ * Raw property SHA-256: c3dae49ba0ca890f8ab3539d451a34899b70896e6b69edaaf2a215287ad06f93
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { Ot: () => c, do: () => d, hc: () => u, jC: () => _, jK: () => A, ju: () => E });
+  var i,
+    r,
+    a,
+    s,
+    l,
+    o,
+    d =
+      (((i = {}).UNKNOWN = "unknown"),
+      (i.ANY = "any"),
+      (i.INVITE = "invite"),
+      (i.ORGANIC = "organic_registration"),
+      (i.ORGANIC_MARKETING = "organic_marketing"),
+      (i.ORGANIC_GUILD_TEMPLATES = "organic_guild_template"),
+      (i.CREATE_GUILD = "create_guild"),
+      i),
+    c = (((r = {}).AGE_GATE = "age_gate"), (r.AGE_GATE_UNDERAGE = "age_gate_underage"), r),
+    u =
+      (((a = {}).CLAIM_ACCOUNT = "claim_account"),
+      (a.CLAIM_ACCOUNT_SUCCESS = "claim_account_success"),
+      a),
+    _ =
+      (((s = {}).GUILD_TEMPLATES = "guild_templates"),
+      (s.GUILD_CREATE = "guild_create"),
+      (s.CREATION_INTENT = "creation_intent"),
+      (s.CHANNEL_PROMPT = "channel_prompt"),
+      (s.JOIN_GUILD = "join_guild"),
+      (s.SUCCESS = "create_success"),
+      s),
+    E =
+      (((l = {}).NUF_STARTED = "nuf_started"),
+      (l.AGE_GATE = "age_gate"),
+      (l.NUF_COMPLETE = "nuf_complete"),
+      (l.HUB_CONNECTION = "hub_connection"),
+      l),
+    A =
+      (((o = {}).WELCOME = "onboarding_welcome"),
+      (o.APPEARANCE = "onboarding_appearance"),
+      (o.DOWNLOAD_DESKTOP = "onboarding_download_desktop"),
+      (o.PROFILE = "onboarding_profile"),
+      (o.NEXT_STEPS = "onboarding_next_steps"),
+      (o.JOIN_SERVER = "onboarding_join_server"),
+      (o.ADD_FRIEND = "onboarding_add_friend"),
+      (o.EXPLORE = "onboarding_explore"),
+      (o.CREATE_SERVER = "onboarding_create_server"),
+      (o.DISMISSED = "onboarding_dismissed"),
+      o);
+}

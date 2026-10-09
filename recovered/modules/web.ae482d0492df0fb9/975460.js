@@ -1,0 +1,27 @@
+/* Recovered shipped factory. Module 975460.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 2907395..2907868
+ * Raw property SHA-256: 818d1b2159249e1d4f2fae1316c83df2c91adbc7a4cb265081ad0d15a7247f67
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { g: () => c, t: () => d });
+  var i = n(582128),
+    r = n(155718),
+    a = n(587895),
+    s = n(429913),
+    l = n(395671),
+    o = n(705751);
+  function d(e) {
+    if (null == e) return null;
+    if (e.type !== o.S7.GAME) return e;
+    let t = e.linkedGames?.find((e) => e.type === r.Mh.OFFICIAL);
+    return t?.application ?? a.A.getApplication(t?.id) ?? null;
+  }
+  function c(e) {
+    let t = null == e || e instanceof l.Ay ? void 0 : e.getOfficialApplicationId(),
+      n = (0, s.h)(t);
+    return i.useMemo(() => (null == e ? null : e instanceof l.Ay ? d(e) : (n ?? null)), [e, n]);
+  }
+}

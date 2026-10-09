@@ -1,0 +1,99 @@
+/* Recovered shipped factory. Module 181370.
+ * Source: recovered/web/assets/347897.7696a337bf0e947e.js
+ * UTF-16 property offsets: 590651..592089
+ * Raw property SHA-256: ca286c356aff5f3185da05a5aaddd5cf02dfbed47992ff6756bd917de4e4c3a8
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e) {
+  let t = (e) => new TextEncoder().encode(e);
+  function r(e, r) {
+    let n, i, o, a, s, l;
+    for (
+      "string" == typeof e && (e = t(e)), n = 3 & e.length, i = e.length - n, o = r, l = 0;
+      l < i;
+    )
+      ((s = (255 & e[l]) | ((255 & e[++l]) << 8) | ((255 & e[++l]) << 16) | ((255 & e[++l]) << 24)),
+        ++l,
+        (o ^= s =
+          ((65535 &
+            (s =
+              ((s = ((65535 & s) * 0xcc9e2d51 + ((((s >>> 16) * 0xcc9e2d51) & 65535) << 16)) | 0) <<
+                15) |
+              (s >>> 17))) *
+            0x1b873593 +
+            ((((s >>> 16) * 0x1b873593) & 65535) << 16)) |
+          0),
+        (o =
+          (65535 &
+            (a =
+              ((65535 & (o = (o << 13) | (o >>> 19))) * 5 + ((((o >>> 16) * 5) & 65535) << 16)) |
+              0)) +
+          27492 +
+          ((((a >>> 16) + 58964) & 65535) << 16)));
+    switch (((s = 0), n)) {
+      case 3:
+        s ^= (255 & e[l + 2]) << 16;
+      case 2:
+        s ^= (255 & e[l + 1]) << 8;
+      case 1:
+        ((s ^= 255 & e[l]),
+          (o ^= s =
+            ((65535 &
+              (s =
+                ((s =
+                  ((65535 & s) * 0xcc9e2d51 + ((((s >>> 16) * 0xcc9e2d51) & 65535) << 16)) | 0) <<
+                  15) |
+                (s >>> 17))) *
+              0x1b873593 +
+              ((((s >>> 16) * 0x1b873593) & 65535) << 16)) |
+            0));
+    }
+    return (
+      (o ^= e.length),
+      (o ^= o >>> 16),
+      (o = ((65535 & o) * 0x85ebca6b + ((((o >>> 16) * 0x85ebca6b) & 65535) << 16)) | 0),
+      (o ^= o >>> 13),
+      (o = ((65535 & o) * 0xc2b2ae35 + ((((o >>> 16) * 0xc2b2ae35) & 65535) << 16)) | 0),
+      (o ^= o >>> 16) >>> 0
+    );
+  }
+  ((r.v2 = function (e, r) {
+    "string" == typeof e && (e = t(e));
+    let n = e.length,
+      i = r ^ n,
+      o = 0,
+      a;
+    for (; n >= 4;)
+      ((a =
+        (65535 &
+          (a =
+            (255 & e[o]) |
+            ((255 & e[++o]) << 8) |
+            ((255 & e[++o]) << 16) |
+            ((255 & e[++o]) << 24))) *
+          0x5bd1e995 +
+        ((((a >>> 16) * 0x5bd1e995) & 65535) << 16)),
+        (a ^= a >>> 24),
+        (i =
+          ((65535 & i) * 0x5bd1e995 + ((((i >>> 16) * 0x5bd1e995) & 65535) << 16)) ^
+          (a = (65535 & a) * 0x5bd1e995 + ((((a >>> 16) * 0x5bd1e995) & 65535) << 16))),
+        (n -= 4),
+        ++o);
+    switch (n) {
+      case 3:
+        i ^= (255 & e[o + 2]) << 16;
+      case 2:
+        i ^= (255 & e[o + 1]) << 8;
+      case 1:
+        ((i ^= 255 & e[o]),
+          (i = (65535 & i) * 0x5bd1e995 + ((((i >>> 16) * 0x5bd1e995) & 65535) << 16)));
+    }
+    return (
+      (i ^= i >>> 13),
+      (i = (65535 & i) * 0x5bd1e995 + ((((i >>> 16) * 0x5bd1e995) & 65535) << 16)),
+      (i ^= i >>> 15) >>> 0
+    );
+  }),
+    (r.v3 = r),
+    (e.exports = r));
+}

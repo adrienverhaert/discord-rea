@@ -1,0 +1,49 @@
+/* Recovered shipped factory. Module 384539.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 34076..35785
+ * Raw property SHA-256: c37d39aa53e222ceb07556bf5ced972674d71d72f1fcc727b4b642f353472f87
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.r(t), n.d(t, { default: () => s, messagesLoader: () => r }));
+  let { createLoader: i } = n(632296),
+    r = i(
+      {
+        bg: () => n.e("563252").then(n.t.bind(n, 965663, 19)),
+        cs: () => n.e("418115").then(n.t.bind(n, 497422, 19)),
+        da: () => n.e("846308").then(n.t.bind(n, 44815, 19)),
+        de: () => n.e("339600").then(n.t.bind(n, 765203, 19)),
+        el: () => n.e("581574").then(n.t.bind(n, 19877, 19)),
+        "en-GB": () => n.e("163678").then(n.t.bind(n, 473197, 19)),
+        "es-419": () => n.e("659976").then(n.t.bind(n, 229499, 19)),
+        "es-ES": () => n.e("677286").then(n.t.bind(n, 795973, 19)),
+        fi: () => n.e("431422").then(n.t.bind(n, 180749, 19)),
+        fr: () => n.e("587141").then(n.t.bind(n, 565156, 19)),
+        hi: () => n.e("782664").then(n.t.bind(n, 219259, 19)),
+        hr: () => n.e("909555").then(n.t.bind(n, 105662, 19)),
+        hu: () => n.e("689732").then(n.t.bind(n, 787695, 19)),
+        it: () => n.e("147362").then(n.t.bind(n, 579193, 19)),
+        ja: () => n.e("125250").then(n.t.bind(n, 438937, 19)),
+        ko: () => n.e("554903").then(n.t.bind(n, 927178, 19)),
+        lt: () => n.e("774465").then(n.t.bind(n, 65688, 19)),
+        nl: () => n.e("77291").then(n.t.bind(n, 155174, 19)),
+        no: () => n.e("392808").then(n.t.bind(n, 421595, 19)),
+        pl: () => n.e("898301").then(n.t.bind(n, 87372, 19)),
+        "pt-BR": () => n.e("782126").then(n.t.bind(n, 455933, 19)),
+        ro: () => n.e("24844").then(n.t.bind(n, 983623, 19)),
+        ru: () => n.e("968574").then(n.t.bind(n, 546381, 19)),
+        "sv-SE": () => n.e("414719").then(n.t.bind(n, 733698, 19)),
+        th: () => n.e("326517").then(n.t.bind(n, 11879, 19)),
+        tr: () => n.e("589671").then(n.t.bind(n, 354586, 19)),
+        uk: () => n.e("529953").then(n.t.bind(n, 330872, 19)),
+        vi: () => n.e("608078").then(n.t.bind(n, 290717, 19)),
+        "zh-CN": () => n.e("670627").then(n.t.bind(n, 577774, 19)),
+        "zh-TW": () => n.e("142911").then(n.t.bind(n, 56450, 19)),
+        "en-US": () => n.e("250897").then(n.bind(n, 339560)),
+      },
+      "en-US",
+    ),
+    { makeMessagesProxy: a } = n(632296),
+    s = a(r);
+}

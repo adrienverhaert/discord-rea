@@ -1,0 +1,117 @@
+/* Recovered shipped factory. Module 271195.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8397693..8399339
+ * Raw property SHA-256: 6a0cc1b6367d18640c20a8efad4fbe5f84dda4a6c177a9b69378bd33223935da
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => T, X: () => p });
+  var i = n(477900);
+  n(582128);
+  var r = n(503698),
+    a = n.n(r),
+    s = n(17928),
+    l = n(868285),
+    o = n(939249),
+    d = n(477155),
+    c = n(297264),
+    u = n(235986),
+    _ = n(282413),
+    E = n(763827),
+    A = n(6155),
+    h = n(919706),
+    f = n(660183),
+    I = n(967481);
+  function p(e) {
+    let { title: t, onJumpToChannel: n, idle: r, preventIdleComponent: a } = e,
+      l = (0, s.bG)([E.A], () => E.A.getChannelId()),
+      u = null != l ? (0, i.jsx)(A.A, { voiceChannelId: l, idle: r }) : null;
+    return (0, i.jsxs)(a, {
+      className: I.Nc,
+      children: [
+        (0, i.jsxs)(o.D, {
+          className: I.qd,
+          onClick: n,
+          children: [
+            (0, i.jsx)(d.r, {
+              size: "custom",
+              color: "currentColor",
+              "aria-label": f.intl.string(f.t.mSfLs0),
+              className: I.Gv,
+              width: 20,
+              height: 20,
+            }),
+            (0, i.jsx)(c.D, {
+              variant: "heading-md/normal",
+              className: I.TK,
+              color: "text-overlay-light",
+              children: t,
+            }),
+          ],
+        }),
+        u,
+      ],
+    });
+  }
+  function T(e) {
+    let {
+      children: t,
+      idle: n,
+      onJumpToChannel: r,
+      backgroundKey: s,
+      onActive: o,
+      onForceIdle: d,
+      renderBottomLeftControls: c,
+      renderBottomRightControls: E,
+      screenMessage: A,
+      hideControls: f = !1,
+      className: T,
+      innerClassName: m,
+      videoControlsClassName: g,
+      ...S
+    } = e;
+    return (0, i.jsxs)("div", {
+      onMouseMove: o,
+      onMouseDown: o,
+      onMouseLeave: d,
+      className: a()(I.Hu, { [I.N7]: n }, T),
+      onDoubleClick: r,
+      children: [
+        (0, i.jsx)(l.F, { children: (0, i.jsx)(_.o, { className: m, children: t }, s) }),
+        null != A ? (0, i.jsx)(h.A, { size: "small", ...A }) : null,
+        !f &&
+          (0, i.jsxs)("div", {
+            className: a()(I._v, g, "theme-dark"),
+            children: [
+              (0, i.jsx)("div", {
+                className: I.K1,
+                children: (0, i.jsx)(p, { idle: n, onJumpToChannel: r, ...S }),
+              }),
+              (0, i.jsxs)("div", {
+                className: I.q6,
+                children: [
+                  (0, i.jsx)(u.A, {
+                    grow: 0,
+                    shrink: 1,
+                    basis: "50%",
+                    align: u.A.Align.CENTER,
+                    className: I.Px,
+                    children: c?.(),
+                  }),
+                  (0, i.jsx)(u.A, {
+                    grow: 0,
+                    shrink: 1,
+                    justify: u.A.Justify.END,
+                    basis: "50%",
+                    align: u.A.Align.CENTER,
+                    children: E?.(),
+                  }),
+                ],
+              }),
+            ],
+          }),
+      ],
+    });
+  }
+}

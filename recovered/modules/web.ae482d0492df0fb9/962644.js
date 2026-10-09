@@ -1,0 +1,103 @@
+/* Recovered shipped factory. Module 962644.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 6814944..6816990
+ * Raw property SHA-256: 71e778fb76e1efc439bbeaed08e8f1af49de8471838dcfa22e5276fbb53c1cb5
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { LI: () => T, Ay: () => m, BE: () => f, Ak: () => I, b8: () => p });
+  var i,
+    r = (((i = {})[(i.DESKTOP = 0)] = "DESKTOP"), (i[(i.MOBILE = 1)] = "MOBILE"), i),
+    a = n(636537),
+    s = n(406935),
+    l = n(73153),
+    o = n(339048),
+    d = n(773669),
+    c = n(594061),
+    u = n(287809),
+    _ = n(264779),
+    E = n(412260),
+    A = n(202541),
+    h = n(652215);
+  function f() {
+    let e = !(arguments.length > 0) || void 0 === arguments[0] || arguments[0];
+    null == u.default.getCurrentUser() ||
+      E.A.isFetchingActivePromotions ||
+      (e && null != E.A.lastFetchedActivePromotions) ||
+      p();
+  }
+  function I() {
+    l.h.dispatch({ type: "ACTIVE_PROMOTIONS_CLEAR" });
+  }
+  async function p() {
+    try {
+      let e = d.default.locale;
+      l.h.dispatch({ type: "ACTIVE_PROMOTIONS_FETCH", locale: e });
+      let t = r.DESKTOP,
+        n = await a.Bo.get({
+          url: h.Rsh.PROMOTIONS,
+          query: { locale: e, platform: t },
+          oldFormErrors: !0,
+          rejectWithError: !0,
+        }),
+        i = E.A.consumedInboundPromotionId;
+      if (!E.A.hasFetchedConsumedInboundPromotionId) {
+        let e = (await (0, o.LM)(A.tv, !1)).find(
+          (e) => null != e.promotion_id && !0 === e.consumed,
+        );
+        i = e?.promotion_id ?? null;
+      }
+      l.h.dispatch({
+        type: "ACTIVE_PROMOTIONS_FETCH_SUCCESS",
+        promotions: n.body,
+        consumedInboundPromotionId: i,
+      });
+    } catch (e) {
+      l.h.dispatch({ type: "ACTIVE_PROMOTIONS_FETCH_FAIL" });
+    }
+  }
+  function T(e) {
+    l.h.dispatch({ type: "CLAIMED_OUTBOUND_PROMOTION_CODE_ADD", claimedOutboundPromotionCode: e });
+  }
+  let m = {
+    fetchActivePromotions: p,
+    fetchClaimedOutboundPromotionCodes: async function () {
+      try {
+        let e = (
+          await a.Bo.get({
+            url: h.Rsh.CLAIMED_OUTBOUND_PROMOTION_CODES,
+            query: { locale: d.default.locale },
+            oldFormErrors: !0,
+            rejectWithError: (0, a.fT)(),
+          })
+        ).body.map(_.Ng);
+        return (
+          l.h.dispatch({
+            type: "CLAIMED_OUTBOUND_PROMOTION_CODES_FETCH_SUCCESS",
+            claimedOutboundPromotionCodes: e,
+          }),
+          !0
+        );
+      } catch {
+        return (l.h.dispatch({ type: "CLAIMED_OUTBOUND_PROMOTION_CODES_FETCH_FAIL" }), !1);
+      }
+    },
+    addClaimedOutboundPromotionCode: T,
+    dismissOutboundPromotionNotice: function () {
+      l.h.dispatch({ type: "OUTBOUND_PROMOTION_NOTICE_DISMISS" });
+      let e = E.A.lastDismissedOutboundPromotionStartDate;
+      null != e &&
+        c.wc.updateAsync(
+          "userContent",
+          (t) => {
+            t.lastDismissedOutboundPromotionStartDate = s.hU.create({ value: e });
+          },
+          c.Sb.INFREQUENT_USER_ACTION,
+        );
+    },
+    markOutboundPromotionsSeen() {
+      l.h.dispatch({ type: "OUTBOUND_PROMOTIONS_SEEN" });
+    },
+  };
+}

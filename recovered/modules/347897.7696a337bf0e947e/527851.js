@@ -1,0 +1,86 @@
+/* Recovered shipped factory. Module 527851.
+ * Source: recovered/web/assets/347897.7696a337bf0e947e.js
+ * UTF-16 property offsets: 405798..407584
+ * Raw property SHA-256: 11ea1b70c1e5affe45611c2c32f6d1e37ab4fc9fb6b6c7262925eaca4a2d5b90
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, r) {
+  "use strict";
+  var n = (function () {
+      function e(e, t) {
+        for (var r = 0; r < t.length; r++) {
+          var n = t[r];
+          ((n.enumerable = n.enumerable || !1),
+            (n.configurable = !0),
+            "value" in n && (n.writable = !0),
+            Object.defineProperty(e, n.key, n));
+        }
+      }
+      return function (t, r, n) {
+        return (r && e(t.prototype, r), n && e(t, n), t);
+      };
+    })(),
+    i = r(150433),
+    o = r(151979),
+    a = r(934580);
+  e.exports = (function (e) {
+    if ("function" != typeof e && null !== e)
+      throw TypeError("Super expression must either be null or a function, not " + typeof e);
+    function t(e) {
+      if (!(this instanceof t)) throw TypeError("Cannot call a class as a function");
+      var r = (function (e, t) {
+        if (!e) throw ReferenceError("this hasn't been initialised - super() hasn't been called");
+        return t && ("object" == typeof t || "function" == typeof t) ? t : e;
+      })(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this));
+      return (
+        (r._deceleration = void 0 !== e.deceleration ? e.deceleration : 0.998),
+        (r._velocity = e.velocity),
+        (r.__isInteraction = void 0 === e.isInteraction || e.isInteraction),
+        r
+      );
+    }
+    return (
+      (t.prototype = Object.create(e && e.prototype, {
+        constructor: { value: t, enumerable: !1, writable: !0, configurable: !0 },
+      })),
+      e && (Object.setPrototypeOf ? Object.setPrototypeOf(t, e) : (t.__proto__ = e)),
+      n(t, [
+        {
+          key: "start",
+          value: function (e, t, r) {
+            ((this.__active = !0),
+              (this._lastValue = e),
+              (this._fromValue = e),
+              (this._onUpdate = t),
+              (this.__onEnd = r),
+              (this._startTime = Date.now()),
+              (this._animationFrame = o.current(this.onUpdate.bind(this))));
+          },
+        },
+        {
+          key: "onUpdate",
+          value: function () {
+            var e = Date.now(),
+              t =
+                this._fromValue +
+                (this._velocity / (1 - this._deceleration)) *
+                  (1 - Math.exp(-(1 - this._deceleration) * (e - this._startTime)));
+            (this._onUpdate(t), 0.1 > Math.abs(this._lastValue - t))
+              ? this.__debouncedOnEnd({ finished: !0 })
+              : ((this._lastValue = t),
+                this.__active && (this._animationFrame = o.current(this.onUpdate.bind(this))));
+          },
+        },
+        {
+          key: "stop",
+          value: function () {
+            ((this.__active = !1),
+              a.current(this._animationFrame),
+              this.__debouncedOnEnd({ finished: !1 }));
+          },
+        },
+      ]),
+      t
+    );
+  })(i);
+}

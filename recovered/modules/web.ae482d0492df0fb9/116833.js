@@ -1,0 +1,197 @@
+/* Recovered shipped factory. Module 116833.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 948478..952043
+ * Raw property SHA-256: cf3e9483753133826db61a5f80a09925a5d828505187e44f6478edc4b2099fdd
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { DynamicGraphicComponent: () => l, Q: () => _, m: () => o });
+  var i,
+    r = n(582128),
+    a = n(268218),
+    s = n(38405),
+    l =
+      (((i = {})[(i.DEMO = 0)] = "DEMO"),
+      (i[(i.COLLECTIBLES_PREVIEW = 1)] = "COLLECTIBLES_PREVIEW"),
+      (i[(i.GUILD_TAG_COACHMARK_ASSET = 2)] = "GUILD_TAG_COACHMARK_ASSET"),
+      (i[(i.ACCOUNT_LINK_DISPLAY = 3)] = "ACCOUNT_LINK_DISPLAY"),
+      (i[(i.GAME_SERVER_GAME_INSTRUCTIONS_ASSET = 4)] = "GAME_SERVER_GAME_INSTRUCTIONS_ASSET"),
+      (i[(i.APPLICATION_IMAGE_HEADER = 5)] = "APPLICATION_IMAGE_HEADER"),
+      (i[(i.SOCIAL_LAYER_SKU_PREVIEW = 6)] = "SOCIAL_LAYER_SKU_PREVIEW"),
+      (i[(i.GUILD_POWERUPS_COACHMARK_ASSET = 7)] = "GUILD_POWERUPS_COACHMARK_ASSET"),
+      (i[(i.BADGE_IMAGE_WITH_PROGRESS_CIRCLE = 8)] = "BADGE_IMAGE_WITH_PROGRESS_CIRCLE"),
+      (i[(i.QUEST_ACTIVITY_UNENROLLED = 9)] = "QUEST_ACTIVITY_UNENROLLED"),
+      (i[(i.GUILD_THEME_NUX_PREVIEW = 10)] = "GUILD_THEME_NUX_PREVIEW"),
+      (i[(i.BADGE_DIRECTORY_NUX = 11)] = "BADGE_DIRECTORY_NUX"),
+      i);
+  let o = {
+      0: () => Promise.all([n.e("543521"), n.e("348565")]).then(n.bind(n, 732852)),
+      1: () =>
+        Promise.all([
+          n.e("121046"),
+          n.e("206516"),
+          n.e("327545"),
+          n.e("163466"),
+          n.e("234017"),
+          n.e("629972"),
+          n.e("752704"),
+          n.e("489020"),
+          n.e("291103"),
+          n.e("419121"),
+          n.e("315513"),
+          n.e("162775"),
+          n.e("128804"),
+          n.e("60882"),
+          n.e("919789"),
+          n.e("943968"),
+          n.e("454048"),
+          n.e("76428"),
+          n.e("517888"),
+          n.e("811133"),
+          n.e("907167"),
+          n.e("11301"),
+          n.e("861060"),
+          n.e("300699"),
+          n.e("349619"),
+          n.e("599666"),
+          n.e("244560"),
+          n.e("398125"),
+          n.e("221825"),
+          n.e("930758"),
+          n.e("593600"),
+          n.e("707826"),
+          n.e("183776"),
+          n.e("776195"),
+          n.e("87306"),
+          n.e("361626"),
+          n.e("511527"),
+          n.e("249366"),
+          n.e("757238"),
+          n.e("198329"),
+          n.e("123353"),
+          n.e("252264"),
+          n.e("854622"),
+          n.e("836545"),
+          n.e("482815"),
+          n.e("77473"),
+          n.e("523276"),
+          n.e("324622"),
+          n.e("25279"),
+          n.e("729963"),
+          n.e("348900"),
+          n.e("812042"),
+          n.e("384996"),
+          n.e("860177"),
+          n.e("875016"),
+          n.e("235996"),
+          n.e("303162"),
+        ]).then(n.bind(n, 510273)),
+      2: () =>
+        Promise.all([
+          n.e("234017"),
+          n.e("948705"),
+          n.e("87306"),
+          n.e("757238"),
+          n.e("123353"),
+          n.e("258831"),
+        ]).then(n.bind(n, 677074)),
+      3: () =>
+        Promise.all([
+          n.e("205035"),
+          n.e("313097"),
+          n.e("253729"),
+          n.e("234236"),
+          n.e("829177"),
+          n.e("921041"),
+          n.e("238672"),
+        ]).then(n.bind(n, 289363)),
+      4: () => Promise.all([n.e("861494"), n.e("147662"), n.e("486629")]).then(n.bind(n, 892740)),
+      5: () => Promise.all([n.e("76928"), n.e("958038"), n.e("362507")]).then(n.bind(n, 839238)),
+      6: () =>
+        Promise.all([
+          n.e("70866"),
+          n.e("355502"),
+          n.e("959880"),
+          n.e("858529"),
+          n.e("488990"),
+        ]).then(n.bind(n, 275256)),
+      7: () => Promise.all([n.e("861494"), n.e("58407")]).then(n.bind(n, 939034)),
+      8: () => Promise.all([n.e("604153"), n.e("654282")]).then(n.bind(n, 140049)),
+      9: () =>
+        Promise.all([
+          n.e("686889"),
+          n.e("505928"),
+          n.e("752657"),
+          n.e("237427"),
+          n.e("634225"),
+          n.e("747973"),
+          n.e("560699"),
+          n.e("60955"),
+          n.e("264236"),
+          n.e("811310"),
+          n.e("187110"),
+          n.e("960478"),
+          n.e("132191"),
+          n.e("53374"),
+          n.e("538887"),
+          n.e("193158"),
+          n.e("8563"),
+          n.e("455924"),
+          n.e("603808"),
+          n.e("285350"),
+          n.e("424265"),
+          n.e("371695"),
+        ]).then(n.bind(n, 392498)),
+      10: () => Promise.all([n.e("138545"), n.e("646570"), n.e("744262")]).then(n.bind(n, 276837)),
+      11: () => Promise.all([n.e("827788"), n.e("274726"), n.e("974976")]).then(n.bind(n, 535107)),
+    },
+    d = {
+      0: 732852,
+      1: 510273,
+      2: 677074,
+      3: 289363,
+      4: 892740,
+      5: 839238,
+      6: 275256,
+      7: 939034,
+      8: 140049,
+      9: 392498,
+      10: 276837,
+      11: 535107,
+    };
+  function c() {
+    return null;
+  }
+  function u(e) {
+    return r.lazy(() =>
+      (0, a.sq)({ createPromise: o[e], webpackId: d[e], name: `DynamicGraphic:${l[e]}` }).catch(
+        (t) => {
+          let i = l[e],
+            r = d[e] in n.c ? "module_execution" : "chunk_load";
+          return (
+            s.A.captureException(Error(`Dynamic graphic failed to load: ${i}`, { cause: t }), {
+              tags: { dynamic_graphic: i, dynamic_graphic_failure_reason: r },
+              extra: { originalError: String(t) },
+            }),
+            { default: c }
+          );
+        },
+      ),
+    );
+  }
+  let _ = {
+    0: u(0),
+    1: u(1),
+    2: u(2),
+    3: u(3),
+    4: u(4),
+    5: u(5),
+    6: u(6),
+    7: u(7),
+    8: u(8),
+    9: u(9),
+    10: u(10),
+    11: u(11),
+  };
+}

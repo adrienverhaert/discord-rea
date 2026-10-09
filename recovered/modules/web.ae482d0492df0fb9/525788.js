@@ -1,0 +1,271 @@
+/* Recovered shipped factory. Module 525788.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 3182005..3185853
+ * Raw property SHA-256: 3d37543786ec780d58e0df57cc05468ae687f2d1bc6b0f4561469fb7ac950e09
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => w });
+  var i = n(477900),
+    r = n(582128),
+    a = n(503698),
+    s = n.n(a),
+    l = n(435558),
+    o = n.n(l),
+    d = n(17928),
+    c = n(451988),
+    u = n(305866),
+    _ = n(689175),
+    E = n(297264),
+    A = n(866665),
+    h = n(39623),
+    f = n(97808),
+    I = n(778712),
+    p = n(922016),
+    T = n(442433),
+    m = n(820284),
+    g = n(942857),
+    S = n(538451),
+    N = n(616356),
+    C = n(287809),
+    O = n(403362),
+    R = n(562153),
+    L = n(806931),
+    y = n(652215),
+    D = n(660183),
+    v = n(552244);
+  function b(e, t) {
+    switch (e) {
+      case L.lp.ACTIVITY:
+        return D.intl.formatToPlainString(D.t.TCM94S, { numUsers: t });
+      case L.lp.STREAM:
+        return D.intl.formatToPlainString(D.t.BR7Tno, { numViewers: t });
+      default:
+        throw Error("Unknown participant type.");
+    }
+  }
+  function M(e) {
+    let {
+        users: t,
+        disableInteraction: n,
+        guildId: r,
+        participantType: a,
+        channelId: l,
+        handleUserContextMenu: o,
+      } = e,
+      d = b(a, t.length);
+    return (0, i.jsx)(u.l, {
+      "aria-label": d,
+      className: v.XM,
+      children: (0, i.jsxs)(_.Ch, {
+        className: v.XG,
+        disableFocusRingScope: !0,
+        children: [
+          (0, i.jsx)(E.D, {
+            variant: "heading-deprecated-12/semibold",
+            className: v.o,
+            children: d,
+          }),
+          (0, i.jsx)("div", {
+            children: t.map((e) =>
+              (0, i.jsx)(
+                S.A,
+                {
+                  user: e,
+                  guildId: r ?? void 0,
+                  channelId: l,
+                  nick: R.Ay.getNickname(r, l, e),
+                  className: s()(v.kp, { [v.YR]: n }),
+                  textClassName: v.vc,
+                  disablePopout: n,
+                  onContextMenu: (t) => (n ? null : o(t, e)),
+                },
+                e.id,
+              ),
+            ),
+          }),
+        ],
+      }),
+    });
+  }
+  function P(e) {
+    let {
+        users: t,
+        guildId: n,
+        channelId: r,
+        maxVisibleUsers: a = 3,
+        className: l,
+        participantType: o,
+      } = e,
+      d = b(o, t.length),
+      c =
+        t.length < a
+          ? D.intl.format(D.t["A+bT9O"], {
+              users: t.length,
+              user1: R.Ay.getName(n, r, t[0]),
+              user2: R.Ay.getName(n, r, t[1]),
+              commaSeparatedUsers: t
+                .slice(0, t.length - 1)
+                .map((e) => R.Ay.getName(n, r, e))
+                .join(", "),
+              lastUser: R.Ay.getName(n, r, t[t.length - 1]),
+            })
+          : d;
+    return (0, i.jsx)(A.m, {
+      text: c,
+      children: (0, i.jsxs)("div", {
+        className: s()(v.Mj, l),
+        children: [
+          (0, i.jsx)(h.EyeIcon, { size: "xs", color: "currentColor", className: v.N0 }),
+          (0, i.jsx)("span", { "aria-hidden": "true", children: t.length }),
+        ],
+      }),
+    });
+  }
+  let U = [];
+  function w(e) {
+    let {
+        channelId: t,
+        guildId: a,
+        participant: l,
+        className: u,
+        compact: _ = !1,
+        disableInteraction: E = !1,
+        maxVisibleUsers: A = 3,
+      } = e,
+      h = r.useRef(null),
+      S = (0, g.A)(),
+      [R, D] = r.useState(!1),
+      b = r.useRef(new c.J_(150, () => D(!1))),
+      w = (0, d.yK)(
+        [N.A, C.default],
+        () => {
+          if (l.type === L.lp.STREAM) {
+            let e = N.A.getViewerIds(l.id);
+            return e.length > 0 ? e.map((e) => C.default.getUser(e)).filter(O.Vq) : U;
+          }
+          return l.type === L.lp.ACTIVITY && l.participants.length > 0
+            ? Array.from(l.participants)
+                .map((e) => C.default.getUser(e.userId))
+                .filter(O.Vq)
+            : U;
+        },
+        [l],
+      );
+    r.useEffect(() => {
+      S && (b.current.cancel(), D(!1));
+    }, [S]);
+    let G = r.useCallback(() => {
+        (b.current.cancel(), D(!0));
+      }, []),
+      x = r.useCallback(() => {
+        b.current.delay();
+      }, []),
+      k = r.useCallback(
+        (e, t) => {
+          (G(),
+            (0, T.L3)(
+              e,
+              async () => {
+                let { default: e } = await Promise.all([
+                  n.e("205035"),
+                  n.e("790484"),
+                  n.e("463317"),
+                  n.e("926132"),
+                  n.e("834552"),
+                  n.e("146652"),
+                  n.e("708757"),
+                  n.e("585968"),
+                  n.e("893190"),
+                  n.e("776273"),
+                  n.e("253729"),
+                  n.e("189673"),
+                  n.e("638221"),
+                  n.e("882073"),
+                  n.e("797558"),
+                  n.e("234236"),
+                  n.e("691994"),
+                  n.e("229787"),
+                  n.e("936320"),
+                  n.e("576665"),
+                  n.e("624198"),
+                  n.e("715038"),
+                  n.e("190889"),
+                  n.e("856753"),
+                  n.e("61129"),
+                  n.e("983525"),
+                  n.e("242204"),
+                  n.e("331203"),
+                  n.e("255302"),
+                  n.e("349644"),
+                  n.e("825486"),
+                  n.e("172883"),
+                  n.e("873786"),
+                  n.e("920628"),
+                  n.e("532418"),
+                ]).then(n.bind(n, 668569));
+                return (n) => (0, i.jsx)(e, { ...n, user: t });
+              },
+              { onClose: x },
+            ));
+        },
+        [x, G],
+      );
+    if (0 === w.length) return null;
+    if (_)
+      return (0, i.jsx)(P, {
+        maxVisibleUsers: A,
+        users: w,
+        guildId: a,
+        channelId: t,
+        className: u,
+        participantType: l.type,
+      });
+    let F = o()(w)
+      .take(A)
+      .map((e) =>
+        (0, i.jsx)(
+          f.eu,
+          {
+            src: e.getAvatarURL(a, 24),
+            "aria-label": e.username,
+            size: I._3.SIZE_24,
+            className: v.lJ,
+          },
+          e.id,
+        ),
+      )
+      .value();
+    return (
+      w.length > A &&
+        (F[F.length - 1] = (0, i.jsxs)(
+          "div",
+          { className: v.ju, children: ["+", w.length - A + 1] },
+          "overflow",
+        )),
+      (0, i.jsx)(m.A, {
+        section: y.JJy.STREAM_VIEWER_POPOUT,
+        children: (0, i.jsx)("div", {
+          onMouseEnter: G,
+          onMouseLeave: x,
+          children: (0, i.jsx)(p.Y, {
+            targetElementRef: h,
+            renderPopout: () =>
+              (0, i.jsx)(M, {
+                participantType: l.type,
+                handleUserContextMenu: k,
+                guildId: a,
+                channelId: t,
+                users: w,
+                disableInteraction: E,
+              }),
+            shouldShow: R && !S,
+            position: "top",
+            children: () => (0, i.jsx)("div", { ref: h, className: s()(v.Mj, u), children: F }),
+          }),
+        }),
+      })
+    );
+  }
+}

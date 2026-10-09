@@ -1,0 +1,469 @@
+/* Recovered shipped factory. Module 498419.
+ * Source: recovered/web/assets/980517.7a81258d0aedeec7.js
+ * UTF-16 property offsets: 82..8774
+ * Raw property SHA-256: 43c5c58b7cef357b7e370b7d54533e5ba2ac31da112f0fff85f8825ac31d842c
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e) {
+  !(function () {
+    var t = function (e) {
+      "use strict";
+      e = e || {};
+      var t,
+        r,
+        n,
+        a,
+        o,
+        i,
+        s,
+        l,
+        c,
+        u,
+        h,
+        d,
+        f,
+        p,
+        m,
+        g,
+        y = {
+          bgColor: "#d00",
+          textColor: "#fff",
+          fontFamily: "sans-serif",
+          fontStyle: "bold",
+          type: "circle",
+          position: "down",
+          animation: "slide",
+          elementId: !1,
+          dataUrl: !1,
+          win: window,
+        };
+      (((f = {}).ff = "u" > typeof InstallTrigger),
+        (f.chrome = !!window.chrome),
+        (f.opera = !!window.opera || navigator.userAgent.indexOf("Opera") >= 0),
+        (f.ie = !1),
+        (f.safari = Object.prototype.toString.call(window.HTMLElement).indexOf("Constructor") > 0),
+        (f.supported = f.chrome || f.ff || f.opera));
+      var b = [];
+      ((h = function () {}), (l = d = !1));
+      var w = {};
+      ((w.ready = function () {
+        ((l = !0), w.reset(), h());
+      }),
+        (w.reset = function () {
+          l &&
+            ((b = []),
+            (c = !1),
+            (u = !1),
+            i.clearRect(0, 0, a, n),
+            i.drawImage(s, 0, 0, a, n),
+            _.setIcon(o),
+            window.clearTimeout(p),
+            window.clearTimeout(m));
+        }),
+        (w.start = function () {
+          if (l && !u) {
+            var e = function () {
+              ((c = b[0]), (u = !1), b.length > 0 && (b.shift(), w.start()));
+            };
+            if (b.length > 0) {
+              u = !0;
+              var r = function () {
+                (["type", "animation", "bgColor", "textColor", "fontFamily", "fontStyle"].forEach(
+                  function (e) {
+                    e in b[0].options && (t[e] = b[0].options[e]);
+                  },
+                ),
+                  E.run(
+                    b[0].options,
+                    function () {
+                      e();
+                    },
+                    !1,
+                  ));
+              };
+              c
+                ? E.run(
+                    c.options,
+                    function () {
+                      r();
+                    },
+                    !0,
+                  )
+                : r();
+            }
+          }
+        }));
+      var v = {},
+        M = function (e) {
+          return (
+            (e.n = "number" == typeof e.n ? Math.abs(0 | e.n) : e.n),
+            (e.x = a * e.x),
+            (e.y = n * e.y),
+            (e.w = a * e.w),
+            (e.h = n * e.h),
+            (e.len = ("" + e.n).length),
+            e
+          );
+        };
+      function x(e) {
+        if (e.paused || e.ended || d) return !1;
+        try {
+          (i.clearRect(0, 0, a, n), i.drawImage(e, 0, 0, a, n));
+        } catch (e) {}
+        ((m = setTimeout(function () {
+          x(e);
+        }, E.duration)),
+          _.setIcon(o));
+      }
+      ((v.circle = function (e) {
+        e = M(e);
+        var r = !1;
+        (2 === e.len
+          ? ((e.x = e.x - 0.4 * e.w), (e.w = 1.4 * e.w), (r = !0))
+          : e.len >= 3 && ((e.x = e.x - 0.65 * e.w), (e.w = 1.65 * e.w), (r = !0)),
+          i.clearRect(0, 0, a, n),
+          i.drawImage(s, 0, 0, a, n),
+          i.beginPath(),
+          (i.font =
+            t.fontStyle + " " + Math.floor(e.h * (e.n > 99 ? 0.85 : 1)) + "px " + t.fontFamily),
+          (i.textAlign = "center"),
+          r
+            ? (i.moveTo(e.x + e.w / 2, e.y),
+              i.lineTo(e.x + e.w - e.h / 2, e.y),
+              i.quadraticCurveTo(e.x + e.w, e.y, e.x + e.w, e.y + e.h / 2),
+              i.lineTo(e.x + e.w, e.y + e.h - e.h / 2),
+              i.quadraticCurveTo(e.x + e.w, e.y + e.h, e.x + e.w - e.h / 2, e.y + e.h),
+              i.lineTo(e.x + e.h / 2, e.y + e.h),
+              i.quadraticCurveTo(e.x, e.y + e.h, e.x, e.y + e.h - e.h / 2),
+              i.lineTo(e.x, e.y + e.h / 2),
+              i.quadraticCurveTo(e.x, e.y, e.x + e.h / 2, e.y))
+            : i.arc(e.x + e.w / 2, e.y + e.h / 2, e.h / 2, 0, 2 * Math.PI),
+          (i.fillStyle =
+            "rgba(" + t.bgColor.r + "," + t.bgColor.g + "," + t.bgColor.b + "," + e.o + ")"),
+          i.fill(),
+          i.closePath(),
+          i.beginPath(),
+          i.stroke(),
+          (i.fillStyle =
+            "rgba(" + t.textColor.r + "," + t.textColor.g + "," + t.textColor.b + "," + e.o + ")"),
+          "number" == typeof e.n && e.n > 999
+            ? i.fillText(
+                (e.n > 9999 ? 9 : Math.floor(e.n / 1e3)) + "k+",
+                Math.floor(e.x + e.w / 2),
+                Math.floor(e.y + e.h - 0.2 * e.h),
+              )
+            : i.fillText(e.n, Math.floor(e.x + e.w / 2), Math.floor(e.y + e.h - 0.15 * e.h)),
+          i.closePath());
+      }),
+        (v.rectangle = function (e) {
+          e = M(e);
+          (2 === e.len
+            ? ((e.x = e.x - 0.4 * e.w), (e.w = 1.4 * e.w))
+            : e.len >= 3 && ((e.x = e.x - 0.65 * e.w), (e.w = 1.65 * e.w)),
+            i.clearRect(0, 0, a, n),
+            i.drawImage(s, 0, 0, a, n),
+            i.beginPath(),
+            (i.font =
+              t.fontStyle + " " + Math.floor(e.h * (e.n > 99 ? 0.9 : 1)) + "px " + t.fontFamily),
+            (i.textAlign = "center"),
+            (i.fillStyle =
+              "rgba(" + t.bgColor.r + "," + t.bgColor.g + "," + t.bgColor.b + "," + e.o + ")"),
+            i.fillRect(e.x, e.y, e.w, e.h),
+            (i.fillStyle =
+              "rgba(" +
+              t.textColor.r +
+              "," +
+              t.textColor.g +
+              "," +
+              t.textColor.b +
+              "," +
+              e.o +
+              ")"),
+            "number" == typeof e.n && e.n > 999
+              ? i.fillText(
+                  (e.n > 9999 ? 9 : Math.floor(e.n / 1e3)) + "k+",
+                  Math.floor(e.x + e.w / 2),
+                  Math.floor(e.y + e.h - 0.2 * e.h),
+                )
+              : i.fillText(e.n, Math.floor(e.x + e.w / 2), Math.floor(e.y + e.h - 0.15 * e.h)),
+            i.closePath());
+        }));
+      var _ = {};
+      function C(e) {
+        e = e.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, function (e, t, r, n) {
+          return t + t + r + r + n + n;
+        });
+        var t = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(e);
+        return !!t && { r: parseInt(t[1], 16), g: parseInt(t[2], 16), b: parseInt(t[3], 16) };
+      }
+      function S(e, t) {
+        var r,
+          n = {};
+        for (r in e) n[r] = e[r];
+        for (r in t) n[r] = t[r];
+        return n;
+      }
+      ((_.getIcon = function () {
+        var e = !1;
+        return (
+          t.element
+            ? (e = t.element)
+            : t.elementId
+              ? (e = g.getElementById(t.elementId)).setAttribute("href", e.getAttribute("src"))
+              : !1 ===
+                  (e = (function () {
+                    for (
+                      var e = g.getElementsByTagName("head")[0].getElementsByTagName("link"),
+                        t = e.length,
+                        r = t - 1;
+                      r >= 0;
+                      r--
+                    )
+                      if (/(^|\s)icon(\s|$)/i.test(e[r].getAttribute("rel"))) return e[r];
+                    return !1;
+                  })()) &&
+                ((e = g.createElement("link")).setAttribute("rel", "icon"),
+                g.getElementsByTagName("head")[0].appendChild(e)),
+          e.setAttribute("type", "image/png"),
+          e
+        );
+      }),
+        (_.setIcon = function (e) {
+          var n = e.toDataURL("image/png");
+          if ((t.dataUrl && t.dataUrl(n), t.element))
+            (t.element.setAttribute("href", n), t.element.setAttribute("src", n));
+          else if (t.elementId) {
+            var a = g.getElementById(t.elementId);
+            (a.setAttribute("href", n), a.setAttribute("src", n));
+          } else if (f.ff || f.opera) {
+            var o = r;
+            ((r = g.createElement("link")),
+              f.opera && r.setAttribute("rel", "icon"),
+              r.setAttribute("rel", "icon"),
+              r.setAttribute("type", "image/png"),
+              g.getElementsByTagName("head")[0].appendChild(r),
+              r.setAttribute("href", n),
+              o.parentNode && o.parentNode.removeChild(o));
+          } else r.setAttribute("href", n);
+        }));
+      var E = {};
+      ((E.duration = 40),
+        (E.types = {}),
+        (E.types.fade = [
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 0 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 0.1 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 0.2 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 0.3 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 0.4 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 0.5 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 0.6 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 0.7 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 0.8 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 0.9 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 1 },
+        ]),
+        (E.types.none = [{ x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 1 }]),
+        (E.types.pop = [
+          { x: 1, y: 1, w: 0, h: 0, o: 1 },
+          { x: 0.9, y: 0.9, w: 0.1, h: 0.1, o: 1 },
+          { x: 0.8, y: 0.8, w: 0.2, h: 0.2, o: 1 },
+          { x: 0.7, y: 0.7, w: 0.3, h: 0.3, o: 1 },
+          { x: 0.6, y: 0.6, w: 0.4, h: 0.4, o: 1 },
+          { x: 0.5, y: 0.5, w: 0.5, h: 0.5, o: 1 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 1 },
+        ]),
+        (E.types.popFade = [
+          { x: 0.75, y: 0.75, w: 0, h: 0, o: 0 },
+          { x: 0.65, y: 0.65, w: 0.1, h: 0.1, o: 0.2 },
+          { x: 0.6, y: 0.6, w: 0.2, h: 0.2, o: 0.4 },
+          { x: 0.55, y: 0.55, w: 0.3, h: 0.3, o: 0.6 },
+          { x: 0.5, y: 0.5, w: 0.4, h: 0.4, o: 0.8 },
+          { x: 0.45, y: 0.45, w: 0.5, h: 0.5, o: 0.9 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 1 },
+        ]),
+        (E.types.slide = [
+          { x: 0.4, y: 1, w: 0.6, h: 0.6, o: 1 },
+          { x: 0.4, y: 0.9, w: 0.6, h: 0.6, o: 1 },
+          { x: 0.4, y: 0.9, w: 0.6, h: 0.6, o: 1 },
+          { x: 0.4, y: 0.8, w: 0.6, h: 0.6, o: 1 },
+          { x: 0.4, y: 0.7, w: 0.6, h: 0.6, o: 1 },
+          { x: 0.4, y: 0.6, w: 0.6, h: 0.6, o: 1 },
+          { x: 0.4, y: 0.5, w: 0.6, h: 0.6, o: 1 },
+          { x: 0.4, y: 0.4, w: 0.6, h: 0.6, o: 1 },
+        ]),
+        (E.run = function (e, r, n, a) {
+          var i =
+            E.types[g.hidden || g.msHidden || g.webkitHidden || g.mozHidden ? "none" : t.animation];
+          ((a = !0 === n ? (void 0 !== a ? a : i.length - 1) : void 0 !== a ? a : 0),
+          (r = r || function () {}),
+          a < i.length && a >= 0)
+            ? (v[t.type](S(e, i[a])),
+              (p = setTimeout(function () {
+                (n ? (a -= 1) : (a += 1), E.run(e, r, n, a));
+              }, E.duration)),
+              _.setIcon(o))
+            : r();
+        }),
+        ((t = S(y, e)).bgColor = C(t.bgColor)),
+        (t.textColor = C(t.textColor)),
+        (t.position = t.position.toLowerCase()),
+        (t.animation = E.types["" + t.animation] ? t.animation : y.animation),
+        (g = t.win.document));
+      var R = t.position.indexOf("up") > -1,
+        A = t.position.indexOf("left") > -1;
+      if (R || A)
+        for (var P = 0; P < E.types["" + t.animation].length; P++) {
+          var T = E.types["" + t.animation][P];
+          (R && (T.y < 0.6 ? (T.y = T.y - 0.4) : (T.y = T.y - 2 * T.y + (1 - T.w))),
+            A && (T.x < 0.6 ? (T.x = T.x - 0.4) : (T.x = T.x - 2 * T.x + (1 - T.h))),
+            (E.types["" + t.animation][P] = T));
+        }
+      return (
+        (t.type = v["" + t.type] ? t.type : y.type),
+        (r = _.getIcon()),
+        (o = document.createElement("canvas")),
+        (s = document.createElement("img")),
+        r.hasAttribute("href")
+          ? (s.setAttribute("crossOrigin", "anonymous"),
+            (s.onload = function () {
+              ((n = s.height > 0 ? s.height : 32),
+                (a = s.width > 0 ? s.width : 32),
+                (o.height = n),
+                (o.width = a),
+                (i = o.getContext("2d")),
+                w.ready());
+            }),
+            s.setAttribute("src", r.getAttribute("href")))
+          : ((s.onload = function () {
+              ((n = 32),
+                (a = 32),
+                (s.height = n),
+                (s.width = a),
+                (o.height = n),
+                (o.width = a),
+                (i = o.getContext("2d")),
+                w.ready());
+            }),
+            s.setAttribute("src", "")),
+        {
+          badge: function (e, t) {
+            ((t = ("string" == typeof t ? { animation: t } : t) || {}),
+              (h = function () {
+                try {
+                  if ("number" == typeof e ? e > 0 : "" !== e) {
+                    var r = { type: "badge", options: { n: e } };
+                    if (
+                      ("animation" in t &&
+                        E.types["" + t.animation] &&
+                        (r.options.animation = "" + t.animation),
+                      "type" in t && v["" + t.type] && (r.options.type = "" + t.type),
+                      ["bgColor", "textColor"].forEach(function (e) {
+                        e in t && (r.options[e] = C(t[e]));
+                      }),
+                      ["fontStyle", "fontFamily"].forEach(function (e) {
+                        e in t && (r.options[e] = t[e]);
+                      }),
+                      b.push(r),
+                      b.length > 100)
+                    )
+                      throw Error("Too many badges requests in queue.");
+                    w.start();
+                  } else w.reset();
+                } catch (e) {
+                  throw Error("Error setting badge. Message: " + e.message);
+                }
+              }),
+              l && h());
+          },
+          video: function (e) {
+            ((h = function () {
+              try {
+                if ("stop" === e) {
+                  ((d = !0), w.reset(), (d = !1));
+                  return;
+                }
+                e.addEventListener(
+                  "play",
+                  function () {
+                    x(this);
+                  },
+                  !1,
+                );
+              } catch (e) {
+                throw Error("Error setting video. Message: " + e.message);
+              }
+            }),
+              l && h());
+          },
+          image: function (e) {
+            ((h = function () {
+              try {
+                var t = e.width,
+                  r = e.height,
+                  s = document.createElement("img"),
+                  l = t / a < r / n ? t / a : r / n;
+                (s.setAttribute("crossOrigin", "anonymous"),
+                  (s.onload = function () {
+                    (i.clearRect(0, 0, a, n), i.drawImage(s, 0, 0, a, n), _.setIcon(o));
+                  }),
+                  s.setAttribute("src", e.getAttribute("src")),
+                  (s.height = r / l),
+                  (s.width = t / l));
+              } catch (e) {
+                throw Error("Error setting image. Message: " + e.message);
+              }
+            }),
+              l && h());
+          },
+          webcam: function (e) {
+            if (
+              ((window.URL && window.URL.createObjectURL) ||
+                ((window.URL = window.URL || {}),
+                (window.URL.createObjectURL = function (e) {
+                  return e;
+                })),
+              f.supported)
+            ) {
+              var t = !1;
+              ((navigator.getUserMedia =
+                navigator.getUserMedia ||
+                navigator.oGetUserMedia ||
+                navigator.msGetUserMedia ||
+                navigator.mozGetUserMedia ||
+                navigator.webkitGetUserMedia),
+                (h = function () {
+                  try {
+                    if ("stop" === e) {
+                      ((d = !0), w.reset(), (d = !1));
+                      return;
+                    }
+                    (((t = document.createElement("video")).width = a),
+                      (t.height = n),
+                      navigator.getUserMedia(
+                        { video: !0, audio: !1 },
+                        function (e) {
+                          ((t.src = URL.createObjectURL(e)), t.play(), x(t));
+                        },
+                        function () {},
+                      ));
+                  } catch (e) {
+                    throw Error("Error setting webcam. Message: " + e.message);
+                  }
+                }),
+                l && h());
+            }
+          },
+          reset: w.reset,
+          browser: { supported: f.supported },
+        }
+      );
+    };
+    "u" > typeof define && define.amd
+      ? define([], function () {
+          return t;
+        })
+      : e.exports
+        ? (e.exports = t)
+        : (this.Favico = t);
+  })();
+}

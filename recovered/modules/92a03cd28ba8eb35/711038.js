@@ -1,0 +1,63 @@
+/* Recovered shipped factory. Module 711038.
+ * Source: recovered/web/assets/92a03cd28ba8eb35.js
+ * UTF-16 property offsets: 2276..3332
+ * Raw property SHA-256: 1f1335aec7b0ce471170d5f41c17db58bf4525a7e342f8a5fb1fed0008658830
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (t, e, s) {
+  s.d(e, { A: () => g });
+  var n = s(477900),
+    i = s(582128),
+    a = s(289873),
+    l = s(738822),
+    r = s(866157),
+    o = s(710969),
+    c = s(814793),
+    u = s(160185),
+    d = s(190107),
+    m = s(660183);
+  function x(t) {
+    let { questId: e } = t;
+    return (0, n.jsx)(u.i, {
+      questId: e,
+      fallbackReason: d.eA.EXCLUDED_QUEST,
+      bodyText: m.intl.string(m.t.NIliWX),
+      questContent: l.uF.EXCLUDED_QUEST_EMBED,
+    });
+  }
+  var h = s(127219);
+  function E(t) {
+    let { questId: e } = t;
+    return (0, n.jsx)(u.i, {
+      questId: e,
+      fallbackReason: d.eA.NOT_SHAREABLE_QUEST,
+      bodyText: m.intl.string(m.t.Rw9rwW),
+      questContent: l.uF.NOT_SHAREABLE_QUEST_EMBED,
+    });
+  }
+  var C = s(262514),
+    f = s(980322);
+  function g(t) {
+    let { questId: e } = t,
+      {
+        quests: s,
+        excludedQuests: u,
+        isFetchingCurrentQuests: d,
+      } = (0, r.mL)({ fetchPolicy: "cache-or-network", callerSource: "embed" }),
+      m = i.useMemo(() => (0, o.vc)(e, s, u), [e, s, u]),
+      g = i.useMemo(() => u.find((t) => t.id === e), [e, u]);
+    return d
+      ? (0, n.jsx)(a.y, { className: f.u })
+      : null == m
+        ? null != g
+          ? (0, n.jsx)(x, { questId: e })
+          : (0, n.jsx)(h.l, { questId: e, reason: h.o.NOT_FOUND })
+        : (0, c.E0)(m.config)
+          ? (0, n.jsx)(
+              C.M,
+              { quest: m, location: l.uF.QUESTS_EMBED, sourceQuestContent: l.uF.QUESTS_EMBED },
+              m.id,
+            )
+          : (0, n.jsx)(E, { questId: e });
+  }
+}

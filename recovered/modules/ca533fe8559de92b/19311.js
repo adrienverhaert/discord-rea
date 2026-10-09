@@ -1,0 +1,107 @@
+/* Recovered shipped factory. Module 19311.
+ * Source: recovered/web/assets/ca533fe8559de92b.js
+ * UTF-16 property offsets: 322467..323928
+ * Raw property SHA-256: de50c394e963a0e666cfaa134d419e46681a616665d1f59c7cf5dad0406cfa2e
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { Ay: () => y, CY: () => f, ti: () => C });
+  var l,
+    i = n(477900);
+  n(582128);
+  var r = n(503698),
+    a = n.n(r),
+    s = n(821609),
+    o = n(123292),
+    u = n(364840),
+    c = n(866665),
+    d = n(331322),
+    p = n(999784),
+    m = n(660183),
+    h = n(88045),
+    C =
+      (((l = {})[(l.CONTINUE = 0)] = "CONTINUE"),
+      (l[(l.UPGRADE = 1)] = "UPGRADE"),
+      (l[(l.PURCHASE = 2)] = "PURCHASE"),
+      l);
+  function f(e) {
+    return 2 === e ? "expressive" : 0 === e ? "primary" : "active";
+  }
+  function S(e) {
+    let {
+        primaryIcon: t,
+        primaryCTA: n,
+        primaryType: l,
+        primaryText: r,
+        primaryDisabled: a,
+        primarySubmitting: o,
+        onPrimary: u,
+      } = e,
+      c = {
+        type: l,
+        disabled: a,
+        onClick: u,
+        icon: null == t ? void 0 : () => (0, i.jsx)(t, { color: "currentColor", className: h.C4 }),
+        loading: o,
+        text: r,
+      };
+    return 2 === n
+      ? (0, i.jsx)(s.$, { variant: f(n), ...c })
+      : (0, i.jsx)(s.$, { ...c, variant: f(n) });
+  }
+  function E(e) {
+    let {
+        onBack: t,
+        backText: n,
+        primaryIcon: l,
+        primaryCTA: r,
+        primaryType: s,
+        primaryText: C,
+        primaryTooltip: f,
+        primaryDisabled: E,
+        primarySubmitting: y,
+        onPrimary: A,
+      } = e,
+      I =
+        null == t
+          ? null
+          : (0, i.jsx)(o.Q, {
+              text: n ?? m.intl.string(m.t["13/7kX"]),
+              onClick: t,
+              variant: "secondary",
+            }),
+      g = (0, i.jsxs)(d.B, {
+        direction: "horizontal",
+        align: "center",
+        gap: 0,
+        padding: 0,
+        fullWidth: !1,
+        children: [
+          (0, i.jsx)(p.A, {}),
+          (function () {
+            if (null == r || null == C) return null;
+            let e = {
+              primaryIcon: l,
+              primaryCTA: r,
+              primaryType: s,
+              primaryText: C,
+              primaryDisabled: E,
+              primarySubmitting: y,
+              onPrimary: A,
+            };
+            return null != f
+              ? (0, i.jsx)(c.m, { text: f, asContainer: !0, children: (0, i.jsx)(S, { ...e }) })
+              : (0, i.jsx)(S, { ...e, onPrimary: A });
+          })(),
+        ],
+      });
+    return (0, i.jsx)(u.j, {
+      children: (0, i.jsxs)("div", {
+        className: a()(h.eT, { [h.T$]: null == I }),
+        children: [I, g],
+      }),
+    });
+  }
+  E.CTAType = C;
+  let y = E;
+}

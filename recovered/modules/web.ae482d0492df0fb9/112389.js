@@ -1,0 +1,24 @@
+/* Recovered shipped factory. Module 112389.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 5200552..5200877
+ * Raw property SHA-256: 2a63daed010ac3887a4117cd9bc5674f28e3186559ea2e29f96753e7c8b77d81
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { S: () => o });
+  var i = n(136722);
+  n(17928);
+  var r = n(717125),
+    a = n(734057),
+    s = n(488926),
+    l = n(652215);
+  function o(e, t) {
+    var n;
+    let o =
+      null != (n = a.A.getChannel(t)) && l.kvI.GUILD_VOCAL.has(n.type)
+        ? i.kg(l.xBc.VIEW_CHANNEL, l.xBc.CONNECT)
+        : l.xBc.VIEW_CHANNEL;
+    return r.A.isChannelGated(e, t) || s.MJ(o, a.A.getChannel(t));
+  }
+}

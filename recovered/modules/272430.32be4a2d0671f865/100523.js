@@ -1,0 +1,40 @@
+/* Recovered shipped factory. Module 100523.
+ * Source: recovered/web/assets/272430.32be4a2d0671f865.js
+ * UTF-16 property offsets: 994..1922
+ * Raw property SHA-256: e12073968dc6a53f00c2313601b6da3824273bdc4bef99c6377686967536132e
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, r, t) {
+  e.exports = {
+    _O: "context_e62f9d",
+    J3: "gradientUpsellWrapper_e62f9d",
+    Vm: "gradientUpsellWrapperTier0_e62f9d",
+    hD: "gradientUpsellWrapperTier2_e62f9d",
+    ip: "gradientUpsellWrapperWithBottomMargin_e62f9d",
+    wm: "logo_e62f9d",
+    Xo: "logoIcon_e62f9d",
+    Vn: "logoWordmark_e62f9d",
+    C: "copy_e62f9d",
+    A6: "trialBadge_e62f9d",
+    kU: "trialBadgeGradientTier0_e62f9d",
+    y_: "trialBadgeGradientTier2_e62f9d",
+    hQ: "contentContainer_e62f9d",
+    dt: "countdownText_e62f9d",
+    qr: "footer_e62f9d",
+    x7: "cancelButton_e62f9d",
+    xF: "subscribeButton_e62f9d",
+    Oy: "upsellButton_e62f9d",
+    yF: "divider_e62f9d",
+    i8: "zoomInFromBottomRight_e62f9d",
+    iW: "messageLengthUpsellContainer_e62f9d",
+    WP: "messageLengthUpsellAppearAnimation_e62f9d",
+    ZH: "messageLengthBrandedContainer_e62f9d",
+    Ed: "messageLengthUpsellHeader_e62f9d",
+    ki: "tryOutUpsellContainer_e62f9d",
+    LW: "topRimPill_e62f9d",
+    as: "subscribeButtonWide_e62f9d",
+    eg: "countdownTextInSetting_e62f9d",
+    kz: "upsellClose_e62f9d",
+    Tn: "upsellImage_e62f9d",
+  };
+}

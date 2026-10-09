@@ -1,0 +1,78 @@
+/* Recovered shipped factory. Module 45787.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 6737296..6738919
+ * Raw property SHA-256: 512a814dae1a92ade669bcd02117c7f423cfd9b62aa30f2955f3d74dec77850c
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { Ad: () => A, Yd: () => I, np: () => f, qH: () => _, xs: () => h });
+  var i = n(636537),
+    r = n(73153),
+    a = n(427358),
+    s = n(280450),
+    l = n(232835),
+    o = n(174459),
+    d = n(38405),
+    c = n(202541),
+    u = n(652215);
+  function _(e) {
+    let t = s.default.getId();
+    return i.Bo.get({
+      url: u.Rsh.GIFT_INTENT_DISMISSALS,
+      oldFormErrors: !0,
+      rejectWithError: !0,
+    }).then(
+      (n) => {
+        s.default.getId() !== t
+          ? r.h.dispatch({ type: "GIFT_INTENT_DISMISSALS_FETCH_FAILURE" })
+          : r.h.dispatch({
+              type: "GIFT_INTENT_DISMISSALS_FETCH_SUCCESS",
+              dismissals: (n.body.dismissals ?? []).map((e) => ({
+                targetId: e.target_id,
+                dismissedAtMs: Number(e.dismissed_at_ms),
+              })),
+              settingsTimestampMs: e,
+            });
+      },
+      (e) => {
+        (d.A.captureException(e, { tags: { feature: "gift_intent" } }),
+          r.h.dispatch({ type: "GIFT_INTENT_DISMISSALS_FETCH_FAILURE" }));
+      },
+    );
+  }
+  function E(e, t, n) {
+    (o.default.track(u.HAw.GIFT_INTENT_DISMISSED, {
+      gift_intent_type: e,
+      dismiss_type: n,
+      affinity: a.A.getUserAffinity(t)?.dmProbability,
+    }),
+      e !== c.np.UNSPECIFIED &&
+        i.Bo.post({
+          url: u.Rsh.GIFT_INTENTS_DISMISS,
+          body: { intent_type: e, target_id: t },
+          oldFormErrors: !0,
+          rejectWithError: !0,
+        }).catch((e) => {
+          d.A.captureException(e, { tags: { feature: "gift_intent" } });
+        }));
+  }
+  function A() {
+    r.h.dispatch({ type: "FRIENDS_LIST_GIFT_INTENTS_SHOWN" });
+  }
+  function h(e) {
+    let t =
+      arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : c.np.FRIEND_ANNIVERSARY;
+    (r.h.dispatch({ type: "MESSAGE_GIFT_INTENT_SHOWN", recipientUserId: e }), E(t, e, "shown"));
+  }
+  function f(e, t) {
+    let n = l.A.getMessage(e, t)?.giftingPrompt;
+    null != n && E(n.giftIntentType, n.recipientUserId, "explicit");
+  }
+  function I(e) {
+    let t =
+      arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : c.np.FRIEND_ANNIVERSARY;
+    (r.h.dispatch({ type: "GIFT_INTENT_FLOW_PURCHASED_GIFT", recipientUserId: e }),
+      E(t, e, "gift_sent"));
+  }
+}

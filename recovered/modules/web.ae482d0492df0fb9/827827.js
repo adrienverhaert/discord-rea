@@ -1,0 +1,60 @@
+/* Recovered shipped factory. Module 827827.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 6070892..6072026
+ * Raw property SHA-256: dc387fb3df7deaeb32509c6195c70c5f5eb8adfc69d63f77bae670ce268488a7
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => E });
+  var i = n(765178),
+    r = n(406935),
+    a = n(535586),
+    s = n(594061),
+    l = n(461213),
+    o = n(174459),
+    d = n(427262),
+    c = n(146901),
+    u = n(652215),
+    _ = n(660183);
+  async function E(e) {
+    let {
+      nextStatus: t,
+      prevStatus: n,
+      analyticsContext: E,
+      durationMillis: A,
+      disableTracking: h = !1,
+    } = e;
+    null == n && (n = l.A.getStatus());
+    let f = null != A ? `${Date.now() + A}` : "0";
+    await s.wc.updateAsync(
+      "status",
+      (e) => {
+        ((e.status = r.hU.create({ value: t })),
+          (e.statusExpiresAtMs = f),
+          (e.statusCreatedAtMs =
+            n === t && null != e.statusCreatedAtMs
+              ? e.statusCreatedAtMs
+              : r.ol.create({ value: `${Date.now()}` })));
+      },
+      s.Sb.INFREQUENT_USER_ACTION,
+    );
+    let I = (function (e, t) {
+      let n = (0, d.MU)(e);
+      if ("0" === t) return _.intl.formatToPlainString(_.t.dO2aLi, { statusLabel: n });
+      let { kind: i, dateString: r, timeString: a } = (0, c._)(t);
+      return "today" === i
+        ? _.intl.formatToPlainString(_.t["r50t/S"], { statusLabel: n, timeString: a })
+        : _.intl.formatToPlainString(_.t["J+GJHv"], {
+            statusLabel: n,
+            dateString: r,
+            timeString: a,
+          });
+    })(t, f);
+    if ((i.O.announce(I), h)) return;
+    let p = { next_status: t, prev_status: n, ...a.A.getGlobalStats() };
+    (null != A && (p = { ...p, expire_duration_minutes: null != A ? A / 6e4 : null }),
+      null != E && (p = { ...p, ...E }),
+      o.default.track(u.HAw.USER_STATUS_UPDATED, p));
+  }
+}

@@ -1,0 +1,68 @@
+/* Recovered shipped factory. Module 147472.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7531024..7532170
+ * Raw property SHA-256: 2b4a74ed8736db6d23733b88a4eef6ffb5cd3e33dd461e7b860babfbdc98eb5e
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { lG: () => A });
+  var i = n(91871),
+    r = n.n(i),
+    a = n(649852),
+    s = n.n(a),
+    l = n(236285),
+    o = n(7584),
+    d = n(174459),
+    c = n(813564),
+    u = n(652215);
+  let _ = s()(function (e, t) {
+      d.default.track(u.HAw.SEARCH_STARTED, {
+        channel_id: t,
+        search_type: u.I4_.SOUNDBOARD,
+        location_stack: e,
+      });
+    }, 350),
+    E = s()(function (e, t, n, i) {
+      d.default.track(u.HAw.SEARCH_RESULT_VIEWED, {
+        search_type: u.I4_.SOUNDBOARD,
+        channel_id: n,
+        query: i,
+        total_results: e.length,
+        location_stack: t,
+      });
+    }, 350);
+  function A(e, t, n, i, a) {
+    let s = t.reduce((t, s) => {
+        var d;
+        let u, E, A, h, f, I;
+        return (
+          _(a, i?.id),
+          (t[s.soundId] =
+            ((d = e.toLocaleLowerCase()),
+            (u = 0),
+            (E = s.name.toLocaleLowerCase()),
+            (A = null != s.emojiId ? l.Ay.getCustomEmojiById(s.emojiId) : null),
+            (f =
+              null !=
+              (h = null != s.emojiName ? o.Ay.convertSurrogateToName(s.emojiName, !1) : null)
+                ? o.Ay.getByName(h)
+                : null),
+            (I = null != A ? [A.name] : (f?.names ?? [])),
+            d === E && (u += 8),
+            I.includes(d) && (u += 7),
+            E.startsWith(d) && (u += 6),
+            I.some((e) => e.startsWith(d)) && (u += 5),
+            E.endsWith(d) && (u += 4),
+            I.some((e) => e.endsWith(d)) && (u += 3),
+            r()(d, s.name.toLocaleLowerCase()) && (u += 2),
+            I.some((e) => r()(d, e)) && (u += 1),
+            u > 0 && (0, c.Ir)(n, s, i) && (u += 100),
+            u)),
+          t
+        );
+      }, {}),
+      d = t.filter((e) => s[e.soundId] > 0).sort((e, t) => s[t.soundId] - s[e.soundId]);
+    return (E(d, a, i?.id, e), d);
+  }
+}

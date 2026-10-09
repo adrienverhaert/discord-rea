@@ -1,0 +1,77 @@
+/* Recovered shipped factory. Module 739010.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7366122..7367844
+ * Raw property SHA-256: c15b2f02660ab9c18bee3281c91579c460fa691f6e128f957f2f4fc2980d5b3b
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    Il: () => I,
+    PN: () => h,
+    RH: () => f,
+    Wi: () => E,
+    X2: () => A,
+    Xo: () => u,
+    Z9: () => _,
+    nU: () => p,
+  });
+  var i,
+    r,
+    a,
+    s,
+    l,
+    o,
+    d,
+    c,
+    u = (((i = {}).MESSAGE = "message"), i),
+    _ = (((r = {})[(r.OWNER = 1)] = "OWNER"), (r[(r.MEMBER = 2)] = "MEMBER"), r),
+    E =
+      (((a = {})[(a.REVIEW_PENDING = 1)] = "REVIEW_PENDING"),
+      (a[(a.CLASSIFICATION_UPHELD = 2)] = "CLASSIFICATION_UPHELD"),
+      (a[(a.CLASSIFICATION_INVALIDATED = 3)] = "CLASSIFICATION_INVALIDATED"),
+      a),
+    A =
+      (((s = {})[(s.BAN = 0)] = "BAN"),
+      (s[(s.TEMP_BAN = 1)] = "TEMP_BAN"),
+      (s[(s.GLOBAL_QUARANTINE = 2)] = "GLOBAL_QUARANTINE"),
+      (s[(s.REQUIRE_VERIFICATION = 3)] = "REQUIRE_VERIFICATION"),
+      (s[(s.USER_WARNING = 4)] = "USER_WARNING"),
+      (s[(s.USER_SPAMMER = 5)] = "USER_SPAMMER"),
+      (s[(s.CHANNEL_SPAM = 6)] = "CHANNEL_SPAM"),
+      (s[(s.MESSAGE_SPAM = 7)] = "MESSAGE_SPAM"),
+      (s[(s.DISABLE_SUSPICIOUS_ACTIVITY = 8)] = "DISABLE_SUSPICIOUS_ACTIVITY"),
+      (s[(s.LIMITED_ACCESS = 9)] = "LIMITED_ACCESS"),
+      (s[(s.CHANNEL_SCHEDULE_DELETE = 10)] = "CHANNEL_SCHEDULE_DELETE"),
+      (s[(s.MESSAGE_CONTENT_REMOVAL = 11)] = "MESSAGE_CONTENT_REMOVAL"),
+      (s[(s.GUILD_DISABLE_INVITE = 12)] = "GUILD_DISABLE_INVITE"),
+      (s[(s.USER_CONTENT_REMOVAL = 13)] = "USER_CONTENT_REMOVAL"),
+      (s[(s.USER_USERNAME_MANGLE = 14)] = "USER_USERNAME_MANGLE"),
+      (s[(s.GUILD_LIMITED_ACCESS = 15)] = "GUILD_LIMITED_ACCESS"),
+      (s[(s.USER_MESSAGE_REMOVAL = 16)] = "USER_MESSAGE_REMOVAL"),
+      (s[(s.GUILD_DELETE = 20)] = "GUILD_DELETE"),
+      s),
+    h =
+      (((l = {})[(l.ALL_GOOD = 100)] = "ALL_GOOD"),
+      (l[(l.LIMITED = 200)] = "LIMITED"),
+      (l[(l.VERY_LIMITED = 300)] = "VERY_LIMITED"),
+      (l[(l.AT_RISK = 400)] = "AT_RISK"),
+      (l[(l.SUSPENDED = 500)] = "SUSPENDED"),
+      l),
+    f =
+      (((o = {})[(o.DSA_ELIGIBLE = 1)] = "DSA_ELIGIBLE"),
+      (o[(o.IN_APP_ELIGIBLE = 2)] = "IN_APP_ELIGIBLE"),
+      (o[(o.AGE_VERIFY_ELIGIBLE = 3)] = "AGE_VERIFY_ELIGIBLE"),
+      (o[(o.AGE_VERIFY_GLOBAL_ELIGIBLE = 4)] = "AGE_VERIFY_GLOBAL_ELIGIBLE"),
+      o),
+    I =
+      (((d = {})[(d.WEBFORM = 0)] = "WEBFORM"),
+      (d[(d.AGE_VERIFY = 1)] = "AGE_VERIFY"),
+      (d[(d.IN_APP = 2)] = "IN_APP"),
+      d),
+    p =
+      (((c = {})[(c.PENDING = 0)] = "PENDING"),
+      (c[(c.SUCCESS = 1)] = "SUCCESS"),
+      (c[(c.FAILED = 2)] = "FAILED"),
+      c);
+}

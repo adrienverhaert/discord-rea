@@ -1,0 +1,152 @@
+/* Recovered shipped factory. Module 355097.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8203814..8207197
+ * Raw property SHA-256: efbe42f2daec23858d008b8b3507e1ed117d6e0a9b49fd98abb2494fa490ec4c
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    Eq: () => T,
+    O9: () => C,
+    PZ: () => p,
+    Sb: () => N,
+    W: () => D,
+    Xx: () => A,
+    YP: () => f,
+    _A: () => h,
+    _F: () => m,
+    bf: () => S,
+    ko: () => R,
+    n3: () => y,
+    nR: () => I,
+    oD: () => g,
+    od: () => O,
+    vv: () => L,
+  });
+  var i,
+    r,
+    a,
+    s,
+    l,
+    o,
+    d,
+    c,
+    u,
+    _,
+    E,
+    A =
+      (((i = {})[(i.MINUTES_15 = 900)] = "MINUTES_15"),
+      (i[(i.HOURS_1 = 3600)] = "HOURS_1"),
+      (i[(i.HOURS_3 = 10800)] = "HOURS_3"),
+      (i[(i.HOURS_8 = 28800)] = "HOURS_8"),
+      (i[(i.HOURS_24 = 86400)] = "HOURS_24"),
+      (i[(i.ALWAYS = -1)] = "ALWAYS"),
+      i),
+    h =
+      (((r = {}).REDUCED_MOTION = "REDUCED_MOTION"),
+      (r.REDUCED_MOTION_STICKERS = "REDUCED_MOTION_STICKERS"),
+      (r.GAME_MODE = "GAME_MODE"),
+      r),
+    f = (((a = {}).AUTO = "auto"), (a.COMPACT = "compact"), (a.COZY = "cozy"), a);
+  let I = "ROLE_SUBSCRIPTIONS",
+    p = "APPLICATION_SUBSCRIPTION_SUBSECTION";
+  var T = (((s = {}).USER_PROFILE = "user_profile"), (s.GUILD = "guild"), s),
+    m = (((l = {}).TRY_IT_OUT = "try_it_out"), (l.GUILD_TAG = "guild_tag"), l),
+    g =
+      (((o = {})[(o.PRELOADED_USER_SETTINGS = 1)] = "PRELOADED_USER_SETTINGS"),
+      (o[(o.FRECENCY_AND_FAVORITES_SETTINGS = 2)] = "FRECENCY_AND_FAVORITES_SETTINGS"),
+      (o[(o.TEST_SETTINGS = 3)] = "TEST_SETTINGS"),
+      o),
+    S =
+      (((d = {}).USER_SETTINGS_PRIVACY_SAFETY = "user_settings_privacy_safety"),
+      (d.USER_SETTINGS_ACTIVITY_PRIVACY = "user_settings_activity_privacy"),
+      (d.SERVER_PRIVACY_MODAL = "server_privacy_modal"),
+      d),
+    N =
+      (((c = {})[(c.INFREQUENT_USER_ACTION = 0)] = "INFREQUENT_USER_ACTION"),
+      (c[(c.FREQUENT_USER_ACTION = 10)] = "FREQUENT_USER_ACTION"),
+      (c[(c.SLOW_USER_ACTION = 20)] = "SLOW_USER_ACTION"),
+      (c[(c.AUTOMATED = 30)] = "AUTOMATED"),
+      (c[(c.DAILY = 86400)] = "DAILY"),
+      c);
+  function C() {
+    return {
+      protoToSave: void 0,
+      timeout: void 0,
+      timeoutDelay: Number.MIN_SAFE_INTEGER,
+      rateLimited: !1,
+      cleanupFuncs: [],
+      errorCallbacks: [],
+      loaded: !1,
+      loading: !1,
+      triggeredMigrations: !1,
+      offlineEditDataVersion: void 0,
+    };
+  }
+  var O =
+      (((u = {}).ACCOUNT = "account"),
+      (u.ACCOUNT_STANDING = "account-standing"),
+      (u.ACCOUNT_ACCOUNT_STANDING = "account/account-standing"),
+      (u.PROFILE_CUSTOMIZATION = "profile-customization"),
+      (u.CONTENT_AND_SOCIAL = "content-and-social"),
+      (u.CONNECTED_GAMES = "connected-games"),
+      (u.CONTENT_AND_SOCIAL_CONNECTED_GAMES = "content-and-social/connected-games"),
+      (u.DATA_AND_PRIVACY = "data-and-privacy"),
+      (u.PRIVACY_AND_SAFETY = "privacy-and-safety"),
+      (u.FAMILY_CENTER = "family-center"),
+      (u.SESSIONS = "sessions"),
+      (u.AUTHORIZED_APPS = "authorized-apps"),
+      (u.CONNECTIONS = "connections"),
+      (u.CLIPS = "clips"),
+      (u.PREMIUM = "premium"),
+      (u.GUILD_BOOSTING = "guild-boosting"),
+      (u.SUBSCRIPTIONS = "subscriptions"),
+      (u.SUBSCRIPTIONS_ROLE_SUBSCRIPTIONS = "subscriptions/role-subscriptions"),
+      (u.INVENTORY = "inventory"),
+      (u.BILLING = "billing"),
+      (u.APPEARANCE = "appearance"),
+      (u.ACCESSIBILITY = "accessibility"),
+      (u.VOICE = "voice"),
+      (u.POGGERMODE = "poggermode"),
+      (u.TEXT = "text"),
+      (u.NOTIFICATIONS = "notifications"),
+      (u.EMAILS = "emails"),
+      (u.NOTIFICATIONS_EMAILS = "notifications/emails"),
+      (u.KEYBINDS = "keybinds"),
+      (u.SYSTEM = "system"),
+      (u.LANGUAGE = "language"),
+      (u.WINDOWS = "windows"),
+      (u.LINUX = "linux"),
+      (u.STREAMER_MODE = "streamer-mode"),
+      (u.ADVANCED = "advanced"),
+      (u.ACTIVITY_PRIVACY = "activity-privacy"),
+      (u.REGISTERED_GAMES = "registered-games"),
+      (u.OVERLAY = "overlay"),
+      (u.EXPERIMENTS = "experiments"),
+      (u.DEVELOPER_OPTIONS = "developer-options"),
+      u),
+    R =
+      (((_ = {})[(_.CONFIRM_START = 0)] = "CONFIRM_START"),
+      (_[(_.CONFIRM_CODE = 1)] = "CONFIRM_CODE"),
+      (_[(_.CHANGE_EMAIL_REASONS = 2)] = "CHANGE_EMAIL_REASONS"),
+      (_[(_.CHANGE_EMAIL_WARNING = 3)] = "CHANGE_EMAIL_WARNING"),
+      (_[(_.EMAIL_AND_PASSWORD = 4)] = "EMAIL_AND_PASSWORD"),
+      (_[(_.COMPLETE = 5)] = "COMPLETE"),
+      _);
+  let L = {
+      NEW_FORUM_THREADS_ON: 16384,
+      NEW_FORUM_THREADS_OFF: 8192,
+      OPT_IN_ENABLED: 4096,
+      FAVORITED: 2048,
+      UNREADS_ALL_MESSAGES: 1024,
+      UNREADS_ONLY_MENTIONS: 512,
+    },
+    y = {
+      OPT_IN_CHANNELS_ON: 16384,
+      OPT_IN_CHANNELS_OFF: 8192,
+      UNREADS_ONLY_MENTIONS: 4096,
+      UNREADS_ALL_MESSAGES: 2048,
+    };
+  var D = (((E = {}).USER = "user"), (E.STREAM = "stream"), E);
+}

@@ -1,0 +1,218 @@
+/* Recovered shipped factory. Module 413611.
+ * Source: recovered/web/assets/b7ac53f87c6f05ec.js
+ * UTF-16 property offsets: 13648..16823
+ * Raw property SHA-256: 01da9040bb4f047e639f2ef7bb671c67f35e111630fa0a4d91c8e4edf89dd8d9
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { m: () => C, A: () => b });
+  var i = n(477900),
+    l = n(582128),
+    s = n(192308),
+    r = n(821609),
+    a = n(695366),
+    o = n(150934),
+    d = n(696986),
+    c = n(683071),
+    u = n(297264),
+    m = n(834730),
+    g = n(17928),
+    x = n(181658),
+    h = n(260509),
+    E = n(71393),
+    j = n(287809),
+    f = n(493540),
+    N = n(469993),
+    p = n(512950),
+    A = n(660183);
+  function I(e) {
+    let t,
+      {
+        resubmittingEnableRequest: n,
+        resubmissionError: l,
+        createEnableRequest: s,
+        requestRejectedNoticeText: a,
+        reapplyNoticeText: o,
+        isApplicationPending: d,
+      } = e;
+    if (null != l)
+      return (0, i.jsx)(c.w, { type: "critical", message: l.getAnyErrorMessage(), role: "alert" });
+    let u = null;
+    return (
+      d
+        ? (u = A.intl.string(A.t.OrkTBn))
+        : null != a
+          ? (u = a)
+          : null != o && ((u = o), (t = A.intl.string(A.t["YKw/NQ"]))),
+      null != u
+        ? (0, i.jsx)(p.p, {
+            messageType: p.Y.WARNING,
+            action: (0, i.jsx)(r.$, {
+              variant: "overlay-secondary",
+              text: t,
+              onClick: s,
+              loading: n,
+            }),
+            children: u,
+          })
+        : null
+    );
+  }
+  var S = n(98332);
+  let C = "role_subscriptions_eligibility_modal";
+  function _(e) {
+    let {
+      guild: t,
+      eligibility: l,
+      eligibilityLoading: o,
+      eligibilityError: d,
+      refreshEligibility: c,
+    } = e;
+    return (0, i.jsx)(r.$, {
+      variant: "expressive",
+      onClick: function () {
+        (0, s.openModalLazy)(
+          async () => {
+            let { default: e } = await Promise.all([
+              n.e("129621"),
+              n.e("419631"),
+              n.e("818266"),
+            ]).then(n.bind(n, 258118));
+            return (n) =>
+              (0, i.jsx)(e, {
+                ...n,
+                eligibility: l,
+                eligibilityLoading: o,
+                eligibilityError: d,
+                refreshEligibility: c,
+                guildId: t.id,
+              });
+          },
+          { modalKey: C },
+        );
+      },
+      size: "md",
+      text: A.intl.string(A.t.NL5ZNS),
+      icon: a.E,
+    });
+  }
+  function v(e) {
+    let { guild: t, checkboxText: n } = e,
+      {
+        canSubmitAcceptance: s,
+        error: a,
+        loading: u,
+        submitAcceptTermsRequest: m,
+      } = (function (e) {
+        let t = (0, g.bG)([E.A], () => E.A.getGuild(e)),
+          [n, i] = l.useState(),
+          [s, r] = l.useState(!1),
+          a = (0, N.ME)(t);
+        return {
+          canSubmitAcceptance: (0, g.bG)(
+            [j.default],
+            () => {
+              let e = j.default.getCurrentUser();
+              return null != t && (0, h.bM)(t, e);
+            },
+            [t],
+          ),
+          error: n,
+          loading: s,
+          submitAcceptTermsRequest: l.useCallback(async () => {
+            if (null != e && a) {
+              (r(!0), i(void 0));
+              try {
+                await f.Bo(e);
+              } catch (e) {
+                i(new x.A(e));
+              } finally {
+                r(!1);
+              }
+            }
+          }, [e, void 0, a]),
+        };
+      })(t.id),
+      [p, I] = l.useState(!1);
+    return (0, i.jsxs)(i.Fragment, {
+      children: [
+        (0, i.jsx)(o.S, {
+          onChange: function () {
+            I((e) => !e);
+          },
+          checked: p,
+          label: n,
+        }),
+        (0, i.jsx)(d.h, { size: 24 }),
+        (0, i.jsx)(r.$, {
+          disabled: !p || !s,
+          onClick: m,
+          loading: u,
+          variant: "expressive",
+          text: A.intl.string(A.t.NL5ZNS),
+        }),
+        null != a &&
+          (0, i.jsxs)(i.Fragment, {
+            children: [
+              (0, i.jsx)(d.h, { size: 24 }),
+              (0, i.jsx)(c.w, { type: "critical", message: a.getAnyErrorMessage(), role: "alert" }),
+            ],
+          }),
+      ],
+    });
+  }
+  function T(e) {
+    let { guild: t, monetizationEligibility: n } = e,
+      {
+        eligibilityLoading: l,
+        eligibilityError: s,
+        refreshEligibility: r,
+        eligibility: a,
+        eligibleForMonetization: o,
+        acceptTermsCheckboxText: d,
+        wasRejectedInV1: c,
+      } = n;
+    return o
+      ? c
+        ? (0, i.jsx)(I, { ...n })
+        : (0, i.jsx)(v, { guild: t, checkboxText: d })
+      : (0, i.jsx)(_, {
+          guild: t,
+          eligibility: a,
+          eligibilityLoading: l,
+          eligibilityError: s,
+          refreshEligibility: r,
+        });
+  }
+  function b(e) {
+    let { guild: t, monetizationEligibility: n } = e;
+    return (0, i.jsxs)("div", {
+      className: S.OQ,
+      children: [
+        (0, i.jsx)("img", {
+          className: S.hV,
+          src: "/assets/45b68ce4917d46f1.svg",
+          alt: A.intl.string(A.t.Af4klP),
+        }),
+        (0, i.jsxs)("div", {
+          className: S.mv,
+          children: [
+            (0, i.jsx)(u.D, {
+              variant: "heading-xl/semibold",
+              color: "text-strong",
+              children: A.intl.string(A.t["PqYfh/"]),
+            }),
+            (0, i.jsx)(d.h, { size: 12 }),
+            (0, i.jsx)(m.E, {
+              variant: "text-md/normal",
+              color: "text-default",
+              children: A.intl.string(A.t["41wkMc"]),
+            }),
+            (0, i.jsx)(d.h, { size: 24 }),
+            (0, i.jsx)(T, { guild: t, monetizationEligibility: n }),
+          ],
+        }),
+      ],
+    });
+  }
+}

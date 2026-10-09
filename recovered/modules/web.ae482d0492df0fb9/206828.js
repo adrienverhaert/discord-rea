@@ -1,0 +1,166 @@
+/* Recovered shipped factory. Module 206828.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 2908573..2911168
+ * Raw property SHA-256: b7cdacb03eb928644b4d551e04bf817d228d529fa58881503b3df5449db2074d
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.d(t, { RD: () => m }), n(321073));
+  var i = n(582128),
+    r = n(52133),
+    a = n(958538),
+    s = n(17928),
+    l = n(975807),
+    o = n(666860),
+    d = n(289919),
+    c = n(123917),
+    u = n(878118),
+    _ = n(281020),
+    E = n(975460),
+    A = n(704824);
+  let h = Symbol();
+  var f = n(942370),
+    I = n(652215);
+  let p = "AUTHORIZE_REQUEST",
+    T = [f._.RPC, f._.WEB];
+  function m(e) {
+    let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+      { debug: n = !1 } = t,
+      m = (0, E.g)(e),
+      S = (0, s.bG)([u.A], () => u.A.getGloballyDisabledAuthorizationFlows()),
+      N = i.useMemo(
+        () => ({
+          ...t,
+          allowedFlows:
+            null != t.allowedFlows
+              ? t.allowedFlows.filter((e) => !S.has(e))
+              : T.filter((e) => !S.has(e)),
+        }),
+        [t, S],
+      ),
+      C = (function (e, t) {
+        var n, s, u, E;
+        let A,
+          m,
+          S,
+          N,
+          C =
+            ((n = i.useMemo(() => (null != e ? [e] : []), [e])),
+            (s = t?.allowedFlows ?? T),
+            (A = (0, a.A)(() => s, s, r.v)),
+            (u = g),
+            (E = i.useCallback(
+              () =>
+                n.map((e) => ({
+                  application: e,
+                  isSubscribedToAuthorizeRequest: d.A.isSubscribed(e.id, p),
+                })),
+              [n],
+            )),
+            (m = i.useRef(h)),
+            (S = i.useRef(E)),
+            (N = i.useSyncExternalStore(
+              i.useCallback(
+                (e) =>
+                  u(() => {
+                    ((m.current = h), e());
+                  }),
+                [u],
+              ),
+              i.useCallback(
+                () => (
+                  S.current !== E && ((S.current = E), (m.current = h)),
+                  m.current === h && (m.current = E()),
+                  m.current
+                ),
+                [E],
+              ),
+            )),
+            i.useMemo(
+              () =>
+                N.map((e) => {
+                  let t = [];
+                  if (
+                    (A.includes(f._.RPC) &&
+                      e.isSubscribedToAuthorizeRequest &&
+                      t.push({
+                        type: f._.RPC,
+                        initiate(t) {
+                          (d.A.dispatchToSubscriptions(
+                            p,
+                            (t) => t.socket.application.id === e.application.id,
+                            {},
+                          ),
+                            t.onConfirm?.(),
+                            o.Ay.trackWithMetadata(I.HAw.ON_PLATFORM_ACCOUNT_LINK_FLOW_STARTED, {
+                              location_stack: t.analyticsLocations,
+                              application_id: e.application.id,
+                              flow_type: f._.RPC,
+                            }),
+                            (0, _.gk)(e.application.id, {
+                              onSuccess: t.onSuccess,
+                              onError: t.onError,
+                            }));
+                        },
+                      }),
+                    A.includes(f._.WEB) && null != e.application.connectionEntrypointUrl)
+                  ) {
+                    let n = e.application.connectionEntrypointUrl;
+                    t.push({
+                      type: f._.WEB,
+                      initiate(t) {
+                        ((0, c.h)({
+                          href: n,
+                          onConfirm: () => {
+                            ((0, l.A)(n),
+                              t?.onConfirm?.(),
+                              (0, _.gk)(e.application.id, {
+                                onSuccess: t.onSuccess,
+                                onError: t.onError,
+                              }));
+                          },
+                        }),
+                          o.Ay.trackWithMetadata(I.HAw.ON_PLATFORM_ACCOUNT_LINK_FLOW_STARTED, {
+                            location_stack: t.analyticsLocations,
+                            application_id: e.application.id,
+                            flow_type: f._.WEB,
+                          }));
+                      },
+                    });
+                  }
+                  return {
+                    context: e,
+                    availableFlows: t,
+                    preferredFlow: t.length > 0 ? t[0] : null,
+                  };
+                }),
+              [N, A],
+            ));
+        return C.length > 0 ? C[0] : null;
+      })(m, N),
+      O = C?.preferredFlow,
+      R = null != O,
+      { token: L, fetched: y } = (0, A.U)(m?.parentId ?? m?.id, { disableFetch: N.disableFetch });
+    return {
+      fetched: y,
+      hasAlreadyLinked: y && null != L,
+      canStartAuthorization: R,
+      startAuthorization: i.useCallback((e) => (null == O ? null : (O.initiate(e), O.type)), [O]),
+      connectionApp: m,
+      chosenFlow: O?.type ?? null,
+      token: L,
+      debug: n
+        ? {
+            isSubscribedToAuthorizeRequest: C?.context?.isSubscribedToAuthorizeRequest ?? !1,
+            oauth2Token: L,
+            hasConnectionEntrypointUrl: m?.connectionEntrypointUrl != null,
+            validFlows: C?.availableFlows?.map((e) => e.type) ?? [],
+          }
+        : void 0,
+    };
+  }
+  function g(e) {
+    return d.A.listenIsSubscribed(e);
+  }
+}

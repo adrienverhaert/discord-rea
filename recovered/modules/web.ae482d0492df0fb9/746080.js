@@ -1,0 +1,78 @@
+/* Recovered shipped factory. Module 746080.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 3210233..3211739
+ * Raw property SHA-256: 0caf33707af1bca2b185b388e04a55e210808ecaa2b5cce18927e7e7b3576fbd
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    Gr: () => o,
+    T4: () => u,
+    VV: () => a,
+    aQ: () => _,
+    jq: () => l,
+    lx: () => c,
+    mP: () => d,
+    qW: () => s,
+  });
+  var i,
+    r,
+    a =
+      (((i = {}).CONJURE = "conjuring"),
+      (i.ROLE_SUBSCRIPTIONS = "role-subscriptions"),
+      (i.SERVER_MONETIZATION_ONBOARDING = "server-monetization-onboarding"),
+      (i.GAME_SHOP = "game-shop"),
+      (i.GUILD_SHOP = "shop"),
+      (i.MEMBER_APPLICATIONS = "member-applications"),
+      (i.GUILD_HOME = "@home"),
+      (i.CHANNEL_BROWSER = "channel-browser"),
+      (i.GUILD_ONBOARDING = "onboarding"),
+      (i.CUSTOMIZE_COMMUNITY = "customize-community"),
+      (i.MEMBER_SAFETY = "member-safety"),
+      (i.GUILD_BOOSTS = "boosts"),
+      (i.GAME_SERVERS = "game-servers"),
+      (i.REPORT_TO_MOD = "report-to-mod"),
+      (i.GUILD_OFFICIAL_MESSAGES = "official-messages"),
+      (i.GUILD_SPACE = "guild-space"),
+      i);
+  let s = new Set(Object.values(a));
+  function l(e) {
+    return s.has(e);
+  }
+  function o(e, t) {
+    return `${e}-${t}`;
+  }
+  function d(e) {
+    return !!e?.includes("@home");
+  }
+  let c = Object.freeze({
+    GUILD_FEED_REMOVED: 1,
+    PINNED: 2,
+    ACTIVE_CHANNELS_REMOVED: 4,
+    REQUIRE_TAG: 16,
+    IS_SPAM: 32,
+    IS_GUILD_RESOURCE_CHANNEL: 128,
+    CLYDE_AI: 256,
+    IS_SCHEDULED_FOR_DELETION: 512,
+    IS_MEDIA_CHANNEL: 1024,
+    SUMMARIES_DISABLED: 2048,
+    IS_ROLE_SUBSCRIPTION_TEMPLATE_PREVIEW_CHANNEL: 8192,
+    IS_BROADCASTING: 16384,
+    HIDE_MEDIA_DOWNLOAD_OPTIONS: 32768,
+    IS_JOIN_REQUEST_INTERVIEW_CHANNEL: 65536,
+    OBFUSCATED: 131072,
+    IS_MODERATOR_REPORT_CHANNEL: 524288,
+    IS_SPOILER_CHANNEL: 2097152,
+    IS_GAME_INVITES_CHANNEL: 4194304,
+    HAS_ONLY_SYSTEM_MESSAGES: 8388608,
+  });
+  var u =
+    (((r = {}).GUILD_HOME = "home"),
+    (r.SERVER_GUIDE = "guide"),
+    (r.CHANNEL_BROWSER = "browse"),
+    (r.CUSTOMIZE_COMMUNITY = "customize"),
+    (r.LINKED_ROLES = "linked-roles"),
+    r);
+  let _ = new Set(Object.values(u));
+}

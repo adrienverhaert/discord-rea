@@ -4,3 +4,8 @@ dist/
 .playwright/
 *.log
 
+evidence/rea-desktop-core.json
+
+/test-results/
+/playwright-report/
+

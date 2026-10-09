@@ -1,0 +1,9 @@
+* text=auto eol=lf
+recovered/desktop/** -text -whitespace
+recovered/web/** -text -whitespace
+*.png binary
+*.webp binary
+*.webm binary
+*.woff2 binary
+*.ico binary
+*.gz binary

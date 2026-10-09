@@ -1,0 +1,201 @@
+/* Recovered shipped factory. Module 152007.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7778335..7781300
+ * Raw property SHA-256: 9a8edfcb670b89ef1b90452a0c368f5c3409fb9b33885300bd10121ca1866819
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.d(t, { A: () => g }), n(938796));
+  var i = n(435558),
+    r = n.n(i),
+    a = n(17928),
+    s = n(73153),
+    l = n(544743),
+    o = n(95701),
+    d = n(280450);
+  let c = {},
+    u = new l.Ay(),
+    _ = new Set();
+  function E(e) {
+    c = r()(c)
+      .reject((t) => t.guildId === e)
+      .keyBy("threadId")
+      .value();
+  }
+  function A(e) {
+    e.threads?.forEach(h);
+  }
+  function h(e) {
+    o.A_.has(e.type) &&
+      null != e.member &&
+      ((c[e.id] = {
+        threadId: e.id,
+        guildId: e.guild_id,
+        flags: e.member.flags,
+        muted: e.member.muted,
+        muteConfig: e.member.muteConfig,
+        joinTimestamp: new Date(e.member.joinTimestamp),
+      }),
+      f(e.id));
+  }
+  function f(e) {
+    let t = c[e];
+    (u.clearTimer(e),
+      !0 === t.muted
+        ? ((_ = new Set(_)).add(e),
+          u.setTimer(e, t.muteConfig, () => {
+            ((c[e].muted = !1), (_ = new Set(_)).delete(e), m.emitChange());
+          }) && ((c[e].muted = !1), (_ = new Set(_)).delete(e)))
+        : (_ = new Set(_)).delete(e));
+  }
+  function I(e) {
+    let { guildId: t, members: n } = e;
+    null != t &&
+      null != n &&
+      n.forEach((e) => {
+        ((c[e.id] = {
+          threadId: e.id,
+          guildId: t,
+          flags: e.flags,
+          muted: e.muted,
+          muteConfig: e.muteConfig,
+          joinTimestamp: new Date(e.joinTimestamp),
+        }),
+          f(e.id));
+      });
+  }
+  function p(e) {
+    let { guildId: t, data: n } = e;
+    null != t &&
+      n.forEach((e) => {
+        let { members: n } = e;
+        n.forEach((e) => {
+          ((c[e.id] = {
+            threadId: e.id,
+            guildId: t,
+            flags: e.flags,
+            muted: e.muted,
+            muteConfig: e.muteConfig,
+            joinTimestamp: new Date(e.joinTimestamp),
+          }),
+            f(e.id));
+        });
+      });
+  }
+  class T extends a.Ay.Store {
+    initialize() {
+      this.waitFor(d.default);
+    }
+    static displayName = "JoinedThreadsStore";
+    hasJoined(e) {
+      return e in c;
+    }
+    joinTimestamp(e) {
+      return c[e]?.joinTimestamp;
+    }
+    flags(e) {
+      return c[e]?.flags;
+    }
+    getInitialOverlayState() {
+      return Object.values(c);
+    }
+    getMuteConfig(e) {
+      return c[e]?.muteConfig;
+    }
+    getMutedThreads() {
+      return _;
+    }
+    isMuted(e) {
+      return _.has(e);
+    }
+  }
+  let m = new T(s.h, {
+      CONNECTION_OPEN: function (e) {
+        (u.reset(),
+          (_ = new Set()),
+          (c = {}),
+          e.guilds.forEach((e) => {
+            A(e);
+          }));
+      },
+      OVERLAY_INITIALIZE: function (e) {
+        let { joinedThreads: t } = e;
+        c = r()(t)
+          .map((e) => ({ ...e, joinTimestamp: new Date(e.joinTimestamp) }))
+          .keyBy("threadId")
+          .value();
+      },
+      GUILD_CREATE: function (e) {
+        let { guild: t } = e;
+        (E(t.id), A(t));
+      },
+      GUILD_DELETE: function (e) {
+        let { guild: t } = e;
+        E(t.id);
+      },
+      THREAD_CREATE: function (e) {
+        let { channel: t } = e;
+        h(t);
+      },
+      THREAD_LIST_SYNC: I,
+      SEARCH_MESSAGES_SUCCESS: p,
+      MOD_VIEW_SEARCH_MESSAGES_SUCCESS: p,
+      LOAD_THREADS_SUCCESS: I,
+      LOAD_ARCHIVED_THREADS_SUCCESS: I,
+      THREAD_DELETE: function (e) {
+        let { channel: t } = e;
+        if (!(t.id in c)) return !1;
+        ((c = { ...c }), delete c[t.id]);
+      },
+      THREAD_MEMBER_UPDATE: function (e) {
+        if (d.default.getId() !== e.userId) return !1;
+        ((c[e.id] = {
+          threadId: e.id,
+          guildId: e.guildId,
+          flags: e.flags,
+          muted: e.muted,
+          muteConfig: e.muteConfig,
+          joinTimestamp: new Date(e.joinTimestamp),
+        }),
+          f(e.id));
+      },
+      THREAD_MEMBER_LOCAL_UPDATE: function (e) {
+        let { id: t, userId: n, guildId: i, isJoining: r } = e;
+        if (d.default.getId() !== n || null === i) return !1;
+        r
+          ? (c[t] = {
+              threadId: t,
+              guildId: i,
+              flags: 0,
+              muted: !0,
+              muteConfig: { end_time: void 0 },
+              joinTimestamp: new Date(),
+            })
+          : delete c[t];
+      },
+      THREAD_MEMBERS_UPDATE: function (e) {
+        let t = !1;
+        return (
+          e.removedMemberIds?.includes(d.default.getId()) &&
+            e.id in c &&
+            ((c = { ...c }), delete c[e.id], (t = !0)),
+          e.addedMembers?.forEach((n) => {
+            n.userId === d.default.getId() &&
+              (((c = { ...c })[e.id] = {
+                threadId: e.id,
+                guildId: e.guildId,
+                flags: n.flags,
+                muted: n.muted,
+                muteConfig: n.muteConfig,
+                joinTimestamp: new Date(n.joinTimestamp),
+              }),
+              f(e.id),
+              (t = !0));
+          }),
+          t
+        );
+      },
+    }),
+    g = m;
+}

@@ -1,0 +1,260 @@
+/* Recovered shipped factory. Module 282108.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 4460963..4466088
+ * Raw property SHA-256: 30eb658255d9e1a6ca1888eae9bea978cb4b4c90c1fae6d0ef73de8e4a3918ec
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.d(t, {
+    $V: () => y,
+    Fg: () => T,
+    KM: () => g,
+    LE: () => v,
+    M: () => O,
+    O8: () => m,
+    b: () => R,
+    c2: () => M,
+    f: () => U,
+    gh: () => D,
+    ku: () => p,
+    mS: () =>
+      function e(t, n) {
+        let i = n ?? T(t);
+        if (i === h.LO.NONE) return !1;
+        if (
+          t.attachments?.some((e) => y({ type: E.D.Attachment, media: e }, i)) ||
+          t.embeds?.some((e) => y({ type: E.D.Embed, media: e }, i)) ||
+          N(t).some((e) => y({ type: E.D.GenericMedia, media: e }, i))
+        )
+          return !0;
+        let r = null;
+        if (
+          ("messageSnapshots" in t
+            ? (r = t.messageSnapshots)
+            : "message_snapshots" in t && (r = t.message_snapshots),
+          null == r || 0 === r.length)
+        )
+          return !1;
+        for (let t of r) if (e(t.message, i)) return !0;
+        return !1;
+      },
+    nx: () => w,
+    qo: () => L,
+    s9: () => C,
+    y5: () => S,
+  }),
+    n(321073),
+    n(938796));
+  var i = n(665260),
+    r = n(873298),
+    a = n(155718),
+    s = n(865116),
+    l = n(427930),
+    o = n(734057),
+    d = n(232835),
+    c = n(994500),
+    u = n(287809),
+    _ = n(403362),
+    E = n(930125),
+    A = n(900019),
+    h = n(811602),
+    f = n(630986),
+    I = n(961440);
+  function p() {
+    return Object.values(h.Jn).filter((e) => null == e.isEligible || e.isEligible?.());
+  }
+  function T(e) {
+    let { channelId: t, authorId: n } = w(e);
+    return null == t || null == e
+      ? h.LO.NONE
+      : (function (e, t) {
+          let n = u.default.getCurrentUser();
+          if (null == n || t === n.id) return h.LO.NONE;
+          let i = M(e, t, [o.A, c.A]);
+          return null == i ? h.LO.NONE : m(i);
+        })(t, n);
+  }
+  function m(e) {
+    let t = p();
+    return null == e
+      ? h.LO.NONE
+      : v(t.map((t) => (U(t.getUserSettingsWithDefaults()[e]) ? t.harmType : null)).filter(_.Vq));
+  }
+  function g(e) {
+    let t = T(e);
+    return S(e, t);
+  }
+  function S(e, t) {
+    if (t === h.LO.NONE || null == e) return !1;
+    if (
+      e.attachments?.some((e) => R({ type: E.D.Attachment, media: e }, t).length > 0) ||
+      e.embeds?.some((e) => R({ type: E.D.Embed, media: e }, t).length > 0)
+    )
+      return !0;
+    let n = null;
+    if (
+      ("messageSnapshots" in e
+        ? (n = e.messageSnapshots)
+        : "message_snapshots" in e && (n = e.message_snapshots),
+      null == n || 0 === n.length)
+    )
+      return !1;
+    for (let e of n) if (S(e.message, t)) return !0;
+    return !1;
+  }
+  function N(e) {
+    let t = [];
+    if ((null != e.components && t.push(...(0, f.A)(e.components)), null != e.embeds))
+      for (let n of e.embeds) null != n.components && t.push(...(0, f.A)(n.components));
+    return t;
+  }
+  function C(e) {
+    return !N(e).some((e) => e.loadingState === a.TD.LOADING);
+  }
+  function O(e) {
+    let t = T(e);
+    if (t === h.LO.NONE) return { attachmentIds: [], embedIds: [] };
+    let n = e.attachments?.filter((e) => y({ type: E.D.Attachment, media: e }, t)),
+      i = e.embeds?.filter((e) => y({ type: E.D.Embed, media: e }, t));
+    return {
+      attachmentIds: n?.map((e) => e.id).filter(Boolean) ?? [],
+      embedIds: i?.map((e, t) => `embed_${t}`).filter(Boolean) ?? [],
+    };
+  }
+  function R(e, t) {
+    if (t === h.LO.NONE) return [];
+    let n = b(t);
+    return 0 === n.length ? [] : n.filter((t) => D(t, e)).map((e) => h.Jn[e].obscureReason);
+  }
+  function L(e, t) {
+    if (t === h.LO.NONE) return !1;
+    let n = b(t);
+    return 0 !== n.length && n.filter((t) => D(t, e)).length > 0;
+  }
+  function y(e, t) {
+    var n, i, r, a, l, o, d;
+    if (t === h.LO.NONE || s.Ay.get("explicit_media_redaction_ignore_pending_scan")) return !1;
+    let c = b(t);
+    if (0 === c.length) return !1;
+    switch (e.type) {
+      case E.D.Embed:
+        return (
+          (n = e.media),
+          !(
+            0 === (i = c).length ||
+            null == n ||
+            0 === i.filter((e) => !D(e, { type: E.D.Embed, media: n })).length ||
+            ("video" in n && null != n.video && n.video?.width === 0 && n.video?.height === 0) ||
+            ("thumbnail" in n &&
+              null != n.thumbnail &&
+              n.thumbnail?.width === 0 &&
+              n.thumbnail?.height === 0) ||
+            ("image" in n && null != n.image && n.image?.width === 0 && n.image?.height === 0) ||
+            ("images" in n && n.images?.some((e) => null != e && 0 === e.width && 0 === e.height))
+          ) &&
+            P(
+              null != (r = n).content_scan_version
+                ? r.content_scan_version
+                : null != r.contentScanVersion || null != r.contentScanVersion
+                  ? r.contentScanVersion
+                  : null,
+              i,
+            )
+        );
+      case E.D.Attachment:
+        return (
+          (a = e.media),
+          0 !== (l = c).length &&
+            0 !== l.filter((e) => !D(e, { type: E.D.Attachment, media: a })).length &&
+            P(a.content_scan_version ?? a.contentScanVersion, l)
+        );
+      case E.D.GenericMedia:
+        return (
+          (o = e.media),
+          0 !== (d = c).length &&
+            0 !== d.filter((e) => !D(e, { type: E.D.GenericMedia, media: o })).length &&
+            P(o.contentScanMetadata?.version, d)
+        );
+      default:
+        return !1;
+    }
+  }
+  function D(e, t) {
+    if (null == e) return !1;
+    let n = h.Jn[e];
+    if (null != n.devSettingKey && s.Ay.get(n.devSettingKey)) return !0;
+    switch (t.type) {
+      case E.D.Embed:
+        return (0, i.Lt)(t.media.flags ?? 0, n.embedFlag);
+      case E.D.Attachment:
+        return (0, i.Lt)(t.media.flags ?? 0, n.attachmentFlag);
+      case E.D.GenericMedia:
+        return (0, i.Lt)(t.media.contentScanMetadata?.flags ?? 0, n.genericMediaFlag);
+      default:
+        return !1;
+    }
+  }
+  function v(e) {
+    let t = h.LO.NONE;
+    for (let n of e)
+      switch (n) {
+        case h.kn.EXPLICIT:
+          t |= h.LO.EXPLICIT;
+          break;
+        case h.kn.GORE:
+          t |= h.LO.GORE;
+          break;
+        case h.kn.SELF_HARM:
+          t |= h.LO.SELF_HARM;
+      }
+    return t;
+  }
+  function b(e) {
+    if (e === h.LO.NONE) return [];
+    let t = [];
+    for (let n of p()) (e & n.bitmask) > 0 && t.push(n.harmType);
+    return t;
+  }
+  function M(e, t) {
+    let n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : [o.A, c.A],
+      [i, r] = n,
+      a = i.getChannel(e),
+      s = u.default.getCurrentUser();
+    return null == s || t === s.id || null == a
+      ? null
+      : a.isDM() || a.isGroupDM()
+        ? null != t && r.getFriendIDs().includes(t)
+          ? E.v.FRIEND_DM
+          : E.v.NON_FRIEND_DM
+        : E.v.GUILD;
+  }
+  function P(e, t) {
+    let n = A.A.validContentScanVersion;
+    return (
+      e !== I.Ae &&
+      (t.includes(h.kn.GORE) || t.includes(h.kn.SELF_HARM) ? null == e || e < n : null == e)
+    );
+  }
+  function U(e) {
+    return null != e && [r.TO.BLOCK, r.TO.BLUR].includes(e);
+  }
+  function w(e) {
+    let t = null,
+      n = null;
+    if (null == e) return { channelId: t, authorId: n };
+    "channel_id" in e && (t = e.channel_id);
+    let [i, r] =
+      "messageReference" in e
+        ? [e.messageReference, (0, l.A)(e)]
+        : "message_reference" in e
+          ? [e.message_reference, (0, l.m)(e)]
+          : [];
+    if (null != i && r) {
+      if (null == i.message_id) return { channelId: t, authorId: n };
+      let e = d.A.getMessage(i.channel_id, i.message_id);
+      null != e && (n = e.author?.id);
+    } else "author" in e ? (n = e.author?.id) : "author_id" in e && (n = e.author_id);
+    return { channelId: t, authorId: n };
+  }
+}

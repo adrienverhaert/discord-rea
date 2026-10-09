@@ -1,0 +1,63 @@
+/* Recovered shipped factory. Module 688151.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 4399932..4401679
+ * Raw property SHA-256: 0d48a550c6c445198e3e05ac67897ffcd370195e943c56cd9a7d12b466b477da
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { $G: () => u, Ps: () => _, RE: () => o, Vh: () => d, vf: () => c });
+  var i,
+    r,
+    a,
+    s,
+    l,
+    o =
+      (((i = {})[(i.NOT_ELIGIBLE = -1)] = "NOT_ELIGIBLE"),
+      (i[(i.CONTROL = 0)] = "CONTROL"),
+      (i[(i.TREATMENT_1 = 1)] = "TREATMENT_1"),
+      (i[(i.TREATMENT_2 = 2)] = "TREATMENT_2"),
+      (i[(i.TREATMENT_3 = 3)] = "TREATMENT_3"),
+      (i[(i.TREATMENT_4 = 4)] = "TREATMENT_4"),
+      (i[(i.TREATMENT_5 = 5)] = "TREATMENT_5"),
+      (i[(i.TREATMENT_6 = 6)] = "TREATMENT_6"),
+      (i[(i.TREATMENT_7 = 7)] = "TREATMENT_7"),
+      (i[(i.TREATMENT_8 = 8)] = "TREATMENT_8"),
+      (i[(i.TREATMENT_9 = 9)] = "TREATMENT_9"),
+      (i[(i.TREATMENT_10 = 10)] = "TREATMENT_10"),
+      (i[(i.TREATMENT_11 = 11)] = "TREATMENT_11"),
+      (i[(i.TREATMENT_12 = 12)] = "TREATMENT_12"),
+      (i[(i.TREATMENT_13 = 13)] = "TREATMENT_13"),
+      (i[(i.TREATMENT_14 = 14)] = "TREATMENT_14"),
+      (i[(i.TREATMENT_15 = 15)] = "TREATMENT_15"),
+      (i[(i.TREATMENT_16 = 16)] = "TREATMENT_16"),
+      (i[(i.TREATMENT_17 = 17)] = "TREATMENT_17"),
+      (i[(i.TREATMENT_18 = 18)] = "TREATMENT_18"),
+      (i[(i.TREATMENT_19 = 19)] = "TREATMENT_19"),
+      (i[(i.TREATMENT_20 = 20)] = "TREATMENT_20"),
+      (i[(i.TREATMENT_21 = 21)] = "TREATMENT_21"),
+      (i[(i.TREATMENT_22 = 22)] = "TREATMENT_22"),
+      (i[(i.TREATMENT_23 = 23)] = "TREATMENT_23"),
+      (i[(i.TREATMENT_24 = 24)] = "TREATMENT_24"),
+      (i[(i.TREATMENT_25 = 25)] = "TREATMENT_25"),
+      i),
+    d = (((r = {}).NONE_LEGACY = "none"), (r.GUILD = "guild"), (r.USER = "user"), r),
+    c = (((a = {}).MANUAL = "manual"), (a.AUTO = "auto"), (a.AUTO_FALLBACK = "auto_fallback"), a),
+    u =
+      (((s = {})[(s.NONE = 0)] = "NONE"),
+      (s[(s.CONNECTION_OPEN = 1)] = "CONNECTION_OPEN"),
+      (s[(s.VOICE_CALL = 2)] = "VOICE_CALL"),
+      (s[(s.PAYMENT_FLOW_STARTED = 3)] = "PAYMENT_FLOW_STARTED"),
+      (s[(s.COLLECTIBLES_SHOP_OPEN = 4)] = "COLLECTIBLES_SHOP_OPEN"),
+      (s[(s.OPEN_USER_SETTINGS = 5)] = "OPEN_USER_SETTINGS"),
+      (s[(s.OPEN_NITRO = 6)] = "OPEN_NITRO"),
+      (s[(s.DM_GDM_LIST_RENDER = 7)] = "DM_GDM_LIST_RENDER"),
+      (s[(s.CONNECTION_OPEN_MOBILE = 8)] = "CONNECTION_OPEN_MOBILE"),
+      (s[(s.QUEST_HOME_OPEN = 9)] = "QUEST_HOME_OPEN"),
+      (s[(s.QUEST_BAR_RENDERED = 10)] = "QUEST_BAR_RENDERED"),
+      s),
+    _ =
+      (((l = {})[(l.EXPERIMENT = 0)] = "EXPERIMENT"),
+      (l[(l.EXPERIMENT_TREATMENT = 1)] = "EXPERIMENT_TREATMENT"),
+      l);
+}

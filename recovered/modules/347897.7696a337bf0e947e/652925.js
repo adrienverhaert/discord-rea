@@ -1,0 +1,65 @@
+/* Recovered shipped factory. Module 652925.
+ * Source: recovered/web/assets/347897.7696a337bf0e947e.js
+ * UTF-16 property offsets: 403897..405233
+ * Raw property SHA-256: c7697927e08cb38ec888b6468188fa597f7fdf580e2e8b5d16dd41349488b31a
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, r) {
+  "use strict";
+  var n = (function () {
+    function e(e, t) {
+      for (var r = 0; r < t.length; r++) {
+        var n = t[r];
+        ((n.enumerable = n.enumerable || !1),
+          (n.configurable = !0),
+          "value" in n && (n.writable = !0),
+          Object.defineProperty(e, n.key, n));
+      }
+    }
+    return function (t, r, n) {
+      return (r && e(t.prototype, r), n && e(t, n), t);
+    };
+  })();
+  e.exports = (function (e) {
+    if ("function" != typeof e && null !== e)
+      throw TypeError("Super expression must either be null or a function, not " + typeof e);
+    function t() {
+      if (!(this instanceof t)) throw TypeError("Cannot call a class as a function");
+      var e = (function (e, t) {
+        if (!e) throw ReferenceError("this hasn't been initialised - super() hasn't been called");
+        return t && ("object" == typeof t || "function" == typeof t) ? t : e;
+      })(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this));
+      return ((e._children = []), e);
+    }
+    return (
+      (t.prototype = Object.create(e && e.prototype, {
+        constructor: { value: t, enumerable: !1, writable: !0, configurable: !0 },
+      })),
+      e && (Object.setPrototypeOf ? Object.setPrototypeOf(t, e) : (t.__proto__ = e)),
+      n(t, [
+        {
+          key: "__addChild",
+          value: function (e) {
+            (0 === this._children.length && this.__attach(), this._children.push(e));
+          },
+        },
+        {
+          key: "__removeChild",
+          value: function (e) {
+            var t = this._children.indexOf(e);
+            -1 === t
+              ? console.warn("Trying to remove a child that doesn't exist")
+              : (this._children.splice(t, 1), 0 === this._children.length && this.__detach());
+          },
+        },
+        {
+          key: "__getChildren",
+          value: function () {
+            return this._children;
+          },
+        },
+      ]),
+      t
+    );
+  })(r(562210));
+}

@@ -1,0 +1,131 @@
+/* Recovered shipped factory. Module 26741.
+ * Source: recovered/web/assets/d6d7214192869745.js
+ * UTF-16 property offsets: 120614..122878
+ * Raw property SHA-256: 333abb0f031b6b5cb19c259d2bed265cab68209db52aa51fcf1c040392b4f351
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, {
+    $s: () => f,
+    J_: () => x,
+    P9: () => m,
+    cM: () => p,
+    dX: () => A,
+    nK: () => E,
+    pZ: () => N,
+    z6: () => C,
+  });
+  var i,
+    l = n(582128),
+    s = n(562708),
+    r = n(172218),
+    a = n(139286),
+    o = n(763827),
+    d = n(977997),
+    c = n(174459),
+    u = n(131955),
+    h = n(652215);
+  function g(e) {
+    return Object.keys(d.A.getVoiceStatesForChannel(e)).length;
+  }
+  function m(e) {
+    let { guildId: t, channelId: n, bannerHash: i } = e,
+      [d, c] = l.useState(!1),
+      u = l.useRef(null),
+      h = (0, r.K)(c, 0.1),
+      m = `${n}:${i}`;
+    return (
+      l.useEffect(() => {
+        d &&
+          u.current !== m &&
+          ((u.current = m),
+          (function (e) {
+            let { guildId: t, channelId: n, bannerHash: i } = e;
+            (0, a.x)({
+              name: s.ImpressionNames.GUILD_HANGOUT_WINDOW,
+              type: s.ImpressionTypes.VIEW,
+              properties: {
+                guild_id: t,
+                channel_id: n,
+                num_voice_users: g(n),
+                media_session_id: o.A.getMediaSessionId(),
+                banner_hash: i,
+              },
+            });
+          })({ guildId: t, channelId: n, bannerHash: i }));
+      }, [d, m, t, n, i]),
+      h
+    );
+  }
+  function A(e) {
+    let { guildId: t, channelId: n } = e,
+      [i, d] = l.useState(!1),
+      c = l.useRef(null),
+      u = (0, r.K)(d, 0.1);
+    return (
+      l.useEffect(() => {
+        i &&
+          c.current !== n &&
+          ((c.current = n),
+          (function (e) {
+            let { guildId: t, channelId: n } = e;
+            (0, a.x)({
+              name: s.ImpressionNames.GUILD_HANGOUT_WINDOW_ENTRY_POINT,
+              type: s.ImpressionTypes.VIEW,
+              properties: {
+                guild_id: t,
+                channel_id: n,
+                num_voice_users: g(n),
+                media_session_id: o.A.getMediaSessionId(),
+              },
+            });
+          })({ guildId: t, channelId: n }));
+      }, [i, n, t]),
+      u
+    );
+  }
+  function f(e) {
+    let { guildId: t, channelId: n, contentExists: i } = e;
+    (0, a.A)({
+      name: s.ImpressionNames.GUILD_HANGOUT_WINDOW_MODAL,
+      type: s.ImpressionTypes.MODAL,
+      properties: { guild_id: t, channel_id: n, num_voice_users: g(n), content_exists: i },
+    });
+  }
+  var p =
+    (((i = {}).GIF_CATEGORY = "gif-category"),
+    (i.GIF_CUSTOM_SEARCH = "gif-custom-search"),
+    (i.RECENT_IMAGE = "recent-image"),
+    (i.PRESET_GIF = "preset-gif"),
+    i);
+  function C(e) {
+    let { guildId: t, channelId: n, contentType: i, gifCategoryType: l } = e,
+      s = "gif-category" === i ? (0, u.Er)(l) : null;
+    c.default.track(h.HAw.HANGOUT_WINDOW_CONTENT_SET, {
+      guild_id: t,
+      channel_id: n,
+      content_type: i,
+      num_voice_users: g(n),
+      media_session_id: o.A.getMediaSessionId(),
+      gif_category_type: s,
+    });
+  }
+  function E(e) {
+    let { guildId: t, channelId: n } = e;
+    c.default.track(h.HAw.HANGOUT_WINDOW_CONTENT_CLEARED, { guild_id: t, channel_id: n });
+  }
+  function x(e) {
+    let { guildId: t, channelId: n } = e;
+    c.default.track(h.HAw.HANGOUT_WINDOW_CLICKED, { guild_id: t, channel_id: n });
+  }
+  function N(e) {
+    let { guildId: t, channelId: n, categoryType: i } = e,
+      l = (0, u.Er)(i);
+    null != l &&
+      c.default.track(h.HAw.HANGOUT_WINDOW_GIF_CATEGORY_CLICKED, {
+        guild_id: t,
+        channel_id: n,
+        category_type: l,
+      });
+  }
+}

@@ -1,0 +1,141 @@
+/* Recovered shipped factory. Module 732071.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 5965020..5968220
+ * Raw property SHA-256: 81e9f7a8e5224b16c7ab38cb2ac5cacda54b794f84149e30a1e5b381a7274ad6
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.d(t, { A: () => h, K: () => _ }), n(321073));
+  var i,
+    r = n(635377),
+    a = n.n(r),
+    s = n(562708),
+    l = n(439372),
+    o = n(793574),
+    d = n(174459),
+    c = n(403362),
+    u = n(652215),
+    _ =
+      (((i = {}).ANNOUNCEMENT = "announcement"),
+      (i.APP_EMBED = "app_embed"),
+      (i.OFFICIAL_MESSAGE = "official_message"),
+      (i.VOICE_INVITE_EMBED = "voice_invite_embed"),
+      i);
+  function E(e) {
+    return "voice_invite_embed" === e.type
+      ? `${e.messageId}-${e.inviteCode}-${e.type}`
+      : `${e.messageId}-${e.type}`;
+  }
+  class A extends l.A {
+    currentlyVisibleMessageTimers = {};
+    viewsInCurrentChannel = new Set();
+    recentViewTimes = new (a())({ max: 500, maxAge: 6e4 });
+    batchBuffer = [];
+    batchTimerId = null;
+    actions = { CHANNEL_SELECT: () => this.handleChannelSelect() };
+    handleMessageBecameVisible(e) {
+      let t = E(e);
+      if (null != this.currentlyVisibleMessageTimers[t] || this.viewsInCurrentChannel.has(t))
+        return;
+      let n = this.recentViewTimes.get(t);
+      if (null != n && Date.now() - n < 6e4) return;
+      let i = setTimeout(() => {
+        (delete this.currentlyVisibleMessageTimers[t],
+          this.viewsInCurrentChannel.add(t),
+          this.recentViewTimes.set(t, Date.now()),
+          this.bufferViewTrack(e));
+      }, 1e3);
+      this.currentlyVisibleMessageTimers[t] = i;
+    }
+    handleMessageLostVisibility(e, t, n) {
+      let i = null != n ? `${e}-${n}-${t}` : `${e}-${t}`,
+        r = this.currentlyVisibleMessageTimers[i];
+      null != r && (clearTimeout(r), delete this.currentlyVisibleMessageTimers[i]);
+    }
+    handleMessageListVisibilityChange(e, t) {
+      for (let t of e) this.handleMessageBecameVisible(t);
+      let n = Object.keys(this.currentlyVisibleMessageTimers);
+      if (n.length > 0) {
+        let i = new Set(e.map(E));
+        for (let e of n) e.endsWith(`-${t}`) && !i.has(e) && this.clearTimer(e);
+      }
+    }
+    clearTimer(e) {
+      let t = this.currentlyVisibleMessageTimers[e];
+      null != t && (clearTimeout(t), delete this.currentlyVisibleMessageTimers[e]);
+    }
+    handleChannelSelect() {
+      for (let e of Object.values(this.currentlyVisibleMessageTimers)) clearTimeout(e);
+      ((this.currentlyVisibleMessageTimers = {}),
+        this.viewsInCurrentChannel.clear(),
+        this.drainBuffer());
+    }
+    drainBuffer() {
+      for (let e of this.batchBuffer) {
+        let t = (function (e) {
+          switch (e.type) {
+            case "announcement":
+              return {
+                event: u.HAw.ANNOUNCEMENT_MESSAGE_VIEWED,
+                properties: {
+                  message_id: e.messageId,
+                  channel_id: e.channelId,
+                  guild_id: e.guildId,
+                  source_channel_id: e.sourceChannelId,
+                  source_guild_id: e.sourceGuildId,
+                },
+              };
+            case "app_embed":
+              return {
+                event: u.HAw.APP_EMBED_VIEWED,
+                properties: {
+                  application_id: e.applicationId,
+                  link_type: e.linkType,
+                  message_id: e.messageId,
+                  channel_id: e.channelId,
+                  guild_id: e.guildId,
+                },
+              };
+            case "official_message":
+              return {
+                event: u.HAw.OFFICIAL_MESSAGE_VIEWED,
+                properties: {
+                  message_id: e.messageId,
+                  channel_id: e.channelId,
+                  guild_id: e.guildId,
+                },
+              };
+            case "voice_invite_embed":
+              return {
+                event: s.ImpressionNames.VOICE_INVITE_EMBED,
+                properties: {
+                  impression_type: s.ImpressionTypes.VIEW,
+                  invite_code: e.inviteCode,
+                  invite_guild_id: e.inviteGuildId,
+                  invite_channel_id: e.inviteChannelId,
+                  invite_instance_id: e.inviteInstanceId,
+                  has_active_stream: e.hasActiveStream,
+                  location_stack: e.treatmentRendered
+                    ? [o.A.INVITE_EMBED, o.A.VOICE_CHANNEL_LIST_INVITE_EMBED]
+                    : [o.A.INVITE_EMBED],
+                },
+              };
+            default:
+              return (0, c.xb)(e);
+          }
+        })(e);
+        d.default.track(t.event, t.properties);
+      }
+      ((this.batchBuffer = []),
+        null != this.batchTimerId && (clearTimeout(this.batchTimerId), (this.batchTimerId = null)));
+    }
+    bufferViewTrack(e) {
+      (this.batchBuffer.length >= 10 && this.drainBuffer(),
+        this.batchBuffer.push(e),
+        null == this.batchTimerId &&
+          (this.batchTimerId = setTimeout(() => this.drainBuffer(), 2e3)));
+    }
+  }
+  let h = new A();
+}

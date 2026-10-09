@@ -1,0 +1,136 @@
+/* Recovered shipped factory. Module 885576.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8969785..8971971
+ * Raw property SHA-256: f93202f8362534ffc8647c2192e4bbbd15ce215bf949f47cc2e27d3ce2cab810
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  let i;
+  n.d(t, { A: () => L });
+  var r = n(649852),
+    a = n.n(r),
+    s = n(17928),
+    l = n(73153),
+    o = n(730852),
+    d = n(77729),
+    c = n(885386),
+    u = n(927813),
+    _ = n(723702),
+    E = n(280450),
+    A = n(652215),
+    h = n(731854);
+  let f = Date.now(),
+    I = !1,
+    p = !1,
+    T = !1,
+    m = !1,
+    g = !1;
+  function S() {
+    return T || m || ((0, _.isAndroid)() && g);
+  }
+  function N() {
+    let e;
+    (Date.now() - f > A.sdF || S()
+      ? I || l.h.dispatch({ type: "IDLE", idle: !0, idleSince: f })
+      : I && l.h.dispatch({ type: "IDLE", idle: !1 }),
+      0 === (e = c.cU.getSetting()) ||
+      null != i ||
+      Date.now() - f > Math.min(e * u.A.Millis.SECOND, A.sdF) ||
+      S()
+        ? p || l.h.dispatch({ type: "AFK", afk: !0 })
+        : p && l.h.dispatch({ type: "AFK", afk: !1 }));
+  }
+  function C(e) {
+    (e && (i = Date.now()), N());
+  }
+  if (!__OVERLAY__) {
+    _.isPlatformEmbedded && d.A?.powerMonitor != null
+      ? (!(function e() {
+          function t(t) {
+            let n = Date.now() - t;
+            ((null == i || n > i) && ((f = Math.max(n, f)), (i = null)),
+              N(),
+              setTimeout(e, 10 * u.A.Millis.SECOND));
+          }
+          if (d.A?.powerMonitor?.getSystemIdleTimeMs != null) {
+            let e = d.A.powerMonitor.getSystemIdleTimeMs();
+            e instanceof Promise ? e.then(t) : t(e);
+          }
+        })(),
+        d.A.powerMonitor.on("resume", () => {
+          ((T = !1), C(!1));
+        }),
+        d.A.powerMonitor.on("suspend", () => {
+          ((T = !0), C(!0), o.default.disconnect());
+        }),
+        d.A.powerMonitor.on("lock-screen", () => {
+          ((m = !0), C(!0));
+        }),
+        d.A.powerMonitor.on("unlock-screen", () => {
+          ((m = !1), C(!1));
+        }))
+      : setInterval(N, 30 * u.A.Millis.SECOND);
+    let e = a()(() => {
+      O({});
+    }, 500);
+    (window.addEventListener("mouseup", e),
+      window.addEventListener("wheel", e),
+      window.addEventListener("keypress", e));
+  }
+  function O(e) {
+    let { timestamp: t, type: n, bypassIdleUpdate: r } = e,
+      a = "OVERLAY_SET_NOT_IDLE" === n && null != t;
+    return (
+      (!a || !(t <= f)) &&
+      !r &&
+      ((i = null),
+      (f = a ? t : Date.now()),
+      __OVERLAY__ ? l.h.dispatch({ type: "OVERLAY_SET_NOT_IDLE", timestamp: f }) : N(),
+      !1)
+    );
+  }
+  class R extends s.Ay.Store {
+    initialize() {
+      this.waitFor(E.default);
+    }
+    static displayName = "IdleStore";
+    isIdle() {
+      return I;
+    }
+    isAFK() {
+      return p;
+    }
+    getIdleSince() {
+      return I ? f : null;
+    }
+    getSystemSuspended() {
+      return T;
+    }
+    getSystemLocked() {
+      return m;
+    }
+  }
+  let L = new R(l.h, {
+    IDLE: function (e) {
+      I = e.idle;
+    },
+    AFK: function (e) {
+      p = e.afk;
+    },
+    SPEAKING: function (e) {
+      let { userId: t, speakingFlags: n } = e;
+      return (n !== h.ME.NONE && t === E.default.getId() && O({}), !1);
+    },
+    APP_STATE_UPDATE: function (e) {
+      let { state: t } = e;
+      return ((g = t === A.g6G.BACKGROUND), (i = null), (f = Date.now()), N(), !1);
+    },
+    OVERLAY_SET_NOT_IDLE: O,
+    CHANNEL_SELECT: O,
+    VOICE_CHANNEL_SELECT: O,
+    WINDOW_FOCUS: O,
+    OVERLAY_INITIALIZE: O,
+    OVERLAY_SET_INPUT_LOCKED: O,
+  });
+}

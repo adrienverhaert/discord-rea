@@ -1,0 +1,56 @@
+/* Recovered shipped factory. Module 656513.
+ * Source: recovered/web/assets/fd9362a41ab0e764.js
+ * UTF-16 property offsets: 95..941
+ * Raw property SHA-256: e52d27048ddf90f99050f661ea688c638f9ceb9a19a9112afea599c52f543fc3
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, s) {
+  s.d(t, { N: () => l });
+  var i = s(477900),
+    a = s(582128),
+    n = s(503698),
+    c = s.n(n),
+    r = s(202091),
+    u = s(494012),
+    h = s(717421),
+    d = s(802859);
+  function l(e) {
+    let { children: t, className: s, collapsibleContent: n, isExpanded: l } = e,
+      [o, f] = a.useState(!1),
+      [m, p] = a.useState(!0),
+      [g, k] = a.useState(!1),
+      v = l ?? o,
+      { ref: x, height: N = 0 } = (0, u.Ay)(),
+      { ref: j, height: y = 0 } = (0, u.Ay)(),
+      C = (0, h.z)(
+        { height: v ? N + y : y, config: r.config.stiff, onRest: () => k(!0) },
+        m ? "animate-never" : "respect-motion-settings",
+      ),
+      b = a.useCallback(() => {
+        f(!o);
+      }, [o, f]);
+    return (
+      a.useLayoutEffect(() => {
+        let e = setTimeout(() => {
+          p(!1);
+        }, 100);
+        return () => clearTimeout(e);
+      }, []),
+      (0, i.jsx)("div", {
+        className: c()(d.uR, { [d.$M]: v }, s),
+        children: (0, i.jsxs)(r.animated.div, {
+          className: c()(d.N0, { [d.Mm]: v && g }),
+          style: C,
+          children: [
+            (0, i.jsx)("div", {
+              ref: j,
+              className: c()(d.wx, { [d.$M]: v }),
+              children: t({ onClick: b }),
+            }),
+            (0, i.jsx)("div", { ref: x, inert: !v, children: n }),
+          ],
+        }),
+      })
+    );
+  }
+}

@@ -1,0 +1,52 @@
+/* Recovered shipped factory. Module 824069.
+ * Source: recovered/web/assets/6cbe268ca8bd6f1c.js
+ * UTF-16 property offsets: 10587..11429
+ * Raw property SHA-256: de61245810dc9b554d7aa4a4bf2e0c10ab99ec46b5c3be04d66dd32ba22b59a8
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, r, t) {
+  t.d(r, { K: () => m });
+  var n = t(477900);
+  t(582128);
+  var i = t(877624),
+    l = t(834730),
+    a = t(28863),
+    s = t(549996),
+    o = t(807098),
+    c = t(637706),
+    d = t(788883),
+    u = t(592455);
+  function m() {
+    let e = (0, s.c)(i.C.PLAN_SELECT_CARD_BANNER),
+      r =
+        null != e && "planSelectCardBanner" === e.properties.properties.oneofKind
+          ? e.properties.properties.planSelectCardBanner
+          : null,
+      t = (0, o.T)(r?.asset);
+    if (null == e || null == r || "" === r.body) return null;
+    let m = (0, c.C)(r.helpArticle, "");
+    return (0, n.jsxs)("div", {
+      className: u.kL,
+      children: [
+        (0, n.jsx)(d.A, {
+          componentType: i.C.PLAN_SELECT_CARD_BANNER,
+          componentId: e.id,
+          promotionId: e.promotionId,
+        }),
+        null != t && (0, n.jsx)("img", { alt: "", className: u.Sl, src: t }),
+        (0, n.jsxs)(l.E, {
+          variant: "text-md/normal",
+          color: "text-default",
+          className: u.rf,
+          children: [
+            r.body,
+            null != m &&
+              (0, n.jsxs)(n.Fragment, {
+                children: ["\xa0", (0, n.jsx)(a.Anchor, { href: m.url, children: m.linkText })],
+              }),
+          ],
+        }),
+      ],
+    });
+  }
+}

@@ -1,0 +1,90 @@
+/* Recovered shipped factory. Module 713402.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 11307914..11309524
+ * Raw property SHA-256: 7f5aad0f5952f96c3de0fe78c7896a13a163008054674c6ad782225b5f938468
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { J: () => l });
+  var i = n(952589),
+    r = n.n(i);
+  function a(e, t, n, i) {
+    if (null != t) {
+      let n = r()(e, t, i);
+      for (; e[n] !== t && n < e.length - 1;) n += 1;
+      e.splice(n, 1);
+    }
+    null != n && e.splice(r()(e, n, i), 0, n);
+  }
+  let s = [];
+  class l {
+    indexBy;
+    sortBy;
+    isEqual;
+    valueMap = new Map();
+    valueArray = [];
+    valueIndexes = {};
+    valueIndexesForGetter = {};
+    dirty = !1;
+    _version = 0;
+    constructor(e, t, n = (e, t) => e === t) {
+      ((this.indexBy = e), (this.sortBy = t), (this.isEqual = n));
+    }
+    get version() {
+      return this._version;
+    }
+    indexes() {
+      let e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
+      if (e) return this.valueIndexes;
+      if (!e && this.dirty) {
+        let e = {};
+        for (let [t, n] of Object.entries(this.valueIndexes)) e[t] = [...n];
+        ((this.valueIndexesForGetter = e), (this.dirty = !1));
+      }
+      return this.valueIndexesForGetter;
+    }
+    keys() {
+      return this.valueMap.keys();
+    }
+    values(e) {
+      let t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
+      return null == e ? this.valueArray : (this.indexes(t)[e] ?? s);
+    }
+    size(e) {
+      return null == e ? this.valueArray.length : (this.valueIndexes[e]?.length ?? 0);
+    }
+    clear() {
+      (this.valueMap.clear(),
+        (this.valueArray = []),
+        (this.valueIndexes = {}),
+        (this.valueIndexesForGetter = {}));
+    }
+    has(e) {
+      return this.valueMap.has(e);
+    }
+    get(e) {
+      return this.valueMap.get(e);
+    }
+    set(e, t) {
+      let n = this.get(e);
+      return (
+        !((null == n && null == t) || (null != n && null != t && this.isEqual(n, t))) &&
+        (null != t ? this.valueMap.set(e, t) : this.valueMap.delete(e),
+        a(this.valueArray, n, t, this.sortBy),
+        null != n && this.indexBy(n).forEach((e) => a(this.getIndex(e), n, null, this.sortBy)),
+        null != t && this.indexBy(t).forEach((e) => a(this.getIndex(e), null, t, this.sortBy)),
+        (this.dirty = !0),
+        this._version++,
+        !0)
+      );
+    }
+    delete(e) {
+      return this.set(e, null);
+    }
+    getIndex(e) {
+      let t = this.valueIndexes[e];
+      return (null == t && ((t = []), (this.valueIndexes[e] = t)), t);
+    }
+  }
+}

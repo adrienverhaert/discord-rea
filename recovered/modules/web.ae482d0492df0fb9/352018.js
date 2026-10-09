@@ -1,0 +1,98 @@
+/* Recovered shipped factory. Module 352018.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8409005..8410602
+ * Raw property SHA-256: af035883e0fbb022362301cf90a8134581fec05e468483bef5edbbaaaf9dc966
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => R });
+  var i = n(477900),
+    r = n(582128),
+    a = n(17928),
+    s = n(625903),
+    l = n(922016),
+    o = n(688810),
+    d = n(384059),
+    c = n(480890),
+    u = n(573435),
+    _ = n(848362),
+    E = n(471993),
+    A = n(734057),
+    h = n(287809),
+    f = n(964989),
+    I = n(158045),
+    p = n(447404),
+    T = n(204651),
+    m = n(806931),
+    g = n(202541),
+    S = n(660183),
+    N = n(138302);
+  function C(e) {
+    let { className: t } = e;
+    return (0, i.jsx)(s.SettingsIcon, { size: "md", color: "currentColor", className: t });
+  }
+  function O(e) {
+    let { className: t } = e;
+    return (0, i.jsxs)(r.Fragment, {
+      children: [
+        (0, i.jsx)(u.Ay, {
+          className: t,
+          mask: u.Ay.Masks.HEADER_BAR_BADGE_BOTTOM,
+          children: (0, i.jsx)(C, {}),
+        }),
+        (0, i.jsx)(f.A, { className: N.s }),
+      ],
+    });
+  }
+  function R(e) {
+    let { hideBadges: t = !1, stream: n, location: s, ...u } = e,
+      f = r.useRef(null),
+      { analyticsLocations: N, parentAnalyticsLocation: R } = (0, o.Ay)(),
+      L = (0, a.bG)([h.default], () =>
+        I.Ay.isPremium(h.default.getCurrentUser(), g.PremiumTypes.TIER_1),
+      ),
+      y = (0, a.bG)([A.A], () => A.A.getChannel(n?.channelId)),
+      D = r.useMemo(() => (null != n ? [n] : []), [n]),
+      v = r.useCallback(() => {
+        null != y && (0, E.A)(y.getGuildId(), y.id, N);
+      }, [y, N]);
+    if (null == n || null == y) return null;
+    let b = C;
+    return (
+      t || L || (b = O),
+      (0, i.jsx)(l.Y, {
+        targetElementRef: f,
+        position: "top",
+        renderPopout: (e) => {
+          let { closePopout: t } = e;
+          return (0, i.jsx)(p.A, {
+            children: (0, i.jsx)(_.A, {
+              channel: y,
+              currentUser: h.default.getCurrentUser(),
+              activeStreams: D,
+              onClose: t,
+              showReportOption: !0,
+              handleGoLive: v,
+              onInteraction: (0, c.s)("ManageStreamsButton", R ?? s, {
+                entrypoint: m.GK.OTHER_BUTTON,
+              }),
+            }),
+          });
+        },
+        animation: l.Y.Animation.FADE,
+        children: (e) =>
+          (0, i.jsx)(T.A, {
+            ...e,
+            buttonRef: f,
+            label: S.intl.string(S.t.tmiYpF),
+            iconComponent: b,
+            onClick: (t) => {
+              ((null != R || null != s) && (0, d.X)(R ?? s, d.O.STREAM_SETTINGS), e?.onClick(t));
+            },
+            ...u,
+          }),
+      })
+    );
+  }
+}

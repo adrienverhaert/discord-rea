@@ -1,0 +1,36 @@
+/* Recovered shipped factory. Module 442353.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8336786..8337325
+ * Raw property SHA-256: 3f4def27b1c9d1613ff87303b2853fafbe18b63f258569b57f116d2ba6424539
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => o });
+  var i = n(477900);
+  n(582128);
+  var r = n(192308),
+    a = n(231723),
+    s = n(885386),
+    l = n(652215);
+  function o(e, t) {
+    let o = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+    s.bm.getSetting() || o
+      ? (0, r.openModalLazy)(
+          async () => {
+            let { default: t } = await Promise.all([
+              n.e("932696"),
+              n.e("25839"),
+              n.e("683084"),
+              n.e("650100"),
+              n.e("195782"),
+              n.e("655212"),
+              n.e("410534"),
+            ]).then(n.bind(n, 308229));
+            return (n) => (0, i.jsx)(t, { ...n, onEnable: e, videoEnabled: !1 });
+          },
+          { modalKey: "camera-preview", contextKey: t === l.BRT.POPOUT ? a.KX : a.SY },
+        )
+      : e?.();
+  }
+}

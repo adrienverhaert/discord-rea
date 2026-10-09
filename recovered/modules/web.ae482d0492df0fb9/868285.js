@@ -1,0 +1,167 @@
+/* Recovered shipped factory. Module 868285.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 11589036..11592574
+ * Raw property SHA-256: 3600e9cdac307e83ecbd3df0fef74e2579912fa3e8e361b4727cb0c54aed9fe0
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.d(t, { F: () => s }), n(321073));
+  var i = n(582128);
+  function r(e) {
+    let t = {};
+    return (
+      e &&
+        i.Children.map(e, (e) => e)?.forEach((e) => {
+          let n = e.key;
+          null != n && (t[n] = e);
+        }),
+      t
+    );
+  }
+  function a() {
+    let e,
+      t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+      n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+    function i(e) {
+      return n.hasOwnProperty(e) ? n[e] : t[e];
+    }
+    let r = {},
+      a = [];
+    for (let e in t) n.hasOwnProperty(e) ? a.length > 0 && ((r[e] = a), (a = [])) : a.push(e);
+    let s = {};
+    for (let t in n) {
+      if (r.hasOwnProperty(t))
+        for (e = 0; e < r[t].length; e++) {
+          let n = r[t][e];
+          s[r[t][e]] = i(n);
+        }
+      s[t] = i(t);
+    }
+    for (e = 0; e < a.length; e++) s[a[e]] = i(a[e]);
+    return s;
+  }
+  class s extends i.Component {
+    static defaultProps = {
+      component: "span",
+      transitionAppear: !0,
+      transitionLeave: !0,
+      transitionEnter: !0,
+      childFactory: null,
+    };
+    static getDerivedStateFromProps(e, t) {
+      let { children: n, firstRender: i } = t,
+        s = r(e.children);
+      return { children: i ? s : a(n, s), firstRender: !1 };
+    }
+    _currentlyTransitioningKeys;
+    _keysToEnter;
+    _keysToLeave;
+    _isMounted;
+    _keyChildMapping = {};
+    constructor(e) {
+      (super(e),
+        (this.state = { children: r(e.children), firstRender: !0 }),
+        (this._currentlyTransitioningKeys = new Set()),
+        (this._keysToEnter = []),
+        (this._keysToLeave = []),
+        (this._isMounted = !1));
+    }
+    componentDidMount() {
+      this._isMounted = !0;
+      let { children: e } = this.state;
+      if (this.props.transitionAppear) for (let t in e) e[t] && this.performAppear(t);
+    }
+    componentWillUnmount() {
+      ((this._isMounted = !1), (this._keyChildMapping = {}), (this.state.children = {}));
+    }
+    componentDidUpdate(e, t) {
+      if (
+        e.children !== this.props.children ||
+        e.transitionAppear !== this.props.transitionAppear ||
+        e.transitionLeave !== this.props.transitionLeave
+      ) {
+        let e = r(this.props.children),
+          n = t.children;
+        if (
+          (this.props.transitionEnter
+            ? this._enqueueTransitions(e, n, this._keysToEnter)
+            : this._keysToEnter.length > 0 && (this._keysToEnter = []),
+          this.props.transitionLeave)
+        )
+          this._enqueueTransitions(n, e, this._keysToLeave);
+        else {
+          let t = [];
+          this._enqueueTransitions(n, e, t);
+          let i = a(n, e);
+          for (let e = 0, n = t.length; e < n; e++) delete i[t[e]];
+          (this._isMounted && this.setState({ children: i }),
+            this._keysToLeave.length > 0 && (this._keysToLeave = []));
+        }
+      }
+      if (this._keysToEnter.length > 0) {
+        let e = this._keysToEnter;
+        ((this._keysToEnter = []), e.forEach(this.performEnter, this));
+      }
+      if (this._keysToLeave.length > 0) {
+        let e = this._keysToLeave;
+        ((this._keysToLeave = []), e.forEach(this.performLeave, this));
+      }
+    }
+    _enqueueTransitions(e, t, n) {
+      for (let i in e) {
+        let r = t && t.hasOwnProperty(i);
+        !e[i] || r || this._currentlyTransitioningKeys.has(i) || n.push(i);
+      }
+    }
+    _perform(e, t, n) {
+      let i = arguments.length > 3 && void 0 !== arguments[3] && arguments[3];
+      this._currentlyTransitioningKeys.add(e);
+      let r = () => this._handleDonePerform(e, n, i),
+        a = this._keyChildMapping[e];
+      null != a && null != a[t] ? a[t](r) : r();
+    }
+    _handleDonePerform(e, t) {
+      let n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2],
+        i = this._keyChildMapping[e];
+      (null != i && null != i[t] && i[t](), this._currentlyTransitioningKeys.delete(e));
+      let a = r(this.props.children);
+      n
+        ? null != a && a.hasOwnProperty(e)
+          ? this.performEnter(e)
+          : this.setState((t) => {
+              let { children: n } = t,
+                { [e]: i, ...r } = n;
+              return { children: r };
+            })
+        : (null != a && a.hasOwnProperty(e)) || this.performLeave(e);
+    }
+    performAppear(e) {
+      this._perform(e, "componentWillAppear", "componentDidAppear");
+    }
+    performEnter(e) {
+      this._perform(e, "componentWillEnter", "componentDidEnter");
+    }
+    performLeave(e) {
+      this._perform(e, "componentWillLeave", "componentDidLeave", !0);
+    }
+    addChildRef = (e, t) => {
+      this._keyChildMapping[e] = t;
+    };
+    render() {
+      let { childFactory: e, component: t } = this.props,
+        { children: n } = this.state,
+        r = [];
+      for (let t in n) {
+        let a = n[t];
+        null != a &&
+          i.isValidElement(a) &&
+          r.push(
+            i.cloneElement(null == e ? a : e(a), { ref: (e) => this.addChildRef(t, e), key: t }),
+          );
+      }
+      let a = { ...this.props };
+      return (Object.keys(s.defaultProps).forEach((e) => delete a[e]), i.createElement(t, a, r));
+    }
+  }
+}

@@ -1,0 +1,99 @@
+/* Recovered shipped factory. Module 381941.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 5943552..5945686
+ * Raw property SHA-256: d7d2a9e0f435d64fb33eabe5a8a94207813ed87ddc2da13c816e53f0a0c9896f
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    ES: () => o,
+    Fd: () => c,
+    Gt: () => A,
+    Hx: () => S,
+    MO: () => f,
+    N0: () => _,
+    VP: () => m,
+    ZG: () => g,
+    aj: () => I,
+    cZ: () => p,
+    k8: () => E,
+    mZ: () => u,
+    q4: () => h,
+    qh: () => l,
+    ty: () => T,
+    y5: () => d,
+  });
+  var i,
+    r,
+    a = n(158390),
+    s = n(927813);
+  n(652215);
+  let l = [0, 4, 8, 16, 24],
+    o = 16,
+    d = 0,
+    c = Object.freeze({
+      referencedAvatarProfile: !1,
+      referencedUsernameProfile: !1,
+      interactionAvatarProfile: !1,
+      interactionUsernameProfile: !1,
+      interactionData: !1,
+      avatarProfile: !1,
+      usernameProfile: !1,
+      emojiPicker: !1,
+      emojiBurstPicker: !1,
+      moreUtilities: !1,
+      contextMenu: !1,
+    }),
+    u = 16,
+    _ = 16,
+    E = 32,
+    A = 64,
+    h = "---new-messages-bar",
+    f = "SPOILER_",
+    I = 3447003,
+    p = 0.16;
+  var T =
+    (((i = {}).ERROR_SOURCE_UNKNOWN = "ERROR_SOURCE_UNKNOWN"),
+    (i.PRECOMPRESSION_SUM_TOO_LARGE = "PRECOMPRESSION_SUM_TOO_LARGE"),
+    (i.PRECOMPRESSION_INDIVIDUAL_FILE_TOO_LARGE = "PRECOMPRESSION_INDIVIDUAL_FILE_TOO_LARGE"),
+    (i.POSTCOMPRESSION_SUM_TOO_LARGE = "POSTCOMPRESSION_SUM_TOO_LARGE"),
+    (i.POSTCOMPRESSION_INDIVIDUAL_FILE_TOO_LARGE = "POSTCOMPRESSION_INDIVIDUAL_FILE_TOO_LARGE"),
+    (i.UPLOAD_ATTACHMENT_MAX_SIZE_ERROR = "UPLOAD_MESSAGE_ATTACHMENT_MAX_SIZE_ERROR"),
+    (i.EXPLICIT_CONTENT = "EXPLICIT_CONTENT"),
+    i);
+  let m = 0xc800000,
+    g = { timeout: 60 * s.A.Millis.SECOND, retries: 3, backoff: new a.A() };
+  var S =
+    (((r = {}).PUSH_NOTIFICATION = "push_notification"),
+    (r.CHAT_INPUT = "chat_input"),
+    (r.SHARE_MODAL = "share_modal"),
+    (r.VOICE_MESSAGE = "voice_message"),
+    (r.THREAD_CREATION = "thread_creation"),
+    (r.FORWARDING = "forwarding"),
+    (r.USER_PROFILE = "user_profile"),
+    (r.RETRY = "explicit_retry"),
+    (r.OVERLAY = "overlay"),
+    (r.ACTIVITY_SHARE = "activity_share"),
+    (r.ICYMI = "icymi"),
+    (r.INSTANT_UPLOAD = "instant_upload"),
+    (r.APP_COMMAND = "app_command"),
+    (r.PRIVATE_MESSAGE_COMMAND = "private_message_command"),
+    (r.POLL_CREATION = "poll_creation"),
+    (r.SHARE_CUSTOM_THEME = "share_custom_theme"),
+    (r.CONJURE_PATCH_NOTES = "vibegrations_patch_notes"),
+    (r.GIF_REPLY = "gif_reply"),
+    (r.STICKER_REPLY = "sticker_reply"),
+    (r.SEND_WAVE = "send_wave"),
+    (r.GIFTING = "gifting"),
+    (r.CONTENT_INVENTORY_MEMBERLIST = "content_inventory_memberlist"),
+    (r.GREET = "greet"),
+    (r.SOCIAL_LAYER_STOREFRONT = "social_layer_storefront"),
+    (r.COLLECTIBLES_SHOP = "collectibles_shop"),
+    (r.GAME_SERVER_SHOP = "game_server_shop"),
+    (r.GAME_ORGANIZATION_INVITE = "game_organization_invite"),
+    (r.MEDIA_MENTION = "media_mention"),
+    (r.GUILD_SPACE = "guild_space"),
+    (r.OTHER = "other"),
+    r);
+}
