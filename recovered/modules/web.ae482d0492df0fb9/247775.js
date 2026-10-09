@@ -1,0 +1,129 @@
+/* Recovered shipped factory. Module 247775.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 11659462..11661216
+ * Raw property SHA-256: 92b91b9c44357d773596859d906857841236f10c9b73ec8ca18248f2619089b4
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  let i, r;
+  (n.r(t),
+    n.d(t, {
+      encryptAndStoreTokens: () => b,
+      getAnalyticsToken: () => S,
+      getToken: () => N,
+      hideToken: () => L,
+      init: () => m,
+      removeAnalyticsToken: () => v,
+      removeToken: () => D,
+      setAnalyticsToken: () => C,
+      setToken: () => O,
+      showToken: () => y,
+    }));
+  var a = n(506774),
+    s = n(818348);
+  let l = "dQw4w9WgXcQ:",
+    o = "__analytics__";
+  function d(e) {
+    return [...e].reduce((e, t) => {
+      let [n, i] = t;
+      return ((e[n] = i), e);
+    }, {});
+  }
+  let c = null,
+    u = window.DiscordNative;
+  null != u && (c = u.safeStorage);
+  let _ = !1,
+    E = {},
+    A = {},
+    h = !1,
+    f = !1;
+  function I() {
+    if (h) {
+      (a.w.remove(s.il), a.w.remove(s.zy));
+      return;
+    }
+    (null != r ? a.w.set(s.il, r) : a.w.remove(s.il), a.w.set(s.zy, A));
+  }
+  function p(e) {
+    return null == e || 0 === e.length
+      ? { decryptedToken: null, wasEncrypted: !1 }
+      : c?.isEncryptionAvailable() && e.startsWith(l)
+        ? { decryptedToken: c.decryptString(e.substring(l.length)), wasEncrypted: !0 }
+        : { decryptedToken: e, wasEncrypted: !1 };
+  }
+  function T(e) {
+    return c?.isEncryptionAvailable() && !e.startsWith(l) ? `${l}${c.encryptString(e)}` : e;
+  }
+  function m() {
+    if (f) return;
+    ((r = a.w.get(s.il)), (A = a.w.get(s.zy) || {}));
+    let { decryptedToken: e, wasEncrypted: t } = p(r);
+    ((_ = t),
+      (i = e),
+      (E = d(
+        Object.entries(A)
+          .map((e) => {
+            let [t, n] = e,
+              { decryptedToken: i, wasEncrypted: r } = p(n);
+            return ((_ = r || _), [t, i]);
+          })
+          .filter((e) => {
+            let [t, n] = e;
+            return null != n;
+          }),
+      )),
+      (f = !0));
+  }
+  function g() {
+    f || m();
+  }
+  function S() {
+    return N(o);
+  }
+  function N(e) {
+    return (m(), null != e) ? E[e] : i;
+  }
+  function C(e) {
+    null == e ? D(o) : (g(), R(e, o));
+  }
+  function O(e, t) {
+    null == e ? D(t) : (g(), (i = e), R(e, t));
+  }
+  function R(e, t) {
+    (null != t && (E[t] = e), _ ? b() : ((r = i), (A = E), I()));
+  }
+  function L() {
+    h || (g(), (h = !0), I());
+  }
+  function y() {
+    h && (g(), (h = !1), I());
+  }
+  function D(e) {
+    g();
+    let t = i;
+    return (
+      null != e && ((t = E[e]), delete E[e], delete A[e]),
+      null != t && t === i && ((i = null), (r = null)),
+      I(),
+      null != t
+    );
+  }
+  function v() {
+    return D(o);
+  }
+  function b() {
+    (g(),
+      c?.isEncryptionAvailable()
+        ? (null != i && (r = T(i)),
+          (A = d(
+            Object.entries(E).map((e) => {
+              let [t, n] = e;
+              return [t, T(n)];
+            }),
+          )),
+          (_ = !0))
+        : ((r = i), (A = E)),
+      I());
+  }
+}

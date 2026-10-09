@@ -1,0 +1,59 @@
+/* Recovered shipped factory. Module 345938.
+ * Source: recovered/web/assets/3fcf1f7387780416.js
+ * UTF-16 property offsets: 1887..2657
+ * Raw property SHA-256: cc5c591b75c3c5851aaa0313d9c6452dda635268bda7acbfb40338b6f238309a
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (t, e, r) {
+  r.d(e, { d: () => a });
+  var i = r(477900),
+    n = r(192308),
+    l = r(294454);
+  let a = (t) => {
+    let { sku: e, guildId: a, source: u, analyticsLocations: o, analyticsContext: s } = t;
+    (0, n.openModalLazy)(
+      async () => {
+        let { default: t } = await Promise.all([
+          r.e("267732"),
+          r.e("225307"),
+          r.e("332165"),
+          r.e("618416"),
+          r.e("501546"),
+          r.e("20409"),
+          r.e("36366"),
+          r.e("481647"),
+          r.e("776602"),
+          r.e("140402"),
+          r.e("401518"),
+          r.e("854461"),
+          r.e("844780"),
+          r.e("250478"),
+          r.e("979630"),
+          r.e("260218"),
+          r.e("236946"),
+          r.e("935948"),
+          r.e("692639"),
+          r.e("565617"),
+          r.e("890480"),
+          r.e("440963"),
+          r.e("766031"),
+          r.e("394317"),
+          r.e("744385"),
+          r.e("304329"),
+          r.e("84755"),
+          r.e("510404"),
+        ]).then(r.bind(r, 763375));
+        return (r) =>
+          (0, i.jsx)(t, {
+            ...r,
+            sku: e,
+            guildId: a,
+            source: u,
+            analyticsLocations: o,
+            analyticsContext: s,
+          });
+      },
+      { stackingBehavior: "stack", modalKey: l.aU },
+    );
+  };
+}

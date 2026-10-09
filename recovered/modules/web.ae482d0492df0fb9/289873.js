@@ -1,0 +1,95 @@
+/* Recovered shipped factory. Module 289873.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10444304..10445901
+ * Raw property SHA-256: 60d5a5ebbf494024d7721283cd043eab4ffe062f07ecd7d99536d0dd0f04becf
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { t: () => u, y: () => _ });
+  var i,
+    r = n(477900),
+    a = n(582128),
+    s = n(503698),
+    l = n.n(s),
+    o = n(844222),
+    d = n(460890),
+    c = n(244875),
+    u =
+      (((i = {}).WANDERING_CUBES = "wanderingCubes"),
+      (i.CHASING_DOTS = "chasingDots"),
+      (i.PULSING_ELLIPSIS = "pulsingEllipsis"),
+      (i.SPINNING_CIRCLE = "spinningCircle"),
+      (i.SPINNING_CIRCLE_SIMPLE = "spinningCircleSimple"),
+      (i.LOW_MOTION = "lowMotion"),
+      i);
+  function _(e) {
+    let { type: t = "wanderingCubes", animated: n = !0, className: i, itemClassName: s, ...u } = e,
+      { i18n: _ } = (0, d.G9)(),
+      { reducedMotion: E } = a.useContext(o.C),
+      A = E.enabled
+        ? (function (e) {
+            switch (e) {
+              case "wanderingCubes":
+              case "chasingDots":
+                return "lowMotion";
+              default:
+                return e;
+            }
+          })(t)
+        : t,
+      h = u["aria-label"] ?? _.SPINNER_LOADING_LABEL;
+    if ("spinningCircle" === A || "spinningCircleSimple" === A)
+      return (0, r.jsx)("div", {
+        className: l()(c.spinner, c[A], i, { [c.stopAnimation]: !n }),
+        role: "img",
+        ...u,
+        "aria-label": h,
+        children: (0, r.jsx)("div", {
+          className: c.spinningCircleInner,
+          children: (0, r.jsxs)("svg", {
+            className: c.circular,
+            viewBox: "25 25 50 50",
+            children: [
+              "spinningCircle" === A &&
+                (0, r.jsxs)(r.Fragment, {
+                  children: [
+                    (0, r.jsx)("circle", {
+                      className: l()(c.path, c.path3, s),
+                      cx: "50",
+                      cy: "50",
+                      r: "20",
+                    }),
+                    (0, r.jsx)("circle", {
+                      className: l()(c.path, c.path2, s),
+                      cx: "50",
+                      cy: "50",
+                      r: "20",
+                    }),
+                  ],
+                }),
+              (0, r.jsx)("circle", { className: l()(c.path, s), cx: "50", cy: "50", r: "20" }),
+            ],
+          }),
+        }),
+      });
+    let f = l()(c.item, s);
+    return (0, r.jsx)("span", {
+      className: l()(c.spinner, i, { [c.stopAnimation]: !n }),
+      role: "img",
+      "aria-label": h,
+      ...u,
+      children: (0, r.jsxs)("span", {
+        className: l()(c.inner, c[A]),
+        children: [
+          (0, r.jsx)("span", { className: f }),
+          (0, r.jsx)("span", { className: f }),
+          "pulsingEllipsis" === A || "lowMotion" === A
+            ? (0, r.jsx)("span", { className: f })
+            : null,
+        ],
+      }),
+    });
+  }
+  _.Type = u;
+}

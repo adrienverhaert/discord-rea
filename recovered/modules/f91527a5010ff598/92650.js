@@ -1,0 +1,179 @@
+/* Recovered shipped factory. Module 92650.
+ * Source: recovered/web/assets/f91527a5010ff598.js
+ * UTF-16 property offsets: 80472..83138
+ * Raw property SHA-256: 4c4fe471f4520536edcdc074b3bf17d22a63caa59909eb0c4725bb6cbaf4ecc9
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { t: () => x });
+  var l = n(582128),
+    i = n(800754),
+    s = n.n(i),
+    a = n(913122),
+    r = n(928658),
+    o = n(321191),
+    c = n(903209),
+    d = n(885386),
+    u = n(174459),
+    h = n(966107),
+    m = n(477900),
+    g = n(192308),
+    p = n(687599),
+    A = n(652215),
+    f = n(166643);
+  function x(e) {
+    let { user: t, onAcceptSuccess: i, onRejectSuccess: x, onError: C } = e,
+      E = (0, f.A)(),
+      [S, I] = l.useState(!1),
+      [j, y] = l.useState(!1),
+      [v, _] = l.useState(!1),
+      [b, N] = l.useState(!1),
+      [T, M] = l.useState(!1),
+      R = S || j || v,
+      D = l.useCallback(
+        async (e) => {
+          if (!R) {
+            I(!0);
+            try {
+              (await (0, h.RK)(e), N(!0), i?.());
+            } catch (t) {
+              let e = new a.LG(t);
+              C?.(e);
+            } finally {
+              I(!1);
+            }
+          }
+        },
+        [R, i, C],
+      ),
+      L = l.useCallback(
+        async (e) => {
+          if (!R) {
+            y(!0);
+            try {
+              (await (0, h.UK)(e), M(!0), x?.());
+            } catch (t) {
+              let e = new a.LG(t);
+              C?.(e);
+            } finally {
+              y(!1);
+            }
+          }
+        },
+        [R, x, C],
+      ),
+      k = l.useCallback(
+        async (e) => {
+          if (R) return;
+          y(!0);
+          let t = s()(e, 50);
+          try {
+            for (let e of t) await (0, h.ST)(e);
+            (M(!0), x?.());
+          } catch (t) {
+            let e = new a.LG(t);
+            C?.(e);
+          } finally {
+            y(!1);
+          }
+        },
+        [R, x, C],
+      ),
+      P = l.useCallback(
+        async (e) => {
+          if (!R) {
+            if (null != t && null == o.A.getMutualGuilds(t.id)) {
+              _(!0);
+              try {
+                await (0, c.A)(t.id, t.getAvatarURL(void 0, 80), {
+                  withMutualGuilds: !0,
+                  withMutualFriendsCount: !0,
+                });
+              } catch (e) {
+              } finally {
+                _(!1);
+              }
+            }
+            !(function (e) {
+              let { channelId: t, onConfirm: l, onCancel: i } = e;
+              (u.default.track(A.HAw.OPEN_MODAL, { type: p.PY, channel_id: t }),
+                (0, g.openModalLazy)(async () => {
+                  let { default: e } = await n.e("661841").then(n.bind(n, 987176));
+                  return (t) => (0, m.jsx)(e, { onConfirm: l, onDismiss: i, ...t });
+                }));
+            })({
+              channelId: e,
+              onConfirm: l,
+              onCancel: function () {
+                let n = null != t ? o.A.getMutualGuilds(t.id)?.map((e) => e.guild.id) : [];
+                u.default.track(A.HAw.MESSAGE_REQUEST_ACTION, {
+                  action: p.LD.DISMISS_CONFIRMATION_PROMPT,
+                  channel_id: e,
+                  mutual_guild_ids: n ?? [],
+                  other_user_id: t?.id,
+                });
+              },
+            });
+          }
+          async function l() {
+            let n = null != t ? o.A.getMutualGuilds(t.id)?.map((e) => e.guild.id) : [];
+            (u.default.track(A.HAw.MESSAGE_REQUEST_ACTION, {
+              action: p.LD.ACCEPT_CONFIRMATION_PROMPT,
+              channel_id: e,
+              mutual_guild_ids: n ?? [],
+              other_user_id: t?.id,
+            }),
+              await D(e));
+          }
+        },
+        [D, R, t],
+      ),
+      O = l.useCallback(
+        (e, t, l) => {
+          function i(n, i) {
+            (i && d.WY.updateSetting(n),
+              n && null != t && (0, r.tJ)(t),
+              D(e.id),
+              u.default.track(A.HAw.MESSAGE_REQUEST_ACTION, {
+                action: p.LD.ACCEPT_HAM_CONFIRMATION_PROMPT,
+                channel_id: e.id,
+                is_dont_show_again_checked: i,
+                non_spam_retraining_opt_in: n,
+              }),
+              null != l && l());
+          }
+          let s = d.WY.getSetting();
+          null == s
+            ? (function (e) {
+                let { onConfirm: t, onCancel: l } = e;
+                (0, g.openModalLazy)(async () => {
+                  let { default: e } = await n.e("19729").then(n.bind(n, 693864));
+                  return (n) => (0, m.jsx)(e, { onConfirm: t, onDismiss: l, ...n });
+                });
+              })({
+                channel: e,
+                onConfirm: i,
+                onCancel: function () {
+                  u.default.track(A.HAw.MESSAGE_REQUEST_ACTION, {
+                    action: p.LD.DISMISS_HAM_CONFIRMATION_PROMPT,
+                    channel_id: e.id,
+                  });
+                },
+              })
+            : i(s);
+        },
+        [D],
+      );
+    return {
+      acceptMessageRequest: E ? P : D,
+      rejectMessageRequest: L,
+      rejectAll: k,
+      markAsNotSpam: O,
+      isAcceptLoading: S,
+      isRejectLoading: j,
+      isUserProfileLoading: v,
+      isOptimisticAccepted: b,
+      isOptimisticRejected: T,
+    };
+  }
+}

@@ -1,0 +1,86 @@
+/* Recovered shipped factory. Module 401565.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 5926564..5928244
+ * Raw property SHA-256: 8879b7423054019e057b23a44921f190fabea8a0799e49690359eb9d7527da85
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => A });
+  var i = n(17928),
+    r = n(73153),
+    a = n(320095),
+    s = n(287809),
+    l = n(380335),
+    o = n(157550);
+  let d = {},
+    c = new Set();
+  function u(e) {
+    return l.A.isMessageRequest(e) || o.A.isSpam(e);
+  }
+  function _(e, t) {
+    let n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+    if (!u(e) || (null != t && e !== t?.channel_id)) return;
+    let i = null == t ? null : (0, a.rh)(t);
+    d[e] = { loaded: !0, error: n, message: i };
+  }
+  class E extends i.Ay.Store {
+    static displayName = "MessageRequestPreviewStore";
+    initialize() {
+      this.waitFor(l.A, o.A, s.default);
+    }
+    shouldLoadMessageRequestPreview(e) {
+      return !c.has(e);
+    }
+    getMessageRequestPreview(e) {
+      return (e in d || (d[e] = { loaded: !1, error: !1, message: null }), d[e]);
+    }
+  }
+  let A = new E(r.h, {
+    CONNECTION_OPEN: function () {
+      ((d = {}), c.clear());
+    },
+    CHANNEL_CREATE: function (e) {
+      let { channel: t } = e;
+      u(t.id) && c.add(t.id);
+    },
+    CHANNEL_UPDATES: function (e) {
+      let { channels: t } = e;
+      for (let e of t) u(e.id) || (c.delete(e.id), delete d[e.id]);
+    },
+    CHANNEL_DELETE: function (e) {
+      let { channel: t } = e;
+      (c.delete(t.id), delete d[t.id]);
+    },
+    MESSAGE_CREATE: function (e) {
+      if (e.isPushNotification) return !1;
+      _(e.message.channel_id, e.message);
+    },
+    MESSAGE_UPDATE: function (e) {
+      let t = e.message.channel_id;
+      if (null == t) return !1;
+      let n = d[t];
+      if (null == n || null == n.message) return !1;
+      d[t] = { ...n, message: (0, a.IU)(n.message, e.message) };
+    },
+    MESSAGE_DELETE: function (e) {
+      if (!u(e.channelId)) return !1;
+      d[e.channelId] = { loaded: !0, error: !1, message: null };
+    },
+    LOAD_MESSAGE_REQUESTS_SUPPLEMENTAL_DATA_SUCCESS: function (e) {
+      let { requestedChannelIds: t, supplementalData: n } = e,
+        i = new Set([...t]);
+      for (let e of (n.forEach((e) => {
+        (_(e.channel_id, e.message_preview), i.delete(e.channel_id));
+      }),
+      Array.from(i)))
+        _(e, null);
+    },
+    LOAD_MESSAGE_REQUESTS_SUPPLEMENTAL_DATA_ERROR: function (e) {
+      let { requestedChannelIds: t } = e;
+      t.forEach((e) => {
+        _(e, null, !0);
+      });
+    },
+  });
+}

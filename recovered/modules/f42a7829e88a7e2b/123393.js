@@ -1,0 +1,73 @@
+/* Recovered shipped factory. Module 123393.
+ * Source: recovered/web/assets/f42a7829e88a7e2b.js
+ * UTF-16 property offsets: 95..1092
+ * Raw property SHA-256: 4da0ba345b47c86aa6ce57d15bd15634547bcc8f4b94e7cdf103a2feb30d7c2b
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, l, n) {
+  n.d(l, { W: () => R });
+  var t = n(477900),
+    u = n(582128),
+    a = n(17928),
+    i = n(739187),
+    r = n(857250),
+    s = n(97483),
+    c = n(192308),
+    d = n(730852),
+    o = n(734057),
+    p = n(624458),
+    f = n(513461),
+    h = n(660183);
+  function R(e, l, R, y) {
+    let [k, C] = u.useState(!1),
+      b = (0, a.bG)([o.A], () => o.A.getChannel(y)),
+      w = u.useCallback(() => {
+        (0, i.P)((0, r.o)(h.intl.string(h.t.R0RpRX), s.Ck.FAILURE));
+      }, []),
+      A = u.useCallback(async () => {
+        if (!k && null != e && null != l && null != R) {
+          if (null != b) return void d.default.selectPrivateChannel(b.id);
+          C(!0);
+          try {
+            await p.A.createOrEnterJoinRequestInterview(R);
+          } catch {
+            w();
+          } finally {
+            C(!1);
+          }
+        }
+      }, [e, R, b, w, k, l]);
+    return {
+      approveRequest: async function n() {
+        if (!k && null != e && null != l && null != R) {
+          C(!0);
+          try {
+            await p.A.updateGuildJoinRequest(e, l, R, f.B5.APPROVED);
+          } catch {
+            w();
+          } finally {
+            C(!1);
+          }
+        }
+      },
+      rejectRequest: function () {
+        null != e &&
+          null != l &&
+          null != R &&
+          (0, c.openModalLazy)(async () => {
+            let { default: u } = await n.e("970685").then(n.bind(n, 867276));
+            return (n) =>
+              (0, t.jsx)(u, {
+                modalProps: n,
+                guildId: e,
+                userId: l,
+                guildJoinRequestId: R,
+                onError: w,
+              });
+          });
+      },
+      submitting: k,
+      handleOpenInterview: A,
+    };
+  }
+}

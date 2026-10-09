@@ -1,0 +1,155 @@
+/* Recovered shipped factory. Module 926262.
+ * Source: recovered/web/assets/f91527a5010ff598.js
+ * UTF-16 property offsets: 86529..88665
+ * Raw property SHA-256: 6c8fc56d2873001ec458ee48a0a4c81d8883fb1af955c31d45d1642151bb599f
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { A: () => x });
+  var l = n(477900),
+    i = n(582128),
+    s = n(661531),
+    a = n(462887),
+    r = n(305866),
+    o = n(834730),
+    c = n(821609),
+    d = n(885574),
+    u = n(666860),
+    h = n(363195),
+    m = n(174459),
+    g = n(652215),
+    p = n(660183),
+    A = n(548426),
+    f = n(165648);
+  function x(e) {
+    let {
+      onClose: t,
+      onConfirm: x,
+      onCancel: C,
+      channel: E,
+      analyticsType: S,
+      popoutText: I,
+      animation: j,
+    } = e;
+    i.useEffect(() => {
+      m.default.track(g.HAw.OPEN_POPOUT, { type: S, ...(0, u.dI)(E) });
+    }, [S, E]);
+    let y = i.useCallback(() => {
+        (x?.(), t());
+      }, [x, t]),
+      v = i.useCallback(() => {
+        (C?.(), t());
+      }, [C, t]),
+      _ = i.useRef(null);
+    return (
+      i.useEffect(() => {
+        let e,
+          t = h.A.theme,
+          l = !1;
+        return (
+          null != j &&
+            (async () => {
+              let [{ default: i }, s] = await Promise.all([
+                n.e("996382").then(n.t.bind(n, 883885, 23)),
+                (0, a.M)(t) ? j.dark() : j.light(),
+              ]);
+              l ||
+                null == _.current ||
+                (e = i.loadAnimation({
+                  container: _.current,
+                  renderer: "svg",
+                  loop: !0,
+                  autoplay: !0,
+                  animationData: s,
+                }));
+            })(),
+          () => {
+            ((l = !0), null != e && (e.destroy(), (e = void 0)));
+          }
+        );
+      }, [j]),
+      (0, l.jsx)(r.l, {
+        "aria-labelledby": "content-warning-popout-label",
+        children: (0, l.jsxs)("form", {
+          className: A.$,
+          onSubmit: y,
+          children: [
+            (0, l.jsxs)("div", {
+              className: A.rf,
+              children: [
+                null != j && (0, l.jsx)("div", { className: A.lY, ref: _ }),
+                (0, l.jsxs)("div", {
+                  className: A.Qs,
+                  children: [
+                    (0, l.jsx)("div", { className: A.wx, children: p.intl.string(p.t.mY3Y38) }),
+                    (0, l.jsx)(o.E, {
+                      id: "content-warning-popout-label",
+                      className: f.PT,
+                      variant: "text-sm/normal",
+                      children: I.body,
+                    }),
+                    (0, l.jsxs)("div", {
+                      className: A._o,
+                      children: [
+                        (0, l.jsxs)("div", {
+                          className: A.UD,
+                          children: [
+                            (0, l.jsx)("div", {
+                              className: A.x6,
+                              children: (0, l.jsx)(c.$, {
+                                variant: "secondary",
+                                onClick: v,
+                                text: p.intl.string(p.t.fsBWmS),
+                              }),
+                            }),
+                            (0, l.jsx)(o.E, {
+                              variant: "text-xs/normal",
+                              className: A.uK,
+                              children: p.intl.format(p.t["0LzVPZ"], {}),
+                            }),
+                          ],
+                        }),
+                        (0, l.jsxs)("div", {
+                          className: A.UD,
+                          children: [
+                            (0, l.jsx)("div", {
+                              className: A.x6,
+                              children: (0, l.jsx)(c.$, {
+                                variant: "primary",
+                                onClick: y,
+                                text: p.intl.string(p.t.KJnHq3),
+                                autoFocus: !0,
+                              }),
+                            }),
+                            (0, l.jsx)(o.E, {
+                              variant: "text-xs/normal",
+                              className: A.uK,
+                              children: p.intl.format(p.t.khjqdH, {}),
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+              ],
+            }),
+            null != I.footer && "" !== I.footer
+              ? (0, l.jsxs)("div", {
+                  className: A.qr,
+                  children: [
+                    (0, l.jsx)(d.CircleInformationIcon, {
+                      size: "xs",
+                      color: s.A.unsafe_rawColors.PRIMARY_400.css,
+                      className: A.Kk,
+                    }),
+                    (0, l.jsx)(o.E, { variant: "text-sm/normal", children: I.footer }),
+                  ],
+                })
+              : null,
+          ],
+        }),
+      })
+    );
+  }
+}

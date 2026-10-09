@@ -1,0 +1,160 @@
+/* Recovered shipped factory. Module 354033.
+ * Source: recovered/web/assets/ca533fe8559de92b.js
+ * UTF-16 property offsets: 265258..268078
+ * Raw property SHA-256: 25cf3b6460a93d91ef182fccd0801c7df5d77512cd5b1258046d8802ed7307ff
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { X: () => T, Y: () => _ });
+  var l = n(477900);
+  n(582128);
+  var i = n(503698),
+    r = n.n(i),
+    a = n(17928),
+    s = n(821609),
+    o = n(939249),
+    u = n(789645),
+    c = n(834730),
+    d = n(297264),
+    p = n(565645),
+    m = n(241524),
+    h = n(166532),
+    C = n(71393),
+    f = n(371794),
+    S = n(500345),
+    E = n(599941),
+    y = n(320137),
+    A = n(417360),
+    I = n(759625),
+    g = n(2242),
+    P = n(660183),
+    v = n(631907),
+    x = n(200791);
+  function _(e) {
+    let { onClose: t, listing: n, step: i, guildId: a } = e,
+      s = (0, E.Tq)(a),
+      c = (0, m.A)(g.TQ),
+      d = (function () {
+        if (c) return null;
+        let e =
+          s?.cover_image_asset?.application_id != null
+            ? (0, f.YE)(s.cover_image_asset.application_id, s.cover_image_asset, 440)
+            : void 0;
+        return null == e && i !== h.pn.CONFIRM
+          ? null
+          : null == e
+            ? (0, l.jsx)("div", { className: v.gI })
+            : (0, l.jsx)("img", { src: e, alt: "", className: v.F0 });
+      })();
+    return (0, l.jsxs)("div", {
+      className: r()(v.N1, { [x.G]: null != d, [v.TP]: c || null == d }),
+      children: [
+        d,
+        (function () {
+          if (i !== h.pn.CONFIRM) return null;
+          let e = null == n.image_asset ? void 0 : (0, f.YE)(n.application_id, n.image_asset, 80);
+          return (0, l.jsx)("div", {
+            className: v.z9,
+            children: (0, l.jsx)("img", { src: e, alt: "", className: v.ah }),
+          });
+        })(),
+        (0, l.jsx)(o.D, {
+          className: v.G3,
+          onClick: () => t(!1),
+          "aria-label": P.intl.string(P.t.cpT0Cq),
+          children: (0, l.jsx)(u.P, { size: "md", color: "currentColor", className: v.ut }),
+        }),
+      ],
+    });
+  }
+  function T(e) {
+    let { onClose: t, listing: n, guildId: i } = e,
+      r = (0, a.bG)([C.A], () => C.A.getGuild(i), [i]),
+      o = (0, y.A)(i).filter((e) => e.roles.includes(n.role_id)),
+      u = n.role_benefits.benefits.filter(S.B1).slice(0, null === o.length ? 4 : 3),
+      m = (0, A.A)(u).slice(0, null === o.length ? 4 : 3);
+    return (0, l.jsxs)("div", {
+      className: v.RP,
+      children: [
+        (0, l.jsx)(d.D, {
+          className: v.RS,
+          variant: "heading-xl/semibold",
+          color: "text-default",
+          children: P.intl.format(P.t["1HIsTk"], { serverName: r?.name }),
+        }),
+        (0, l.jsx)(c.E, {
+          className: v.sT,
+          variant: "text-md/normal",
+          color: "text-default",
+          children: P.intl.format(P.t.oi3gip, { tier: n.name }),
+        }),
+        m.length > 0 &&
+          (0, l.jsxs)(l.Fragment, {
+            children: [
+              (0, l.jsx)(c.E, {
+                variant: "text-xs/normal",
+                color: "text-default",
+                className: v.n2,
+                children: P.intl.string(P.t.w0CQ01),
+              }),
+              (0, l.jsx)("div", {
+                className: v.M3,
+                children: m.map((e) =>
+                  (0, l.jsx)(I.A, { benefit: e, guildId: i, onClick: () => t(!0) }, (0, S.nh)(e)),
+                ),
+              }),
+            ],
+          }),
+        (function () {
+          if (0 === o.length) return null;
+          let e = o[0];
+          return (0, l.jsxs)(l.Fragment, {
+            children: [
+              (0, l.jsx)(c.E, {
+                variant: "text-xs/medium",
+                color: "text-default",
+                className: v.n2,
+                children: P.intl.string(P.t["6Y1FLi"]),
+              }),
+              (0, l.jsxs)("div", {
+                className: v.DI,
+                children: [
+                  (0, l.jsx)(p.A, {
+                    emojiId: e.id,
+                    emojiName: e.name,
+                    animated: e.animated ?? !1,
+                    className: v.mp,
+                  }),
+                  (0, l.jsxs)("div", {
+                    children: [
+                      (0, l.jsx)(c.E, {
+                        variant: "text-md/medium",
+                        color: "text-strong",
+                        className: v.cC,
+                        children: P.intl.string(P.t.PrKk4n),
+                      }),
+                      (0, l.jsx)(c.E, {
+                        color: "interactive-text-default",
+                        variant: "text-sm/normal",
+                        children: P.intl.format(P.t["2ICUkG"], { count: o.length }),
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+            ],
+          });
+        })(),
+        (0, l.jsx)("div", {
+          "data-button-hoisted-classname-wrapper": !0,
+          className: v.EJ,
+          children: (0, l.jsx)(s.$, {
+            variant: "primary",
+            text: P.intl.string(P.t["Ph+ecI"]),
+            onClick: () => t(!0),
+          }),
+        }),
+      ],
+    });
+  }
+}

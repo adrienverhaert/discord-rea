@@ -1,0 +1,82 @@
+/* Recovered shipped factory. Module 189552.
+ * Source: recovered/web/assets/d8470c5331bd669d.js
+ * UTF-16 property offsets: 50480..51777
+ * Raw property SHA-256: 3a1966673ec9774efab6dd48ed4673236e13ce2bc4089d4eb6e17cd697f25139
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { Cy: () => d, IY: () => T, Ko: () => c, UY: () => A, YH: () => g, ii: () => I });
+  var l,
+    r = n(582128),
+    a = n(702841),
+    i = n(688810),
+    s = n(402860),
+    E = n(317525),
+    u = n(71393),
+    o = n(287809),
+    _ = n(841549);
+  function c(e, t) {
+    let { guildId: n, userId: l, colorRoleId: r } = e;
+    (0, s.openUserProfileModal)({ userId: l, guildId: n, sourceAnalyticsLocations: t, roleId: r });
+  }
+  function d(e, t, n, l) {
+    let { analyticsLocations: a } = (0, i.Ay)();
+    return r.useCallback(
+      (r) => {
+        if (null == e) return;
+        let i = o.default.getUser(e.userId);
+        null != i &&
+          (r.stopPropagation(),
+          (0, _.Mg)(r, {
+            user: i,
+            guildId: e.guildId,
+            analyticsLocations: null != n ? [n] : a,
+            onCloseContextMenu: l,
+            isViewOnly: t,
+          }));
+      },
+      [e, a, l, n, t],
+    );
+  }
+  function A(e, t, n) {
+    let { analyticsLocations: l } = (0, i.Ay)();
+    return r.useCallback(
+      (r) => {
+        if (null == e) return;
+        let a = o.default.getUser(e.userId);
+        null != a &&
+          (r.stopPropagation(),
+          (0, _.B8)(r, {
+            user: a,
+            guildId: e.guildId,
+            analyticsLocations: null != t ? [t] : l,
+            onCloseContextMenu: n,
+            showTransferOwnershipItem: !0,
+          }));
+      },
+      [e, n, l, t],
+    );
+  }
+  function g(e) {
+    return (0, a.bG)(
+      [u.A, E.A],
+      () => {
+        if (null == e) return null;
+        let t = u.A.getGuild(e.guildId);
+        return null == t || null == e.highestRoleId
+          ? null
+          : (E.A.getRole(t.id, e.highestRoleId) ?? null);
+      },
+      [e],
+    );
+  }
+  var T =
+    (((l = {})[(l.LOADING = 0)] = "LOADING"),
+    (l[(l.SUCCESS_STILL_INDEXING = 1)] = "SUCCESS_STILL_INDEXING"),
+    (l[(l.SUCCESS_EMPTY = 2)] = "SUCCESS_EMPTY"),
+    (l[(l.SUCCESS_FULL = 3)] = "SUCCESS_FULL"),
+    l);
+  function I(e, t, n) {
+    return t ? 0 : e ? 1 : n <= 0 ? 2 : 3;
+  }
+}

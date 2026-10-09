@@ -1,0 +1,54 @@
+/* Recovered shipped factory. Module 695366.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10004911..10005754
+ * Raw property SHA-256: e4c8df98c4222e53a6599b0b16c6bf69c93d1b667c2700f4ba2334e5f225d491
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { E: () => l });
+  var i = n(477900);
+  n(582128);
+  var r = n(661531),
+    a = n(996682),
+    s = n(27989);
+  function l(e) {
+    let {
+        size: t = "md",
+        width: n,
+        height: l,
+        secondaryColor: o = "transparent",
+        secondaryColorClass: d = "",
+        color: c = r.A.colors.INTERACTIVE_ICON_DEFAULT,
+        colorClass: u = "",
+        ..._
+      } = e,
+      E = (0, s.J)(t),
+      A = E?.width ?? n,
+      h = E?.height ?? l;
+    return (0, i.jsxs)("svg", {
+      ...(0, a.A)(_),
+      xmlns: "http://www.w3.org/2000/svg",
+      width: A,
+      height: h,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      children: [
+        (0, i.jsx)("circle", {
+          cx: "12",
+          cy: "12",
+          r: "10",
+          fill: "string" == typeof o ? o : o.css,
+          className: d,
+        }),
+        (0, i.jsx)("path", {
+          fill: "string" == typeof c ? c : c.css,
+          fillRule: "evenodd",
+          d: "M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm1.44-15.94L13.06 14a1.06 1.06 0 0 1-2.12 0l-.38-6.94a1 1 0 0 1 1-1.06h.88a1 1 0 0 1 1 1.06Zm-.19 10.69a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0Z",
+          clipRule: "evenodd",
+          className: u,
+        }),
+      ],
+    });
+  }
+}

@@ -1,0 +1,41 @@
+/* Recovered shipped factory. Module 606096.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 9964482..9965077
+ * Raw property SHA-256: e09641975f56ea2545e1fb12b4ab857a901e6fadf8aa25cb88459f40297d083a
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { BookmarkIcon: () => l });
+  var i = n(477900);
+  n(582128);
+  var r = n(661531),
+    a = n(996682),
+    s = n(27989);
+  function l(e) {
+    let {
+        size: t = "md",
+        width: n,
+        height: l,
+        color: o = r.A.colors.INTERACTIVE_ICON_DEFAULT,
+        colorClass: d = "",
+        ...c
+      } = e,
+      u = (0, s.J)(t),
+      _ = u?.width ?? n,
+      E = u?.height ?? l;
+    return (0, i.jsx)("svg", {
+      ...(0, a.A)(c),
+      xmlns: "http://www.w3.org/2000/svg",
+      width: _,
+      height: E,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      children: (0, i.jsx)("path", {
+        fill: "string" == typeof o ? o : o.css,
+        d: "M4 5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v16a1 1 0 0 1-1.67.74l-5.66-5.13a1 1 0 0 0-1.34 0l-5.66 5.13A1 1 0 0 1 4 20.99V5Z",
+        className: d,
+      }),
+    });
+  }
+}

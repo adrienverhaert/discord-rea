@@ -1,0 +1,43 @@
+/* Recovered shipped factory. Module 646270.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10147377..10148076
+ * Raw property SHA-256: 54e8b7d72697b94976be934dc342931fceae8b9363717aee715792f9d5bacf58
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { u: () => l });
+  var i = n(477900);
+  n(582128);
+  var r = n(661531),
+    a = n(996682),
+    s = n(27989);
+  function l(e) {
+    let {
+        size: t = "md",
+        width: n,
+        height: l,
+        color: o = r.A.colors.INTERACTIVE_ICON_DEFAULT,
+        colorClass: d = "",
+        ...c
+      } = e,
+      u = (0, s.J)(t),
+      _ = u?.width ?? n,
+      E = u?.height ?? l;
+    return (0, i.jsx)("svg", {
+      ...(0, a.A)(c),
+      xmlns: "http://www.w3.org/2000/svg",
+      width: _,
+      height: E,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      children: (0, i.jsx)("path", {
+        fill: "string" == typeof o ? o : o.css,
+        fillRule: "evenodd",
+        d: "M5 4a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V4Zm5 16a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2h-2a1 1 0 0 1-1-1ZM8 3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H8Z",
+        clipRule: "evenodd",
+        className: d,
+      }),
+    });
+  }
+}

@@ -1,0 +1,33 @@
+/* Recovered shipped factory. Module 641886.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 3834584..3835768
+ * Raw property SHA-256: 8b0fe14630691405c6432fc1bd36f8971a4815beb0af50e9951fa747e27c2871
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { AK: () => s, KO: () => a, Wj: () => l, Z6: () => o, fc: () => r });
+  var i = n(88686);
+  let r = {
+      [i.W.Crimson]: { darkBackground: "#900007", lightBackground: "#E7040F", name: i.W.Crimson },
+      [i.W.Berry]: { darkBackground: "#893A99", lightBackground: "#B11FCF", name: i.W.Berry },
+      [i.W.Sky]: { darkBackground: "#0080B7", lightBackground: "#56CCFF", name: i.W.Sky },
+      [i.W.Teal]: { darkBackground: "#086460", lightBackground: "#7DEED7", name: i.W.Teal },
+      [i.W.Forest]: { darkBackground: "#2D5401", lightBackground: "#6AA624", name: i.W.Forest },
+      [i.W.BubbleGum]: {
+        darkBackground: "#DC3E97",
+        lightBackground: "#F957B3",
+        name: i.W.BubbleGum,
+      },
+      [i.W.Violet]: { darkBackground: "#730BC8", lightBackground: "#972FED", name: i.W.Violet },
+      [i.W.Cobalt]: { darkBackground: "#0131C2", lightBackground: "#4278FF", name: i.W.Cobalt },
+      [i.W.Clover]: { darkBackground: "#047B20", lightBackground: "#63CD5A", name: i.W.Clover },
+      [i.W.Lemon]: { darkBackground: "#F6CD12", lightBackground: "#FED400", name: i.W.Lemon },
+      [i.W.White]: { darkBackground: "#FFFFFF", lightBackground: "#FFFFFF", name: i.W.White },
+      [i.W.Black]: { darkBackground: "#000000", lightBackground: "#000000", name: i.W.Black },
+    },
+    a = "invalid_palette",
+    s = "custom_palette",
+    l = { name: a, darkBackground: "", lightBackground: "" },
+    o = Object.values(r);
+}

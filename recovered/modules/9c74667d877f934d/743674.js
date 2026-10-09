@@ -1,0 +1,48 @@
+/* Recovered shipped factory. Module 743674.
+ * Source: recovered/web/assets/9c74667d877f934d.js
+ * UTF-16 property offsets: 95..723
+ * Raw property SHA-256: c69d9a2e59df82571e67dccb6ccc3c9571f5694d44806629d3b1e457009843ac
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (n, l, e) {
+  e.d(l, { S: () => c });
+  var t = e(582128),
+    u = e(635377),
+    r = e.n(u),
+    o = e(998304),
+    s = e(515718);
+  let a = new (r())({ max: 50 });
+  async function i(n) {
+    let l = a.get(n);
+    if (null != l) return l;
+    let e = await new Promise((l, e) => {
+        let t = new Image();
+        ((t.crossOrigin = "Anonymous"),
+          (t.onerror = (n) => {
+            (e(n), null != t && ((t.onerror = null), (t.onload = null)), (t = null));
+          }),
+          (t.onload = () => {
+            null != t
+              ? (l((0, s.Sf)(t, 2, 10)), (t.onerror = null), (t.onload = null), (t = null))
+              : e("image is null");
+          }),
+          (t.src = n));
+      }),
+      t = (0, o.Ob)(...e[0]);
+    return (a.set(n, t), t);
+  }
+  function c(n) {
+    let [l, e] = t.useState(() => (null != n ? a.get(n) : void 0)),
+      [u, r] = t.useState();
+    if (null != n && n !== u) {
+      r(n);
+      let l = a.get(n);
+      null != l
+        ? e(l)
+        : i(n).then((n) => {
+            e(n);
+          });
+    }
+    return l;
+  }
+}

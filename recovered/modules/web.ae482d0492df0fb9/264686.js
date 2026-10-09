@@ -1,0 +1,72 @@
+/* Recovered shipped factory. Module 264686.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 672414..674325
+ * Raw property SHA-256: 4369d2a015b6b2fe1d83a3272607bcb2522e6c4332d7f8409619eb7440b305bb
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { default: () => s });
+  var i = n(73153),
+    r = n(174459),
+    a = n(652215);
+  let s = {
+    setDesktopType(e) {
+      (r.default.track(a.HAw.LOCAL_SETTINGS_UPDATED, { notifications_enabled: e === a.nRU.ALL }),
+        i.h.dispatch({ type: "NOTIFICATIONS_SET_DESKTOP_TYPE", desktopType: e }));
+    },
+    setTTSType(e) {
+      (r.default.track(a.HAw.LOCAL_SETTINGS_UPDATED, { tts_type: e.toString() }),
+        i.h.dispatch({ type: "NOTIFICATIONS_SET_TTS_TYPE", ttsType: e }));
+    },
+    setDisabledSounds(e) {
+      (r.default.track(a.HAw.LOCAL_SETTINGS_UPDATED, { disabled_sounds: e }),
+        i.h.dispatch({ type: "NOTIFICATIONS_SET_DISABLED_SOUNDS", sounds: e }));
+    },
+    toggleDisableAllSounds(e) {
+      (r.default.track(a.HAw.LOCAL_SETTINGS_UPDATED, { all_sounds_enabled: !e }),
+        i.h.dispatch({ type: "NOTIFICATIONS_TOGGLE_ALL_DISABLED" }));
+    },
+    setDisableUnreadBadge(e) {
+      (r.default.track(a.HAw.LOCAL_SETTINGS_UPDATED, { unread_badge_enabled: !e }),
+        i.h.dispatch({ type: "NOTIFICATIONS_SET_DISABLE_UNREAD_BADGE", disableUnreadBadge: e }));
+    },
+    setTaskbarFlash(e) {
+      (r.default.track(a.HAw.LOCAL_SETTINGS_UPDATED, { show_taskbar_flash: e }),
+        i.h.dispatch({ type: "NOTIFICATIONS_SET_TASKBAR_FLASH", taskbarFlash: e }));
+    },
+    setNotifyMessagesInSelectedChannel(e) {
+      (r.default.track(a.HAw.LOCAL_SETTINGS_UPDATED, { notify_messages_in_selected_channel: e }),
+        i.h.dispatch({ type: "NOTIFICATIONS_SET_NOTIFY_MESSAGES_IN_SELECTED_CHANNEL", notify: e }));
+    },
+    setScreenDowntimeReminder(e) {
+      (r.default.track(a.HAw.LOCAL_SETTINGS_UPDATED, { screen_downtime_reminder: e }),
+        i.h.dispatch({
+          type: "NOTIFICATIONS_SET_SCREEN_DOWNTIME_REMINDER",
+          screenDowntimeReminder: e,
+        }));
+    },
+    setPermissionsState(e, t) {
+      (r.default.track(a.HAw.ENABLE_NOTIFICATIONS, { enabled: e === a.kCE.ENABLED, source: t }),
+        i.h.dispatch({ type: "NOTIFICATIONS_SET_PERMISSION_STATE", enabled: e, source: t }));
+    },
+    showNotification(e, t, n, r, a) {
+      i.h.dispatch({
+        type: "NOTIFICATION_CREATE",
+        icon: e,
+        title: t,
+        body: n,
+        trackingProps: r,
+        options: {
+          ...a,
+          onClick(e) {
+            (a.onClick?.(e), i.h.dispatch({ type: "NOTIFICATION_CLICK" }));
+          },
+        },
+      });
+    },
+    clickedNotification() {
+      i.h.dispatch({ type: "NOTIFICATION_CLICK" });
+    },
+  };
+}

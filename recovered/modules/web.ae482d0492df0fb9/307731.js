@@ -1,0 +1,90 @@
+/* Recovered shipped factory. Module 307731.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 4334621..4337112
+ * Raw property SHA-256: 52f5d9a578a4ba9f337361f2f19fe675d499f70612e1e93d61cc00be6c950c67
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.r(t),
+    n.d(t, {
+      DEFAULT_EMOJI_SLOTS: () => i,
+      EMOJI_MAX_FILESIZE: () => o,
+      EMOJI_MAX_FILESIZE_KB: () => l,
+      EMOJI_MAX_LENGTH: () => a,
+      EMOJI_MAX_SLOTS_MORE: () => r,
+      EMOJI_RE: () => s,
+      EMOJI_URL_BASE_SIZE: () => d,
+      EmojiDisabledReasons: () => f,
+      EmojiIntention: () => I,
+      EmojiInteractionPoint: () => T,
+      EmojiSprites: () => h,
+      MAX_EMOJI_TO_BE_JUMBO: () => c,
+      isExternalEmojiAllowedForIntention: () => m,
+    }));
+  let i = 50,
+    r = 200,
+    a = 32,
+    s = /[^a-zA-Z0-9_]/g,
+    l = 256,
+    o = 262144,
+    d = 48,
+    c = 30;
+  var u,
+    _,
+    E,
+    A,
+    h =
+      (((u = {})[(u.NonDiversityPerRow = 42)] = "NonDiversityPerRow"),
+      (u[(u.DiversityPerRow = 10)] = "DiversityPerRow"),
+      (u[(u.PickerPerRow = 11)] = "PickerPerRow"),
+      (u[(u.PickerCount = 50)] = "PickerCount"),
+      u),
+    f =
+      (((_ = {})[(_.DISALLOW_EXTERNAL = 0)] = "DISALLOW_EXTERNAL"),
+      (_[(_.GUILD_SUBSCRIPTION_UNAVAILABLE = 1)] = "GUILD_SUBSCRIPTION_UNAVAILABLE"),
+      (_[(_.PREMIUM_LOCKED = 2)] = "PREMIUM_LOCKED"),
+      (_[(_.ONLY_GUILD_EMOJIS_ALLOWED = 3)] = "ONLY_GUILD_EMOJIS_ALLOWED"),
+      (_[(_.ROLE_SUBSCRIPTION_LOCKED = 4)] = "ROLE_SUBSCRIPTION_LOCKED"),
+      (_[(_.ROLE_SUBSCRIPTION_UNAVAILABLE = 5)] = "ROLE_SUBSCRIPTION_UNAVAILABLE"),
+      (_[(_.DISALLOW_CUSTOM = 6)] = "DISALLOW_CUSTOM"),
+      _),
+    I =
+      (((E = {})[(E.REACTION = 0)] = "REACTION"),
+      (E[(E.STATUS = 1)] = "STATUS"),
+      (E[(E.COMMUNITY_CONTENT = 2)] = "COMMUNITY_CONTENT"),
+      (E[(E.CHAT = 3)] = "CHAT"),
+      (E[(E.GUILD_STICKER_RELATED_EMOJI = 4)] = "GUILD_STICKER_RELATED_EMOJI"),
+      (E[(E.GUILD_ROLE_BENEFIT_EMOJI = 5)] = "GUILD_ROLE_BENEFIT_EMOJI"),
+      (E[(E.SOUNDBOARD = 6)] = "SOUNDBOARD"),
+      (E[(E.VOICE_CHANNEL_TOPIC = 7)] = "VOICE_CHANNEL_TOPIC"),
+      (E[(E.GIFT = 8)] = "GIFT"),
+      (E[(E.AUTO_SUGGESTION = 9)] = "AUTO_SUGGESTION"),
+      (E[(E.POLLS = 10)] = "POLLS"),
+      (E[(E.PROFILE = 11)] = "PROFILE"),
+      (E[(E.GUILD_PROFILE = 12)] = "GUILD_PROFILE"),
+      (E[(E.DEFAULT_REACT_EMOJI = 13)] = "DEFAULT_REACT_EMOJI"),
+      (E[(E.NO_CUSTOM_EMOJI = 14)] = "NO_CUSTOM_EMOJI"),
+      (E[(E.TYPING_INDICATOR = 15)] = "TYPING_INDICATOR"),
+      E);
+  let p = new Set([2, 4, 5, 6, 8]);
+  var T =
+    (((A = {}).EmojiButtonMouseEntered = "EMOJI_BUTTON_MOUSE_ENTERED"),
+    (A.EmojiButtonFocused = "EMOJI_BUTTON_FOCUSED"),
+    (A.ChatInputExpressionPressed = "CHAT_INPUT_EXPRESSION_PRESSED"),
+    (A.ChatInputSuggestionsShown = "CHAT_INPUT_SUGGESTIONS_SHOWN"),
+    (A.SearchEmojiKeybindPressed = "SEARCH_EMOJI_KEYBIND_PRESSED"),
+    (A.AutocompleteTyped = "AUTOCOMPLETE_TYPED"),
+    (A.AutocompleteWrapperShown = "AUTOCOMPLETE_WRAPPER_SHOWN"),
+    (A.GuildLeaveModalShown = "GUILD_LEAVE_MODAL_SHOWN"),
+    (A.AddReactionPopoutMouseEntered = "ADD_REACTION_POPOUT_MOUSE_ENTERED"),
+    (A.AddReactionPopoutFocused = "ADD_REACTION_POPOUT_FOCUSED"),
+    (A.MessageContextMenuMouseEntered = "MESSAGE_CONTEXT_MENU_MOUSE_ENTERED"),
+    (A.EmojiPickerActionSheetOpened = "EMOJI_PICKER_ACTION_SHEET_OPENED"),
+    (A.TrackOpenPopoutUsed = "TRACK_OPEN_POPOUT_USED"),
+    (A.CustomEmojiTooltipShown = "CUSTOM_EMOJI_TOOLTIP_SHOWN"),
+    A);
+  function m(e) {
+    return !p.has(e);
+  }
+}

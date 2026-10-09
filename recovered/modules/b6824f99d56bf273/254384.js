@@ -1,0 +1,65 @@
+/* Recovered shipped factory. Module 254384.
+ * Source: recovered/web/assets/b6824f99d56bf273.js
+ * UTF-16 property offsets: 1192..2132
+ * Raw property SHA-256: 8f35849b43b5b037dc073314705c5a331a04434a32f817879fd34c249233dd4d
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { A: () => d });
+  var i = n(477900),
+    r = n(477782),
+    u = n(342053),
+    l = n(23722),
+    a = n(192308),
+    s = n(294454),
+    o = n(660183);
+  function d(e) {
+    let { user: t, location: d } = e,
+      c = (0, u.g)(d),
+      f = (0, l.A)(() => {
+        !(function (e) {
+          let { user: t, source: r } = e;
+          (0, a.openModalLazy)(
+            async () => {
+              let { default: e } = await Promise.all([
+                n.e("267732"),
+                n.e("225307"),
+                n.e("332165"),
+                n.e("618416"),
+                n.e("501546"),
+                n.e("20409"),
+                n.e("392833"),
+                n.e("481647"),
+                n.e("776602"),
+                n.e("140402"),
+                n.e("401518"),
+                n.e("854461"),
+                n.e("577084"),
+                n.e("428967"),
+                n.e("844780"),
+                n.e("979630"),
+                n.e("260218"),
+                n.e("236946"),
+                n.e("935948"),
+                n.e("692639"),
+                n.e("565617"),
+                n.e("890480"),
+                n.e("440963"),
+                n.e("766031"),
+                n.e("394317"),
+                n.e("744385"),
+                n.e("304329"),
+                n.e("84755"),
+                n.e("260832"),
+              ]).then(n.bind(n, 880867));
+              return (n) => (0, i.jsx)(e, { ...n, user: t, source: r });
+            },
+            { stackingBehavior: "stack", modalKey: s.aU },
+          );
+        })({ user: t, source: "user-profile-embed" });
+      });
+    return c
+      ? (0, i.jsx)(r.Dr, { id: "share-profile", label: o.intl.string(o.t["sFN1/M"]), action: f })
+      : null;
+  }
+}

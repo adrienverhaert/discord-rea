@@ -1,0 +1,55 @@
+/* Recovered shipped factory. Module 646986.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8057082..8058033
+ * Raw property SHA-256: c2437d02cbc95631e884110c68c37de979e0f4f63be4be9654af9a8dd7b6cece
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => A });
+  var i = n(477900),
+    r = n(582128),
+    a = n(688810),
+    s = n(183555),
+    l = n(758873),
+    o = n(80330),
+    d = n(402857),
+    c = n(842241),
+    u = n(986712),
+    _ = n(518477),
+    E = n(660183);
+  function A(e) {
+    let { user: t, currentUser: n, guildId: A, onOpenUserProfileModal: h, onClose: f } = e,
+      { analyticsLocations: I } = (0, a.Ay)(),
+      { trackUserProfileAction: p } = (0, s.NJ)(),
+      { cards: T, isOffline: m } = (0, l.A)({ userId: t.id, currentUserId: n.id, guildId: A }),
+      g = r.useCallback(
+        (e) => {
+          let r = { ...e, user: t, currentUser: n, onClose: f };
+          return T.map((e, t) =>
+            (function (e, t, n) {
+              switch (e.type) {
+                case "stream":
+                  return (0, i.jsx)(c.A, { stream: e.stream, ...n }, "stream");
+                case "live":
+                  return (0, i.jsx)(d.A, { activity: e.activity, ...n }, `live-${t}`);
+                case "voice":
+                  return (0, i.jsx)(u.A, { voiceChannel: e.voiceChannel, ...n }, "voice");
+              }
+            })(e, t, r),
+          );
+        },
+        [T, n, f, t],
+      );
+    return m
+      ? null
+      : (0, i.jsx)(o.A, {
+          renderCards: g,
+          heading: E.intl.string(E.t.J6STd9),
+          onExpand: () => {
+            (p({ action: "PRESS_SHOW_MORE_ACTIVITY", analyticsLocations: I }),
+              h?.({ tabSection: _.RP.ACTIVITY }));
+          },
+        });
+  }
+}

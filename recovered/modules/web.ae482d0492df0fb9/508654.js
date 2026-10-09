@@ -1,0 +1,176 @@
+/* Recovered shipped factory. Module 508654.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 5327132..5330394
+ * Raw property SHA-256: 6ccb9fa5dcf32b964ef4588d505aed3b807508ea1996cde390bf4b937f4239c6
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    Ay: () => p,
+    BP: () => N,
+    Qs: () => T,
+    RO: () => R,
+    WG: () => g,
+    ob: () => C,
+    r2: () => O,
+    vj: () => m,
+    wX: () => S,
+  });
+  var i = n(582128),
+    r = n(17928),
+    a = n(734057),
+    s = n(71393),
+    l = n(576705),
+    o = n(927813),
+    d = n(698441),
+    c = n(357801),
+    u = n(11550),
+    _ = n(563312),
+    E = n(974930),
+    A = n(988794),
+    h = n(652215);
+  let f = [],
+    I = 15 * o.A.Millis.MINUTE;
+  function p(e, t) {
+    return (0, r.yK)(
+      [s.A, d.Ay, l.A, a.A],
+      () => {
+        let n = s.A.getGuild(e);
+        return null == n
+          ? f
+          : d.Ay.getGuildScheduledEventsByIndex(t ?? d.ej.GUILD_EVENT_UPCOMING(n.id)).filter(
+              (e) => {
+                let t = e.channel_id;
+                if (null == t) return !0;
+                let n = a.A.getBasicChannel(t);
+                return null != n && l.A.canBasicChannel(h.hVb.VIEW_CHANNEL, n);
+              },
+            );
+      },
+      [t, e],
+    );
+  }
+  function T(e) {
+    return (0, r.bG)(
+      [d.Ay, a.A, l.A],
+      () => {
+        let t = a.A.getBasicChannel(e);
+        if (null == t || !l.A.canBasicChannel(h.hVb.VIEW_CHANNEL, t) || null == t?.guild_id)
+          return null;
+        let n = d.Ay.getGuildScheduledEventsByIndex(d.ej.CHANNEL_EVENT_ACTIVE(e));
+        return n.length > 0 ? n[0] : null;
+      },
+      [e],
+    );
+  }
+  function m(e) {
+    let t = (0, r.yK)([d.Ay], () => d.Ay.getGuildScheduledEventsForGuild(e), [e]);
+    return i.useMemo(() => {
+      let e = new Map();
+      return (
+        t.forEach((t) => {
+          let n = t.channel_id;
+          null != n && e.set(n, t);
+        }),
+        e
+      );
+    }, [t]);
+  }
+  function g(e) {
+    let t = (0, r.yK)(
+        [d.Ay, a.A, l.A],
+        () =>
+          d.Ay.getGuildScheduledEventsByIndex(d.ej.GUILD_EVENT_UPCOMING(e)).filter((e) => {
+            if (e.entity_type === A.Ps.NONE || e.status !== A.XG.SCHEDULED) return !1;
+            if (null == e.channel_id) return !0;
+            let t = a.A.getBasicChannel(e.channel_id);
+            return null != t && l.A.canBasicChannel(h.hVb.VIEW_CHANNEL, t);
+          }),
+        [e],
+      ),
+      n = (0, r.cf)([u.A], () => u.A.getAllEventDismissals()),
+      i = (0, r.cf)([u.A], () => u.A.getAllUpcomingNoticeSeenTimes()),
+      o = (0, r.cf)(
+        [d.Ay],
+        () =>
+          null == t
+            ? {}
+            : t.reduce((e, t) => {
+                let n = (0, E.G3)(t);
+                return { ...e, [t.id]: d.Ay.isInterestedInEventRecurrence(t.id, n) };
+              }, {}),
+        [t],
+      ),
+      _ = (0, r.bG)([s.A], () => s.A.getGuild(e)),
+      f =
+        null != _ &&
+        !_.features.has(h.GuildFeatures.COMMUNITY) &&
+        _.features.has(h.GuildFeatures.INTERNAL_EMPLOYEE_ONLY);
+    if (null != t && null != o && f)
+      for (let e = 0; e < t.length; e++) {
+        let r = t[e],
+          a = n[r.id],
+          s = i[r.id],
+          l = o[r.id] ?? !1,
+          d = (0, c.F)(r, a, s, l);
+        if (null != d) return { upcomingEvent: r, noticeType: d };
+      }
+  }
+  function S(e) {
+    let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : d.Ay,
+      n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : a.A,
+      i = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : l.A;
+    return t.getGuildScheduledEventsByIndex(d.ej.GUILD_EVENT_ACTIVE(e)).find((e) => {
+      if (e.entity_type === A.Ps.NONE || !(0, d.Fd)(e)) return !1;
+      if (null == e.channel_id) return !0;
+      let t = n.getBasicChannel(e.channel_id);
+      return null != t && i.canBasicChannel(h.hVb.VIEW_CHANNEL, t);
+    });
+  }
+  function N(e) {
+    return (0, r.bG)([d.Ay, a.A, l.A], () => S(e, d.Ay, a.A, l.A), [e]);
+  }
+  function C(e) {
+    return (0, r.bG)(
+      [d.Ay],
+      () => d.Ay.getGuildScheduledEventsByIndex(d.ej.CHANNEL_EVENT_UPCOMING(e)),
+      [e],
+    );
+  }
+  function O(e) {
+    return (0, r.bG)(
+      [a.A, d.Ay],
+      () => {
+        let t = d.Ay.getGuildScheduledEventsByIndex(d.ej.GUILD_EVENT_ACTIVE(e)).find(
+          (e) => null != a.A.getChannel(e.channel_id),
+        );
+        return a.A.getChannel(t?.channel_id);
+      },
+      [e],
+    );
+  }
+  function R(e) {
+    let [t, n] = i.useState(() => Date.now());
+    i.useEffect(() => {
+      let e = setInterval(() => {
+        n(Date.now());
+      }, I);
+      return () => clearInterval(e);
+    }, []);
+    let a = (0, r.bG)(
+      [d.Ay],
+      () => (null == e ? [] : d.Ay.getGuildScheduledEventsByIndex(d.ej.CHANNEL_EVENT_UPCOMING(e))),
+      [e, t],
+    );
+    return i.useMemo(
+      () =>
+        a.filter((e) => {
+          let { startTime: t, endTime: n } = (0, _.YR)(e),
+            { withinStartWindow: i, diffMinutes: r } = (0, E.CC)(t.toISOString(), n?.toISOString());
+          return e.status !== A.XG.ACTIVE && i && r < 15;
+        }),
+      [a],
+    );
+  }
+}

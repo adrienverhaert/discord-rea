@@ -1,0 +1,33 @@
+/* Recovered shipped factory. Module 244875.
+ * Source: recovered/web/assets/168184.89ca03aeddb8c28f.js
+ * UTF-16 property offsets: 6671..7580
+ * Raw property SHA-256: ef1902fcc0e759e94025711e6138353e4cade1547807fc4a8394993be6ff3f0d
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, a, i) {
+  i.r(
+    (e.exports = {
+      "spinner-wandering-cubes": "spinner-wandering-cubes__46696",
+      "spinner-chasing-dots-rotate": "spinner-chasing-dots-rotate__46696",
+      "spinner-chasing-dots-bounce": "spinner-chasing-dots-bounce__46696",
+      "spinner-pulsing-ellipsis": "spinner-pulsing-ellipsis__46696",
+      "spinner-low-motion": "spinner-low-motion__46696",
+      "spinner-spinning-circle-rotate": "spinner-spinning-circle-rotate__46696",
+      "spinner-spinning-circle-dash": "spinner-spinning-circle-dash__46696",
+      spinner: "spinner__46696",
+      inner: "inner__46696",
+      wanderingCubes: "wanderingCubes__46696",
+      item: "item__46696",
+      chasingDots: "chasingDots__46696",
+      pulsingEllipsis: "pulsingEllipsis__46696",
+      lowMotion: "lowMotion__46696",
+      spinningCircle: "spinningCircle__46696",
+      spinningCircleInner: "spinningCircleInner__46696 inner__46696",
+      circular: "circular__46696",
+      path: "path__46696",
+      path2: "path2__46696",
+      path3: "path3__46696",
+      stopAnimation: "stopAnimation__46696",
+    }),
+  );
+}

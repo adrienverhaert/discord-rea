@@ -1,0 +1,353 @@
+/* Recovered shipped factory. Module 385803.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 3542833..3550126
+ * Raw property SHA-256: fd3702070b27f3e79706bae32b9e38cac4fe5d2a9f597f684301e0a83c7628bd
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    G$: () => u,
+    Jm: () => A,
+    Qm: () => c,
+    ag: () => h,
+    f5: () => d,
+    iA: () => E,
+    ni: () => f,
+  });
+  var i,
+    r = n(435558),
+    a = n(873298),
+    s = n(335542),
+    l = n(818348),
+    o = n(660183);
+  let d = [l.NJ.ASH, l.NJ.DARK, l.NJ.ONYX];
+  function c(e) {
+    return e.id !== a.ju.EASTER_EGG;
+  }
+  let u = [
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.MINT_APPLE,
+        theme: l.NJ.LIGHT,
+        colors: [
+          { token: "BG_GRADIENT_MINT_APPLE_1", stop: 6.15 },
+          { token: "BG_GRADIENT_MINT_APPLE_2", stop: 48.7 },
+          { token: "BG_GRADIENT_MINT_APPLE_3", stop: 93.07 },
+        ],
+        angle: 180,
+        getName: () => o.intl.string(o.t.kCdS4d),
+        midpointPercentage: 27,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.CITRUS_SHERBERT,
+        theme: l.NJ.LIGHT,
+        colors: [
+          { token: "BG_GRADIENT_CITRUS_SHERBERT_1", stop: 31.1 },
+          { token: "BG_GRADIENT_CITRUS_SHERBERT_2", stop: 67.09 },
+        ],
+        angle: 180,
+        getName: () => o.intl.string(o.t.S4UnEz),
+        midpointPercentage: 27,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.RETRO_RAINCLOUD,
+        theme: l.NJ.LIGHT,
+        colors: [
+          { token: "BG_GRADIENT_RETRO_RAINCLOUD_1", stop: 5.64 },
+          { token: "BG_GRADIENT_RETRO_RAINCLOUD_2", stop: 26.38 },
+          { token: "BG_GRADIENT_RETRO_RAINCLOUD_2", stop: 49.92 },
+          { token: "BG_GRADIENT_RETRO_RAINCLOUD_1", stop: 73.12 },
+        ],
+        angle: 148.71,
+        getName: () => o.intl.string(o.t["48xnKc"]),
+        midpointPercentage: 50,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.HANAMI,
+        theme: l.NJ.LIGHT,
+        colors: [
+          { token: "BG_GRADIENT_HANAMI_1", stop: 3.56 },
+          { token: "BG_GRADIENT_HANAMI_2", stop: 35.49 },
+          { token: "BG_GRADIENT_HANAMI_3", stop: 68.78 },
+        ],
+        angle: 38.08,
+        getName: () => o.intl.string(o.t.G4HsBJ),
+        midpointPercentage: 50,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.SUNRISE,
+        theme: l.NJ.LIGHT,
+        colors: [
+          { token: "BG_GRADIENT_SUNRISE_1", stop: 8.62 },
+          { token: "BG_GRADIENT_SUNRISE_2", stop: 48.07 },
+          { token: "BG_GRADIENT_SUNRISE_3", stop: 76.04 },
+        ],
+        angle: 154.19,
+        getName: () => o.intl.string(o.t.NAt885),
+        midpointPercentage: 50,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.COTTON_CANDY,
+        theme: l.NJ.LIGHT,
+        colors: [
+          { token: "BG_GRADIENT_COTTON_CANDY_1", stop: 8.5 },
+          { token: "BG_GRADIENT_COTTON_CANDY_2", stop: 94.28 },
+        ],
+        angle: 180.14,
+        getName: () => o.intl.string(o.t.godtzA),
+        midpointPercentage: 50,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.LOFI_VIBES,
+        theme: l.NJ.LIGHT,
+        colors: [
+          { token: "BG_GRADIENT_LOFI_VIBES_1", stop: 7.08 },
+          { token: "BG_GRADIENT_LOFI_VIBES_2", stop: 34.94 },
+          { token: "BG_GRADIENT_LOFI_VIBES_3", stop: 65.12 },
+          { token: "BG_GRADIENT_LOFI_VIBES_4", stop: 96.23 },
+        ],
+        angle: 179.52,
+        getName: () => o.intl.string(o.t.hlS2xq),
+        midpointPercentage: 27,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.DESERT_KHAKI,
+        theme: l.NJ.LIGHT,
+        colors: [
+          { token: "BG_GRADIENT_DESERT_KHAKI_1", stop: 12.92 },
+          { token: "BG_GRADIENT_DESERT_KHAKI_2", stop: 32.92 },
+          { token: "BG_GRADIENT_DESERT_KHAKI_3", stop: 52.11 },
+        ],
+        angle: 38.99,
+        getName: () => o.intl.string(o.t.abMn9y),
+        midpointPercentage: 50,
+      },
+    ],
+    _ = l.NJ.DARK,
+    E = [
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.SUNSET,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_SUNSET_1", stop: 27.57 },
+          { token: "BG_GRADIENT_SUNSET_2", stop: 71.25 },
+        ],
+        angle: 141.68,
+        getName: () => o.intl.string(o.t.JKDra4),
+        midpointPercentage: 35,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.CHROMA_GLOW,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_CHROMA_GLOW_1", stop: 3.94 },
+          { token: "BG_GRADIENT_CHROMA_GLOW_2", stop: 26.1 },
+          { token: "BG_GRADIENT_CHROMA_GLOW_3", stop: 39.82 },
+          { token: "BG_GRADIENT_CHROMA_GLOW_4", stop: 56.89 },
+          { token: "BG_GRADIENT_CHROMA_GLOW_5", stop: 76.45 },
+        ],
+        angle: 128.92,
+        getName: () => o.intl.string(o.t.kwc8Us),
+        midpointPercentage: 15,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.FOREST,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_FOREST_1", stop: 11.2 },
+          { token: "BG_GRADIENT_FOREST_2", stop: 29.93 },
+          { token: "BG_GRADIENT_FOREST_3", stop: 48.64 },
+          { token: "BG_GRADIENT_FOREST_4", stop: 67.85 },
+          { token: "BG_GRADIENT_FOREST_5", stop: 83.54 },
+        ],
+        angle: 162.27,
+        getName: () => o.intl.string(o.t["TeA/j8"]),
+        midpointPercentage: 50,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.CRIMSON_MOON,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_CRIMSON_MOON_1", stop: 16.17 },
+          { token: "BG_GRADIENT_CRIMSON_MOON_2", stop: 72 },
+        ],
+        angle: 64.92,
+        getName: () => o.intl.string(o.t.blIucj),
+        midpointPercentage: 30,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.MIDNIGHT_BLURPLE,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_MIDNIGHT_BLURPLE_1", stop: 11.21 },
+          { token: "BG_GRADIENT_MIDNIGHT_BLURPLE_2", stop: 61.92 },
+        ],
+        angle: 48.17,
+        getName: () => o.intl.string(o.t.O1yOXG),
+        midpointPercentage: 24,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.MARS,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_MARS_1", stop: 14.61 },
+          { token: "BG_GRADIENT_MARS_2", stop: 74.62 },
+        ],
+        angle: 170.82,
+        getName: () => o.intl.string(o.t["1swi9s"]),
+        midpointPercentage: 50,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.DUSK,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_DUSK_1", stop: 12.84 },
+          { token: "BG_GRADIENT_DUSK_2", stop: 85.99 },
+        ],
+        angle: 180,
+        getName: () => o.intl.string(o.t.So2Wuh),
+        midpointPercentage: 50,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.UNDER_THE_SEA,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_UNDER_THE_SEA_1", stop: 1.91 },
+          { token: "BG_GRADIENT_UNDER_THE_SEA_2", stop: 48.99 },
+          { token: "BG_GRADIENT_UNDER_THE_SEA_3", stop: 96.35 },
+        ],
+        angle: 179.14,
+        getName: () => o.intl.string(o.t.a22o48),
+        midpointPercentage: 50,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.RETRO_STORM,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_RETRO_STORM_1", stop: 5.64 },
+          { token: "BG_GRADIENT_RETRO_STORM_2", stop: 26.38 },
+          { token: "BG_GRADIENT_RETRO_STORM_2", stop: 49.92 },
+          { token: "BG_GRADIENT_RETRO_STORM_1", stop: 73.12 },
+        ],
+        angle: 148.71,
+        getName: () => o.intl.string(o.t.Bf294R),
+        midpointPercentage: 61,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.NEON_NIGHTS,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_NEON_NIGHTS_1", stop: 0 },
+          { token: "BG_GRADIENT_NEON_NIGHTS_2", stop: 50 },
+          { token: "BG_GRADIENT_NEON_NIGHTS_3", stop: 100 },
+        ],
+        angle: 180,
+        getName: () => o.intl.string(o.t["p+XCta"]),
+        midpointPercentage: 50,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.STRAWBERRY_LEMONADE,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_STRAWBERRY_LEMONADE_1", stop: 18.79 },
+          { token: "BG_GRADIENT_STRAWBERRY_LEMONADE_2", stop: 49.76 },
+          { token: "BG_GRADIENT_STRAWBERRY_LEMONADE_3", stop: 80.72 },
+        ],
+        angle: 161.03,
+        getName: () => o.intl.string(o.t["d5Ar+j"]),
+        midpointPercentage: 32,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.AURORA,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_AURORA_1", stop: 10.39 },
+          { token: "BG_GRADIENT_AURORA_2", stop: 26.87 },
+          { token: "BG_GRADIENT_AURORA_3", stop: 48.31 },
+          { token: "BG_GRADIENT_AURORA_4", stop: 64.98 },
+          { token: "BG_GRADIENT_AURORA_5", stop: 92.5 },
+        ],
+        angle: 239.16,
+        getName: () => o.intl.string(o.t.Je1FWC),
+        midpointPercentage: 34,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.SEPIA,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_SEPIA_1", stop: 14.14 },
+          { token: "BG_GRADIENT_SEPIA_2", stop: 60.35 },
+        ],
+        angle: 69.98,
+        getName: () => o.intl.string(o.t["Z+Un40"]),
+        midpointPercentage: 50,
+      },
+    ],
+    A = [
+      ...u,
+      ...E,
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.BLURPLE_TWILIGHT,
+        theme: _,
+        colors: [
+          { token: "BG_GRADIENT_BLURPLE_TWILIGHT_1", stop: 11.18 },
+          { token: "BG_GRADIENT_BLURPLE_TWILIGHT_2", stop: 64.54 },
+        ],
+        angle: 47.61,
+        getName: () => o.intl.string(o.t.Mfoe3p),
+        midpointPercentage: 50,
+      },
+      {
+        type: s.F.BACKGROUND_GRADIENT_PRESET,
+        id: a.ju.EASTER_EGG,
+        theme: l.NJ.LIGHT,
+        colors: [
+          { token: "BG_GRADIENT_EASTER_EGG_1", stop: 4 },
+          { token: "BG_GRADIENT_EASTER_EGG_2", stop: 96 },
+        ],
+        angle: 180,
+        getName: () => o.intl.string(o.t.mFinbb),
+        midpointPercentage: 50,
+      },
+    ];
+  ([...E, ...u],
+    s.F.STANDARD_BACKGROUND_THEME,
+    s.F.STANDARD_BACKGROUND_THEME,
+    l.NJ.LIGHT,
+    s.F.STANDARD_BACKGROUND_THEME,
+    l.NJ.ONYX,
+    s.F.STANDARD_BACKGROUND_THEME,
+    s.F.STANDARD_BACKGROUND_THEME,
+    l.NJ.LIGHT,
+    s.F.STANDARD_BACKGROUND_THEME,
+    l.NJ.ASH,
+    s.F.STANDARD_BACKGROUND_THEME,
+    l.NJ.DARK,
+    s.F.STANDARD_BACKGROUND_THEME,
+    l.NJ.ONYX,
+    s.F.STANDARD_BACKGROUND_THEME);
+  let h = (0, r.keyBy)(A, "id");
+  var f = (((i = {})[(i.SIZE_48 = 48)] = "SIZE_48"), (i[(i.SIZE_60 = 60)] = "SIZE_60"), i);
+}

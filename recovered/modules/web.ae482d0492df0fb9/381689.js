@@ -1,0 +1,93 @@
+/* Recovered shipped factory. Module 381689.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7332112..7334536
+ * Raw property SHA-256: 148756537bbb6494be0f3452ce4ac964e4b4b95e51491f32118356004c4df1cf
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => h });
+  var i = n(739187),
+    r = n(857250),
+    a = n(97483),
+    s = n(734057),
+    l = n(287809),
+    o = n(562153),
+    d = n(427262),
+    c = n(835002),
+    u = n(660183),
+    _ = n(799719),
+    E = n(256416);
+  function A(e, t, n) {
+    let i = l.default.getUser(t),
+      r = s.A.getChannel(n),
+      a = o.Ay.getName(r?.guild_id, r?.id, i) ?? d.Ay.getGlobalName(i);
+    switch (e) {
+      case c.OB.IGNORE_SUCCESS:
+        return u.intl.formatToPlainString(u.t["+joqrP"], { username: a });
+      case c.OB.UNIGNORE_SUCCESS:
+        return u.intl.formatToPlainString(u.t.THExKa, { username: a });
+      case c.OB.BLOCK_SUCCESS:
+        return u.intl.formatToPlainString(u.t.XXPrIs, { username: a });
+      case c.OB.UNBLOCK_SUCCESS:
+        return u.intl.formatToPlainString(u.t.uExcGX, { username: a });
+      case c.OB.MUTE_SUCCESS:
+        return u.intl.formatToPlainString(u.t.X4NtYb, { username: a });
+      case c.OB.UNMUTE_SUCCESS:
+        return u.intl.formatToPlainString(u.t.tRaBfY, { username: a });
+      case c.OB.REPORT_SUCCESS:
+        return u.intl.formatToPlainString(u.t.FOptFU, { username: a });
+      case c.OB.TIGGER_PAWTECT_ERROR:
+        return u.intl.string(u.t.c6kn6F);
+      case c.OB.AGE_VERIFICATION_FAE_FAILED:
+        return u.intl.string(_.default["9F2y52"]);
+      case c.OB.AGE_VERIFICATION_ID_FAILED:
+        return u.intl.string(_.default["40UKek"]);
+      case c.OB.AGE_VERIFICATION_UNDERAGE:
+        return u.intl.string(_.default.XBGt7g);
+      case c.OB.TIGGER_PAWTECT_VERIFIED:
+        return u.intl.string(u.t["7nKAXx"]);
+      case c.OB.GENERIC_ERROR:
+        return u.intl.string(u.t.zBpoc7);
+      case c.OB.REPORT_TO_MOD_SUCCESS:
+        return u.intl.string(E.default.iBypeZ);
+      case c.OB.SAFETY_FEEDBACK_SUCCESS:
+        return u.intl.string(u.t.TcFR5k);
+      case c.OB.EXISTING_USER_AGE_GATE_SUCCESS:
+        return u.intl.string(u.t["susqq/"]);
+      case c.OB.AGE_VERIFICATION_METHOD_UNAVAILABLE:
+        return u.intl.string(_.default.vVwFCK);
+      default:
+        return u.intl.string(u.t["+c5xtT"]);
+    }
+  }
+  let h = {
+    showIgnoreSuccessToast(e, t) {
+      (0, i.P)((0, r.o)(A(c.OB.IGNORE_SUCCESS, e, t), a.Ck.SUCCESS));
+    },
+    showUnignoreSuccessToast(e, t) {
+      (0, i.P)((0, r.o)(A(c.OB.UNIGNORE_SUCCESS, e, t), a.Ck.SUCCESS));
+    },
+    showBlockSuccessToast(e, t) {
+      (0, i.P)((0, r.o)(A(c.OB.BLOCK_SUCCESS, e, t), a.Ck.SUCCESS));
+    },
+    showUnblockSuccessToast(e, t) {
+      (0, i.P)((0, r.o)(A(c.OB.UNBLOCK_SUCCESS, e, t), a.Ck.SUCCESS));
+    },
+    showMuteSuccessToast(e, t) {
+      (0, i.P)((0, r.o)(A(c.OB.MUTE_SUCCESS, e, t), a.Ck.SUCCESS));
+    },
+    showUnmuteSuccessToast(e, t) {
+      (0, i.P)((0, r.o)(A(c.OB.UNMUTE_SUCCESS, e, t), a.Ck.SUCCESS));
+    },
+    showReportSuccessToast(e, t) {
+      (0, i.P)((0, r.o)(A(c.OB.REPORT_SUCCESS, e, t), a.Ck.SUCCESS));
+    },
+    showSuccessToast(e) {
+      (0, i.P)((0, r.o)(A(e), a.Ck.SUCCESS));
+    },
+    showFailedToast(e) {
+      (0, i.P)((0, r.o)(A(e ?? c.OB.GENERIC_ERROR), a.Ck.FAILURE));
+    },
+  };
+}

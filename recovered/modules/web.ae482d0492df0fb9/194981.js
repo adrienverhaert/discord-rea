@@ -1,0 +1,248 @@
+/* Recovered shipped factory. Module 194981.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10481405..10484994
+ * Raw property SHA-256: 1f329168baf354756848c9066e2c11af6a1483ca3751514a8b3ed5bd2090b91c
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { D: () => c });
+  var i = n(582128),
+    r = n(66455),
+    a = n(710778),
+    s = n(621466),
+    l = n(451988),
+    o = n(844222);
+  let d = i.createElement("span");
+  function c(e) {
+    var t, n;
+    let c,
+      u,
+      _,
+      E,
+      A,
+      h,
+      f,
+      I,
+      p,
+      T,
+      m,
+      g,
+      {
+        children: S,
+        targetElementRef: N,
+        asContainer: C = !1,
+        containerTag: O = "span",
+        ariaHidden: R = !1,
+        ...L
+      } = e,
+      y =
+        ((c = i.useRef(null)),
+        {
+          triggerRef: i.useCallback(
+            (e) => {
+              ((c.current = e), null != N && (0, a.cZ)(N, e));
+            },
+            [N],
+          ),
+          targetElementRef: c,
+        }),
+      D = i.useId(),
+      { isVisible: v, triggerProps: b } = (function (e) {
+        let {
+            targetElementRef: t,
+            shouldShow: n = !0,
+            delay: r,
+            onTooltipShow: a,
+            onTooltipHide: d,
+            forceOpen: c = !1,
+            overflowOnly: u = !1,
+            hideOnClick: _ = !0,
+          } = e,
+          { keyboardModeEnabled: E } = i.useContext(o.C),
+          A = i.useRef(null),
+          h = t ?? A,
+          [f, I] = i.useState(!1),
+          p = i.useRef(null),
+          T = i.useRef(!1);
+        i.useEffect(
+          () => (
+            (p.current = new l.Ep()),
+            () => {
+              let e = p.current;
+              null != e && e.stop();
+            }
+          ),
+          [],
+        );
+        let m = null != h.current,
+          g = !1 !== n && (f || c) && m && !T.current,
+          S = i.useCallback(() => {
+            if (T.current || (u && null == h.current)) return;
+            if (u && null != h.current) {
+              let e = h.current;
+              if ((0, s.vq)(e, HTMLElement) && e.offsetWidth >= e.scrollWidth) return;
+            }
+            let e = r ?? 0,
+              t = p.current;
+            null != t &&
+              t.start(
+                e,
+                () => {
+                  (I(!0), a?.());
+                },
+                !1,
+              );
+          }, [r, a, u, h]),
+          N = i.useCallback(() => {
+            (p.current?.stop(), I(!1), d?.());
+          }, [d]),
+          C = i.useCallback(() => {
+            _ && N();
+          }, [N, _]),
+          O = i.useCallback(
+            (e) => {
+              (null == h.current && (h.current = e.currentTarget), (T.current = !1), S());
+            },
+            [S, h],
+          ),
+          R = i.useCallback(
+            (e) => {
+              E && (null == h.current && (h.current = e.currentTarget), (T.current = !1), S());
+            },
+            [E, S, h],
+          ),
+          L = i.useCallback(() => {
+            (p.current?.stop(), N());
+          }, [N]),
+          y = i.useMemo(
+            () => ({
+              onMouseEnter: O,
+              onMouseLeave: L,
+              onFocus: R,
+              onBlur: N,
+              onContextMenu: N,
+              onClick: C,
+            }),
+            [O, L, R, N, C],
+          );
+        return (
+          i.useEffect(() => {
+            if (!g) return;
+            let e = h.current?.ownerDocument ?? document;
+            function t(e) {
+              ("Escape" === e.key || "Esc" === e.key) && ((T.current = !0), N());
+            }
+            return (
+              e.addEventListener("keydown", t),
+              () => {
+                e.removeEventListener("keydown", t);
+              }
+            );
+          }, [g, N, h]),
+          i.useEffect(() => {
+            if (!g) return;
+            let e = h.current?.ownerDocument ?? document;
+            function t() {
+              N();
+            }
+            return (
+              e.addEventListener("click", t),
+              () => {
+                e.removeEventListener("click", t);
+              }
+            );
+          }, [g, N, h]),
+          { isVisible: g, triggerProps: y }
+        );
+      })({ targetElementRef: y.targetElementRef, ...L }),
+      M = R ? void 0 : D,
+      P =
+        ((t = i.isValidElement(S) ? S : d),
+        (n = y.triggerRef),
+        (u = i.useCallback(
+          (e) => {
+            null == e ? n(null) : "function" == typeof e.getBoundingClientRect && n(e);
+          },
+          [n],
+        )),
+        (_ = t.props.ref),
+        (E = (0, r.A)(_)),
+        (A = i.useCallback(
+          (e) => {
+            ((0, a.cZ)(E.current, e), u(e));
+          },
+          [E, u],
+        )),
+        (h = i.useRef(_)),
+        i.useEffect(() => {
+          h.current = _;
+        }, [_]),
+        (I = (f = t.props).buttonRef),
+        (p = i.useCallback(
+          (e) => {
+            ((0, a.cZ)(I, e), A(e));
+          },
+          [I, A],
+        )),
+        (T = f.innerRef),
+        (m = i.useCallback(
+          (e) => {
+            ((0, a.cZ)(T, e), A(e));
+          },
+          [T, A],
+        )),
+        (g = {
+          onMouseEnter: (0, a.cy)(f.onMouseEnter, b.onMouseEnter),
+          onMouseLeave: (0, a.cy)(f.onMouseLeave, b.onMouseLeave),
+          onFocus: (0, a.cy)(f.onFocus, b.onFocus),
+          onBlur: (0, a.cy)(f.onBlur, b.onBlur),
+          onContextMenu: (0, a.cy)(f.onContextMenu, b.onContextMenu),
+          onClick: (0, a.cy)(f.onClick, b.onClick),
+        }),
+        null != M && "" !== M && (g["aria-describedby"] = (0, a.iO)(f["aria-describedby"], M)),
+        "string" == typeof t.type
+          ? (g.ref = A)
+          : "buttonRef" in t.props
+            ? ((g.buttonRef = p), (g.ref = A))
+            : "innerRef" in t.props
+              ? ((g.innerRef = m), (g.ref = A))
+              : ((g.ref = A), (g.innerRef = A)),
+        i.cloneElement(t, g)),
+      U = (function (e, t, n, i, r, s, l) {
+        if (!e) return null;
+        let o = s
+          ? n
+          : {
+              ...n,
+              onFocus: (0, a.cy)(n.onFocus, (e) => {
+                let t = e.target;
+                if (null != t) {
+                  let e = (0, a.iO)(t.getAttribute("aria-describedby") ?? void 0, r);
+                  t.setAttribute("aria-describedby", e);
+                }
+              }),
+              onBlur: (0, a.cy)(n.onBlur, (e) => {
+                let t = e.target;
+                if (null != t) {
+                  let e = t.getAttribute("aria-describedby");
+                  if (null != e) {
+                    let n = e.split(" ").filter((e) => e !== r);
+                    n.length > 0
+                      ? t.setAttribute("aria-describedby", n.join(" "))
+                      : t.removeAttribute("aria-describedby");
+                  }
+                }
+              }),
+            };
+        return (0, a.EE)({ tag: l, children: t, triggerHandlers: o, triggerRef: i });
+      })(C, S, b, y.triggerRef, D, R, O);
+    return {
+      tooltipId: D,
+      isVisible: v,
+      targetElementRef: y.targetElementRef,
+      trigger: U ?? P,
+      describedById: M,
+    };
+  }
+}

@@ -1,0 +1,60 @@
+/* Recovered shipped factory. Module 558213.
+ * Source: recovered/web/assets/bcfc13c602daabd8.js
+ * UTF-16 property offsets: 7384..9265
+ * Raw property SHA-256: fb5cf1576fdf2ea794e95fe1473ebb4bc711cb4a5303a78d702d0bdf49746c42
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (t, e, I) {
+  (I.r(e),
+    I.d(e, {
+      INVITE_OPTIONS_100_TIMES: () => N,
+      INVITE_OPTIONS_10_TIMES: () => T,
+      INVITE_OPTIONS_12_HOURS: () => P,
+      INVITE_OPTIONS_14_DAYS: () => m,
+      INVITE_OPTIONS_1_DAY: () => f,
+      INVITE_OPTIONS_1_HOUR: () => s,
+      INVITE_OPTIONS_25_TIMES: () => O,
+      INVITE_OPTIONS_30_DAYS: () => V,
+      INVITE_OPTIONS_30_MINUTES: () => S,
+      INVITE_OPTIONS_50_TIMES: () => r,
+      INVITE_OPTIONS_5_TIMES: () => u,
+      INVITE_OPTIONS_60_DAYS: () => g,
+      INVITE_OPTIONS_6_HOURS: () => E,
+      INVITE_OPTIONS_7_DAYS: () => d,
+      INVITE_OPTIONS_8_HOURS: () => o,
+      INVITE_OPTIONS_FOREVER: () => D,
+      INVITE_OPTIONS_ONCE: () => _,
+      INVITE_OPTIONS_UNLIMITED: () => l,
+      MAX_AGE_OPTIONS: () => A,
+      MAX_USES_OPTIONS: () => a,
+    }));
+  var n = I(660183);
+  function i(t, e) {
+    return {
+      value: t,
+      get label() {
+        return e();
+      },
+    };
+  }
+  let l = i(0, () => n.intl.formatToPlainString(n.t["r/IcuP"], { maxUses: 0 })),
+    _ = i(1, () => n.intl.formatToPlainString(n.t["r/IcuP"], { maxUses: 1 })),
+    u = i(5, () => n.intl.formatToPlainString(n.t["r/IcuP"], { maxUses: 5 })),
+    T = i(10, () => n.intl.formatToPlainString(n.t["r/IcuP"], { maxUses: 10 })),
+    O = i(25, () => n.intl.formatToPlainString(n.t["r/IcuP"], { maxUses: 25 })),
+    r = i(50, () => n.intl.formatToPlainString(n.t["r/IcuP"], { maxUses: 50 })),
+    N = i(100, () => n.intl.formatToPlainString(n.t["r/IcuP"], { maxUses: 100 })),
+    a = [l, _, u, T, O, r, N],
+    S = i(1800, () => n.intl.formatToPlainString(n.t.iXLF9W, { minutes: 30 })),
+    s = i(3600, () => n.intl.formatToPlainString(n.t.xCjYxK, { hours: 1 })),
+    E = i(21600, () => n.intl.formatToPlainString(n.t.xCjYxK, { hours: 6 })),
+    o = i(28800, () => n.intl.formatToPlainString(n.t.xCjYxK, { hours: 8 })),
+    P = i(43200, () => n.intl.formatToPlainString(n.t.xCjYxK, { hours: 12 })),
+    f = i(86400, () => n.intl.formatToPlainString(n.t["k2UNz+"], { days: 1 })),
+    d = i(604800, () => n.intl.formatToPlainString(n.t["k2UNz+"], { days: 7 })),
+    m = i(1209600, () => n.intl.formatToPlainString(n.t["k2UNz+"], { days: 14 })),
+    V = i(2592e3, () => n.intl.formatToPlainString(n.t["k2UNz+"], { days: 30 })),
+    g = i(5184e3, () => n.intl.formatToPlainString(n.t["k2UNz+"], { days: 60 })),
+    D = i(0, () => n.intl.string(n.t.PqEzn8)),
+    A = [S, s, E, P, f, d, m, V, g, D];
+}

@@ -1,0 +1,93 @@
+/* Recovered shipped factory. Module 403918.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 4135653..4139012
+ * Raw property SHA-256: e64194d4abcff9f5c9671aad1f927093cb69fd2d8439f9f57d83ae481b1fbb66
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.d(t, { P2: () => c, SX: () => o, W_: () => d, hp: () => s, yt: () => l }), n(427262));
+  var i,
+    r = n(818348),
+    a = n(660183);
+  let s = 128,
+    l = Object.freeze({
+      MINUTES_30: 18e5,
+      HOURS_1: 36e5,
+      HOURS_4: 144e5,
+      TODAY: "TODAY",
+      DONT_CLEAR: "DONT_CLEAR",
+    });
+  (r.cl.ONLINE, r.cl.IDLE, r.cl.DND, r.cl.INVISIBLE);
+  let o = [l.TODAY, l.HOURS_4, l.HOURS_1, l.MINUTES_30, l.DONT_CLEAR];
+  var d =
+    (((i = {}).PLAYING = "PLAYING"),
+    (i.LISTENING_TO = "LISTENING_TO"),
+    (i.WATCHING = "WATCHING"),
+    (i.CURRENT_OBSESSION = "CURRENT_OBSESSION"),
+    (i.SHOWER_THOUGHT = "SHOWER_THOUGHT"),
+    (i.TODAY_I_LEARNED = "TODAY_I_LEARNED"),
+    (i.HOT_TAKE = "HOT_TAKE"),
+    (i.DAD_JOKE = "DAD_JOKE"),
+    (i.EMOJI_DAY = "EMOJI_DAY"),
+    (i.USELESS_TALENT = "USELESS_TALENT"),
+    (i.VIDEO_GAME_ITEM = "VIDEO_GAME_ITEM"),
+    (i.READING = "READING"),
+    (i.SONG_STUCK = "SONG_STUCK"),
+    (i.MOST_USED_EMOJI = "MOST_USED_EMOJI"),
+    (i.BEST_FOOD = "BEST_FOOD"),
+    (i.FICTIONAL_WORLD = "FICTIONAL_WORLD"),
+    (i.USERNAME_ORIGIN = "USERNAME_ORIGIN"),
+    (i.THEME_SONG = "THEME_SONG"),
+    (i.FAVORITE_COLLECTIBLE = "FAVORITE_COLLECTIBLE"),
+    (i.GAME_MECHANIC = "GAME_MECHANIC"),
+    (i.NPC_COMPANION = "NPC_COMPANION"),
+    (i.FOOD_CRAVING = "FOOD_CRAVING"),
+    (i.MYTHICAL_PET = "MYTHICAL_PET"),
+    (i.LATEST_HOBBY = "LATEST_HOBBY"),
+    (i.FAVORITE_ANIME = "FAVORITE_ANIME"),
+    (i.RANKED_UP = "RANKED_UP"),
+    (i.CHARACTER_CLASS = "CHARACTER_CLASS"),
+    (i.HIGH_SCORE = "HIGH_SCORE"),
+    (i.FINISHED_PLAYING = "FINISHED_PLAYING"),
+    (i.FINISHED_READING = "FINISHED_READING"),
+    (i.CANT_WAIT = "CANT_WAIT"),
+    (i.ADD_STATUS = "ADD_STATUS"),
+    (i.WHATS_ON_YOUR_MIND = "WHATS_ON_YOUR_MIND"),
+    i);
+  let c = [
+    { value: "PLAYING", label: () => a.intl.string(a.t.r5TNmx) },
+    { value: "LISTENING_TO", label: () => a.intl.string(a.t["ylzor/"]) },
+    { value: "WATCHING", label: () => a.intl.string(a.t.pzz9iP) },
+    { value: "CURRENT_OBSESSION", label: () => a.intl.string(a.t.xaCthD) },
+    { value: "SHOWER_THOUGHT", label: () => a.intl.string(a.t.Wf8fxL) },
+    { value: "TODAY_I_LEARNED", label: () => a.intl.string(a.t.pycKiy) },
+    { value: "HOT_TAKE", label: () => a.intl.string(a.t.l3pZci) },
+    { value: "DAD_JOKE", label: () => a.intl.string(a.t["3XVZ0v"]) },
+    { value: "EMOJI_DAY", label: () => a.intl.string(a.t["4U+EJP"]) },
+    { value: "USELESS_TALENT", label: () => a.intl.string(a.t["Z3Vn/X"]) },
+    { value: "VIDEO_GAME_ITEM", label: () => a.intl.string(a.t.PiepBk) },
+    { value: "READING", label: () => a.intl.string(a.t.pYQRnN) },
+    { value: "SONG_STUCK", label: () => a.intl.string(a.t.S7UJ0u) },
+    { value: "MOST_USED_EMOJI", label: () => a.intl.string(a.t["1TlHwx"]) },
+    { value: "BEST_FOOD", label: () => a.intl.string(a.t.ZPjuez) },
+    { value: "FICTIONAL_WORLD", label: () => a.intl.string(a.t.lyOeXL) },
+    { value: "USERNAME_ORIGIN", label: () => a.intl.string(a.t.l6Yb3T) },
+    { value: "THEME_SONG", label: () => a.intl.string(a.t.Vok4QU) },
+    { value: "FAVORITE_COLLECTIBLE", label: () => a.intl.string(a.t.T24umy) },
+    { value: "GAME_MECHANIC", label: () => a.intl.string(a.t.kzToEh) },
+    { value: "NPC_COMPANION", label: () => a.intl.string(a.t["/Zm5VV"]) },
+    { value: "FOOD_CRAVING", label: () => a.intl.string(a.t.ujnXus) },
+    { value: "MYTHICAL_PET", label: () => a.intl.string(a.t["45r7ue"]) },
+    { value: "LATEST_HOBBY", label: () => a.intl.string(a.t.SluNa8) },
+    { value: "FAVORITE_ANIME", label: () => a.intl.string(a.t.R1f9RT) },
+    { value: "RANKED_UP", label: () => a.intl.string(a.t.nXJgjn) },
+    { value: "CHARACTER_CLASS", label: () => a.intl.string(a.t.SWVxPM) },
+    { value: "HIGH_SCORE", label: () => a.intl.string(a.t.gbUeX7) },
+    { value: "FINISHED_PLAYING", label: () => a.intl.string(a.t.bIrdLj) },
+    { value: "FINISHED_READING", label: () => a.intl.string(a.t["tcQn+J"]) },
+    { value: "CANT_WAIT", label: () => a.intl.string(a.t["40gTjw"]) },
+    { value: "ADD_STATUS", label: () => a.intl.string(a.t.Vq4UmS) },
+    { value: "WHATS_ON_YOUR_MIND", label: () => a.intl.string(a.t.xod367) },
+  ];
+}

@@ -1,0 +1,59 @@
+/* Recovered shipped factory. Module 447991.
+ * Source: recovered/web/assets/562d6a18545b1657.js
+ * UTF-16 property offsets: 94..949
+ * Raw property SHA-256: 8bde4cf092dd57a0e3481edf73fd1cdc04e6b649fe69c31df8b67076f2ea3dbb
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, r, s) {
+  s.d(r, { A: () => c });
+  var t = s(477900),
+    a = s(582128),
+    i = s(876230),
+    n = s(268218);
+  let l = a.lazy(() =>
+      (0, n.sq)({
+        createPromise: () =>
+          Promise.all([s.e("216870"), s.e("390098"), s.e("334127")]).then(s.bind(s, 266546)),
+        webpackId: 266546,
+        name: "DiscordVideoPlayer",
+      }),
+    ),
+    u = { width: "100%", height: "100%", objectFit: "contain" };
+  function c(e) {
+    let { onPlay: r, autoplay: s, playable: n = !0, ...c } = e,
+      o = a.useRef(!1),
+      d = a.useRef(!1),
+      p = a.useCallback(
+        (e, s) => {
+          o.current && ((o.current = !1), r?.(d.current, e, s));
+        },
+        [r],
+      ),
+      h = a.useCallback(
+        (e, r) => {
+          e === i.Q6.PLAYING
+            ? r !== i.KB.BUFFERING_RECOVERY && ((o.current = !0), (d.current = r !== i.KB.USER))
+            : p(0, 0);
+        },
+        [p],
+      ),
+      b = a.useCallback(
+        (e, r) => {
+          p(1e3 * e, Number.isFinite(r) ? 1e3 * r : 0);
+        },
+        [p],
+      ),
+      k = null != c.poster ? (0, t.jsx)("img", { src: c.poster, alt: "", style: u }) : null;
+    return n
+      ? (0, t.jsx)(a.Suspense, {
+          fallback: k,
+          children: (0, t.jsx)(l, {
+            ...c,
+            autoplay: s,
+            onPlayerStateChange: h,
+            onProgressUpdate: b,
+          }),
+        })
+      : k;
+  }
+}

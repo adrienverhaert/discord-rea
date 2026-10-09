@@ -1,0 +1,31 @@
+/* Recovered shipped factory. Module 833414.
+ * Source: recovered/web/assets/f0dd5afd5be9540d.js
+ * UTF-16 property offsets: 95..664
+ * Raw property SHA-256: 7621860df2f12d7c805ef41b2c03d5967f6fd5b51e9264a66acf634e0ae69e62
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, _, i) {
+  e.exports = {
+    _O: "inviteSettingsInviteRow__1de14",
+    wx: "header__1de14",
+    Hu: "subhead__1de14",
+    o1: "actions__1de14",
+    zN: "headerDivider__1de14",
+    eb: "revokeInvite__1de14",
+    Qq: "text__1de14",
+    Gg: "inviteDisabledRow__1de14",
+    TJ: "inviteDisabledTip__1de14",
+    N5: "inviteDisabledContainer__1de14",
+    sA: "countdownColumn__1de14",
+    Rg: "inviteCode__1de14",
+    AL: "inviteSourceContainer__1de14",
+    _z: "linkedChannelJoinSource__1de14",
+    PD: "linkedChannelJoinSourceText__1de14",
+    qW: "countdown__1de14",
+    r9: "uses__1de14",
+    D2: "discriminator__1de14",
+    my: "avatar__1de14",
+    XH: "bypass__1de14",
+    G: "infoIcon__1de14",
+  };
+}

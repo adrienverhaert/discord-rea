@@ -1,0 +1,123 @@
+/* Recovered shipped factory. Module 818023.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 2589100..2591397
+ * Raw property SHA-256: 60ed4a4f26116995e8727d7f28b6fae000d2589435c19216f826943a6fe048f4
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    bN: () => b,
+    iu: () => S,
+    D4: () => h,
+    Ig: () => _,
+    M1: () => x,
+    AM: () => m,
+    W9: () => L,
+    xW: () => C,
+    dm: () => k,
+    N7: () => y,
+    gq: () => I,
+    $W: () => A,
+    eK: () => T,
+    I4: () => p,
+    yz: () => E,
+    qG: () => N,
+    CS: () => R,
+    Gl: () => P,
+    DY: () => g,
+    aX: () => v,
+    qA: () => f,
+    NW: () => u,
+    i6: () => G,
+    mO: () => O,
+    lk: () => U,
+    H5: () => w,
+    _J: () => D,
+  });
+  var i,
+    r,
+    a,
+    s,
+    l,
+    o,
+    d = n(155718),
+    c = n(652215);
+  let u = "1070087967294631976",
+    _ = 160,
+    E = /^https?:\/\/(?:www\.)?(twitch\.tv\/(.+)|youtube.com\/watch\?v=)/,
+    A = "438122941302046720",
+    h = "1417273808645259344",
+    f = "773336526917861400",
+    I = "880218394199220334",
+    p = "755827207812677713",
+    T = "1234546995360694434",
+    m = "1214629548377768066",
+    g = "https://discord.com/blog/server-activities-games-voice-watch-together",
+    S = { SMALL: 64, LARGE: 160 },
+    N = ["in_development", "activities_team", "employee_release"],
+    C = [
+      "1037680572660727838",
+      "235088799074484224",
+      "1007373802981822582",
+      "1067803140071620628",
+      "1194351737264406548",
+      "1245041113882955918",
+      "1245040907732910201",
+      "1245040436427489471",
+      "1208090049871351890",
+      "1235205910863806484",
+      "1227719606223765687",
+    ],
+    O = ["1247266306231898122", "1257458870390099989", "1276239071764680926"];
+  var R =
+      (((i = {}).ADS = "ADS"),
+      (i.FAILED_LOAD = "FAILED_LOAD"),
+      (i.LAGGING = "LAGGING"),
+      (i.CONFUSING = "CONFUSING"),
+      (i.NOT_FUN = "NOT_FUN"),
+      (i.OTHER = "OTHER"),
+      i),
+    L = (((r = {})[(r.PLAY = 0)] = "PLAY"), (r[(r.SPECTATE = 1)] = "SPECTATE"), r),
+    y =
+      (((a = {})[(a.UNLOCKED = 1)] = "UNLOCKED"),
+      (a[(a.PORTRAIT = 2)] = "PORTRAIT"),
+      (a[(a.LANDSCAPE = 3)] = "LANDSCAPE"),
+      a);
+  let D = new Set(["755600276941176913", "880218832743055411", "1050941315912835122", I]);
+  var v =
+      (((s = {})[(s.UNHANDLED = -1)] = "UNHANDLED"),
+      (s[(s.PORTRAIT = 0)] = "PORTRAIT"),
+      (s[(s.LANDSCAPE = 1)] = "LANDSCAPE"),
+      s),
+    b =
+      (((l = {})[(l.FOCUSED = 0)] = "FOCUSED"),
+      (l[(l.PIP = 1)] = "PIP"),
+      (l[(l.GRID = 2)] = "GRID"),
+      l);
+  let M = {
+      label_type: d.Hr.NONE,
+      release_phase: "",
+      label_from: null,
+      label_until: null,
+      omit_badge_from_surfaces: [],
+    },
+    P = {
+      application_id: "",
+      requires_age_gate: !1,
+      legacy_responsive_aspect_ratio: !1,
+      default_orientation_lock_state: 1,
+      tablet_default_orientation_lock_state: 1,
+      supported_platforms: [d.Yl.WEB],
+      client_platform_config: { [d.Yl.WEB]: M, [d.Yl.IOS]: M, [d.Yl.ANDROID]: M },
+      has_csp_exception: !1,
+      displays_advertisements: !1,
+      blocked_locales: [],
+      supported_locales: [],
+    },
+    U = [c.rbe.GUILD_TEXT, c.rbe.DM, c.rbe.GROUP_DM, c.rbe.GUILD_SPACE],
+    w = [...U, c.rbe.GUILD_VOICE],
+    G = "https://support-dev.discord.com/hc/en-us/articles/21692628851351-Private-Activity-Safety";
+  var x = (((o = {}).NORMAL = "normal"), (o.FULL_SCREEN = "full-screen"), o);
+  let k = 216e5;
+}

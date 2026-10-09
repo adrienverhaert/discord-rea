@@ -1,0 +1,91 @@
+/* Recovered shipped factory. Module 623373.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 3874066..3875430
+ * Raw property SHA-256: af57554f1bb3765bc097be04297bbdf83acb7537af3b56fb10b1758d8e91a512
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    $K: () => l,
+    Ab: () => c,
+    B1: () => E,
+    CW: () => s,
+    JQ: () => u,
+    Vx: () => o,
+    YW: () => f,
+    ex: () => _,
+    go: () => d,
+    rb: () => h,
+    v8: () => A,
+  });
+  var i = n(575593),
+    r = n(203632),
+    a = n(652215);
+  function s(e) {
+    let { product: t, hasShopDiscount: n } = e;
+    return (
+      (t.prices[n ? a.lid.PREMIUM_TIER_2 : a.lid.DEFAULT]?.countryPrices?.prices ?? []).find(
+        (e) => e.currency === a.Yri.DISCORD_ORB,
+      ) ?? null
+    );
+  }
+  function l(e) {
+    let { product: t, hasShopDiscount: n } = e;
+    return (
+      (t.prices[n ? a.lid.PREMIUM_TIER_2 : a.lid.DEFAULT]?.countryPrices?.prices ?? []).find(
+        (e) => e.currency !== a.Yri.DISCORD_ORB,
+      ) ?? null
+    );
+  }
+  function o(e) {
+    return null != s({ product: e, hasShopDiscount: !1 });
+  }
+  function d(e) {
+    return null != l({ product: e, hasShopDiscount: !1 });
+  }
+  function c(e) {
+    if (null == e) return !1;
+    let t = o(e),
+      n = d(e);
+    return t && !n;
+  }
+  function u(e) {
+    return (
+      null != e &&
+      f(e) === i.R.PROFILE_EFFECT &&
+      e.items.some(
+        (e) =>
+          (0, r.C3)(e) &&
+          e.effects.some((e) => null != e.randomizedSources && e.randomizedSources.length > 0),
+      )
+    );
+  }
+  function _(e) {
+    return e.filter((e) => {
+      let t = o(e),
+        n = d(e);
+      return t && n;
+    });
+  }
+  function E(e) {
+    return e.type === i.R.VARIANTS_GROUP && null != e.variants && 0 !== e.variants.length;
+  }
+  function A(e) {
+    return E(e) ? e.variants.map((e) => e.skuId) : [e.skuId];
+  }
+  function h(e, t) {
+    return E(e) && null != t ? (e.variants[t] ?? e) : e;
+  }
+  function f(e) {
+    if (null == e) return null;
+    if (e.type === i.R.VARIANTS_GROUP) {
+      if (null == e.variants || 0 === e.variants.length) return null;
+      let t = e.variants[0];
+      if (null == t) return null;
+      let [n] = t.items;
+      return n.type;
+    }
+    return e.type;
+  }
+}

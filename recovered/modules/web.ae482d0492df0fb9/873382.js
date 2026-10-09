@@ -1,0 +1,49 @@
+/* Recovered shipped factory. Module 873382.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 2260265..2262547
+ * Raw property SHA-256: b3825a251b9f577df57e3486296d890fbda26955f782af8945bf03e4cd3dfdc0
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { v: () => i });
+  let i = {
+    bg: async () =>
+      (await Promise.all([n.e("986042"), n.e("385047")]).then(n.bind(n, 827146))).default,
+    cs: async () => (await n.e("276293").then(n.bind(n, 546404))).default,
+    da: async () => (await n.e("318197").then(n.bind(n, 970644))).default,
+    de: async () => (await n.e("317985").then(n.bind(n, 568568))).default,
+    el: async () => (await n.e("693769").then(n.bind(n, 574448))).default,
+    "en-GB": async () => (await n.e("239658").then(n.bind(n, 823089))).default,
+    "en-US": async () => (await Promise.resolve().then(n.bind(n, 874373))).default,
+    "es-ES": async () => (await n.e("488844").then(n.bind(n, 244679))).default,
+    "es-419": async () => (await n.e("488844").then(n.bind(n, 244679))).default,
+    fi: async () => (await n.e("904855").then(n.bind(n, 533898))).default,
+    fr: async () => (await n.e("302433").then(n.bind(n, 715192))).default,
+    hr: async () => (await n.e("343888").then(n.bind(n, 991059))).default,
+    hu: async () => (await n.e("223710").then(n.bind(n, 331501))).default,
+    it: async () =>
+      (await Promise.all([n.e("986042"), n.e("246470")]).then(n.bind(n, 531621))).default,
+    ja: async () => (await n.e("529311").then(n.bind(n, 216226))).default,
+    ko: async () => (await n.e("724276").then(n.bind(n, 752415))).default,
+    lt: async () => (await n.e("653435").then(n.bind(n, 169846))).default,
+    nl: async () => (await n.e("376981").then(n.bind(n, 317108))).default,
+    no: async () => (await n.e("494549").then(n.bind(n, 647476))).default,
+    pl: async () =>
+      (await Promise.all([n.e("986042"), n.e("166134")]).then(n.bind(n, 46613))).default,
+    "pt-BR": async () => (await n.e("193261").then(n.bind(n, 955068))).default,
+    ro: async () => (await n.e("391139").then(n.bind(n, 781806))).default,
+    ru: async () =>
+      (await Promise.all([n.e("986042"), n.e("237972")]).then(n.bind(n, 872831))).default,
+    "sv-SE": async () => (await n.e("26731").then(n.bind(n, 548966))).default,
+    th: async () => (await n.e("621417").then(n.bind(n, 227344))).default,
+    tr: async () => (await n.e("424979").then(n.bind(n, 459742))).default,
+    uk: async () =>
+      (await Promise.all([n.e("986042"), n.e("736350")]).then(n.bind(n, 143149))).default,
+    vi: async () => (await n.e("305987").then(n.bind(n, 53326))).default,
+    "zh-CN": async () =>
+      (await Promise.all([n.e("986042"), n.e("978475")]).then(n.bind(n, 971750))).default,
+    "zh-TW": async () => (await n.e("19567").then(n.bind(n, 696754))).default,
+    hi: async () => (await n.e("842253").then(n.bind(n, 487132))).default,
+  };
+}

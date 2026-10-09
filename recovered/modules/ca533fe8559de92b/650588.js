@@ -1,0 +1,116 @@
+/* Recovered shipped factory. Module 650588.
+ * Source: recovered/web/assets/ca533fe8559de92b.js
+ * UTF-16 property offsets: 421698..423341
+ * Raw property SHA-256: 0a8e8fc7b8c41973a138b57b2e1aa12c8c209fd7aaea5ad7ed862ab8b5d78264
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { A: () => E });
+  var l = n(477900),
+    i = n(582128),
+    r = n(503698),
+    a = n.n(r),
+    s = n(661531),
+    o = n(834730),
+    u = n(922016),
+    c = n(305866),
+    d = n(939249),
+    p = n(7807),
+    m = n(807348),
+    h = n(511558),
+    C = n(660183),
+    f = n(649028);
+  let S = [54, 8, 8, 8];
+  function E(e) {
+    let { onSelect: t, sound: n } = e,
+      [r, E] = i.useState(!1),
+      y = i.useRef(null),
+      A = a()(f.Qq, f.Ow);
+    function I(e) {
+      (E(!1), t?.(e));
+    }
+    function g(e) {
+      return (0, l.jsxs)("div", {
+        className: f.Ry,
+        children: [
+          (0, l.jsxs)("div", {
+            className: f.__invalid_customGiftHeaderText,
+            children: [
+              (0, l.jsx)(o.E, { variant: "text-md/bold", children: C.intl.string(C.t.aThJz8) }),
+              (0, l.jsx)(o.E, { variant: "text-sm/normal", children: C.intl.string(C.t.stGFA3) }),
+            ],
+          }),
+          (0, l.jsx)("div", { className: f.$H, children: e }),
+        ],
+      });
+    }
+    return (0, l.jsx)(u.Y, {
+      targetElementRef: y,
+      shouldShow: r,
+      position: "bottom",
+      align: "left",
+      onRequestClose: () => E(!1),
+      renderPopout: (e) => {
+        let { closePopout: t } = e;
+        return (0, l.jsx)(c.l, {
+          children: (0, l.jsx)(h.A, {
+            suppressPlaySound: !0,
+            shouldShowLockedSounds: !1,
+            guildId: null,
+            channel: null,
+            onClose: t,
+            onSelect: I,
+            analyticsSource: "gift soundboard",
+            soundButtonOverlay: m.If.ADD,
+            listPadding: S,
+            renderHeader: g,
+            defaultSoundsOnly: !0,
+          }),
+        });
+      },
+      children: () =>
+        (0, l.jsx)(d.D, {
+          className: a()(f.kL, f.Ow),
+          onClick: () => E(!0),
+          innerRef: y,
+          children:
+            null == n
+              ? (0, l.jsxs)("div", {
+                  className: f.hQ,
+                  children: [
+                    (0, l.jsx)(p.J, {
+                      size: "custom",
+                      color: s.A.colors.ICON_STRONG,
+                      className: f.tc,
+                      width: 14,
+                      height: 14,
+                    }),
+                    (0, l.jsx)(o.E, {
+                      className: A,
+                      variant: "text-sm/semibold",
+                      lineClamp: 1,
+                      children: C.intl.string(C.t.aThJz8),
+                    }),
+                  ],
+                })
+              : (0, l.jsxs)("div", {
+                  className: f.hQ,
+                  children: [
+                    (0, l.jsx)(o.E, {
+                      className: A,
+                      variant: "text-sm/semibold",
+                      lineClamp: 1,
+                      children: n.emojiName,
+                    }),
+                    (0, l.jsx)(o.E, {
+                      className: A,
+                      variant: "text-sm/semibold",
+                      lineClamp: 1,
+                      children: n.name,
+                    }),
+                  ],
+                }),
+        }),
+    });
+  }
+}

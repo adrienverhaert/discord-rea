@@ -1,0 +1,106 @@
+/* Recovered shipped factory. Module 315710.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 9907116..9909025
+ * Raw property SHA-256: 32362db422bba5cc1f19e8b45700542779a67daaf334eba54f497aeb653e32f8
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { Ok: () => E, se: () => c, tj: () => _ });
+  var i = n(582128),
+    r = n(557361);
+  let a = "u" < typeof document ? void 0 : document,
+    s = null == a ? () => void 0 : r.Ay,
+    l = null == a ? i.useEffect : i.useLayoutEffect,
+    o = 0,
+    d = new Set();
+  function c() {
+    return r.rx.isActive();
+  }
+  let u = { current: !0 };
+  function _(e) {
+    var t, n, r;
+    let c,
+      _,
+      E,
+      A,
+      h,
+      f = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+    ((t = f.returnRef),
+      (n = !0 === f.disable),
+      (r = !0 === f.disableReturn),
+      (c = i.useRef(a?.activeElement)),
+      (_ = i.useRef(null)),
+      (E = i.useRef(t)),
+      (A = i.useRef(n)),
+      (h = i.useRef(r)),
+      l(() => {
+        (null != e.current && (_.current = e.current),
+          (E.current = t),
+          (A.current = n),
+          (h.current = r));
+      }),
+      l(() => {
+        let e =
+          null == _.current ? null : { containerElementRef: _, disabledRef: A, sequence: o++ };
+        return (
+          null != e && d.add(e),
+          () => {
+            if (!A.current && !h.current) {
+              let t = E.current?.current ?? null;
+              if (null != (t ?? c.current)) {
+                let n = !0,
+                  i = [],
+                  r = _.current?.ownerDocument ?? a,
+                  s = r?.activeElement;
+                i =
+                  null != s && null != e
+                    ? Array.from(d).filter((t) => {
+                        let { containerElementRef: n, disabledRef: i, sequence: r } = t;
+                        return !i.current && r > e.sequence && n.current?.contains(s) === !0;
+                      })
+                    : [];
+                let l = null == s || s === r?.body,
+                  o = null != s && _.current?.contains(s) === !0;
+                if (null == t) {
+                  let e = null == _.current;
+                  n = l || o || i.length > 0 || e;
+                }
+                n &&
+                  requestAnimationFrame(() => {
+                    let t = E.current?.current ?? null,
+                      n = t?.isConnected ? t : c.current,
+                      r = _.current?.ownerDocument ?? a,
+                      s = r?.activeElement,
+                      u = l || o;
+                    Array.from(d).some((t) => {
+                      let i, r;
+                      return (
+                        t !== e &&
+                        null != s &&
+                        t.containerElementRef.current?.contains(s) === !0 &&
+                        ((i = null != e && t.sequence < e.sequence),
+                        (r = null != n && t.containerElementRef.current?.contains(n) === !0),
+                        !u || !i || !r)
+                      );
+                    }) ||
+                      null == n ||
+                      !n.isConnected ||
+                      i.some((e) => d.has(e) && !e.disabledRef.current) ||
+                      (t?.isConnected ? n.focus() : n.focus({ preventScroll: !0 }));
+                  });
+              }
+            }
+            null != e && d.delete(e);
+          }
+        );
+      }, []));
+    let I = i.useMemo(() => f.attachTo ?? e.current?.ownerDocument ?? a, [f.attachTo, e]),
+      p = i.useRef(null);
+    return s(f.disable ? p : e, { disable: f.disable, disableReturnRef: u, attachTo: I });
+  }
+  function E(e) {
+    let { disableReturn: t } = e;
+    return (_(e.containerRef, { disableReturn: t }), e.children);
+  }
+}

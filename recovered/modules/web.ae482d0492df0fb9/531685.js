@@ -1,0 +1,116 @@
+/* Recovered shipped factory. Module 531685.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 9403555..9405843
+ * Raw property SHA-256: 37ae5c62b8b7f6f4597b914667e057f81f6351a04c2e5aebd58c7e733efff9e7
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => A });
+  var i = n(284009),
+    r = n.n(i),
+    a = n(17928),
+    s = n(73153),
+    l = n(365971);
+  let o = null,
+    d = new Map(),
+    c = new Set();
+  function u(e) {
+    let t = d.get(e);
+    return null == t
+      ? (c.has(e) || console.warn("Window state not initialized", e),
+        { isElementFullscreen: !1, focused: !1, windowSize: { width: 0, height: 0 }, visible: !1 })
+      : t;
+  }
+  class _ extends a.Ay.Store {
+    static displayName = "WindowStore";
+    isFocused() {
+      let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : (0, l.Xg)();
+      return u(e).focused;
+    }
+    isAppFocused() {
+      return null != this.getFocusedWindowId();
+    }
+    isVisible() {
+      let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : (0, l.Xg)();
+      return u(e).visible;
+    }
+    getFocusedWindowId() {
+      let e = null;
+      return (
+        d.forEach((t, n) => {
+          t.focused && (e = n);
+        }),
+        e
+      );
+    }
+    getLastFocusedWindowId() {
+      return o;
+    }
+    isElementFullScreen() {
+      let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : (0, l.Xg)();
+      return u(e).isElementFullscreen;
+    }
+    windowSize() {
+      let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : (0, l.Xg)();
+      return u(e).windowSize;
+    }
+  }
+  let E = new _(s.h, {
+    WINDOW_INIT: function (e) {
+      r()(!d.has(e.windowId), "Window initialized multiple times");
+      let { width: t, height: n, isElementFullscreen: i, focused: a, visible: s } = e;
+      return (
+        d.set(e.windowId, {
+          windowSize: { width: t, height: n },
+          isElementFullscreen: i,
+          focused: a,
+          visible: s,
+        }),
+        a && (o = e.windowId),
+        !0
+      );
+    },
+    WINDOW_FULLSCREEN_CHANGE: function (e) {
+      let t = u(e.windowId);
+      return (
+        t.isElementFullscreen !== e.isElementFullscreen &&
+        (d.set(e.windowId, { ...t, isElementFullscreen: e.isElementFullscreen }), !0)
+      );
+    },
+    WINDOW_FOCUS: function (e) {
+      let t = u(e.windowId);
+      return (
+        t.focused !== e.focused &&
+        (e.focused && (o = e.windowId), d.set(e.windowId, { ...t, focused: e.focused }), !0)
+      );
+    },
+    WINDOW_RESIZED: function (e) {
+      let t = u(e.windowId);
+      return (
+        (t.windowSize.width !== e.width || t.windowSize.height !== e.height) &&
+        (d.set(e.windowId, { ...t, windowSize: { width: e.width, height: e.height } }), !0)
+      );
+    },
+    WINDOW_UNLOAD: function (e) {
+      return (c.add(e.windowId), d.delete(e.windowId), o === e.windowId && (o = null), !0);
+    },
+    WINDOW_VISIBILITY_CHANGE: function (e) {
+      let t = u(e.windowId);
+      return t.visible !== e.visible && (d.set(e.windowId, { ...t, visible: e.visible }), !0);
+    },
+  });
+  Promise.resolve()
+    .then(n.bind(n, 174459))
+    .then((e) => {
+      let { addExtraAnalyticsDecorator: t } = e;
+      t((e) => {
+        {
+          e.client_app_state = E.isAppFocused() ? "focused" : "unfocused";
+          let t = E.windowSize();
+          ((e.client_viewport_width = t.width), (e.client_viewport_height = t.height));
+        }
+      });
+    });
+  let A = E;
+}

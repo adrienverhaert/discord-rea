@@ -1,0 +1,85 @@
+/* Recovered shipped factory. Module 42119.
+ * Source: recovered/web/assets/f999da23ba3b166d.js
+ * UTF-16 property offsets: 783..2051
+ * Raw property SHA-256: 4c04b05e9d4d17d244dacee9841b38d05cf7ca42224dc1ac38a57bc71760fcac
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, r) {
+  r.d(t, { IK: () => c, wH: () => u });
+  var s = r(477900),
+    n = r(582128),
+    i = r(947641),
+    a = r(866665),
+    l = r(476931);
+  function d(e) {
+    let { preset: t, theme: r, className: i } = e,
+      a = n.useId().replaceAll(":", "-"),
+      d = (0, l.oE)(t, r);
+    return (0, s.jsxs)("svg", {
+      "aria-hidden": "true",
+      className: i,
+      viewBox: "0 0 46 46",
+      children: [
+        (0, s.jsx)("defs", {
+          children: (0, s.jsx)("linearGradient", {
+            id: a,
+            gradientTransform: `rotate(${d.angle - 90} 0.5 0.5)`,
+            children: d.colors.map((e) => {
+              let { hex: r, stop: n } = e;
+              return (0, s.jsx)("stop", { offset: `${n}%`, stopColor: r }, `${t.id}-${r}-${n}`);
+            }),
+          }),
+        }),
+        (0, s.jsx)("rect", {
+          x: 0.5,
+          y: 0.5,
+          width: 45,
+          height: 45,
+          rx: 11.5,
+          fill: `url(#${a})`,
+          shapeRendering: "geometricPrecision",
+          stroke: "rgba(151, 151, 159, 0.12)",
+          strokeWidth: 1,
+        }),
+      ],
+    });
+  }
+  function u(e) {
+    let { className: t, testId: r } = e;
+    return (0, s.jsx)("span", {
+      "aria-hidden": "true",
+      className: t,
+      "data-testid": r,
+      children: (0, s.jsx)(i.r, { size: "xxs", color: "var(--white)" }),
+    });
+  }
+  function c(e) {
+    let {
+      preset: t,
+      selected: r,
+      disabled: n,
+      onClick: i,
+      label: l,
+      theme: c,
+      buttonClassName: o,
+      graphicClassName: h,
+      selectedIndicatorClassName: x,
+      selectedIndicatorTestId: f,
+    } = e;
+    return (0, s.jsx)(a.m, {
+      text: l,
+      children: (0, s.jsxs)("button", {
+        type: "button",
+        className: o,
+        disabled: n,
+        "aria-label": l,
+        "aria-pressed": r,
+        onClick: i,
+        children: [
+          (0, s.jsx)(d, { preset: t, theme: c, className: h }),
+          r && (0, s.jsx)(u, { className: x, testId: f }),
+        ],
+      }),
+    });
+  }
+}

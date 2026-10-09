@@ -1,0 +1,1557 @@
+/* Recovered shipped factory. Module 887909.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 6161930..6190630
+ * Raw property SHA-256: 3e6527f7c2ea5af3911279c7c21f1e6f860f62698fe8ba20d8382582ce54f10e
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.r(t),
+    n.d(t, {
+      OAuth2AuthorizeModal: () => e3,
+      getOAuth2AuthorizeProps: () => tt,
+      OAuth2AuthorizePage: () => e2,
+      openOAuth2Modal: () => te,
+      openOAuth2ModalWithCreateGuildModal: () => e9,
+      useOAuth2AuthorizeForm: () => e7,
+    }),
+    n(323874),
+    n(14289),
+    n(35956),
+    n(321073));
+  var i = n(477900),
+    r = n(582128),
+    a = n(503698),
+    s = n.n(a),
+    l = n(806163),
+    o = n(172218),
+    d = n(935399),
+    c = n(607399),
+    u = n(485845),
+    _ = n(179771),
+    E = n(136722),
+    A = n(365199),
+    h = n(17928),
+    f = n(821609),
+    I = n(815390),
+    p = n(462887),
+    T = n(289873),
+    m = n(834730),
+    g = n(297264),
+    S = n(885574),
+    N = n(933832),
+    C = n(708988),
+    O = n(192308),
+    R = n(73153),
+    L = n(830215),
+    y = n(803306),
+    D = n(736653),
+    v = n(573648),
+    b = n(666860),
+    M = n(269815),
+    P = n(627363),
+    U = n(587895),
+    w = n(224750),
+    G = n(62447),
+    x = n(854378),
+    k = n(968309),
+    F = n(268218),
+    B = n(272613),
+    V = n(736056),
+    H = n(14509),
+    j = n(976860),
+    W = n(570962),
+    Y = n(395671),
+    K = n(889227),
+    $ = n(280450),
+    z = n(30370),
+    X = n(287809),
+    Z = n(486020),
+    q = n(488926),
+    Q = n(998218),
+    J = n(123677),
+    ee = n(501592),
+    et = n(652215),
+    en = n(660183);
+  function ei(e, t) {
+    return null != e && (0, ee.K)(e) && !1 === t;
+  }
+  var er = n(716965),
+    ea = n(376092),
+    es = n(647053),
+    el = n(671523),
+    eo = n(998445),
+    ed = n(11023),
+    ec = n(173936),
+    eu = n(194261),
+    e_ = n(215026),
+    eE = n(406810),
+    eA = n(430392),
+    eh = n(231483),
+    ef = n(878014),
+    eI = n(935208),
+    ep = n(891969);
+  function eT(e) {
+    let t,
+      {
+        application: n,
+        scopes: r,
+        redirectUri: a,
+        approximateGuildCount: s,
+        isEmbeddedFlow: l,
+        disclosures: o,
+        connectedAccount: d,
+      } = e,
+      c = new Date(eI.default.extractTimestamp(n.id)),
+      u = (0, es.i4)(r),
+      E = (0, ef.D)(n);
+    if (null != a && !E && !l)
+      try {
+        let e = new URL(a);
+        t = null != e.host && e.host.length > 0 ? e.origin : e.href;
+      } catch (e) {
+        t = null;
+      }
+    return (0, i.jsxs)("div", {
+      className: ep.B_,
+      children: [
+        null != t
+          ? (0, i.jsx)(em, {
+              icon: ec.LinkIcon,
+              text: en.intl.format(en.t["5k5OKD"], { origin: t }),
+            })
+          : null,
+        (0, i.jsx)(em, {
+          icon: eu.LockIcon,
+          text: (function (e) {
+            let t = (0, G.t)(e);
+            if (null != e.privacy_policy_url && null != e.terms_of_service_url) {
+              let n = t ? en.t.yVfotv : en.t.rxlyKL;
+              return en.intl.format(n, {
+                application: e.name,
+                privacyPolicyURL: e.privacy_policy_url,
+                termsOfServiceURL: e.terms_of_service_url,
+                discordPrivacyPolicyURL: et.X7G.PRIVACY,
+              });
+            }
+            if (null != e.privacy_policy_url) {
+              let n = t ? en.t.pYVSah : en.t.TBvmM2;
+              return en.intl.format(n, {
+                application: e.name,
+                privacyPolicyURL: e.privacy_policy_url,
+                discordPrivacyPolicyURL: et.X7G.PRIVACY,
+              });
+            }
+            if (null != e.terms_of_service_url) {
+              let n = t ? en.t.nBLOp5 : en.t["q0T/Q1"];
+              return en.intl.format(n, {
+                application: e.name,
+                termsOfServiceURL: e.terms_of_service_url,
+                discordPrivacyPolicyURL: et.X7G.PRIVACY,
+              });
+            }
+            let n = t ? en.t["8LemYv"] : en.t["3Ywek3"];
+            return en.intl.format(n, {
+              application: e.name,
+              discordPrivacyPolicyURL: et.X7G.PRIVACY,
+            });
+          })(n),
+        }),
+        null != d ? (0, i.jsx)(em, { icon: e_.w, text: en.intl.string(en.t["8qui3M"]) }) : null,
+        (0, i.jsx)(em, {
+          icon: eE.ClockIcon,
+          text: en.intl.formatToPlainString(en.t["+1bjc8"], { date: c }),
+        }),
+        r.includes(_.F.BOT) && null != s
+          ? (0, i.jsx)(em, {
+              icon: eA.RobotIcon,
+              text: en.intl.formatToPlainString(en.t.UHGHSP, { guildCount: s }),
+            })
+          : null,
+        (0, i.jsx)(em, { icon: eh.ShieldIcon, text: u }),
+        null != o
+          ? o.map((e) => {
+              let t = (0, w.wI)(e),
+                n = (function (e) {
+                  switch (e) {
+                    case w.yW.IP_LOCATION:
+                      return eo.GlobeEarthIcon;
+                    case w.yW.DISPLAYS_ADVERTISEMENTS:
+                      return ed.J;
+                    default:
+                      return null;
+                  }
+                })(e);
+              return null != n && null != t ? (0, i.jsx)(em, { icon: n, text: t }, e) : null;
+            })
+          : null,
+      ],
+    });
+  }
+  function em(e) {
+    let { icon: t, text: n } = e;
+    return (0, i.jsxs)("div", {
+      className: ep.f_,
+      children: [
+        (0, i.jsx)(t, { className: ep.u7, color: "currentColor" }),
+        (0, i.jsx)(m.E, { variant: "text-xs/normal", className: ep.z9, children: n }),
+      ],
+    });
+  }
+  var eg = n(214947),
+    eS = n(845798),
+    eN = n(687966),
+    eC = n(625903),
+    eO = n(975571),
+    eR = n(441945);
+  function eL(e) {
+    let t,
+      { application: n, accountScopes: r } = e,
+      a = [],
+      s = (0, G.A)(n);
+    return (r.includes(_.F.SDK_SOCIAL_LAYER)
+      ? ((t = s
+          ? en.intl.format(en.t.GxjwZM, {
+              applicationName: n.name,
+              learnMoreURL: eO.A.getArticleURL(et.MVz.SOCIAL_LAYER_CONNECTIONS),
+            })
+          : en.intl.format(en.t.DfBeUq, {
+              learnMoreURL: eO.A.getArticleURL(et.MVz.SOCIAL_LAYER_CONNECTIONS),
+            })),
+        a.push(
+          {
+            icon: eg.$,
+            text: s
+              ? en.intl.formatToPlainString(en.t.z9peav, { maxFriends: et.$4X })
+              : en.intl.formatToPlainString(en.t.WNKzo9, { maxFriends: et.$4X }),
+          },
+          { icon: eS.S, text: s ? en.intl.string(en.t.daY6xj) : en.intl.string(en.t.j7peBh) },
+          {
+            icon: eN.GameControllerIcon,
+            text: s ? en.intl.string(en.t["/bdaNN"]) : en.intl.string(en.t["feD3+i"]),
+          },
+          {
+            icon: eC.SettingsIcon,
+            text: s ? en.intl.string(en.t.mSqazC) : en.intl.string(en.t.YFFVM1),
+          },
+        ))
+      : r.includes(_.F.SDK_SOCIAL_LAYER_PRESENCE) &&
+        ((t = s
+          ? en.intl.format(en.t.GxjwZM, {
+              applicationName: n.name,
+              learnMoreURL: eO.A.getArticleURL(et.MVz.SOCIAL_LAYER_CONNECTIONS),
+            })
+          : en.intl.format(en.t.DfBeUq, {
+              learnMoreURL: eO.A.getArticleURL(et.MVz.SOCIAL_LAYER_CONNECTIONS),
+            })),
+        a.push(
+          {
+            icon: eg.$,
+            text: s
+              ? en.intl.formatToPlainString(en.t.z9peav, { maxFriends: et.$4X })
+              : en.intl.formatToPlainString(en.t.WNKzo9, { maxFriends: et.$4X }),
+          },
+          {
+            icon: eN.GameControllerIcon,
+            text: s ? en.intl.string(en.t["/bdaNN"]) : en.intl.string(en.t["feD3+i"]),
+          },
+          {
+            icon: eC.SettingsIcon,
+            text: s ? en.intl.string(en.t.mSqazC) : en.intl.string(en.t.YFFVM1),
+          },
+        )),
+    0 === a.length)
+      ? null
+      : (0, i.jsxs)("div", {
+          className: eR.b9,
+          children: [
+            null != t
+              ? (0, i.jsx)(g.D, { variant: "heading-sm/normal", className: eR.a9, children: t })
+              : null,
+            a.map((e, t) => {
+              let { icon: n, text: r } = e;
+              return (0, i.jsx)(ey, { icon: n, text: r }, t);
+            }),
+          ],
+        });
+  }
+  function ey(e) {
+    let { icon: t, text: n } = e;
+    return (0, i.jsxs)("div", {
+      className: eR.f_,
+      children: [
+        (0, i.jsx)(t, { className: eR.u7, color: "currentColor" }),
+        (0, i.jsx)(m.E, { variant: "text-md/normal", className: eR.u0, children: n }),
+      ],
+    });
+  }
+  var eD = n(285796),
+    ev = n(628284),
+    eb = n(444927),
+    eM = n(698403);
+  function eP(e) {
+    let { text: t, error: n, isFake: r } = e,
+      a = !0 === r ? en.intl.string(en.t.OX8EMU) : en.intl.string(en.t["0lpCFG"]),
+      l = `${a}: ${t}${null != n ? `. ${n}` : ""}`;
+    return (0, i.jsxs)("div", {
+      className: eM.z8,
+      role: "group",
+      "aria-label": l,
+      children: [
+        !0 === r
+          ? (0, i.jsx)(eD.a, {
+              size: "md",
+              color: "currentColor",
+              className: s()(eM.Kk, eM.RC),
+              "aria-hidden": !0,
+            })
+          : (0, i.jsx)(ev.y, {
+              size: "md",
+              color: "currentColor",
+              className: s()(eM.Kk, eM.sc),
+              "aria-hidden": !0,
+            }),
+        (0, i.jsxs)("div", {
+          className: eM.rv,
+          "aria-hidden": !0,
+          children: [
+            (0, i.jsx)(m.E, {
+              variant: "text-md/normal",
+              color: !0 === r ? "text-muted" : void 0,
+              children: t,
+            }),
+            null != n
+              ? (0, i.jsx)(m.E, {
+                  variant: "text-xs/normal",
+                  color: "text-feedback-critical",
+                  children: n,
+                })
+              : null,
+          ],
+        }),
+      ],
+    });
+  }
+  function eU(e) {
+    let {
+        application: t,
+        accountScopes: n,
+        requestedScopes: r,
+        integrationType: a,
+        errors: l,
+        isTrustedName: o = !1,
+        noDivider: d = !1,
+      } = e,
+      c = (0, eb.A)(() => es.O_[Math.floor(Math.random() * es.O_.length)]);
+    if (0 === n.length) return null;
+    let E = c(),
+      A = o ? en.t.PZpY9c : en.t["1Hz+Sl"],
+      h = a === u.b.USER_INSTALL && r.includes(_.F.APPLICATIONS_COMMANDS);
+    return (0, i.jsxs)("div", {
+      className: s()(eM.Wu, d ? eM.bc : void 0),
+      children: [
+        (0, i.jsx)(g.D, {
+          variant: "heading-sm/normal",
+          className: eM.a9,
+          children: en.intl.format(A, { application: t?.name ?? "" }),
+        }),
+        n
+          .map((e) =>
+            (0, es.rY)(e, n).map((t, n) =>
+              (0, i.jsx)(eP, { text: t, error: 0 === n ? l?.[e]?.[0] : void 0 }, `${e}-${n}`),
+            ),
+          )
+          .flat(),
+        h && (0, i.jsx)(eP, { text: en.intl.string(en.t.Ls2XRq) }),
+        (0, i.jsx)(eP, { text: E, isFake: !0 }),
+      ],
+    });
+  }
+  var ew = n(150934),
+    eG = n(789645),
+    ex = n(526342);
+  function ek(e) {
+    let {
+        application: t,
+        permissions: n,
+        deniedPermissions: a,
+        onPermissionsChange: s,
+        guild: l,
+      } = e,
+      o = r.useMemo(() => E.B8(l.permissions), [l.permissions]);
+    r.useEffect(() => {
+      s(!1, E.pb(n, o));
+    }, [o, s, n]);
+    let d = ea.Q.filter((e) => E.zy(n, e)),
+      c = d
+        .filter((e) => !E.zy(o, e))
+        .map((e) => {
+          let t = (0, ea.hx)(e),
+            n = !E.zy(a, e);
+          return (0, i.jsx)(
+            "li",
+            {
+              className: ex.EK,
+              children: (0, i.jsx)(ew.S, { checked: n, onChange: (t) => s(t, e), label: t }),
+            },
+            String(e),
+          );
+        }),
+      u = d
+        .filter((e) => E.zy(o, e))
+        .map((e) => {
+          let t = (0, ea.hx)(e);
+          return (0, i.jsxs)(
+            "li",
+            {
+              className: ex.EK,
+              children: [
+                (0, i.jsx)("div", {
+                  className: ex.nW,
+                  children: (0, i.jsx)(eG.P, {
+                    size: "md",
+                    color: "currentColor",
+                    className: ex.Kk,
+                  }),
+                }),
+                (0, i.jsx)(m.E, { variant: "text-md/normal", children: t }),
+              ],
+            },
+            String(e),
+          );
+        });
+    return (0, i.jsxs)("div", {
+      className: ex.AS,
+      children: [
+        c.length > 0
+          ? (0, i.jsxs)("div", {
+              children: [
+                (0, i.jsx)(m.E, {
+                  variant: "text-sm/medium",
+                  color: "text-default",
+                  children: en.intl.format(en.t.sOaT2j, {
+                    applicationName: t.name,
+                    guildName: l.name,
+                  }),
+                }),
+                (0, i.jsx)("ul", { className: ex.RH, children: c }),
+              ],
+            })
+          : null,
+        u.length > 0
+          ? (0, i.jsxs)("div", {
+              children: [
+                (0, i.jsx)(m.E, {
+                  variant: "text-sm/medium",
+                  color: "text-default",
+                  children: en.intl.format(en.t.fsOkF4, { applicationName: t.name }),
+                }),
+                (0, i.jsx)("ul", { className: ex.RH, children: u }),
+              ],
+            })
+          : null,
+      ],
+    });
+  }
+  var eF = n(890497),
+    eB = n(516513);
+  function eV(e) {
+    let { error: t, selectedGuildId: n, onGuildChange: r, guilds: a, disabled: s = !1 } = e,
+      l = a
+        .filter((e) => E.zy(e.permissions, et.xBc.MANAGE_GUILD))
+        .map((e) => ({ id: e.id, value: e.id, label: e.name }));
+    return (0, i.jsx)("div", {
+      className: eB.g,
+      children: (0, i.jsx)(eF.Z, {
+        label: en.intl.string(en.t["1DXFFd"]),
+        helperText: en.intl.format(en.t.t9Jm9o, {}),
+        errorMessage: t,
+        selectionMode: "single",
+        maxOptionsVisible: 5,
+        placeholder: en.intl.string(en.t.oM4E1A),
+        options: l,
+        onSelectionChange: r,
+        disabled: s,
+        value: n ?? void 0,
+      }),
+    });
+  }
+  var eH = n(665260),
+    ej = n(97808),
+    eW = n(939249),
+    eY = n(709066),
+    eK = n(566615),
+    e$ = n(778712),
+    ez = n(21200);
+  function eX(e) {
+    let {
+        user: t,
+        application: n,
+        bot: a,
+        accountScopes: s,
+        showLogout: l,
+        location: o,
+        scopes: d,
+      } = e,
+      c = (0, eK.i)(),
+      u = Z.Ay.getApplicationIconURL({ id: n.id, icon: n.icon }),
+      _ = Z.Ay.getUserAvatarURL(t),
+      E = r.useMemo(
+        () =>
+          d.some((e) => (0, es.RM)(e))
+            ? (0, i.jsxs)(i.Fragment, {
+                children: [
+                  (0, i.jsx)(m.E, {
+                    variant: "text-lg/normal",
+                    color: "text-default",
+                    children: en.intl.string(en.t.uT1CPa),
+                  }),
+                  (0, i.jsx)(g.D, {
+                    variant: "heading-xxl/bold",
+                    color: "text-strong",
+                    children: n.name,
+                  }),
+                ],
+              })
+            : (0, i.jsxs)(i.Fragment, {
+                children: [
+                  (0, i.jsxs)(m.E, {
+                    variant: "text-lg/bold",
+                    color: "text-strong",
+                    children: [
+                      n.name,
+                      null != a
+                        ? (0, i.jsx)(eY.A, {
+                            className: ez.AO,
+                            verified:
+                              null != a.public_flags &&
+                              (0, eH.Lt)(a.public_flags, et.nhx.VERIFIED_BOT),
+                          })
+                        : null,
+                    ],
+                  }),
+                  s.length > 0
+                    ? (0, i.jsx)(m.E, {
+                        variant: "text-md/normal",
+                        color: "text-default",
+                        children: en.intl.string(en.t.jFbDnJ),
+                      })
+                    : (0, i.jsx)(m.E, {
+                        variant: "text-md/normal",
+                        color: "text-default",
+                        children: en.intl.string(en.t["X+Fdpo"]),
+                      }),
+                ],
+              }),
+        [s.length, n, a, d],
+      );
+    return (0, i.jsxs)("header", {
+      id: c,
+      className: ez.wx,
+      children: [
+        (0, i.jsxs)("div", {
+          className: ez.Y,
+          children: [
+            (0, i.jsx)(ej.eu, {
+              className: ez.my,
+              src: u,
+              size: e$._3.SIZE_80,
+              "aria-label": n.name,
+            }),
+            (0, i.jsxs)("div", {
+              className: ez.I5,
+              children: [
+                (0, i.jsx)("div", { className: ez.pw }),
+                (0, i.jsx)("div", { className: ez.pw }),
+                (0, i.jsx)("div", { className: ez.pw }),
+              ],
+            }),
+            (0, i.jsx)(ej.eu, {
+              className: ez.my,
+              src: _,
+              size: e$._3.SIZE_80,
+              "aria-label": t.username,
+            }),
+          ],
+        }),
+        E,
+        l
+          ? (0, i.jsx)("div", {
+              className: ez.Ny,
+              children: (0, i.jsxs)(m.E, {
+                variant: "text-sm/normal",
+                color: "text-muted",
+                children: [
+                  en.intl.format(en.t.qRvpYU, {
+                    userHook: () =>
+                      (0, i.jsxs)(
+                        m.E,
+                        {
+                          className: ez.ZD,
+                          variant: "text-sm/normal",
+                          children: [
+                            t.username,
+                            !t.hasUniqueUsername() &&
+                              (0, i.jsx)(m.E, {
+                                className: ez.Jb,
+                                variant: "text-sm/normal",
+                                children: `#${t.discriminator}`,
+                              }),
+                          ],
+                        },
+                        t.id,
+                      ),
+                  }),
+                  (0, i.jsx)(eW.D, {
+                    tag: "a",
+                    className: ez.Pg,
+                    onClick: () => (0, er.Vh)(o, "oauth2_logout"),
+                    children: en.intl.string(en.t["yV/hjC"]),
+                  }),
+                ],
+              }),
+            })
+          : null,
+      ],
+    });
+  }
+  var eZ = n(321987),
+    eq = n(595244);
+  function eQ(e) {
+    let { selectedGuildId: t, selectedChannelId: n, onChannelChange: a, error: s } = e,
+      [l, o] = r.useState(null),
+      d = r.useRef(!1);
+    if (
+      (r.useEffect(() => {
+        async function e(e) {
+          let n = await (0, er.$Q)(e);
+          t === e &&
+            (n.sort((e, t) => e.name.localeCompare(t.name)),
+            o({ guildId: e, channels: n }),
+            (d.current = !0));
+        }
+        (o(null), null == t ? a(null) : e(t));
+      }, [a, t]),
+      r.useEffect(() => {
+        !d.current ||
+          (null == l ? null != n && a(null) : l.channels.some((e) => e.id === n) || a(null));
+      }, [l, a, n, t]),
+      null == t)
+    )
+      return null;
+    let c =
+      null == l || l.guildId !== t
+        ? []
+        : (l?.channels ?? []).map((e) => ({ id: e.id, value: e.id, label: e.name }));
+    return (0, i.jsx)("div", {
+      className: eB.g,
+      children: (0, i.jsx)(eF.Z, {
+        label: en.intl.string(en.t["8qKd+J"]),
+        helperText: en.intl.string(en.t.kQXMfN),
+        selectionMode: "single",
+        maxOptionsVisible: 5,
+        errorMessage: s,
+        onSelectionChange: a,
+        placeholder: en.intl.string(en.t["Re/64R"]),
+        options: c,
+        value: n ?? void 0,
+      }),
+    });
+  }
+  var eJ = n(613057),
+    e0 = n(292502);
+  let e1 = (0, F.Fe)({
+    createPromise: () =>
+      Promise.all([
+        n.e("169727"),
+        n.e("457428"),
+        n.e("644013"),
+        n.e("896691"),
+        n.e("971156"),
+        n.e("260009"),
+        n.e("779367"),
+        n.e("552653"),
+        n.e("85427"),
+        n.e("247917"),
+        n.e("89530"),
+        n.e("64769"),
+        n.e("132073"),
+        n.e("992956"),
+        n.e("880150"),
+        n.e("490743"),
+        n.e("7452"),
+        n.e("529787"),
+        n.e("60002"),
+        n.e("189423"),
+        n.e("415695"),
+        n.e("219798"),
+        n.e("691398"),
+        n.e("266201"),
+        n.e("752704"),
+        n.e("56606"),
+        n.e("206516"),
+        n.e("327545"),
+        n.e("163466"),
+        n.e("227652"),
+        n.e("234017"),
+        n.e("629972"),
+        n.e("40791"),
+        n.e("358404"),
+        n.e("996907"),
+        n.e("831130"),
+        n.e("398929"),
+        n.e("377989"),
+        n.e("496818"),
+        n.e("587618"),
+        n.e("985788"),
+        n.e("645499"),
+        n.e("615643"),
+        n.e("454048"),
+        n.e("397270"),
+        n.e("300699"),
+        n.e("349619"),
+        n.e("543039"),
+        n.e("599666"),
+        n.e("244560"),
+        n.e("398125"),
+        n.e("221825"),
+        n.e("253729"),
+        n.e("930758"),
+        n.e("827708"),
+        n.e("266900"),
+        n.e("901555"),
+        n.e("948804"),
+        n.e("593600"),
+        n.e("695445"),
+        n.e("611523"),
+        n.e("707826"),
+        n.e("199999"),
+        n.e("890027"),
+        n.e("183776"),
+        n.e("417286"),
+        n.e("776195"),
+        n.e("672727"),
+        n.e("809915"),
+        n.e("662174"),
+        n.e("87306"),
+        n.e("361626"),
+        n.e("747017"),
+        n.e("165595"),
+        n.e("445124"),
+        n.e("851130"),
+        n.e("445421"),
+        n.e("832823"),
+        n.e("776750"),
+        n.e("761935"),
+        n.e("511527"),
+        n.e("763070"),
+        n.e("381933"),
+        n.e("502018"),
+        n.e("249366"),
+        n.e("728633"),
+        n.e("628439"),
+        n.e("757238"),
+        n.e("92678"),
+        n.e("570506"),
+        n.e("225990"),
+        n.e("539620"),
+        n.e("133902"),
+        n.e("485393"),
+        n.e("973794"),
+        n.e("123353"),
+        n.e("401590"),
+        n.e("498215"),
+        n.e("27773"),
+        n.e("252264"),
+        n.e("960478"),
+        n.e("593176"),
+        n.e("621624"),
+        n.e("836545"),
+        n.e("784041"),
+        n.e("858514"),
+        n.e("344265"),
+        n.e("401827"),
+        n.e("869546"),
+        n.e("238412"),
+        n.e("637721"),
+        n.e("371133"),
+        n.e("231578"),
+        n.e("288705"),
+        n.e("562168"),
+        n.e("678050"),
+        n.e("780262"),
+        n.e("556385"),
+        n.e("291220"),
+        n.e("58405"),
+      ]).then(n.bind(n, 991054)),
+    webpackId: 991054,
+  });
+  function e2() {
+    let e = (0, l.zy)(),
+      t = r.useMemo(() => (0, J._)(e.search), [e.search]);
+    (0, M.A)();
+    let a = !e.search.includes("response_type"),
+      [s, o] = r.useState(!1),
+      d = r.useRef(!1),
+      [u, _] = r.useState(null),
+      E = !c.Fr && !s && (a || !$.default.isAuthenticated());
+    if (
+      (r.useEffect(() => {
+        if (c.Ct && a) {
+          let t = new URL("discord://action/oauth2/authorize");
+          ((t.search = e.search), window.open(t.toString(), "_self"));
+        } else
+          c.Fr ||
+            (!a && $.default.isAuthenticated()) ||
+            d.current ||
+            ((d.current = !0),
+            Promise.resolve()
+              .then(n.bind(n, 129014))
+              .then((t) => {
+                let { default: n } = t;
+                if (a)
+                  n.request(et.e$_.DEEP_LINK, { type: eJ.XK.OAUTH2, params: { search: e.search } })
+                    .then((e) => {
+                      _(e ?? !1);
+                    })
+                    .catch(() => _(!1))
+                    .then(() => n.disconnect());
+                else {
+                  _(!0);
+                  let t = new URLSearchParams(e.search);
+                  n.request(et.e$_.AUTHORIZE, {
+                    client_id: t.get("client_id"),
+                    scope: t.get("scope"),
+                    response_type: t.get("response_type"),
+                    redirect_uri: t.get("redirect_uri"),
+                    code_challenge: t.get("code_challenge"),
+                    code_challenge_method: t.get("code_challenge_method"),
+                    state: t.get("state"),
+                    permissions: t.get("permissions"),
+                    guild_id: t.get("guild_id"),
+                    channel_id: t.get("channel_id"),
+                    prompt: t.get("prompt"),
+                    disable_guild_select: t.get("disable_guild_select"),
+                    integration_type: t.get("integration_type"),
+                    nonce: t.get("nonce"),
+                  })
+                    .then((e) => {
+                      let { location: t } = e;
+                      t && (window.location.href = t);
+                    })
+                    .catch(() => _(!1))
+                    .then(() => n.disconnect());
+                }
+              }));
+      }, [e.search, a]),
+      E && !1 !== u)
+    ) {
+      let e;
+      return (
+        (e =
+          !0 === u
+            ? (0, i.jsxs)(i.Fragment, {
+                children: [
+                  (0, i.jsx)(x.hE, { children: en.intl.string(en.t.csrAMJ) }),
+                  (0, i.jsx)(x.tK, {
+                    children: a ? en.intl.string(en.t["m1+IBn"]) : en.intl.string(en.t.kRzrSO),
+                  }),
+                  (0, i.jsx)(f.$, {
+                    onClick: () => o(!0),
+                    variant: "primary",
+                    text: en.intl.string(en.t.fIv16B),
+                  }),
+                ],
+              })
+            : (0, i.jsxs)(i.Fragment, {
+                children: [
+                  (0, i.jsx)(x.hE, { children: en.intl.string(en.t["Z+hCVU"]) }),
+                  (0, i.jsx)(T.y, {}),
+                ],
+              })),
+        (0, i.jsx)(eZ.$, {
+          removeChildWrapper: !0,
+          children: (0, i.jsx)("div", { className: e0.ah, children: e }),
+        })
+      );
+    }
+    return (0, i.jsx)(eZ.$, {
+      removeChildWrapper: !0,
+      children: (0, i.jsx)(e3, {
+        transitionState: I.i.ENTERED,
+        ...t,
+        showLogout: !0,
+        isExternalStandaloneOAuthPage: !0,
+        hideHeader: !0,
+      }),
+    });
+  }
+  function e3(e) {
+    let {
+        label: t,
+        title: n,
+        subtitle: r,
+        header: a,
+        body: l,
+        actions: o,
+        nextStep: d,
+        appDetails: c,
+        hasContentBackground: u,
+        noPadding: _,
+        modalSize: E,
+        obscured: A,
+      } = e7({ ...e }),
+      h =
+        null != a || null != l || null != c
+          ? (0, i.jsxs)("div", {
+              className: e0.Gq,
+              children: [
+                a,
+                (0, i.jsx)("div", {
+                  className: e0.FG,
+                  children: (0, i.jsxs)("div", {
+                    className: s()(e0.Qs, u ? e0.cw : null, _ ? e0.pN : null),
+                    children: [l, null == d ? c : null],
+                  }),
+                }),
+              ],
+            })
+          : null;
+    return (0, i.jsx)(eZ.f, {
+      ...e,
+      onClose: () => Promise.resolve(e.onClose?.()),
+      size: E,
+      actions: o,
+      title: n,
+      subtitle: r,
+      "aria-label": t,
+      children: (0, i.jsx)(W.A, { className: e0.dx, obscured: !0 === A, children: h }),
+    });
+  }
+  function e6(e) {
+    let { clientId: t, platformType: n, platformName: a } = e,
+      s = (0, h.bG)([U.A], () => U.A.getApplication(t), [t]),
+      l = (0, h.bG)([$.default, X.default], () =>
+        null != $.default.getId() ? X.default.getCurrentUser() : null,
+      ),
+      o = (0, D.Ay)(),
+      d = v.A.get(n),
+      c = null != d ? ((0, p.q)(o) ? d.icon.lightSVG : d.icon.darkSVG) : null,
+      u = null != s ? Z.Ay.getApplicationIconURL({ id: s.id, icon: s.icon }) : null,
+      _ = null != l ? Z.Ay.getUserAvatarURL(l) : null,
+      E = s?.name ?? "";
+    return (
+      r.useEffect(() => {
+        P.Ay.fetchApplication(t);
+      }, [t]),
+      (0, i.jsxs)("div", {
+        className: e0.E4,
+        children: [
+          (0, i.jsxs)("div", {
+            className: e0.z1,
+            children: [
+              (0, i.jsxs)("div", {
+                className: e0.q3,
+                children: [
+                  null != u
+                    ? (0, i.jsx)("img", { src: u, alt: E, className: e0.gO })
+                    : (0, i.jsx)("div", { className: e0.gO }),
+                  (0, i.jsx)(A.MoreHorizontalIcon, { size: "md", color: "currentColor" }),
+                  null != _ && (0, i.jsx)("img", { src: _, alt: "", className: e0.eh }),
+                ],
+              }),
+              (0, i.jsx)(m.E, { variant: "text-lg/normal", children: en.intl.string(en.t.uT1CPa) }),
+              (0, i.jsx)(g.D, { variant: "heading-xl/semibold", children: E }),
+            ],
+          }),
+          (0, i.jsx)(m.E, {
+            variant: "text-sm/normal",
+            children: en.intl.format(en.t["aJRE/Q"], { applicationName: E, platformName: a }),
+          }),
+          (0, i.jsxs)("div", {
+            className: e0.eD,
+            children: [
+              null != c && (0, i.jsx)("img", { src: c, alt: "", className: e0.sw }),
+              (0, i.jsx)(m.E, { variant: "text-md/medium", className: e0.PP, children: a }),
+              (0, i.jsx)(f.$, {
+                variant: "primary",
+                size: "sm",
+                onClick: function () {
+                  (0, k.A)({ platformType: n, location: "OAuth2 Connect Account Step" });
+                },
+                text: en.intl.string(en.t.S0W8Z5),
+              }),
+            ],
+          }),
+          (0, i.jsxs)("div", {
+            className: e0.sT,
+            children: [
+              (0, i.jsx)(S.CircleInformationIcon, {
+                size: "sm",
+                color: "currentColor",
+                className: e0.Vi,
+              }),
+              (0, i.jsx)(m.E, {
+                variant: "text-sm/normal",
+                children: en.intl.format(en.t["8psEFX"], { platformName: a, applicationName: E }),
+              }),
+            ],
+          }),
+        ],
+      })
+    );
+  }
+  function e5(e) {
+    let { platformType: t, platformName: n, connectedAccount: r, applicationName: a } = e,
+      s = (0, D.Ay)(),
+      l = v.A.get(t),
+      o = null != l ? ((0, p.q)(s) ? l.icon.lightSVG : l.icon.darkSVG) : null;
+    return (0, i.jsxs)("div", {
+      className: e0.E4,
+      children: [
+        (0, i.jsx)(m.E, {
+          variant: "text-sm/normal",
+          children: en.intl.format(en.t["+oaRw3"], { platformName: n }),
+        }),
+        (0, i.jsxs)("div", {
+          className: e0.eD,
+          children: [
+            null != o && (0, i.jsx)("img", { src: o, alt: "", className: e0.sw }),
+            (0, i.jsxs)("div", {
+              className: e0.mG,
+              children: [
+                (0, i.jsx)(m.E, { variant: "text-md/medium", children: r.name }),
+                (0, i.jsx)(m.E, {
+                  variant: "text-xs/normal",
+                  children: en.intl.format(en.t.Dkd7sE, {
+                    platformName: n,
+                    connectedAccountId: r.id,
+                  }),
+                }),
+              ],
+            }),
+            (0, i.jsx)(N.CheckmarkLargeIcon, { size: "sm", color: "status-positive" }),
+          ],
+        }),
+        (0, i.jsx)(m.E, {
+          variant: "text-sm/normal",
+          children: en.intl.format(en.t.pyRNXJ, { applicationName: a }),
+        }),
+        (0, i.jsx)("div", { className: e0.zd }),
+      ],
+    });
+  }
+  function e4() {
+    return (0, i.jsx)("div", { className: e0.g4, children: (0, i.jsx)(T.y, { className: e0.u1 }) });
+  }
+  function e7(e) {
+    let t,
+      n,
+      a,
+      s,
+      c,
+      {
+        clientId: A,
+        responseType: f,
+        redirectUri: I,
+        codeChallenge: p,
+        codeChallengeMethod: T,
+        state: g,
+        nonce: S,
+        prompt: N,
+        authorizations: O,
+        scopes: D,
+        permissions: M,
+        guildId: U,
+        channelId: x,
+        integrationType: k,
+        disableGuildSelect: F = !1,
+        showLogout: B = !1,
+        isTrustedName: H = !1,
+        isEmbeddedFlow: W = !1,
+        callback: Z,
+        callbackWithoutPost: ee,
+        onClose: eo,
+        disclosures: ed,
+        isExternalStandaloneOAuthPage: ec = !1,
+        isTwoWayLinkDiscordConsent: eu = !1,
+        hideCancel: e_ = !1,
+        connectedAccountProvider: eE,
+      } = e,
+      eA = null != k ? O?.get(k) : void 0,
+      eh = (0, l.zy)(),
+      ef = (0, h.bG)([V.A], () => V.A.hasLoadedExperiments);
+    r.useEffect(() => {
+      $.default.isAuthenticated() && !ef && L.A.getExperiments();
+    }, [ef]);
+    let [eI, ep] = r.useState(null),
+      [em, eg] = r.useState(null),
+      [eS, eN] = r.useState(null),
+      [eC, eO] = r.useState(!1),
+      [eR, ey] = r.useState(!1),
+      eD = eI?.guilds,
+      [ev, eb] = r.useState(U ?? null),
+      [eM, eP] = r.useState(x ?? null),
+      [ew, eG] = r.useState(q.x3),
+      ex = (0, h.bG)(
+        [z.A],
+        () => (null == eE ? null : (z.A.getAccounts().find((e) => e.type === eE) ?? null)),
+        [eE],
+      ),
+      eF = null == eE || null != ex,
+      eB = r.useMemo(() => (eI?.user != null ? new K.A(eI.user) : null), [eI?.user]),
+      eH = (0, h.bG)([X.default], () => X.default.getCurrentUser()?.nsfwAllowed),
+      ej = (0, G.A)(eI?.application ?? null),
+      eW = r.useMemo(() => eD?.find((e) => e.id === ev), [eD, ev]),
+      [eY, eK] = r.useState(null),
+      e$ = r.useMemo(
+        () => null == eA && null == k && (D?.length ?? 0) === 0 && null == I,
+        [eA, D?.length, I, k],
+      ),
+      [ez, eZ] = r.useState(null);
+    r.useEffect(() => {
+      e$ && P.Ay.fetchApplication(A).then((e) => eZ(Y.Ay.createFromServer(e)));
+    }, [A, e$]);
+    let eJ = r.useMemo(
+        () => (null == eY ? null : ez?.integrationTypesConfig?.[eY]?.oauth2InstallParams),
+        [ez?.integrationTypesConfig, eY],
+      ),
+      { requestedScopes: e2, accountScopes: e3 } = r.useMemo(() => {
+        let e = e$ ? eJ?.scopes : D,
+          t = (0, J.e)(e ?? []),
+          n = es.k$.filter((e) => t.includes(e));
+        return { requestedScopes: t, accountScopes: n };
+      }, [eJ?.scopes, D, e$]),
+      e7 = r.useMemo(() => (e$ ? E.iu(eJ?.permissions ?? 0) : M) ?? q.x3, [eJ?.permissions, M, e$]),
+      e8 = r.useRef(!1),
+      [e9, te] = r.useState(ed ?? []),
+      [tt, tn] = r.useState(null != ed && ed.length > 0);
+    ((0, d.Ay)(() => {
+      let e = $.default.getAnalyticsToken();
+      null != e
+        ? R.h.dispatch({
+            type: "SET_ANALYTICS_TOKEN",
+            analyticsToken: e,
+            userId: $.default.getId(),
+          })
+        : (0, y.rQ)({ withAnalyticsToken: !0 }).catch(et.tEg);
+    }),
+      r.useEffect(() => {
+        if (!e8.current && null == ed) {
+          if (!$.default.isAuthenticated())
+            return void (0, er.Vh)(eh, "oauth2_error_not_authenticated");
+          e();
+        }
+        async function e() {
+          e8.current = !0;
+          try {
+            let { disclosures: e, allAcked: t } = await (0, w.vG)(A);
+            (tn(!t), te(e));
+          } catch (n) {
+            let { status: e, body: t } = n;
+            if (401 === e) return void (0, er.Vh)(eh, "oauth2_error_failed_disclosures");
+            eN(
+              Error(null != t.message ? t.message : `${Object.keys(t)[0]}: ${Object.values(t)[0]}`),
+            );
+          } finally {
+            e8.current = !1;
+          }
+        }
+      }, [A, eh, ed, te, eN, tn, eg]));
+    let ti = ei(eI?.application.content_classification ?? ez?.contentClassification, eH),
+      tr = r.useCallback(
+        async function (e) {
+          let t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
+          if (null != ee) {
+            (eO(!0), ee(e));
+            return;
+          }
+          if (null == eY) return void eN(Error("No integration type was selected."));
+          try {
+            eO(!0);
+            let n = await (0, er.Gq)({
+              authorize: e,
+              clientId: A,
+              scopes: e2,
+              responseType: f,
+              redirectUri: I,
+              codeChallenge: p,
+              codeChallengeMethod: T,
+              state: g,
+              nonce: S,
+              integrationType: eY,
+              connectedAccountProvider: eE,
+              permissions: E.TF(e7, ew),
+              guildId: eY === u.b.GUILD_INSTALL && null != ev ? ev : void 0,
+              channelId: eY === u.b.GUILD_INSTALL && null != eM ? eM : void 0,
+            });
+            if ((e && (await (0, w.Yx)(A, e9)), null != Z))
+              (Z({
+                application: eI?.application,
+                location: n.location,
+                guild: eW,
+                scopes: e2,
+                canceled: t,
+              }),
+                eo?.());
+            else if (null != n.location) {
+              let e = Q.A.toURLSafe(n.location)?.pathname;
+              Q.A.isDiscordUrl(n.location) && e === et.BVt.OAUTH2_AUTHORIZED
+                ? (0, j.pX)(et.BVt.OAUTH2_AUTHORIZED, {
+                    state: { application: eI?.application, guild: eW },
+                  })
+                : (window.location = n.location);
+            } else eO(!1);
+          } catch (t) {
+            let e = t.body;
+            (e?.message != null && "" !== e.message ? eN(Error(e.message)) : eN(e),
+              eg("AUTHORIZE_SCOPES"),
+              eO(!1));
+          }
+        },
+        [ee, Z, eI?.application, eW, eo, A, e2, f, I, p, T, g, S, e7, ew, ev, eY, eE, eM, e9],
+      ),
+      ta = r.useRef(!1),
+      ts = r.useCallback(async () => {
+        if (!$.default.isAuthenticated())
+          return void (0, er.Vh)(eh, "oauth2_error_not_authenticated");
+        if (!e8.current && !ta.current) {
+          ta.current = !0;
+          try {
+            var e;
+            let t =
+                null != eA
+                  ? eA
+                  : await (0, er.qY)({
+                      clientId: A,
+                      scopes: e2,
+                      responseType: f,
+                      redirectUri: I,
+                      codeChallenge: p,
+                      codeChallengeMethod: T,
+                      state: g,
+                      nonce: S,
+                      integrationType: eY ?? void 0,
+                      connectedAccountProvider: eE,
+                    }),
+              n = ei(t.application.content_classification, eH);
+            (ep(
+              ((e = t),
+              null == e.guilds
+                ? e
+                : {
+                    ...e,
+                    guilds: e.guilds.map((e) => ({ ...e, permissions: E.iu(e.permissions) })),
+                  }),
+            ),
+              N !== el.l.NONE || !t.authorized || tt || n || tr(!0),
+              (0, b.zV)(et.HAw.OAUTH2_AUTHORIZE_VIEWED, { application_id: t.application.id }));
+          } catch (n) {
+            let { status: e, body: t } = n;
+            if (401 === e) return void (0, er.Vh)(eh, "oauth2_error_unauthorized");
+            eN(
+              Error(null != t.message ? t.message : `${Object.keys(t)[0]}: ${Object.values(t)[0]}`),
+            );
+          } finally {
+            ta.current = !1;
+          }
+        }
+      }, [eh, eA, A, e2, f, I, p, T, g, S, eY, eE, N, tr, tt, eH]),
+      tl = r.useMemo(
+        () =>
+          null != ez && e$
+            ? Object.entries(ez.integrationTypesConfig ?? {})
+                .filter((e) => {
+                  let [t, n] = e;
+                  return null != n.oauth2InstallParams;
+                })
+                .map((e) => {
+                  let [t, n] = e;
+                  return Number(t);
+                })
+            : [],
+        [ez, e$],
+      ),
+      to = r.useRef(null);
+    (r.useEffect(() => {
+      em !== to.current &&
+        ((to.current = em),
+        (0, b.zV)(et.HAw.OAUTH2_AUTHORIZE_STEP_VIEWED, {
+          step: em,
+          application_id: A,
+          integration_type: eY,
+          scopes: e2,
+          permissions: e7.toString(),
+        }));
+    }, [A, eY, e7, e2, em]),
+      r.useEffect(() => {
+        null == em &&
+          (!e$ || null != ez) &&
+          ef &&
+          (null == eE || eF
+            ? null != eA
+              ? (eK(eA.integration_type ?? u.b.GUILD_INSTALL), eg("AUTHORIZE_SCOPES"))
+              : tl.length > 1
+                ? eg("SELECT_INSTALL_TYPE")
+                : (1 === tl.length ? eK(tl[0]) : null != k ? eK(k) : eK(u.b.GUILD_INSTALL),
+                  eg("AUTHORIZE_SCOPES"))
+            : eg("CONNECT_ACCOUNT"));
+      }, [eA, tl, ez, e$, eE, eF, k, em, ef]),
+      r.useEffect(() => {
+        "CONNECT_ACCOUNT" === em && eF && (eK(k ?? u.b.USER_INSTALL), eg("AUTHORIZE_SCOPES"));
+      }, [em, eF, k]),
+      r.useEffect(() => {
+        if (null == eY || null != eI || null != eS) return;
+        eY === u.b.USER_INSTALL && (eb(null), eP(null));
+        let e = e2.filter((e) => !es.gX.includes(e));
+        0 === e2.length
+          ? eN(Error("No scopes were provided."))
+          : e.length > 0
+            ? eN(Error(`Invalid scope: ${e[0]}`))
+            : (0, ea.F7)(e7)
+              ? eN(Error("Invalid permission(s) provided."))
+              : ts();
+      }, [tt, ts, e2, e7, eY, eI, eS]));
+    let td = r.useCallback((e) => {
+        e && ey(!0);
+      }, []),
+      tc = (0, o.K)(td);
+    if (eS instanceof Error)
+      return ec
+        ? { body: (0, i.jsx)(eq.gz, { message: eS.message }) }
+        : eu
+          ? {
+              label: en.intl.string(en.t.j2d6Km),
+              header: (0, i.jsx)(m.E, {
+                variant: "text-lg/bold",
+                color: "text-strong",
+                children: en.intl.string(en.t.j2d6Km),
+              }),
+              body: (0, i.jsx)(m.E, {
+                variant: "text-md/normal",
+                color: "text-default",
+                children: eS.message,
+              }),
+              actions: [{ onClick: eo, text: en.intl.string(en.t.cpT0Cq) }],
+              noPadding: !0,
+            }
+          : {
+              title: en.intl.string(en.t.j2d6Km),
+              subtitle: eS.message,
+              actions: [{ onClick: eo, text: en.intl.string(en.t.cpT0Cq) }],
+            };
+    let tu = null != eE ? (v.A.get(eE)?.name ?? "") : "",
+      t_ = !1,
+      tE = !1,
+      tA = !0,
+      th = !0,
+      tf = !0,
+      tI = !1;
+    switch (em) {
+      case null:
+        return { label: en.intl.string(en.t.ZTNur7), body: (0, i.jsx)(e4, {}) };
+      case "CONNECT_ACCOUNT":
+        ((t = (0, i.jsx)(e6, { clientId: A, platformType: eE, platformName: tu })),
+          (tA = !1),
+          (th = !1),
+          (tf = !1),
+          (t_ = !0));
+        break;
+      case "SELECT_INSTALL_TYPE":
+        if (null == ez) return { label: en.intl.string(en.t.ZTNur7), body: (0, i.jsx)(e4, {}) };
+        ((t = (0, i.jsx)(e1, {
+          application: ez,
+          onSelect: function (e) {
+            (eK(e), ep(null), eg("AUTHORIZE_SCOPES"));
+          },
+        })),
+          (tA = !1),
+          (th = !1),
+          (tf = !1),
+          (tI = !0));
+        break;
+      case "AUTHORIZE_SCOPES":
+        if (null == eI || null == eB || null == eY)
+          return { label: en.intl.string(en.t.ZTNur7), body: (0, i.jsx)(e4, {}) };
+        let tp = null == eS || eS instanceof Error ? {} : eS,
+          tT = eD?.sort((e, t) => e.name.toLowerCase().localeCompare(t.name.toLowerCase())),
+          tm = eY === u.b.GUILD_INSTALL && e2.includes(_.F.WEBHOOK_INCOMING),
+          tg =
+            tm ||
+            (eY === u.b.GUILD_INSTALL &&
+              (e2.includes(_.F.BOT) || e2.includes(_.F.APPLICATIONS_COMMANDS)));
+        ((t = (0, i.jsxs)(i.Fragment, {
+          children: [
+            null != ex &&
+              eF &&
+              (0, i.jsx)(e5, {
+                platformType: ex.type,
+                platformName: tu,
+                connectedAccount: ex,
+                applicationName: eI.application.name,
+              }),
+            (0, i.jsx)(eL, { application: eI.application, accountScopes: e3 }),
+            (0, i.jsx)(eU, {
+              application: eI.application,
+              accountScopes: e3,
+              requestedScopes: e2,
+              integrationType: eY,
+              errors: tp,
+              isTrustedName: H || ej,
+            }),
+            (0, i.jsx)("div", { className: e0.sL, ref: tc }),
+            tg
+              ? (0, i.jsx)(eV, {
+                  error: (tp[_.F.BOT] ?? tp[_.F.APPLICATIONS_COMMANDS] ?? [])[0],
+                  selectedGuildId: ev,
+                  onGuildChange: eb,
+                  guilds: tT ?? [],
+                  disabled: "" !== ev && null != ev && !0 === F,
+                })
+              : null,
+            tm
+              ? (0, i.jsx)(eQ, {
+                  error: (tp[_.F.WEBHOOK_INCOMING] ?? [])[0],
+                  selectedChannelId: eM,
+                  selectedGuildId: ev,
+                  onChannelChange: eP,
+                })
+              : null,
+          ],
+        })),
+          e2.includes(_.F.BOT) && !E.aI(e7, q.x3) && (a = "AUTHORIZE_BOT_PERMISSIONS"),
+          tl.length > 1 && (n = "SELECT_INSTALL_TYPE"),
+          (tE = (tg && null == eW) || (tm && null == eM)),
+          (t_ = !0));
+        break;
+      case "AUTHORIZE_BOT_PERMISSIONS":
+        if (null == eI) return { label: en.intl.string(en.t.ZTNur7), body: (0, i.jsx)(e4, {}) };
+        ((t = (0, i.jsx)(ek, {
+          application: eI.application,
+          permissions: e7,
+          deniedPermissions: ew,
+          onPermissionsChange: function (e, t) {
+            eG((n) => (e ? E.TF(n, t) : E.WQ(n, t)));
+          },
+          guild: eW,
+        })),
+          (n = "AUTHORIZE_SCOPES"),
+          (t_ = !0));
+    }
+    let tS = [];
+    if (tA && null != eI) {
+      let e = eI?.application.approximate_guild_count ?? eI?.bot?.approximate_guild_count;
+      s = (0, i.jsxs)(i.Fragment, {
+        children: [
+          (0, i.jsx)(eT, {
+            application: eI.application,
+            scopes: e2,
+            disclosures: e9,
+            redirectUri: eI.redirect_uri ?? null,
+            approximateGuildCount: void 0 !== e ? e : null,
+            isEmbeddedFlow: W,
+            connectedAccount: ex,
+          }),
+          (0, i.jsx)("div", { className: e0.sL, ref: tc }),
+        ],
+      });
+    }
+    if (
+      (th &&
+        null != eI &&
+        null != eB &&
+        (c = (0, i.jsx)(eX, {
+          user: eB,
+          application: eI.application,
+          bot: eI.bot,
+          accountScopes: e3,
+          showLogout: B || !1,
+          location: eh,
+          scopes: e2,
+        })),
+      tf &&
+        (null != n
+          ? tS.push({
+              variant: "secondary",
+              onClick: () => eg(n),
+              text: en.intl.string(en.t["13/7kX"]),
+            })
+          : e_ ||
+            tS.push({
+              variant: "secondary",
+              onClick: () => tr(!1, !0),
+              text: en.intl.string(en.t["ETE/oC"]),
+            }),
+        "SELECT_INSTALL_TYPE" !== em))
+    ) {
+      let e = "CONNECT_ACCOUNT" !== em && !eR;
+      tS.push(
+        e
+          ? { disabled: !0, loading: eC, text: en.intl.string(en.t.N22i9F), icon: C.M }
+          : {
+              onClick: null != a ? () => eg(a) : () => tr(!0),
+              loading: eC,
+              disabled: ("CONNECT_ACCOUNT" !== em && null == s) || tE || ti,
+              text: tE
+                ? en.intl.string(en.t.BwwiSM)
+                : null != a
+                  ? en.intl.string(en.t["3PatSz"])
+                  : en.intl.string(en.t["y+/PE9"]),
+            },
+      );
+    }
+    return {
+      label: "CONNECT_ACCOUNT" === em ? en.intl.string(en.t.JGuDTr) : void 0,
+      header: c,
+      body: t,
+      actions: tS,
+      nextStep: a,
+      appDetails: s,
+      sendAuthorize: tr,
+      hasContentBackground: t_,
+      noPadding: tI,
+      obscured: ti,
+    };
+  }
+  function e8(e, t) {
+    if (null == t.location || (null != e.callback && e.callback(t))) return;
+    let { host: n, pathname: r, searchParams: a } = Q.A.toURLSafe(t.location) ?? {},
+      s = Q.A.isDiscordHostname(n ?? null) || window.location.host === n;
+    if (s && r === et.BVt.OAUTH2_AUTHORIZED)
+      (0, O.openModal)((e) =>
+        (0, i.jsx)(eq.dR, { guild: t.guild, application: t.application, ...e }),
+      );
+    else if (s && r?.startsWith(et.BVt.OAUTH2_ERROR)) {
+      if (!0 === t.canceled) return;
+      (0, O.openModal)((e) => {
+        let t = a?.get("error_description") ?? a?.get("error") ?? en.intl.string(en.t.mqn873);
+        return (
+          Array.isArray(t) && (t = t[0]),
+          (0, i.jsx)(eZ.f, {
+            ...e,
+            children: (0, i.jsx)(eq.gz, { message: t, onClose: e.onClose }),
+          })
+        );
+      });
+    } else window.open(t.location, "_blank")?.focus();
+  }
+  function e9(e, t) {
+    (0, H._9)()
+      ? B.A.openCreateGuildModal({ onSuccess: (n) => te({ ...e, guildId: n }, t) })
+      : te(e, t);
+  }
+  function te(e, t) {
+    (0, O.openModal)((t) => (0, i.jsx)(e3, { ...t, ...e, callback: e8.bind(null, e) }), {
+      onCloseCallback: t,
+    });
+  }
+  function tt(e) {
+    let { hostname: t = "", host: n, pathname: i, search: r } = Q.A.toURLSafe(e) ?? {};
+    return null != i &&
+      null != r &&
+      (Q.A.isDiscordHostname(t) || n === window.location.host) &&
+      (i.startsWith(`/api${et.Rsh.OAUTH2_AUTHORIZE}`) || i.startsWith(et.BVt.OAUTH2_AUTHORIZE))
+      ? (0, J._)(r)
+      : null;
+  }
+}

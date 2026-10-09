@@ -1,0 +1,92 @@
+/* Recovered shipped factory. Module 907926.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 5003902..5005944
+ * Raw property SHA-256: 8029a6180c23303bbfe91b1f375a8fdfbe887b3f47369c584e9ea2e5d2207542
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => S });
+  var i = n(941426),
+    r = n(205693),
+    a = n(827343),
+    s = n(439372),
+    l = n(624694),
+    o = n(929921),
+    d = n(616356),
+    c = n(71393),
+    u = n(192820),
+    _ = n(116956),
+    E = n(287809),
+    A = n(927813),
+    h = n(258585),
+    f = n(652896),
+    I = n(476697),
+    p = n(753070);
+  let T = new i.Vy("AutoQualityStreamingManager"),
+    m = 0;
+  class g extends s.A {
+    actions = {
+      MEDIA_ENGINE_CONNECTION_STATS: this.handleStats,
+      POST_CONNECTION_OPEN: this.handlePostConnectionOpen,
+    };
+    handleStats() {
+      if ((m += 1) % 10 != 0) return;
+      let e = d.A.getCurrentUserActiveStream();
+      if (null == e) return;
+      let t = _.A.getRTCConnection((0, f._z)(e)),
+        n = u.Ay.getGoLiveSource();
+      if (null == t || null == n || !t.hasActiveRemoteWants()) return;
+      let i = o.A.getState();
+      if (i.preset !== p.jQ.PRESET_AUTO) return;
+      if (d.A.getStreamerActiveStreamMetadata()?.id != null)
+        return void T.info("Skipping auto quality checker for game stream.");
+      let s = l.A.getAccumulatedPerformanceStats(t.getMediaEngineConnectionId(), e.ownerId, "long"),
+        h = (t.analyticsContext.getDuration() ?? 30) >= 30 * A.A.Millis.SECOND ? 30 : 15;
+      if (null == s || s.numDatapoints < h) return;
+      let g = E.default.getCurrentUser(),
+        S = c.A.getGuild(e.guildId),
+        [N, C] = (0, I.Ay)(p.jQ.PRESET_DOCUMENTS, g, S?.premiumTier) ?? [
+          p.on.RESOLUTION_SOURCE,
+          p.kn.FPS_5,
+        ],
+        [O, R] = (0, I.Ay)(p.jQ.PRESET_VIDEO, g, S?.premiumTier, e.guildId) ?? [
+          p.on.RESOLUTION_720,
+          p.kn.FPS_30,
+        ],
+        L = null;
+      if (
+        (s.entropy < 10 && (i.resolution !== N || i.fps !== C)
+          ? (T.info("Low entropy average, switching to screenshare preset."),
+            (L = {
+              qualityOptions: { preset: p.jQ.PRESET_AUTO, resolution: N, frameRate: C },
+              context: r.x.STREAM,
+            }))
+          : s.entropy > 20 &&
+            (i.resolution !== O || i.fps !== R) &&
+            (T.info("High entropy average, switching to video preset."),
+            (L = {
+              qualityOptions: { preset: p.jQ.PRESET_AUTO, resolution: O, frameRate: R },
+              context: r.x.STREAM,
+            })),
+        null != L)
+      ) {
+        if (null != n.desktopSource)
+          L.desktopSettings = { sourceId: n.desktopSource.id, sound: i.soundshareEnabled };
+        else {
+          if (null == n.cameraSource) return;
+          L.cameraSettings = {
+            videoDeviceGuid: n.cameraSource.videoDeviceGuid,
+            audioDeviceGuid: n.cameraSource.audioDeviceGuid,
+            sound: i.soundshareEnabled,
+          };
+        }
+        (t.autoQualityChange(), a.default.setGoLiveSource(L));
+      }
+    }
+    handlePostConnectionOpen() {
+      (0, h.pn)();
+    }
+  }
+  let S = new g();
+}

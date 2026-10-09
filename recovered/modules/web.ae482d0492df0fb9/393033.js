@@ -1,0 +1,93 @@
+/* Recovered shipped factory. Module 393033.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7372193..7373885
+ * Raw property SHA-256: d302f785b952934f18237e0a862f54f90c05b0934619fa8aa13c4e13cbf0d90a
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    $r: () => m,
+    Jn: () => h,
+    Q7: () => E,
+    Tk: () => T,
+    W$: () => g,
+    _W: () => _,
+    _g: () => p,
+    eu: () => I,
+    f4: () => A,
+    l0: () => f,
+    qn: () => S,
+  });
+  var i = n(536637),
+    r = n.n(i),
+    a = n(17928),
+    s = n(59318),
+    l = n(280450),
+    o = n(739010),
+    d = n(239093),
+    c = n(652215),
+    u = n(660183);
+  function _(e) {
+    return r()().to(r()(e));
+  }
+  function E(e) {
+    return (0, s.u)(e.filename) || (0, s.AE)(e.filename) ? c.sbO.IS_SPOILER : 0;
+  }
+  function A(e) {
+    if (null == e.fields) return;
+    let t = e.fields.reduce((e, t) => ((e[t.rawName] = t.rawValue), e), {});
+    return {
+      header: t[d.g0.HEADER] ?? "",
+      icon: t[d.g0.ICON_TYPE],
+      body: t[d.g0.BODY] ?? "",
+      ctas: (t[d.g0.CTAS] ?? "").split(",").filter((e) => "" !== e),
+      timestamp: parseFloat(t[d.g0.TIMESTAMP] ?? 0),
+      theme: t[d.g0.THEME],
+      learn_more_link: t[d.g0.LEARN_MORE_LINK],
+      classification_id: t[d.g0.CLASSIFICATION_ID],
+    };
+  }
+  function h(e) {
+    return e.type !== o.Xo.MESSAGE || ("" === e.content && 0 === e.attachments.length);
+  }
+  function f(e) {
+    return {
+      [d.Iv.DIDNT_VIOLATE_POLICY]: u.intl.string(u.t.mZffAi),
+      [d.Iv.TOO_STRICT_UNFAIR]: u.intl.string(u.t.wgZVAn),
+      [d.Iv.DONT_AGREE_PENALTY]: u.intl.string(u.t.eu8G4k),
+      [d.Iv.SOMETHING_ELSE]: u.intl.string(u.t.XU3s6r),
+    }[e];
+  }
+  function I(e) {
+    return null == e || 0 === e.length
+      ? ""
+      : 1 === e.length
+        ? e.toUpperCase()
+        : `${e.charAt(0).toUpperCase()}${e.slice(1)}`;
+  }
+  function p(e) {
+    return null != e && null != e.guild_metadata;
+  }
+  function T(e) {
+    return e === c.t02.DSA_APPEAL_REQUEST_DEFLECTION
+      ? u.intl.string(u.t["0qyXXH"])
+      : u.intl.string(u.t.aPmsx3);
+  }
+  function m(e) {
+    if (e.actions.some((e) => e.action_type === o.X2.BAN)) return null;
+    let t = e.max_expiration_time;
+    if (null == t || !0 === e.has_indefinite_suspension) return null;
+    try {
+      return new Date(t);
+    } catch {
+      return null;
+    }
+  }
+  function g() {
+    return null != (0, a.bG)([l.default], () => l.default.getSuspendedUserToken());
+  }
+  function S() {
+    return null != l.default.getSuspendedUserToken();
+  }
+}

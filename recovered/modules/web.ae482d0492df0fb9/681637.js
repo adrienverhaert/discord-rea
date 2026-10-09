@@ -1,0 +1,70 @@
+/* Recovered shipped factory. Module 681637.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 6784812..6786215
+ * Raw property SHA-256: d9a864145d81a78d244db7197cb9d9d88ef73a95e7fccf2f4a2c386e8ec73b2d
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => T });
+  var i = n(607399),
+    r = n(820739),
+    a = n(439372),
+    s = n(5180),
+    l = n(831617),
+    o = n(71393),
+    d = n(576705),
+    c = n(967198),
+    u = n(868652),
+    _ = n(645619),
+    E = n(772788),
+    A = n(383272),
+    h = n(414133),
+    f = n(363487),
+    I = n(342220);
+  class p extends a.A {
+    handleSelectedGuildChange() {
+      let e = c.A.getGuildId();
+      if (null == e || (0, s.ai)(e)) return;
+      let t = o.A.getGuild(e);
+      if (null != t) {
+        if (
+          (l.x1.trackExposure({ guildId: t.id, location: "GuildPowerupsManager" }),
+          A.g$.trackExposure({ guildId: t.id, location: "GuildPowerupsManager" }),
+          E.K.getConfig({ guildId: t.id, location: "GuildPowerupsManager" }),
+          !(0, f.G)(d.A, t))
+        ) {
+          let t = (0, I.X)(),
+            n =
+              i.Fr &&
+              (0, A.Qs)(e, "GuildPowerupsManager") &&
+              !(0, A.Ov)(e, "GuildPowerupsManager") &&
+              (0, I.X)() &&
+              (0, h.ht)("GuildPowerupsManager"),
+            r = i.Fr && (0, I.X)();
+          if (!(i.Fr ? n || r : t)) return;
+        }
+        (_.A.shouldFetchCatalogForGuild(e) && (0, u.AK)(e),
+          _.A.shouldFetchPowerupsForGuild(e) && (0, u.Xd)(e));
+      }
+    }
+    handleEntitlementUpdate(e) {
+      let { guildId: t } = e;
+      this.refreshGuildPowerups(t);
+    }
+    handleAppliedBoostUpdate(e) {
+      let { guildId: t } = e;
+      this.refreshGuildPowerups(t);
+    }
+    refreshGuildPowerups(e) {
+      !0 === (0, f.G)(d.A, o.A.getGuild(e)) && ((0, u.Xd)(e), (0, r.VU)(e, { includeEnded: !0 }));
+    }
+    stores = new Map().set(c.A, this.handleSelectedGuildChange);
+    actions = {
+      GUILD_POWERUP_ENTITLEMENTS_CREATE: this.handleEntitlementUpdate.bind(this),
+      GUILD_POWERUP_ENTITLEMENTS_DELETE: this.handleEntitlementUpdate.bind(this),
+      GUILD_APPLIED_BOOSTS_UPDATE: this.handleAppliedBoostUpdate.bind(this),
+    };
+  }
+  let T = new p();
+}

@@ -1,0 +1,43 @@
+/* Recovered shipped factory. Module 45926.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 3756276..3756920
+ * Raw property SHA-256: cc60ea69f505d928c16e5349e6fc07ef7b079e640b5b666c15cee2cb38db0c80
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  function i() {
+    return {
+      minConsecutiveChunks: 2,
+      minDominanceRatio: 0.4,
+      noiseFloorMultiplier: 3,
+      noiseFloorPercentile: 10,
+      requireAttribution: !0,
+      rmsScale: 4,
+      laughterEventThreshold: 0.5,
+      shoutingEventThreshold: 0.35,
+      laughterWeight: 1,
+      shoutingWeight: 0.7,
+      eventChainGapChunks: 2,
+      lagPreChunks: 1,
+      lagPostChunks: 3,
+      gameEventsAsReactionAnchors: !0,
+      mainWeight: 1,
+      reactionWeight: 0.4,
+      coOccurrenceWeight: 0.6,
+      normalizeComponents: !0,
+      sMainMedian: 0.777,
+      sMainIqr: 0.763,
+      sReactionMedian: 0.477,
+      sReactionIqr: 0.454,
+      sCoMedianPerPair: 1.5,
+      sCoIqrPerPair: 1,
+      soloReactionWeight: 0,
+      soloCoOccurrenceWeight: 0,
+      gameSquashScale: 1.5,
+      audioThreshold: 0,
+      mixedThreshold: 0.5,
+    };
+  }
+  n.d(t, { A: () => i });
+}

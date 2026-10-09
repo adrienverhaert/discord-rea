@@ -1,0 +1,80 @@
+/* Recovered shipped factory. Module 392054.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 2964563..2966989
+ * Raw property SHA-256: 79dc1e22f7c6d3aabd55194365e974bde2ebeb73ee464888334222e68d037289
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { Hf: () => d, Oh: () => _, RA: () => u, gK: () => E, iw: () => A, y$: () => c });
+  var i,
+    r,
+    a,
+    s,
+    l,
+    o,
+    d = (((i = {})[(i.BUILT_IN = 0)] = "BUILT_IN"), (i[(i.APPLICATION = 1)] = "APPLICATION"), i),
+    c =
+      (((r = {})[(r.BUILT_IN = 0)] = "BUILT_IN"),
+      (r[(r.BUILT_IN_TEXT = 1)] = "BUILT_IN_TEXT"),
+      (r[(r.BUILT_IN_INTEGRATION = 2)] = "BUILT_IN_INTEGRATION"),
+      (r[(r.BOT = 3)] = "BOT"),
+      (r[(r.PLACEHOLDER = 4)] = "PLACEHOLDER"),
+      r),
+    u =
+      (((a = {})[(a.ROLE = 1)] = "ROLE"),
+      (a[(a.USER = 2)] = "USER"),
+      (a[(a.CHANNEL = 3)] = "CHANNEL"),
+      a),
+    _ =
+      (((s = {}).DISCOVERY = "discovery"),
+      (s.SUGGESTION = "suggestion"),
+      (s.MENTION = "mention"),
+      (s.PASTE = "paste"),
+      (s.RECALL = "recall"),
+      (s.POPULAR_COMMANDS = "popular_commands"),
+      (s.MJ_CHAT_BAR = "mj_chat_bar"),
+      (s.QUERY = "query"),
+      (s.SLASH_UI = "slash_ui"),
+      (s.APP_LAUNCHER = "app_launcher"),
+      (s.APP_LAUNCHER_HOME = "app_launcher_home"),
+      (s.APP_LAUNCHER_HOME_SEARCH = "app_launcher_home_search"),
+      (s.APP_LAUNCHER_LIST_VIEW_ALL = "app_launcher_list_view_all"),
+      (s.APP_LAUNCHER_APPLICATION_VIEW = "app_launcher_application_view"),
+      (s.APP_LAUNCHER_APPLICATION_VIEW_FRECENCT = "app_launcher_application_view_frecent"),
+      (s.APP_LAUNCHER_APPLICATION_VIEW_MORE_MENU = "app_launcher_application_view_more_menu"),
+      (s.APP_LAUNCHER_SLASH_SEARCH = "app_launcher_slash_search"),
+      (s.APP_LAUNCHER_FRECENTS_VIEW_ALL = "app_launcher_frecents_view_all"),
+      (s.IMAGE_RECS_MENU = "image_recs_menu"),
+      (s.IMAGE_RECS_SUBMENU = "image_recs_submenu"),
+      (s.ACTIVITY_INSTANCE_EMBED = "activity_instance_embed"),
+      (s.ACTIVITY_BOOKMARK_EMBED = "activity_bookmark_embed"),
+      (s.ACTIVITIES_MINI_SHELF = "activities_mini_shelf"),
+      (s.VC_TILE_ACTIVITY_SUGGESTION = "vc_tile_activity_suggestion"),
+      (s.APP_DMS_ENTRY_POINT_COMMAND_BUTTON = "app_dms_entry_point_command_button"),
+      s),
+    E =
+      (((l = {})[(l.BUILT_IN = 1)] = "BUILT_IN"),
+      (l[(l.FRECENCY = 2)] = "FRECENCY"),
+      (l[(l.APP = 3)] = "APP"),
+      l),
+    A =
+      (((o = {})[(o.CHAT = 0)] = "CHAT"),
+      (o[(o.APPLICATION_LAUNCHER = 1)] = "APPLICATION_LAUNCHER"),
+      (o[(o.APP_LAUNCHER_APPLICATION_VIEW = 2)] = "APP_LAUNCHER_APPLICATION_VIEW"),
+      (o[(o.IMAGE_RECS_MENU = 3)] = "IMAGE_RECS_MENU"),
+      (o[(o.IMAGE_RECS_SUBMENU = 4)] = "IMAGE_RECS_SUBMENU"),
+      (o[(o.CONTEXT_MENU = 5)] = "CONTEXT_MENU"),
+      (o[(o.VOICE_UI = 6)] = "VOICE_UI"),
+      (o[(o.VOICE_TILE_ACTIVITY_SUGGESTIONS = 7)] = "VOICE_TILE_ACTIVITY_SUGGESTIONS"),
+      (o[(o.MINI_SHELF = 8)] = "MINI_SHELF"),
+      (o[(o.USER_PROFILE = 9)] = "USER_PROFILE"),
+      (o[(o.NOW_PLAYING = 10)] = "NOW_PLAYING"),
+      (o[(o.ACTIVITY_DETAILS = 11)] = "ACTIVITY_DETAILS"),
+      (o[(o.ACTIVITIES_HOME = 12)] = "ACTIVITIES_HOME"),
+      (o[(o.ACTIVITY_INSTANCE_EMBED = 13)] = "ACTIVITY_INSTANCE_EMBED"),
+      (o[(o.ACTIVITY_BOOKMARK_EMBED = 14)] = "ACTIVITY_BOOKMARK_EMBED"),
+      (o[(o.APP_DMS_ENTRY_POINT_COMMAND_BUTTON = 15)] = "APP_DMS_ENTRY_POINT_COMMAND_BUTTON"),
+      (o[(o.APP_MESSAGE_EMBED = 16)] = "APP_MESSAGE_EMBED"),
+      o);
+}

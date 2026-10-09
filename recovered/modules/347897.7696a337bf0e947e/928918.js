@@ -1,0 +1,83 @@
+/* Recovered shipped factory. Module 928918.
+ * Source: recovered/web/assets/347897.7696a337bf0e947e.js
+ * UTF-16 property offsets: 647354..648902
+ * Raw property SHA-256: 7db79f75cb89f666caccda3e185d443eba065e471840d8208e897ba6d3fccead
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e) {
+  var t = Object.prototype.hasOwnProperty;
+  function r(e) {
+    if (!(this instanceof r)) throw TypeError("Constructor PseudoMap requires 'new'");
+    if ((this.clear(), e))
+      if (e instanceof r || ("function" == typeof Map && e instanceof Map))
+        e.forEach(function (e, t) {
+          this.set(t, e);
+        }, this);
+      else if (Array.isArray(e))
+        e.forEach(function (e) {
+          this.set(e[0], e[1]);
+        }, this);
+      else throw TypeError("invalid argument");
+  }
+  function n(e, t) {
+    return e === t || (e != e && t != t);
+  }
+  function i(e, t, r) {
+    ((this.key = e), (this.value = t), (this._index = r));
+  }
+  function o(e, r) {
+    for (var i = 0, o = "_" + r, a = o; t.call(e, a); a = o + i++) if (n(e[a].key, r)) return e[a];
+  }
+  ((e.exports = r),
+    (r.prototype.forEach = function (e, t) {
+      ((t = t || this),
+        Object.keys(this._data).forEach(function (r) {
+          "size" !== r && e.call(t, this._data[r].value, this._data[r].key);
+        }, this));
+    }),
+    (r.prototype.has = function (e) {
+      return !!o(this._data, e);
+    }),
+    (r.prototype.get = function (e) {
+      var t = o(this._data, e);
+      return t && t.value;
+    }),
+    (r.prototype.set = function (e, r) {
+      !(function (e, r, o) {
+        for (var a = 0, s = "_" + r, l = s; t.call(e, l); l = s + a++)
+          if (n(e[l].key, r)) {
+            e[l].value = o;
+            return;
+          }
+        (e.size++, (e[l] = new i(r, o, l)));
+      })(this._data, e, r);
+    }),
+    (r.prototype.delete = function (e) {
+      var t = o(this._data, e);
+      t && (delete this._data[t._index], this._data.size--);
+    }),
+    (r.prototype.clear = function () {
+      var e = Object.create(null);
+      ((e.size = 0),
+        Object.defineProperty(this, "_data", {
+          value: e,
+          enumerable: !1,
+          configurable: !0,
+          writable: !1,
+        }));
+    }),
+    Object.defineProperty(r.prototype, "size", {
+      get: function () {
+        return this._data.size;
+      },
+      set: function (e) {},
+      enumerable: !0,
+      configurable: !0,
+    }),
+    (r.prototype.values =
+      r.prototype.keys =
+      r.prototype.entries =
+        function () {
+          throw Error("iterators are not implemented in this version");
+        }));
+}

@@ -1,0 +1,50 @@
+/* Recovered shipped factory. Module 434078.
+ * Source: recovered/web/assets/84993.b7a01947d08d1da7.js
+ * UTF-16 property offsets: 142..1277
+ * Raw property SHA-256: 732b47c917c4874b053b8546ffe75ed36e3cdb7d056795ef2eeb0e7ac1d76a12
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (a, d, e) {
+  a.exports = {
+    Nr: "card_abfd90",
+    ur: "cardFlairWrapper_abfd90",
+    mN: "cardFlairGlow_abfd90",
+    GW: "cardMedium_abfd90",
+    ax: "cardSmall_abfd90",
+    Vl: "cardImageContainer_abfd90",
+    jz: "cardEmbedded_abfd90",
+    BN: "cardDark_abfd90 card_abfd90",
+    YF: "cardHighlighted_abfd90",
+    Mn: "cardDarkHighlighted_abfd90",
+    Rc: "cardNotLoaded_abfd90",
+    Zl: "cardAnimation_abfd90",
+    GC: "cardBackgroundImage_abfd90",
+    wP: "cardImage_abfd90",
+    t7: "ticketIconContainer_abfd90",
+    Cw: "ticketIcon_abfd90",
+    zH: "details_abfd90",
+    S1: "inGameItemLabelContainer_abfd90",
+    gn: "titleContainer_abfd90",
+    iQ: "descriptionContainer_abfd90",
+    li: "buttonHover_abfd90",
+    ov: "titleContainerNoPrice_abfd90",
+    w4: "titleContainerExtendedHeight_abfd90",
+    iZ: "bottomGradient_abfd90",
+    p6: "priceContainer_abfd90",
+    of: "strikethrough_abfd90",
+    ye: "iconAsset_abfd90",
+    qS: "badge_abfd90",
+    fC: "badgeContainer_abfd90",
+    HI: "checkboxContainer_abfd90",
+    zu: "cardButtonsContainer_abfd90",
+    ij: "wishlistButton_abfd90",
+    gy: "forwardButton_abfd90",
+    o: "cardButtonContainer_abfd90",
+    H5: "cardButtonContainerHovered_abfd90",
+    U6: "pulse_abfd90",
+    Yf: "placeholderCard_abfd90",
+    RC: "placeholderText_abfd90",
+    pt: "orbsEarnedContainer_abfd90",
+    fN: "orbIconAligned_abfd90",
+  };
+}

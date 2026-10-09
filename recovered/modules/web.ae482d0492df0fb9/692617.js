@@ -1,0 +1,142 @@
+/* Recovered shipped factory. Module 692617.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 918691..920467
+ * Raw property SHA-256: 0971498b734e724222bedd20c5d53d06abdcbcdd276b2bbd541d7017f96c5d2f
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => I });
+  var i = n(477900);
+  n(582128);
+  var r = n(503698),
+    a = n.n(r),
+    s = n(435558),
+    l = n.n(s),
+    o = n(834730),
+    d = n(866665),
+    c = n(862482),
+    u = n(573435),
+    _ = n(548118),
+    E = n(166051);
+  function A(e) {
+    switch (e) {
+      case _.Ay.Sizes.SMOL:
+        return E.nc;
+      case _.Ay.Sizes.MINI:
+        return E.qV;
+      case _.Ay.Sizes.SMALLER:
+      default:
+        return E.q1;
+    }
+  }
+  function h(e) {
+    let { size: t, notched: n, width: r, children: a } = e,
+      s = _.iu[t];
+    return (0, i.jsx)(u.Ay, {
+      mask: n ? u.l8[s] : u.Ay.Masks.SQUIRCLE,
+      width: r ?? s,
+      height: s,
+      children: (0, i.jsx)("div", { className: E.A8, children: a }),
+    });
+  }
+  function f(e) {
+    let t,
+      { count: n, size: r, notched: s, tooltip: l, onFocus: u, onClick: A } = e,
+      f = (function (e) {
+        switch (e) {
+          case _.Ay.Sizes.SMOL:
+          case _.Ay.Sizes.MINI:
+            return "text-xxs/semibold";
+          case _.Ay.Sizes.SMALLER:
+          default:
+            return "text-xs/medium";
+        }
+      })(r),
+      I = n > 99 ? ">99" : `+${n}`,
+      p = ((t = _.iu[r]), I.length <= 2 ? t : t + 8),
+      T = (0, i.jsx)(c.$n, {
+        className: a()(E.ju, E.lv),
+        onFocus: u,
+        onClick: (e) => A?.(e),
+        look: c.$n.Looks.BLANK,
+        size: c.$n.Sizes.NONE,
+        children: (0, i.jsx)(o.E, { variant: f, children: I }),
+      });
+    return (0, i.jsx)(h, {
+      size: r,
+      notched: s,
+      width: p,
+      children:
+        null != l ? (0, i.jsx)(d.m, { text: l, position: "top", asContainer: !0, children: T }) : T,
+    });
+  }
+  function I(e) {
+    let t,
+      n,
+      r,
+      s,
+      {
+        className: o,
+        maxGuilds: d,
+        guilds: c,
+        onFocus: u,
+        onClick: I,
+        size: p = _.Ay.Sizes.SMALLER,
+        hideOverflowCount: T = !1,
+        disableGuildNameTooltip: m = !1,
+        overflowTooltip: g,
+      } = e;
+    return c.length <= 0
+      ? null
+      : (0, i.jsx)("ul", {
+          className: a()(o, E.HD),
+          children:
+            ((n = (t = c.length > d && !T) ? c.length - d + 1 : 0),
+            (r = t ? Math.min(c.length, d) - 1 : Math.min(c.length, d)),
+            (s = l()(c)
+              .take(r)
+              .map((e, n) =>
+                (0, i.jsx)(
+                  "li",
+                  {
+                    className: A(p),
+                    children: (0, i.jsx)(h, {
+                      size: p,
+                      notched: t || n !== r - 1,
+                      children: (0, i.jsx)(_.Ay, {
+                        guild: e,
+                        active: !0,
+                        onClick: I,
+                        size: p,
+                        showTooltip: !m,
+                      }),
+                    }),
+                  },
+                  e.id,
+                ),
+              )
+              .value()),
+            t
+              ? [
+                  ...s,
+                  (0, i.jsx)(
+                    "li",
+                    {
+                      className: A(p),
+                      children: (0, i.jsx)(f, {
+                        count: n,
+                        size: p,
+                        notched: !1,
+                        tooltip: g,
+                        onFocus: u,
+                        onClick: I,
+                      }),
+                    },
+                    "overflow",
+                  ),
+                ]
+              : s),
+        });
+  }
+}

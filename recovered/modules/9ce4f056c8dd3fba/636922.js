@@ -1,0 +1,103 @@
+/* Recovered shipped factory. Module 636922.
+ * Source: recovered/web/assets/9ce4f056c8dd3fba.js
+ * UTF-16 property offsets: 94..2057
+ * Raw property SHA-256: 039f1850a17654388872396ed90a622879647fb1f7fce23940b01cb325b3a55b
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, s, i) {
+  i.d(s, { A: () => v });
+  var l = i(477900),
+    n = i(582128),
+    a = i(503698),
+    t = i.n(a),
+    d = i(837381),
+    r = i(17928),
+    c = i(93474),
+    o = i(384231),
+    u = i(9842),
+    g = i(69282),
+    A = i(734057),
+    m = i(935208),
+    h = i(320095),
+    E = i(763754),
+    p = i(491182),
+    M = i(860227),
+    f = i(439762),
+    I = i(824556),
+    _ = i(699352),
+    R = i(235227),
+    N = i(715628),
+    b = i(752636),
+    x = i(270642),
+    y = i(268719),
+    C = i(234957),
+    L = i(652215),
+    S = i(13673);
+  let v = n.memo(function (e) {
+    let {
+        message: s,
+        compact: i = !1,
+        className: n,
+        onContextMenu: a,
+        onClick: v,
+        hideSimpleEmbedContent: F = !0,
+        channel: O,
+        isGroupStart: j,
+        animateAvatar: k,
+        subscribeToComponentDispatch: T,
+        renderThreadAccessory: G,
+        trackAnnouncementViews: D = !1,
+        inlineEditor: B,
+        ...U
+      } = e,
+      K = s.type === L.lAJ.POLL_RESULT || (e.disableInteraction ?? !1),
+      P = s.isFirstMessageInForumPost(O),
+      w = (0, o.S)((s.editedTimestamp ?? s.timestamp).valueOf()),
+      {
+        content: H,
+        hasSpoilerEmbeds: V,
+        hasBailedAst: J,
+      } = (0, f.A)(s, {
+        hideSimpleEmbedContent: F,
+        allowList: P || w,
+        allowHeading: P || w,
+        allowLinks: !0,
+        previewLinkTarget: !0,
+      }),
+      z = s.type === L.lAJ.REPLY ? s.messageReference : void 0,
+      X = (0, r.bG)([u.A], () => u.A.getMessageByReference(z)),
+      Y = (0, d.rm)(s.id),
+      Z = (0, E.Ay)(s),
+      Q = (0, r.bG)(
+        [A.A],
+        () =>
+          s.hasFlag(L.pr7.HAS_THREAD) && A.A.getChannel(m.default.castMessageIdAsChannelId(s.id)),
+      ),
+      q = (0, g.Xx)({ guildId: O.guild_id, roleId: Z.iconRoleId }),
+      W = (0, r.bG)([c.A], () => null != c.A.getMessage(s.id), [s.id]),
+      $ = (0, I.A)({ message: s, channel: O, announcementEnabled: D }),
+      ee = (0, M.fF)(s),
+      es = (0, M.ZD)(s);
+    return (0, l.jsx)(p.A, {
+      compact: i,
+      className: t()(n, { [S.M1]: (0, h.ec)(s), [S.XN]: K, [S.DX]: W }),
+      disableInteraction: K,
+      childrenRepliedMessage: (0, C.A)(s, O, z, X, i),
+      childrenExecutedCommand: (0, y.A)(s, O, i),
+      childrenHeader: (0, b.A)({ ...e, guildId: O.guild_id, author: Z, roleIcon: q }),
+      childrenAccessories: e.hideAccessories ? void 0 : (0, _.J)(e, V, J),
+      childrenMessageContent: B ?? (W ? (0, R.A)(e, H) : (0, N.A)(e, H)),
+      childrenSystemMessage: (0, x.A)({ ...e, disableInteraction: K }),
+      onContextMenu: a,
+      onClick: v,
+      hasThread: G && null != Q && s.hasFlag(L.pr7.HAS_THREAD),
+      hasReply: s.type === L.lAJ.REPLY,
+      "aria-labelledby": ee,
+      "aria-describedby": es,
+      messageRef: $,
+      author: Z,
+      ...Y,
+      ...U,
+    });
+  });
+}

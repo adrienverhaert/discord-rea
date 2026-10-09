@@ -1,0 +1,62 @@
+/* Recovered shipped factory. Module 256311.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 558339..559566
+ * Raw property SHA-256: f507743c9586c830938529c9e01adc4645c591e75f9c2c7f32b88b21f6a745d1
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => d });
+  var i = n(636537),
+    r = n(73153),
+    a = n(883600),
+    s = n(885386),
+    l = n(559868);
+  function o() {
+    let e = new Date().getMinutes();
+    return `x=${Math.floor(e / 5)}`;
+  }
+  let d = {
+    lockChangeLog(e) {
+      r.h.dispatch({ type: "CHANGE_LOG_LOCK", key: e });
+    },
+    unlockChangeLog(e) {
+      r.h.dispatch({ type: "CHANGE_LOG_UNLOCK", key: e });
+    },
+    markChangelogAsSeen(e, t) {
+      (r.h.dispatch({ type: "CHANGE_LOG_MARK_SEEN", changelogId: e, changelogDate: t }),
+        s.pK.updateSetting(e));
+    },
+    setChangelogOverride(e) {
+      r.h.dispatch({ type: "CHANGE_LOG_SET_OVERRIDE", id: e });
+    },
+    fetchChangelogConfig() {
+      let e = l.V5.DESKTOP;
+      return i.Bo.get({
+        url: `https://cdn.discordapp.com/changelogs/config_${e}.json?${o()}`,
+        rejectWithError: !0,
+      });
+    },
+    async fetchChangelog(e, t) {
+      arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+      let n = arguments.length > 3 && void 0 !== arguments[3] && arguments[3];
+      if (null != a.A.getChangelog(e, t)) return null;
+      let s = l.V5.DESKTOP,
+        d = n ? "" : `?${o()}`;
+      try {
+        let n = await i.Bo.get({
+          url: `https://cdn.discordapp.com/changelogs/${s}/${e}/${t}.json${d}`,
+          rejectWithError: !0,
+        });
+        return (
+          r.h.dispatch({ type: "CHANGE_LOG_FETCH_SUCCESS", id: e, changelog: n.body }),
+          n.body
+        );
+      } catch {
+        if ((r.h.dispatch({ type: "CHANGE_LOG_FETCH_FAILED", id: e, locale: t }), "en-US" !== t))
+          return await this.fetchChangelog(e, "en-US");
+        return null;
+      }
+    },
+  };
+}

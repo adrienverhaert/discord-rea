@@ -1,0 +1,41 @@
+/* Recovered shipped factory. Module 163328.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10271100..10272011
+ * Raw property SHA-256: 6a872724b6959a1dc09398f7f3ac7d0b0a96813e5a13bc805b9b943b8d699e36
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { y: () => l });
+  var i = n(477900);
+  n(582128);
+  var r = n(661531),
+    a = n(996682),
+    s = n(27989);
+  function l(e) {
+    let {
+        size: t = "md",
+        width: n,
+        height: l,
+        color: o = r.A.colors.INTERACTIVE_ICON_DEFAULT,
+        colorClass: d = "",
+        ...c
+      } = e,
+      u = (0, s.J)(t),
+      _ = u?.width ?? n,
+      E = u?.height ?? l;
+    return (0, i.jsx)("svg", {
+      ...(0, a.A)(c),
+      xmlns: "http://www.w3.org/2000/svg",
+      width: _,
+      height: E,
+      fill: "none",
+      viewBox: "0 0 24 24",
+      children: (0, i.jsx)("path", {
+        d: "M12 2.81a1 1 0 0 1 0-1.41l.36-.36a1 1 0 0 1 1.41 0l9.2 9.2a1 1 0 0 1 0 1.4l-.7.7a1 1 0 0 1-1.3.13l-9.54-6.72a1 1 0 0 1-.08-1.58l1-1L12 2.8ZM12 21.2a1 1 0 0 1 0 1.41l-.35.35a1 1 0 0 1-1.41 0l-9.2-9.19a1 1 0 0 1 0-1.41l.7-.7a1 1 0 0 1 1.3-.12l9.54 6.72a1 1 0 0 1 .07 1.58l-1 1 .35.36ZM15.66 16.8a1 1 0 0 1-1.38.28l-8.49-5.66A1 1 0 1 1 6.9 9.76l8.49 5.65a1 1 0 0 1 .27 1.39ZM17.1 14.25a1 1 0 1 0 1.11-1.66L9.73 6.93a1 1 0 0 0-1.11 1.66l8.49 5.66Z",
+        fill: "string" == typeof o ? o : o.css,
+        className: d,
+      }),
+    });
+  }
+}

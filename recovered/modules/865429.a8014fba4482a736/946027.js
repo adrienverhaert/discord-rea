@@ -1,0 +1,60 @@
+/* Recovered shipped factory. Module 946027.
+ * Source: recovered/web/assets/865429.a8014fba4482a736.js
+ * UTF-16 property offsets: 95..1570
+ * Raw property SHA-256: 8ddb088702941fa70e778bbedbad3e2379aaf6b63c3e42097cd4603dcfc08006
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (a, e, o) {
+  o.r(
+    (a.exports = {
+      uploadIconAnimateInLeft: "uploadIconAnimateInLeft_b78547",
+      uploadIconAnimateInMiddle: "uploadIconAnimateInMiddle_b78547",
+      uploadIconAnimateInRight: "uploadIconAnimateInRight_b78547",
+      uploadModalShake: "uploadModalShake_b78547",
+      uploadTextFadeIn: "uploadTextFadeIn_b78547",
+      uploadModalBounceTransition: "uploadModalBounceTransition_b78547",
+      uploadModalBounce: "uploadModalBounce_b78547",
+      uploadArea: "uploadArea_b78547",
+      droppable: "droppable_b78547",
+      uploadModalIn: "uploadModalIn_b78547",
+      uploadDropModal: "uploadDropModal_b78547",
+      uploadIconAnimateIn: "uploadIconAnimateIn_b78547",
+      instructions: "instructions_b78547",
+      title: "title_b78547",
+      bgScale: "bgScale_b78547",
+      inner: "inner_b78547",
+      icons: "icons_b78547",
+      icon: "icon_b78547",
+      one: "one_b78547",
+      three: "three_b78547",
+      two: "two_b78547",
+      wrapOne: "wrapOne_b78547",
+      wrapTwo: "wrapTwo_b78547",
+      wrapThree: "wrapThree_b78547",
+      document: "document_b78547",
+      image: "image_b78547",
+      code: "code_b78547",
+      crossOne: "crossOne_b78547",
+      crossTwo: "crossTwo_b78547",
+      lightOne: "lightOne_b78547",
+      lightTwo: "lightTwo_b78547",
+      popOne: "popOne_b78547",
+      sparkleOne: "sparkleOne_b78547",
+      sparkleTwo: "sparkleTwo_b78547",
+      imageFilePreviewImg: "imageFilePreviewImg_b78547",
+      fileIcon: "fileIcon_b78547",
+      video: "video_b78547",
+      acrobat: "acrobat_b78547",
+      ae: "ae_b78547",
+      sketch: "sketch_b78547",
+      ai: "ai_b78547",
+      archive: "archive_b78547",
+      photoshop: "photoshop_b78547",
+      ps: "ps_b78547",
+      spreadsheet: "spreadsheet_b78547",
+      webcode: "webcode_b78547",
+      audio: "audio_b78547",
+      unknown: "unknown_b78547",
+    }),
+  );
+}

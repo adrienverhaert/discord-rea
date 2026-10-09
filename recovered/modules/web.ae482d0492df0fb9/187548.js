@@ -1,0 +1,62 @@
+/* Recovered shipped factory. Module 187548.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 3908236..3909496
+ * Raw property SHA-256: 87bd3e28aed1abe9fac6459c0b28ba6084ca7d68f3c29dc955429a84ff7e0ea4
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => E });
+  var i = n(367513),
+    r = n(401843),
+    a = n(439372),
+    s = n(198052),
+    l = n(652896),
+    o = n(616356),
+    d = n(309010),
+    c = n(945041),
+    u = n(806931);
+  class _ extends a.A {
+    actions = {
+      VOICE_CHANNEL_SELECT: (e) => this.handleVoiceChannelSelect(e),
+      VOICE_STATE_UPDATES: (e) => this.handleVoiceStateUpdates(e),
+    };
+    handleVoiceChannelSelect(e) {
+      let { channelId: t } = e;
+      c.Uq.getState().isEnabled && null != t && this.findAndWatchStream();
+    }
+    handleVoiceStateUpdates(e) {
+      let { voiceStates: t } = e;
+      if (!c.Uq.getState().isEnabled) return;
+      let n = d.Ay.getVoiceChannelId();
+      null != n &&
+        t.forEach((e) => {
+          if (e.channelId !== n) return;
+          let t = o.A.getStreamForUser(e.userId, e.guildId),
+            a = o.A.getActiveStreamForUser(e.userId, e.guildId);
+          if (null != t && null == a) {
+            if (o.A.isStreamMarkedFull((0, l._z)(t))) return;
+            (0, r.A9)(t, { forceMultiple: !0, forceFocus: !0 });
+            return;
+          }
+          if (null == t && null != a) {
+            let e = s.A.getSelectedParticipant(n),
+              t = e?.type === u.lp.STREAM && e?.id === (0, l._z)(a);
+            if (((0, r.vN)((0, l._z)(a), !1, !0), !t)) return;
+            let d = o.A.getAllActiveStreamsForChannel(n).find((e) => e.ownerId !== a.ownerId);
+            if (null == d) return;
+            i.A.selectParticipant(n, (0, l._z)(d));
+          }
+        });
+    }
+    findAndWatchStream() {
+      let e = d.Ay.getVoiceChannelId();
+      if (null == e) return;
+      let t = o.A.getAllApplicationStreamsForChannel(e).find(
+        (e) => !o.A.isStreamMarkedFull((0, l._z)(e)),
+      );
+      null != t && (0, r.A9)(t);
+    }
+  }
+  let E = new _();
+}

@@ -1,0 +1,38 @@
+/* Recovered shipped factory. Module 412728.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 9845086..9845944
+ * Raw property SHA-256: ffb4d833a856bc60c0b66caa28f08b532530309ccd02dfca1013702cf925165c
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { q: () => a, z: () => s });
+  var i,
+    r,
+    a =
+      (((i = {}).CHANNEL_ADD_FLOW = "channel_add_flow"),
+      (i.CONTACT_SYNC_FLOW = "contact_sync_flow"),
+      (i.DIRECTORY_GUILD_ADD_FLOW = "directory_guild_add_flow"),
+      (i.GUILD_ADD_FLOW = "guild_add_flow"),
+      (i.GUILD_ADD_NUF = "guild_add_nuf"),
+      (i.USER_VERIFICATION_MODAL_FLOW = "user_verification_modal_flow"),
+      (i.GUILD_TRANSFER_OWNERSHIP_FLOW = "guild_transfer_ownership_flow"),
+      (i.ROLE_ADD_FLOW = "role_add_flow"),
+      (i.USER_ACCOUNT_EMAIL_CHANGE_FLOW = "user_account_email_change_flow"),
+      (i.USER_LOGIN_FLOW = "user_login_flow"),
+      (i.USER_REGISTRATION_FLOW = "user_registration_flow"),
+      (i.ACTIVITY_SHELF_FLOW = "activity_shelf_flow"),
+      (i.POMELO_FLOW = "pomelo_flow"),
+      (i.APPEAL_INGESTION = "appeal_ingestion"),
+      (i.ACCOUNT_REVERT_FLOW = "account_revert_flow"),
+      i),
+    s =
+      (((r = {}).PAGE = "page"),
+      (r.MODAL = "modal"),
+      (r.POPOUT = "popout"),
+      (r.MENU = "menu"),
+      (r.PANE = "pane"),
+      (r.VIEW = "view"),
+      (r.HALFSHEET = "halfsheet"),
+      r);
+}

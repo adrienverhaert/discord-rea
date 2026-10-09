@@ -1,0 +1,27 @@
+/* Recovered shipped factory. Module 164696.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8457867..8458322
+ * Raw property SHA-256: 21903ef49897122730d40ac81e08a3f221a26eaaaa40611cfd5dc3cf6be18f32
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { Ay: () => l, Zb: () => s });
+  var i = n(600975),
+    r = n(688151);
+  let a = (0, i.C)({
+    kind: "guild",
+    id: "2026-02_past_vc_activity_messages",
+    label: "Past VC Activity Messages",
+    commonTriggerPoint: r.$G.VOICE_CALL,
+    defaultConfig: { enabled: !1 },
+    treatments: [
+      { id: 1, label: "Show past VC activity messages in system channel", config: { enabled: !0 } },
+    ],
+  });
+  function s(e, t) {
+    let { enabled: n } = a.useExperiment({ guildId: e, location: t }, { autoTrackExposure: !0 });
+    return n;
+  }
+  let l = a;
+}

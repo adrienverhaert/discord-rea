@@ -1,0 +1,70 @@
+/* Recovered shipped factory. Module 524246.
+ * Source: recovered/web/assets/37853515aae7fb46.js
+ * UTF-16 property offsets: 95..944
+ * Raw property SHA-256: 5d3fb7916bb54de72f7734a62cb4a930615eb9fff08029a934cef91f127bf9b9
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (t, e, i) {
+  i.d(e, { A: () => u });
+  var a = i(477900),
+    l = i(582128),
+    r = i(776310),
+    s = i(536283);
+  let u = function (t) {
+    let {
+        confettiTarget: e,
+        confettiCanvas: i,
+        confettiVelocityMultiplier: u,
+        sprites: n,
+        colors: o,
+      } = t,
+      [c, p] = l.useState(null),
+      d = (0, r.f9)(i, c),
+      [y, f] = l.useState(!1);
+    return (
+      l.useEffect(() => {
+        let t = Array(10).fill(0);
+        return (
+          null != e &&
+            d.isReady &&
+            !y &&
+            (t = t.map((i, a) =>
+              setTimeout(() => {
+                var i, l;
+                (a === t.length - 1 && f(!0),
+                  d.createMultipleConfetti(
+                    ((i = e.getBoundingClientRect()),
+                    (l = (l = u) ?? 1),
+                    {
+                      ...s.Mw,
+                      position: {
+                        type: "static-random",
+                        minValue: { x: i.x, y: i.y },
+                        maxValue: { x: i.x + i.width, y: i.y + i.height / 2 },
+                      },
+                      velocity: {
+                        type: "static-random",
+                        minValue: { x: -100 * l, y: -50 * l },
+                        maxValue: { x: 100 * l, y: -300 * l },
+                      },
+                      dragCoefficient: { type: "static", value: 0.166 },
+                    }),
+                    50,
+                  ));
+              }, 100 * a),
+            )),
+          () => {
+            for (let e of t) clearTimeout(e);
+          }
+        );
+      }, [d, e, y, u]),
+      (0, a.jsx)(r.K_, {
+        ref: p,
+        sprites: n ?? s.uI,
+        colors: o ?? s._t,
+        spriteWidth: s.wn,
+        spriteHeight: s.wn,
+      })
+    );
+  };
+}

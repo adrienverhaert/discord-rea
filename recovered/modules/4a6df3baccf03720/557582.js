@@ -1,0 +1,163 @@
+/* Recovered shipped factory. Module 557582.
+ * Source: recovered/web/assets/4a6df3baccf03720.js
+ * UTF-16 property offsets: 1756..4341
+ * Raw property SHA-256: fe0b66de668342faf70ae53de01d491b7cb8f4b99b407c5845daf12d7301c713
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (t, e, n) {
+  n.d(e, { Ay: () => _, Uq: () => L, sC: () => D });
+  var l = n(477900);
+  n(582128);
+  var r = n(503698),
+    i = n.n(r),
+    a = n(17928),
+    s = n(866665),
+    c = n(97808),
+    u = n(778712),
+    o = n(177953),
+    d = n(834730),
+    m = n(297264),
+    x = n(696451),
+    g = n(427262),
+    h = n(722260),
+    f = n(563312),
+    E = n(826383),
+    N = n(794782),
+    v = n(974930),
+    A = n(937050),
+    j = n(850183),
+    T = n(103355),
+    I = n(660183),
+    C = n(386522);
+  function L(t) {
+    let {
+        className: e,
+        creator: n,
+        guildId: r,
+        isNew: m,
+        guildEvent: A,
+        eventPreview: j,
+        recurrenceId: L,
+      } = t,
+      D = (0, E.A)(r, A.id, L),
+      _ = A ?? j,
+      p = (0, a.bG)([x.Ay], () => x.Ay.getNick(r, n?.id), [r, n]);
+    L = null == _ || null != L ? L : (0, v.G3)(_);
+    let { startTime: w } = (0, f.Ay)(A ?? j, L),
+      S = (0, h.A)(L, A.id),
+      y = _?.scheduled_start_time != null ? (0, v.j)(S, w, new Date(_.scheduled_start_time)) : null;
+    if (null == _) return null;
+    let { entity_type: P, status: b, recurrence_rule: k } = _;
+    return (0, l.jsxs)("div", {
+      className: i()(C.II, e),
+      children: [
+        (0, l.jsx)(T.L, {
+          startTime: w.toISOString(),
+          status: y ?? b,
+          eventType: P,
+          isNew: m,
+          recurrenceRule: (0, N.Sn)(k),
+          guildEventId: A.id,
+          recurrenceId: L,
+        }),
+        (0, l.jsx)("div", { className: C.jH }),
+        null != n &&
+          (0, l.jsx)(s.m, {
+            text: I.intl.formatToPlainString(I.t["+3iypQ"], { username: p ?? g.Ay.getName(n) }),
+            children: (0, l.jsx)(c.eu, {
+              src: n.getAvatarURL(r, 20),
+              size: u._3.SIZE_20,
+              "aria-label": p ?? n.username,
+              className: C.xL,
+            }),
+          }),
+        (0, l.jsx)(s.m, {
+          ariaHidden: !0,
+          text: I.intl.formatToPlainString(I.t["+DLsD8"], { count: D }),
+          children: (0, l.jsxs)("div", {
+            role: "group",
+            "aria-label": I.intl.formatToPlainString(I.t["+DLsD8"], { count: D }),
+            className: C.T_,
+            children: [
+              (0, l.jsx)(o.n, { size: "xxs", color: "currentColor", className: C.pO }),
+              (0, l.jsx)(d.E, { color: "text-default", variant: "text-sm/normal", children: D }),
+            ],
+          }),
+        }),
+      ],
+    });
+  }
+  function D(t) {
+    let {
+      headerVariant: e = "heading-lg/medium",
+      descriptionClassName: n,
+      name: r,
+      description: a,
+      truncate: s,
+      guildId: c,
+      imageSource: u,
+    } = t;
+    return (0, l.jsxs)("div", {
+      className: i()({ [C.dT]: null != u }),
+      children: [
+        (0, l.jsxs)("div", {
+          className: i()({ [C.FD]: null != u }),
+          children: [
+            (0, l.jsx)(m.D, { variant: e, selectable: !0, className: C.eq, children: r }),
+            null != a &&
+              (0, l.jsx)(A.A, { description: a, className: i()(n, C.h_), truncate: s, guildId: c }),
+          ],
+        }),
+        null != u &&
+          (0, l.jsx)("div", {
+            className: C.iT,
+            children: (0, l.jsx)(j.A, { source: u, className: C.xn }),
+          }),
+      ],
+    });
+  }
+  function _(t) {
+    let {
+      headerVariant: e,
+      descriptionClassName: n,
+      creator: r,
+      name: i,
+      description: a,
+      imageSource: s,
+      truncate: c,
+      guildId: u,
+      isNew: o,
+      guildEvent: d,
+      eventPreview: m,
+      recurrenceId: x,
+    } = t;
+    return (0, l.jsxs)("div", {
+      className: C.kL,
+      children: [
+        null != s
+          ? (0, l.jsx)("div", {
+              className: C.iT,
+              children: (0, l.jsx)(j.A, { source: s, className: C.xn }),
+            })
+          : null,
+        (0, l.jsx)(L, {
+          className: C.kj,
+          creator: r,
+          guildId: u,
+          isNew: o,
+          guildEvent: d,
+          eventPreview: m,
+          recurrenceId: x,
+        }),
+        (0, l.jsx)(D, {
+          name: i,
+          description: a,
+          headerVariant: e,
+          descriptionClassName: n,
+          truncate: c,
+          guildId: u,
+        }),
+      ],
+    });
+  }
+}

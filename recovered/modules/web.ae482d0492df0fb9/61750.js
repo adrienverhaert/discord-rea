@@ -1,0 +1,143 @@
+/* Recovered shipped factory. Module 61750.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 3890855..3892906
+ * Raw property SHA-256: f5947610337759e891284f3fed5593044c521f7762efdeec88842c0f0f9cb45c
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => s });
+  var i = n(477900);
+  n(582128);
+  var r = n(192308),
+    a = n(758836);
+  let s = function (e) {
+    let {
+        product: t,
+        remainingProducts: s,
+        analyticsLocations: l,
+        overrideTitle: o,
+        overrideDescription: d,
+        shouldShowPromotionalExperience: c,
+        onCloseCallback: u,
+        itemConsumed: _,
+        purchaseType: E = a.gs.FIAT,
+        overrideGraphic: A,
+        overrideGradientColor: h,
+        rentalExpiresAt: f,
+      } = e,
+      I = null != s && s.length > 0;
+    (0, r.openModalLazy)(
+      async () => {
+        if ((0, a.EZ)(t.skuId) || t.skuId === a.Dp.ORB_PROFILE_BADGE) {
+          let { default: e } = await Promise.all([
+            n.e("736663"),
+            n.e("128804"),
+            n.e("237427"),
+            n.e("634225"),
+            n.e("881063"),
+            n.e("645499"),
+            n.e("60955"),
+            n.e("454048"),
+            n.e("364827"),
+            n.e("907167"),
+            n.e("784569"),
+            n.e("861060"),
+            n.e("293159"),
+            n.e("264236"),
+            n.e("349619"),
+            n.e("593600"),
+            n.e("9205"),
+            n.e("960478"),
+            n.e("132191"),
+            n.e("784041"),
+            n.e("718573"),
+            n.e("538887"),
+            n.e("8563"),
+            n.e("523276"),
+            n.e("729963"),
+            n.e("384996"),
+            n.e("875016"),
+            n.e("603808"),
+            n.e("424265"),
+            n.e("36877"),
+            n.e("627323"),
+            n.e("132737"),
+            n.e("7914"),
+            n.e("186546"),
+            n.e("443256"),
+            n.e("254103"),
+            n.e("230880"),
+            n.e("625265"),
+            n.e("995481"),
+          ]).then(n.bind(n, 328064));
+          return (n) =>
+            (0, i.jsx)(e, {
+              product: t,
+              analyticsLocations: l,
+              overrideTitle: o,
+              overrideDescription: d,
+              itemConsumed: _,
+              purchaseType: a.gs.ORB,
+              ...n,
+            });
+        }
+        let { default: e } = await Promise.all([
+          n.e("736663"),
+          n.e("237427"),
+          n.e("634225"),
+          n.e("881063"),
+          n.e("645499"),
+          n.e("60955"),
+          n.e("454048"),
+          n.e("364827"),
+          n.e("784569"),
+          n.e("293159"),
+          n.e("362931"),
+          n.e("264236"),
+          n.e("349619"),
+          n.e("593600"),
+          n.e("9205"),
+          n.e("960478"),
+          n.e("132191"),
+          n.e("784041"),
+          n.e("718573"),
+          n.e("538887"),
+          n.e("8563"),
+          n.e("523276"),
+          n.e("446800"),
+          n.e("875016"),
+          n.e("649520"),
+          n.e("603808"),
+          n.e("424265"),
+          n.e("36877"),
+          n.e("627323"),
+          n.e("132737"),
+          n.e("7914"),
+          n.e("186546"),
+          n.e("443256"),
+          n.e("254103"),
+          n.e("230880"),
+          n.e("625265"),
+          n.e("192643"),
+        ]).then(n.bind(n, 393870));
+        return (n) =>
+          (0, i.jsx)(e, {
+            product: t,
+            remainingProducts: s,
+            analyticsLocations: l,
+            overrideTitle: o,
+            overrideDescription: d,
+            shouldShowPromotionalExperience: c,
+            purchaseType: E,
+            overrideGraphic: A,
+            overrideGradientColor: h,
+            rentalExpiresAt: f,
+            onCloseCallback: u,
+            ...n,
+          });
+      },
+      { onCloseCallback: I ? void 0 : u },
+    );
+  };
+}

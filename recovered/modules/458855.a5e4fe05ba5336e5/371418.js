@@ -1,0 +1,34 @@
+/* Recovered shipped factory. Module 371418.
+ * Source: recovered/web/assets/458855.a5e4fe05ba5336e5.js
+ * UTF-16 property offsets: 95..888
+ * Raw property SHA-256: 8a2e1fe615fdce128aed3042ba463513e31bfd49d3bafeda7cf0857b87572fb4
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (o, c, _) {
+  o.exports = {
+    zr: "root__48c1c",
+    JC: "role__48c1c",
+    j1: "roleRemoveButton__48c1c",
+    jH: "roleRemoveButtonCanRemove__48c1c",
+    m4: "roleDot__48c1c",
+    U4: "roleFlowerStar__48c1c",
+    s$: "roleRemoveIcon__48c1c",
+    vZ: "roleRemoveIconFocused__48c1c",
+    gD: "roleVerifiedIcon__48c1c",
+    S3: "roleName__48c1c",
+    sH: "roleNameOverflow__48c1c",
+    hP: "actionButton__48c1c role__48c1c",
+    lv: "overflowButton__48c1c actionButton__48c1c role__48c1c",
+    c9: "addButton__48c1c actionButton__48c1c role__48c1c",
+    hs: "addButtonIcon__48c1c",
+    Jo: "overflowRolesPopout__48c1c",
+    rF: "overflowRolesPopoutArrowWrapper__48c1c",
+    QG: "overflowRolesPopoutArrow__48c1c",
+    Vf: "popoutBottom__48c1c",
+    vy: "popoutTop__48c1c",
+    q0: "overflowRolesPopoutHeader__48c1c",
+    LP: "overflowRolesPopoutHeaderIcon__48c1c",
+    VT: "overflowRolesPopoutHeaderText__48c1c",
+    UT: "roleIcon__48c1c",
+  };
+}

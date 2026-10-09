@@ -1,0 +1,79 @@
+/* Recovered shipped factory. Module 210954.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 4630557..4631924
+ * Raw property SHA-256: b8860a230043b37ba4d0ce833f9ac18381c8c1dcdc10e5de09c5050ba4be148d
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => O });
+  var i = n(477900);
+  n(582128);
+  var r = n(503698),
+    a = n.n(r),
+    s = n(17928),
+    l = n(793574),
+    o = n(688810),
+    d = n(429913),
+    c = n(869146),
+    u = n(272812),
+    _ = n(461782),
+    E = n(334463),
+    A = n(343030),
+    h = n(91242),
+    f = n(317608),
+    I = n(113192),
+    p = n(165610),
+    T = n(652215),
+    m = n(411801),
+    g = n(967481),
+    S = n(969426);
+  function N(e) {
+    let { onActive: t, onForceIdle: n } = e;
+    return (0, i.jsx)("div", { onMouseMove: t, onMouseDown: t, onMouseLeave: n, className: m.IU });
+  }
+  function C() {
+    let e = (0, s.bG)([h.A], () => (0, p.ny)(h.A.getMainFrame())),
+      t = (0, d.h)(e?.applicationId),
+      n = (0, s.bG)([c.A], () => c.A.getWindowOpen(T.MLl.ACTIVITY_POPOUT)),
+      r = (0, s.bG)([E.A], () => E.A.isFrameHidden());
+    if (null == e || null == t || n) return null;
+    let { layoutMode: l } = e.data,
+      o = l === p.y0.PIP && !r,
+      C = o && null != E.A.pipVideoWindow && null != E.A.pipFrameWindow;
+    return (0, i.jsx)(_.Ay, {
+      timeout: 2e3,
+      children: (t) => {
+        let { idle: n, onActive: s, onForceIdle: l } = t;
+        return (0, i.jsxs)(u.A, {
+          className: a()(m.zr, { [m.NW]: o, [S.a8]: o, [g.N7]: n, [m.p0]: o, [m.R]: r, [m.Gq]: C }),
+          noBorder: !o,
+          children: [
+            o ? (0, i.jsx)(N, { onActive: s, onForceIdle: l }) : null,
+            (0, i.jsx)(f.A, {
+              frameId: e.id,
+              level: A.A.AboveAppContent,
+              className: a()(m.pU, { [m.p0]: o }),
+              overlay: o
+                ? (0, i.jsx)("div", {
+                    className: "theme-dark",
+                    children: (0, i.jsx)(I.v, {
+                      frame: e,
+                      idle: n,
+                      onMouseMove: s,
+                      onMouseDown: s,
+                      onMouseLeave: l,
+                    }),
+                  })
+                : null,
+            }),
+          ],
+        });
+      },
+    });
+  }
+  let O = () => {
+    let { analyticsLocations: e } = (0, o.Ay)(l.A.FRAME_PIP);
+    return (0, i.jsx)(o.f5, { value: e, children: (0, i.jsx)(C, {}) });
+  };
+}

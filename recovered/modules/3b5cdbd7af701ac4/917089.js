@@ -1,0 +1,38 @@
+/* Recovered shipped factory. Module 917089.
+ * Source: recovered/web/assets/3b5cdbd7af701ac4.js
+ * UTF-16 property offsets: 772..1496
+ * Raw property SHA-256: ae820e751e0810f94b9d54bdb4061f4e37d23f0d5cae0e471f6bb2aba2357de6
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, _, o) {
+  e.exports = {
+    Ak: "flagContainer__71c22",
+    yk: "roleContainer__71c22",
+    yF: "roundedRow__71c22",
+    iM: "shimmer__71c22",
+    iA: "memberRowContainer__71c22",
+    Lq: "loading__71c22",
+    $E: "actionCell__71c22",
+    wH: "selected__71c22",
+    qb: "memberSelected__71c22",
+    $g: "addRoleContainer__71c22",
+    oE: "compact__71c22",
+    y2: "xsmallCol__71c22",
+    qp: "smallCol__71c22",
+    QB: "mediumCol__71c22",
+    OL: "fillCol__71c22",
+    FD: "memberNameContainer__71c22",
+    Br: "memberGlobalName__71c22",
+    bc: "memberNameText__71c22",
+    eg: "memberName__71c22",
+    Wn: "memberAvatar__71c22",
+    CN: "communicationDisabledTooltip__71c22",
+    x6: "button__71c22",
+    Lc: "highestRole__71c22",
+    yt: "otherRoles__71c22",
+    fd: "addRoleIcon__71c22",
+    Zf: "roleTooltipItem__71c22",
+    VW: "nameContainer__71c22",
+    Dz: "memberClanTag__71c22",
+  };
+}

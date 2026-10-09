@@ -1,0 +1,36 @@
+/* Recovered shipped factory. Module 176201.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 6732348..6732943
+ * Raw property SHA-256: 8c6d1cd35c258b8f5dbb6f1a75177301425f8e6506f533c1ef1ded62b0f0d46c
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { K3: () => a, Qv: () => l, kz: () => s });
+  var i = n(317097),
+    r = n(652215);
+  function a(e) {
+    return {
+      primaryColor: 0 === e.primary_color ? r.TpD : (0, i.Hl)(e.primary_color),
+      secondaryColor: null == e.secondary_color ? null : (0, i.Hl)(e.secondary_color),
+      tertiaryColor: null == e.tertiary_color ? null : (0, i.Hl)(e.tertiary_color),
+    };
+  }
+  function s(e) {
+    return (
+      null != e &&
+      null != e.colorStrings &&
+      null != e.colorStrings.primaryColor &&
+      null != e.colorStrings.secondaryColor
+    );
+  }
+  function l(e) {
+    let t = 0 === e.color,
+      n =
+        null != e.colors &&
+        0 === e.colors.primary_color &&
+        null == e.colors.secondary_color &&
+        null == e.colors.tertiary_color;
+    return t || n;
+  }
+}

@@ -1,0 +1,127 @@
+/* Recovered shipped factory. Module 401124.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 725385..727777
+ * Raw property SHA-256: 8ea1f75635dd76ab3e1753e0614c647aee042079b96a95de105e14fb1b622b86
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.r(t),
+    n.d(t, {
+      enable: () => O,
+      isNotSupported: () => N,
+      trackToggleSelfDeaf: () => L,
+      trackToggleSelfMute: () => R,
+    }));
+  var i = n(477900);
+  n(582128);
+  var r = n(862482),
+    a = n(192308),
+    s = n(640238),
+    l = n(834730),
+    o = n(73153),
+    d = n(626584),
+    c = n(734057),
+    u = n(192820),
+    _ = n(309010),
+    E = n(532624),
+    A = n(531685),
+    h = n(174459),
+    f = n(350535),
+    I = n(427603),
+    p = n(652215),
+    T = n(765682),
+    m = n(660183);
+  let g = new d.A("AudioActionCreators");
+  function S() {
+    (0, a.openModalLazy)(async () => {
+      let { default: e } = await Promise.all([n.e("915082"), n.e("944602"), n.e("825280")]).then(
+        n.bind(n, 987482),
+      );
+      return (t) => (0, i.jsx)(e, { source: "Unsupported Browser", ...t });
+    });
+  }
+  function N() {
+    return (
+      !u.Ay.isSupported() &&
+      ((0, a.openModal)((e) =>
+        (0, i.jsx)(s.a, {
+          header: m.intl.string(m.t.ilMTy0),
+          confirmText: m.intl.string(m.t["BK8LK+"]),
+          cancelText: m.intl.string(m.t["ETE/oC"]),
+          onConfirm: S,
+          confirmButtonColor: r.$n.Colors.BRAND,
+          ...e,
+          children: (0, i.jsx)(l.E, {
+            variant: "text-md/normal",
+            children: m.intl.string(m.t.h66vlB),
+          }),
+        }),
+      ),
+      !0)
+    );
+  }
+  function C(e) {
+    h.default.track(p.HAw.PERMISSIONS_ACKED, { type: "audio", action: e });
+  }
+  function O() {
+    let e = !(arguments.length > 0) || void 0 === arguments[0] || arguments[0];
+    return N()
+      ? Promise.resolve(!1)
+      : (h.default.track(p.HAw.PERMISSIONS_REQUESTED, { type: "audio" }),
+        u.Ay.getMediaEngine()
+          .enable()
+          .then(
+            () => {
+              (o.h.dispatch({ type: "MEDIA_ENGINE_SET_AUDIO_ENABLED", enabled: !0, unmute: e }),
+                C(T.hL.ACCEPTED));
+            },
+            (e) => {
+              switch (e) {
+                case p.xei.NO_DEVICES_FOUND:
+                  C(T.hL.NO_DEVICES);
+                  break;
+                case p.xei.PERMISSION_DENIED:
+                  C(T.hL.DENIED);
+                  break;
+                case p.xei.PERMISSION_DISMISSED:
+                  C(T.hL.DISMISSED);
+                  break;
+                default:
+                  (C(T.hL.ERROR), g.warn(`unknown getUserMedia error: ${e}`));
+              }
+            },
+          )
+          .then(() => !0));
+  }
+  function R(e) {
+    let { usedKeybind: t = !1, location: n } = e,
+      i = E.Ay.getKeybindForAction(p.hCu.TOGGLE_MUTE, !1, !0),
+      r = _.Ay.getVoiceChannelId(),
+      a = null != r ? c.A.getChannel(r) : null;
+    h.default.track(p.HAw.INPUT_MUTE_TOGGLED, {
+      enabled: !u.Ay.isSelfMute(),
+      custom_keybind_assigned: null != i,
+      used_keybind: t,
+      app_in_focus: A.A.isAppFocused(),
+      overlay_activated: null != (0, I.A)(),
+      voice_channel_type: null != a ? a.type : null,
+      location: n,
+    });
+  }
+  function L(e) {
+    let { usedKeybind: t = !1, location: n } = e,
+      i = E.Ay.getKeybindForAction(p.hCu.TOGGLE_DEAFEN, !1, !0),
+      r = _.Ay.getVoiceChannelId(),
+      a = null != r ? c.A.getChannel(r) : null;
+    h.default.track(p.HAw.SELF_DEAFEN_TOGGLED, {
+      enabled: !u.Ay.isSelfDeaf(),
+      keybind_assigned: null != i ? (0, f.dI)(i.shortcut) : void 0,
+      used_keybind: t,
+      app_in_focus: A.A.isAppFocused(),
+      overlay_activated: null != (0, I.A)(),
+      voice_channel_type: null != a ? a.type : null,
+      location: n,
+    });
+  }
+}

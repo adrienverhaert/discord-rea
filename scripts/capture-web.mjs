@@ -1,0 +1,10 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import path from 'node:path';import {createHash} from 'node:crypto';
+const root='recovered/web';await mkdir(root+'/assets',{recursive:true});
+if(process.argv.includes('--refresh')) {const page=await fetch('https://discord.com/app');if(!page.ok)throw Error('HTML fetch '+page.status);await writeFile(root+'/index.original.html',Buffer.from(await page.arrayBuffer()));}
+const html=await readFile(root+'/index.original.html','utf8');
+const urls=[...new Set([...html.matchAll(/(?:src|href)=["'](\/assets\/[^"']+)/g)].map(m=>'https://discord.com'+m[1]))];
+const manifest={capturedAt:new Date().toISOString(),origin:'https://discord.com/app',desktopVersion:'1.0.9261',versionRelationship:'Live web deployment loaded by the desktop endpoint; not an assertion of the historical desktop release bundle',html:{url:'https://discord.com/app',path:root+'/index.original.html',bytes:Buffer.byteLength(html),sha256:createHash('sha256').update(html).digest('hex')},files:[],failures:[]};let next=0,done=0;
+async function download(url){const res=await fetch(url);if(!res.ok)throw Error('HTTP '+res.status);const bytes=Buffer.from(await res.arrayBuffer());const filename=path.basename(new URL(url).pathname);await writeFile(root+'/assets/'+filename,bytes);return {url,path:root+'/assets/'+filename,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),contentType:res.headers.get('content-type')};}
+async function worker(){while(next<urls.length){const url=urls[next++];try{manifest.files.push(await download(url));}catch(e){manifest.failures.push({url,error:String(e)});}done++;if(done%100===0)console.log(`${done}/${urls.length}`);}}
+await Promise.all(Array.from({length:10},worker));manifest.files.sort((a,b)=>a.path.localeCompare(b.path));await writeFile('evidence/web-manifest.json',JSON.stringify(manifest,null,2));console.log(JSON.stringify({files:manifest.files.length,bytes:manifest.files.reduce((s,f)=>s+f.bytes,0),failures:manifest.failures}));

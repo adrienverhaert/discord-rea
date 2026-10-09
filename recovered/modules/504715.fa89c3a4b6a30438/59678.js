@@ -1,0 +1,52 @@
+/* Recovered shipped factory. Module 59678.
+ * Source: recovered/web/assets/504715.fa89c3a4b6a30438.js
+ * UTF-16 property offsets: 95..1340
+ * Raw property SHA-256: 9b10991d19c3ebb00b734e60f834f04dc0973415930b2efcee0526a1fe55a58f
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (t, _, e) {
+  t.exports = {
+    ue: "assistantTurn__76711",
+    ky: "chatMessageAssistant__76711",
+    cW: "chatMarkdown__76711",
+    DV: "turnResponse__76711",
+    dO: "turnSteps__76711",
+    K1: "activityStatus__76711",
+    YO: "turnChecklist__76711",
+    pj: "turnActivity__76711",
+    ep: "activityStatusRow__76711",
+    EK: "activityStatusRowToggle__76711",
+    hd: "activityStatusIcon__76711",
+    $m: "activityStatusFace__76711",
+    nC: "subagentMark__76711",
+    nD: "activityStatusChevron__76711",
+    pw: "activityStatusShine__76711",
+    Yj: "activityStatusShineFace__76711",
+    l3: "conjure-activity-shine-band__76711",
+    nT: "conjure-activity-shine-face__76711",
+    Z$: "wandSparkle__76711",
+    KH: "wandSparkleSmall__76711",
+    r3: "conjure-wand-sparkle-small__76711",
+    Q_: "wandSparkleLarge__76711",
+    V4: "conjure-wand-sparkle-large__76711",
+    qo: "activityStatusLabel__76711",
+    _q: "activityStatusLabelExit__76711",
+    GD: "activityStatusLabelEnter__76711",
+    BA: "activityDetail__76711",
+    Ge: "conjure-detail-enter__76711",
+    yJ: "stepDetail__76711",
+    Dx: "stepRow__76711",
+    kG: "stepDisclosureToggle__76711",
+    nV: "step-row-enter__76711",
+    zH: "stepStat__76711",
+    SS: "stepCommand__76711",
+    sI: "stepStatPositive__76711",
+    eh: "stepStatNegative__76711",
+    iq: "stepItem__76711",
+    Ue: "stepChevron__76711",
+    y8: "stepScreenshots__76711",
+    MT: "turnAttachments__76711",
+    l6: "stepLine__76711",
+    jz: "stepDriver__76711",
+  };
+}

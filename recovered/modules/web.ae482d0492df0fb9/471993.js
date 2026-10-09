@@ -1,0 +1,89 @@
+/* Recovered shipped factory. Module 471993.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8335486..8336785
+ * Raw property SHA-256: cf2523047ae086d4b7cd6c3f3419596e078c11cf21f5cdb61436b884f50d07ad
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => E });
+  var i = n(477900);
+  n(582128);
+  var r = n(192308),
+    a = n(401843),
+    s = n(327649),
+    l = n(734057),
+    o = n(71393),
+    d = n(192820),
+    c = n(287809),
+    u = n(723702),
+    _ = n(753070);
+  function E(e, t, E) {
+    if (u.isPlatformEmbedded)
+      (0, r.openModalLazy)(async () => {
+        let { default: e } = await Promise.all([
+          n.e("249169"),
+          n.e("879641"),
+          n.e("473782"),
+          n.e("132073"),
+          n.e("702154"),
+          n.e("553464"),
+          n.e("205035"),
+          n.e("130662"),
+          n.e("342551"),
+          n.e("498552"),
+          n.e("253729"),
+          n.e("827708"),
+          n.e("721690"),
+          n.e("234236"),
+          n.e("988077"),
+          n.e("718573"),
+          n.e("784103"),
+          n.e("537894"),
+          n.e("128534"),
+          n.e("499941"),
+          n.e("486672"),
+          n.e("858337"),
+          n.e("236946"),
+          n.e("757598"),
+          n.e("338601"),
+          n.e("944801"),
+          n.e("944727"),
+          n.e("763612"),
+          n.e("943371"),
+          n.e("725241"),
+          n.e("561547"),
+          n.e("937494"),
+          n.e("82001"),
+          n.e("289239"),
+          n.e("191782"),
+          n.e("190088"),
+        ]).then(n.bind(n, 266536));
+        return (t) => (0, i.jsx)(e, { ...t, analyticsLocations: E });
+      });
+    else {
+      let n = l.A.getChannel(t),
+        i = (0, s.A)(
+          _.jQ.PRESET_CUSTOM,
+          _.on.RESOLUTION_1080,
+          _.kn.FPS_30,
+          c.default.getCurrentUser(),
+          o.A.getGuild(e)?.premiumTier,
+          n,
+        )
+          ? { width: 1920, height: 1080 }
+          : { width: 1280, height: 720 };
+      ((0, a.Xd)({
+        preset: _.jQ.PRESET_CUSTOM,
+        resolution: i.height,
+        frameRate: _.kn.FPS_30,
+        soundshareEnabled: !0,
+      }),
+        d.Ay.getMediaEngine()
+          .getDesktopSource(i, !0)
+          .then((n) => {
+            (0, a.XI)(e, t, { pid: null, sourceId: n, sourceName: null, analyticsLocations: E });
+          }));
+    }
+  }
+}

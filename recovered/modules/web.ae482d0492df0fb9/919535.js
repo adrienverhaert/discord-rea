@@ -1,0 +1,102 @@
+/* Recovered shipped factory. Module 919535.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10583295..10584848
+ * Raw property SHA-256: c2f0842e68ab6d934fdab7f9db3eed2039ec15a9a6d0f2480b7295e47f0c493f
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  (n.d(t, {
+    $: () => r,
+    Ae: () =>
+      function e(t) {
+        let n =
+          arguments.length > 1 && void 0 !== arguments[1]
+            ? arguments[1]
+            : { limit: 200, hasBailedAst: !1 };
+        if (Array.isArray(t)) {
+          let r = t.length;
+          for (let a = 0; a < r; a++) {
+            let { ast: r } = e(t[a], n);
+            if (r === i) {
+              ((n.hasBailedAst = !0), (t.length = a));
+              break;
+            }
+            t[a] = r;
+          }
+        } else if ("text" !== t.type) {
+          if (((n.limit -= 1), n.limit <= 0))
+            return ((n.hasBailedAst = !0), { ast: i, hasBailedAst: !0 });
+          if (Array.isArray(t.content)) {
+            let { ast: i } = e(t.content, n);
+            t.content = i;
+          }
+          "list" === t.type &&
+            (t.items = t.items.map((t) => {
+              let { ast: i } = e(t, n);
+              return i;
+            }));
+        }
+        return { ast: t, hasBailedAst: n.hasBailedAst };
+      },
+    rI: () =>
+      function e(t, n) {
+        let i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : null;
+        if (Array.isArray(n)) {
+          let r = n.length,
+            a = [];
+          for (let s = 0; s < r; s++)
+            !(function (e, t) {
+              if (Array.isArray(t)) {
+                let { length: n } = t;
+                for (let i = 0; i < n; i++) e.push(t[i]);
+                return;
+              }
+              e.push(t);
+            })(a, e(t, n[s], i));
+          return (
+            t.isSlate ||
+              (function (e) {
+                let t = null;
+                for (let n = 0; n < e.length; n++) {
+                  let i = e[n];
+                  if (
+                    null == t ||
+                    "text" !== t.type ||
+                    t.type !== i.type ||
+                    "string" != typeof t.content ||
+                    "string" != typeof i.content
+                  ) {
+                    t = i;
+                    continue;
+                  }
+                  ((t.content += i.content), e.splice(n, 1), n--);
+                }
+              })(a),
+            a
+          );
+        }
+        return (null != n.content && (n.content = e(t, n.content, n)),
+        "inlineCode" === n.type && delete n.validationChildContent,
+        "list" === n.type && (n.items = n.items.map((n) => (Array.isArray(n) ? e(t, n, null) : n))),
+        null != i && n.type === i.type)
+          ? n.content
+          : n;
+      },
+  }),
+    n(321073));
+  let i = {};
+  function r(e) {
+    return (function e(t) {
+      let n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : [];
+      return (
+        Array.isArray(t)
+          ? t.forEach((t) => e(t, n))
+          : "string" == typeof t.content
+            ? n.push(t.content)
+            : null != t.content && e(t.content, n),
+        n
+      );
+    })(e).join("");
+  }
+}

@@ -1,0 +1,330 @@
+/* Recovered shipped factory. Module 863036.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8859268..8865240
+ * Raw property SHA-256: fe5685734d0fa0a4f454ddbf408eaae9495f5750fa110cc6b5aceef05b8e78b1
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  let i, r, a, s, l, o;
+  (n.d(t, { A: () => j }), n(938796));
+  var d = n(435558),
+    c = n.n(d),
+    u = n(536637),
+    _ = n.n(u),
+    E = n(371444),
+    A = n(602137),
+    h = n(17928),
+    f = n(636537),
+    I = n(73153),
+    p = n(7584),
+    T = n(815807),
+    m = n(95701),
+    g = n(671759),
+    S = n(889227),
+    N = n(149790),
+    C = n(734057),
+    O = n(652215),
+    R = n(37411);
+  let L = O.XlH.CLOSED,
+    y = {},
+    D = {},
+    v = !1,
+    b = !1,
+    M = null,
+    P = [
+      "name",
+      "type",
+      "topic_",
+      "bitrate_",
+      "userLimit_",
+      "nsfw_",
+      "flags_",
+      "rateLimitPerUser_",
+      "defaultThreadRateLimitPerUser",
+      "defaultAutoArchiveDuration",
+      "template",
+      "defaultReactionEmoji",
+      "rtcRegion",
+      "videoQualityMode",
+      "threadMetadata",
+      "banner",
+      "availableTags",
+      "defaultSortOrder",
+      "defaultForumLayout",
+      "defaultTagSetting",
+      "iconEmoji",
+      "themeColor",
+      "application_id",
+    ];
+  function U(e, t, n) {
+    switch (e) {
+      case "topic_":
+        return t ?? "";
+      case "defaultAutoArchiveDuration":
+        return t ?? R.cM;
+      case "defaultSortOrder":
+        return t ?? A.T.LATEST_ACTIVITY;
+      case "defaultForumLayout":
+        if (n === O.rbe.GUILD_MEDIA) return E.C.GRID;
+        if (null == t || t === E.C.DEFAULT) return E.C.LIST;
+        return t;
+      case "rateLimitPerUser_":
+      case "defaultThreadRateLimitPerUser":
+        return t ?? 0;
+      case "defaultReactionEmoji":
+        if (null == t) return null;
+        if ((0, T.is)(t.emojiId)) return { emojiId: t.emojiId };
+        let i = t.emojiName;
+        return null == i || "" === i
+          ? null
+          : { emojiName: p.Ay.translateInlineEmojiToSurrogates(i) };
+      default:
+        return t;
+    }
+  }
+  function w(e) {
+    ((i = e.section),
+      (r = e.subsection),
+      null != s &&
+        i === O.p_A.INSTANT_INVITES &&
+        ((v = !0),
+        f.Bo.get({ url: O.Rsh.INSTANT_INVITES(s.id), oldFormErrors: !0, rejectWithError: !0 }).then(
+          (e) => {
+            ((v = !1), I.h.dispatch({ type: "CHANNEL_SETTINGS_LOADED_INVITES", invites: e.body }));
+          },
+          () => (v = !1),
+        )));
+  }
+  function G() {
+    ((b = !1), (L = O.XlH.CLOSED), (i = null), (s = a = null), (l = null), (D = {}));
+  }
+  let x = c().debounce(() => {
+    if (null == s || null == a) return !1;
+    let e = s.toJS(),
+      t = a.toJS(),
+      n = e.type;
+    P.every((i) => {
+      let r = e[i],
+        a = t[i],
+        s = U(i, r, n),
+        l = U(i, a, n);
+      return c().isEqual(s, l);
+    }) &&
+      s !== a &&
+      ((s = a), H.emitChange());
+  }, 500);
+  function k(e) {
+    return new g.A({
+      code: e.code,
+      temporary: e.temporary,
+      revoked: e.revoked,
+      inviter: null != e.inviter ? new S.A(e.inviter) : null,
+      channel: (0, m.OY)(e.channel),
+      guild: null != e.guild ? (0, N.DY)(e.guild) : null,
+      uses: e.uses,
+      maxUses: e.max_uses,
+      maxAge: e.max_age,
+      createdAt: _()(e.created_at),
+      type: e.type,
+      roles: e.roles,
+    });
+  }
+  function F(e) {
+    return (
+      !!(function (e) {
+        if (null == a || a.id !== e) return !1;
+        if (a === s) {
+          let t = C.A.getChannel(e);
+          if (null == t) return !1;
+          ((s = a = t), (l = C.A.getChannel(s.parent_id)));
+        } else {
+          let t = C.A.getChannel(e);
+          if (null == t) return !1;
+          ((a = t),
+            null != s &&
+              ((s = s
+                .set("permissionOverwrites", a.permissionOverwrites)
+                .set("availableTags", a.availableTags)),
+              (l = C.A.getChannel(s.parent_id))));
+        }
+        return !0;
+      })(e) &&
+      null != s &&
+      (null != o && null == s.permissionOverwrites[o] && (o = s.getGuildId()), !0)
+    );
+  }
+  function B(e) {
+    let { channelId: t } = e;
+    return F(t);
+  }
+  class V extends h.Ay.Store {
+    static displayName = "ChannelSettingsStore";
+    initialize() {
+      this.waitFor(C.A);
+    }
+    hasChanges() {
+      return s !== a;
+    }
+    isOpen() {
+      return b;
+    }
+    getSection() {
+      return i;
+    }
+    getInvites() {
+      return { invites: D, loading: v };
+    }
+    showNotice() {
+      return this.hasChanges();
+    }
+    getChannel() {
+      return s;
+    }
+    getFormState() {
+      return L;
+    }
+    getCategory() {
+      return l;
+    }
+    getProps() {
+      return {
+        submitting: L === O.XlH.SUBMITTING,
+        errors: y,
+        channel: s,
+        section: i,
+        subsection: r,
+        invites: D,
+        selectedOverwriteId: o,
+        hasChanges: this.hasChanges(),
+        analyticsLocation: M,
+      };
+    }
+  }
+  let H = new V(I.h, {
+      CHANNEL_SETTINGS_INIT: function (e) {
+        let t = C.A.getChannel(e.channelId);
+        if (null == t) return G();
+        ((L = O.XlH.OPEN),
+          (s = a = t),
+          (M = "location" in e && null != e.location ? e.location : null),
+          (r = "subsection" in e ? e.subsection : null),
+          null != s && (s = s.set("nsfw", s.isNSFW())),
+          (l = C.A.getChannel(s.parent_id)),
+          (o = s.getGuildId()));
+        let n = s.isModeratorReportChannel() ? O.p_A.PERMISSIONS : O.p_A.OVERVIEW;
+        return (
+          (y = {}),
+          w({ type: "CHANNEL_SETTINGS_SET_SECTION", section: i ?? n, subsection: r }),
+          !0
+        );
+      },
+      CHANNEL_SETTINGS_SUBMIT: function () {
+        ((L = O.XlH.SUBMITTING), (y = {}));
+      },
+      CHANNEL_SETTINGS_SUBMIT_SUCCESS: function () {
+        ((a = s), (L = O.XlH.OPEN));
+      },
+      CHANNEL_SETTINGS_SUBMIT_FAILURE: function (e) {
+        ((L = O.XlH.OPEN),
+          (y = Object.keys(e.errors ?? {}).reduce((t, n) => {
+            let i = e.errors[n];
+            return ((0, d.isArray)(i) ? (t[n] = i.join("\n")) : (t[n] = i), t);
+          }, {})));
+      },
+      CHANNEL_SETTINGS_CLOSE: G,
+      CHANNEL_PERMISSIONS_PUT_OVERWRITE_SUCCESS: B,
+      CHANNEL_PERMISSIONS_DELETE_OVERWRITE_SUCCESS: B,
+      CHANNEL_SETTINGS_OVERWRITE_SELECT: function (e) {
+        let { overwriteId: t } = e;
+        o = t;
+      },
+      CHANNEL_SETTINGS_UPDATE: function (e) {
+        let {
+          name: t,
+          channelType: n,
+          topic: i,
+          bitrate: r,
+          userLimit: a,
+          nsfw: l,
+          flags: o,
+          rateLimitPerUser: d,
+          defaultThreadRateLimitPerUser: c,
+          autoArchiveDuration: u,
+          locked: _,
+          invitable: E,
+          defaultAutoArchiveDuration: A,
+          template: h,
+          defaultReactionEmoji: f,
+          rtcRegion: I,
+          videoQualityMode: p,
+          availableTags: T,
+          defaultSortOrder: m,
+          defaultForumLayout: g,
+          defaultTagSetting: S,
+          iconEmoji: N,
+          themeColor: C,
+          applicationId: O,
+        } = e;
+        if (null == s) return !1;
+        (null != t && (s = s.set("name", t)),
+          null != i && (s = s.set("topic", i)),
+          null != r && (s = s.set("bitrate", r)),
+          null != a && (s = s.set("userLimit", a)),
+          null != l && (s = s.set("nsfw", l)),
+          null != o && (s = s.set("flags", o)),
+          null != d && (s = s.set("rateLimitPerUser", d)),
+          null != c && (s = s.set("defaultThreadRateLimitPerUser", c)),
+          null != u &&
+            (s = s.set("threadMetadata", { ...s.threadMetadata, autoArchiveDuration: u })),
+          null != _ && (s = s.set("threadMetadata", { ...s.threadMetadata, locked: _ })),
+          null != E && (s = s.set("threadMetadata", { ...s.threadMetadata, invitable: E })),
+          null != A && (s = s.set("defaultAutoArchiveDuration", A)),
+          null != h && (s = s.set("template", h)),
+          null != n && (s = s.set("type", n)),
+          void 0 !== I && (s = s.set("rtcRegion", I)),
+          null != p && (s = s.set("videoQualityMode", p)),
+          void 0 !== f && (s = s.set("defaultReactionEmoji", f)),
+          null != T && (s = s.set("availableTags", T)),
+          null != m && (s = s.set("defaultSortOrder", m)),
+          null != S && (s = s.set("defaultTagSetting", S)),
+          null != g && (s = s.set("defaultForumLayout", g)),
+          void 0 !== N && (s = s.set("iconEmoji", N)),
+          null != C && (s = s.set("themeColor", C)),
+          void 0 !== O && (s = s.set("application_id", O)),
+          x());
+      },
+      CHANNEL_SETTINGS_SET_SECTION: w,
+      CHANNEL_SETTINGS_LOADED_INVITES: function (e) {
+        ((D = {}),
+          e.invites.forEach((e) => {
+            D[e.code] = k(e);
+          }));
+      },
+      CHANNEL_UPDATES: function (e) {
+        let { channels: t } = e;
+        if (null == s) return !1;
+        let n = !1;
+        for (let e of t) n = F(e.id) || n;
+        return n;
+      },
+      THREAD_UPDATE: function (e) {
+        let { channel: t } = e;
+        return null != s && F(t.id);
+      },
+      CHANNEL_DELETE: function (e) {
+        let {
+          channel: { id: t },
+        } = e;
+        if (null == s || s.id !== t) return !1;
+        L = O.XlH.CLOSED;
+      },
+      INSTANT_INVITE_REVOKE_SUCCESS: function (e) {
+        ((D = { ...D }), delete D[e.code]);
+      },
+      INSTANT_INVITE_CREATE_SUCCESS: function (e) {
+        D = { ...D, [e.invite.code]: k(e.invite) };
+      },
+    }),
+    j = H;
+}

@@ -1,0 +1,181 @@
+/* Recovered shipped factory. Module 57019.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 6354922..6357886
+ * Raw property SHA-256: b4ae3b89d09b4c71ee84cacad2e2b4d2775be0869b60ef2b21c121f82e360bd8
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { Fn: () => E, Gt: () => A, Ru: () => I });
+  var i = n(582128),
+    r = n(717421),
+    a = n(232554),
+    s = n(626584),
+    l = n(567249),
+    o = n(287809),
+    d = n(531685),
+    c = n(365971),
+    u = n(392164);
+  let _ = new s.A("NotificationLayoutManager");
+  class E {
+    resizeObserver;
+    listeners = new Map();
+    queuedCompute = !1;
+    items = [];
+    matchHeight = 0;
+    locked = !0;
+    constructor(e) {
+      this.locked = e;
+    }
+    updateState(e, t) {
+      this.items = e;
+      let n = this.locked !== t;
+      ((this.locked = t), this.computeLayout(n));
+    }
+    initialize(e) {
+      if (null == this.resizeObserver) {
+        for (let [, { element: t }] of ((this.resizeObserver = new e.ResizeObserver(
+          this.handleResize,
+        )),
+        this.listeners))
+          this.resizeObserver.observe(t);
+        this.queueCompute();
+      }
+    }
+    cleanUp() {
+      (this.resizeObserver?.disconnect(), (this.resizeObserver = void 0), this.listeners.clear());
+    }
+    queueCompute() {
+      this.queuedCompute ||
+        ((this.queuedCompute = !0), Promise.resolve().then(() => this.computeLayout()));
+    }
+    handleResize = (e) => {
+      this.computeLayout();
+    };
+    computeLayout() {
+      let e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
+      this.queuedCompute = !1;
+      let t = 0,
+        n = 0;
+      for (let i of this.items) {
+        let r = this.listeners.get(i.notification.id);
+        if (null == r) continue;
+        let { offsetHeight: a } = r.element;
+        ((r.top !== t || r.height !== a || r.index !== n) && (e = !0),
+          (r.top = t),
+          (r.height = a),
+          (r.index = n),
+          0 === t && (this.matchHeight !== a && (e = !0), (this.matchHeight = a)),
+          (t += a + 8),
+          n++);
+      }
+      e && this.broadcastLayoutUpdates();
+    }
+    broadcastLayoutUpdates() {
+      for (let e of this.items) {
+        let t = this.listeners.get(e.notification.id);
+        null != t &&
+          t.callback({
+            locked: this.locked,
+            matchHeight: this.matchHeight,
+            height: t.height,
+            top: t.top,
+            index: t.index,
+          });
+      }
+    }
+    subscribe(e, t, n) {
+      (this.listeners.set(e, {
+        notificationId: e,
+        callback: n,
+        element: t,
+        height: 0,
+        top: 0,
+        index: 0,
+      }),
+        this.resizeObserver?.observe(t),
+        this.queueCompute());
+    }
+    unsubscribe(e) {
+      let t = this.listeners.get(e);
+      null != t &&
+        (this.resizeObserver?.unobserve(t.element), this.listeners.delete(e), this.queueCompute());
+    }
+    getLayoutSpecs(e) {
+      return this.listeners.get(e);
+    }
+  }
+  let A = i.createContext(new E(!0));
+  function h(e, t, n) {
+    return t && 0 !== e ? 20 * Math.max(e / 5, 0) : n;
+  }
+  let f = { mass: 0.8, friction: 25, tension: 320 };
+  function I(e, t, n) {
+    let [s, E] = (0, r.z)(
+        () => ({ from: { opacity: 0, scale: 1, transform: 0, height: 0, contentOpacity: 1 } }),
+        void 0,
+        [],
+      ),
+      I = i.useRef(E),
+      p = i.useContext(A),
+      T = i.useMemo(() => {
+        let t = !1;
+        return (n) => {
+          null == n
+            ? p.unsubscribe(e)
+            : p.subscribe(e, n, (n) => {
+                let { locked: i, matchHeight: r, height: a, top: s, index: E } = n;
+                if (o.default.getCurrentUser()?.isStaff()) {
+                  let t = l.A.getWindow(u.f),
+                    n = null != t ? d.A.windowSize((0, c.Q2)(t)) : void 0;
+                  _.info(
+                    "Notification layout update",
+                    { id: e, locked: i, matchHeight: r, height: a, top: s, index: E },
+                    n,
+                  );
+                }
+                let { current: A } = I,
+                  p = {
+                    opacity: i && E > 4 ? 0 : i ? Math.min(1 - E / 4, 1) : 1,
+                    scale: i ? Math.min(1 - E / 4, 1) : 1,
+                    transform: h(E, i, s),
+                    contentOpacity: i && E > 0 ? 0 : 1,
+                    height: i ? r : a,
+                  };
+                (A({
+                  from: t
+                    ? void 0
+                    : {
+                        opacity: 0,
+                        scale: 1.1,
+                        transform: -((i ? r : a) * 1),
+                        contentOpacity: 1,
+                        height: i ? r : a,
+                      },
+                  to: p,
+                  config: f,
+                }),
+                  (t = !0));
+              });
+        };
+      }, [e, p]);
+    return (
+      i.useLayoutEffect(() => {
+        if (t === a.wL.YEETED) {
+          let t = p.getLayoutSpecs(e);
+          if (null == t) return void n();
+          (I.current({
+            to: {
+              scale: 0.8,
+              opacity: 0,
+              transform: h(t.index, p.locked, t.top) + (p.locked ? 0 : t.height / 2),
+            },
+            config: f,
+          }),
+            setTimeout(n, 300));
+        }
+      }, [t, n, e, p]),
+      { ref: T, springs: s }
+    );
+  }
+}

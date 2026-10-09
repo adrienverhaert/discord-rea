@@ -1,0 +1,104 @@
+{
+  "capturedAt": "2026-10-09T00:40:01.607Z",
+  "version": "1.0.9261",
+  "executable": {
+    "filename": "Discord.exe",
+    "sha256": "08f12bded9410c45363aae2311dba9cff61b655aab7afcbe4ca58774bc9be5c1"
+  },
+  "archives": [
+    {
+      "source": "resources/app.asar",
+      "bytes": 3619342,
+      "sha256": "535bcb3de917fa65289519e399ea82ab93d9e4df35f7b437ae8433e5ca9d39ca",
+      "files": [
+        {
+          "path": "recovered/desktop/bootstrap/bundle.js",
+          "bytes": 3064091,
+          "sha256": "316fb6200a9e923133674679d65457593462dba9a524b318bf4d11a48f79b408"
+        },
+        {
+          "path": "recovered/desktop/bootstrap/data/quotes_copy.json",
+          "bytes": 410,
+          "sha256": "f0971e5e329cd5cc89f631c630d0c083e71e97f884fd50b1439c1d695c8b6ae6"
+        },
+        {
+          "path": "recovered/desktop/bootstrap/package.json",
+          "bytes": 883,
+          "sha256": "30dfc02065c7e0a135e16351c129a118f1b1f40f764b85ea4d038e2c86117039"
+        },
+        {
+          "path": "recovered/desktop/bootstrap/splash/fonts/ggsans-400-normal.woff2",
+          "bytes": 29668,
+          "sha256": "49ea2d11bfc1a1d42beb815cf3546cf228f819325eb200585f6992e94e0e0238"
+        },
+        {
+          "path": "recovered/desktop/bootstrap/splash/fonts/ggsans-500-medium.woff2",
+          "bytes": 30600,
+          "sha256": "2018aec4e18a463f6d362cd32b69a822ac1470b6dd7cb8e9f0dc330ba87f4b59"
+        },
+        {
+          "path": "recovered/desktop/bootstrap/splash/images/img_lucky_dice.png",
+          "bytes": 6378,
+          "sha256": "9dfef87800478e8f5b1fd3e28ac162cf40a629abbb3f8d94b4f078d1f5094db7"
+        },
+        {
+          "path": "recovered/desktop/bootstrap/splash/index.css",
+          "bytes": 5394,
+          "sha256": "2e0ee4441dd310616276306ca9da50466363002b51bae3e14f68e73949449d21"
+        },
+        {
+          "path": "recovered/desktop/bootstrap/splash/index.html",
+          "bytes": 198,
+          "sha256": "4bfe611cf9dc0882c51364b1d102bee34a151e9d1d881a250c8deaaab6cbd738"
+        },
+        {
+          "path": "recovered/desktop/bootstrap/splash/videos/connecting.webm",
+          "bytes": 160381,
+          "sha256": "313818d6b177a70fbe715a5142d6221ac1a1851eff5a9f6df505670ddcd73074"
+        },
+        {
+          "path": "recovered/desktop/bootstrap/splash/videos/connecting.webp",
+          "bytes": 309074,
+          "sha256": "802cc5106da5c367abe62b1c4445858d08bd49f18b67ce7b63249eeb966217bf"
+        },
+        {
+          "path": "recovered/desktop/bootstrap/splashScreenPreload.js",
+          "bytes": 9289,
+          "sha256": "49e2c11f79868587e69d15529f08645e5699a27437fe85855137dfd7709fc051"
+        }
+      ]
+    },
+    {
+      "source": "modules/discord_desktop_core-1/discord_desktop_core/core.asar",
+      "bytes": 1736075,
+      "sha256": "396088f647b3084fc3b6efedd7c5e50eb4d7b9575b817e9b689ff739a54e0c04",
+      "files": [
+        {
+          "path": "recovered/desktop/core/bundle.js",
+          "bytes": 378670,
+          "sha256": "93c40dc9bc6e3532d7b007b3220e1c36ee6ab495f7b7006e29c608b2c7ebe939"
+        },
+        {
+          "path": "recovered/desktop/core/data/cacert.pem",
+          "bytes": 250607,
+          "sha256": "2c6d4960579b0d4fd46c6cbf135545116e76f2dbb7490e24cf330f2565770362"
+        },
+        {
+          "path": "recovered/desktop/core/data/riotgames.pem",
+          "bytes": 1493,
+          "sha256": "0206a897c4b3e6ba5b235f52c978064d0b20594d21d9947ba2d3129167a0b1c7"
+        },
+        {
+          "path": "recovered/desktop/core/mainScreenPreload.js",
+          "bytes": 1102445,
+          "sha256": "04472e880fc520f9696f13b23c4dcba988142322df35b9ff560c399078eedad4"
+        },
+        {
+          "path": "recovered/desktop/core/package.json",
+          "bytes": 1536,
+          "sha256": "608d5064d66f20e1fd733a3ec5cd13d0934d182649d7680b1a9809115c6f8eeb"
+        }
+      ]
+    }
+  ]
+}

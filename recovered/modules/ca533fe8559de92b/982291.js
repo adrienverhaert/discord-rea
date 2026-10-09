@@ -1,0 +1,82 @@
+/* Recovered shipped factory. Module 982291.
+ * Source: recovered/web/assets/ca533fe8559de92b.js
+ * UTF-16 property offsets: 237487..239107
+ * Raw property SHA-256: b4d1e36797487b9aedb81df6068ef86df65e09876e3b317237a9bd237c396e5d
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { c: () => S });
+  var l = n(477900),
+    i = n(582128),
+    r = n(951305),
+    a = n(166532),
+    s = n(735305),
+    o = n(169801),
+    u = n(810498),
+    c = n(295405),
+    d = n(75304),
+    p = n(558620),
+    m = n(642639),
+    h = n(818348);
+  function C(e) {
+    let {
+        returnStep: t = a.pn.REVIEW,
+        returnStepIfNoPaymentSources: n,
+        paymentModalStepProps: r,
+      } = e,
+      { purchaseType: o } = (0, m.t4)((e) => ({ purchaseType: e.purchaseType })),
+      u = i.useCallback(
+        () =>
+          (function (e) {
+            let {
+              paymentModalStepProps: t,
+              returnStep: n = a.pn.REVIEW,
+              returnStepIfNoPaymentSources: l,
+              purchaseType: i,
+            } = e;
+            if (0 === Object.keys(c.A.paymentSources).length) {
+              if (null != l) return void t.handleStepChange(l);
+              i === h.VV.SUBSCRIPTION
+                ? t.handleStepChange(n, { trackedFromStep: a.pn.ADD_PAYMENT_STEPS })
+                : t.handleClose();
+            } else t.handleStepChange(n, { trackedFromStep: a.pn.ADD_PAYMENT_STEPS });
+          })({
+            returnStep: t,
+            returnStepIfNoPaymentSources: n,
+            paymentModalStepProps: r,
+            purchaseType: o,
+          }),
+        [t, n, r, o],
+      );
+    return (0, l.jsx)(s.x, { ...r, onReturn: u });
+  }
+  function f(e) {
+    let { initialPlanId: t } = e,
+      { selectedSkuId: n } = (0, m.t4)((e) => ({ selectedSkuId: e.selectedSkuId })),
+      s = (0, p.A)(),
+      { isGift: c, claimableRewards: d } = (0, r.Pv)(),
+      h = (0, o.A)({ isGift: c, skuId: n }),
+      f = (0, m.t4)((e) => e.getIsInOneStepSubscriptionCheckout({ isTrial: h })),
+      S = (0, u.px)(s, c, d),
+      E = i.useMemo(() => {
+        let e = null == t ? a.pn.PLAN_SELECT : a.pn.REVIEW;
+        return (f && (e = a.pn.REVIEW), S && (e = a.pn.SELECT_FREE_SKU), e);
+      }, [f, S, t]);
+    return (0, l.jsx)(C, {
+      paymentModalStepProps: e,
+      returnStep: a.pn.REVIEW,
+      returnStepIfNoPaymentSources: E,
+    });
+  }
+  function S(e) {
+    let {
+      checkoutFlow: t,
+      returnStep: n = a.pn.REVIEW,
+      returnStepIfNoPaymentSources: i,
+      paymentModalStepProps: r,
+    } = e;
+    return t === d.C.PREMIUM_CHECKOUT
+      ? (0, l.jsx)(f, { ...r })
+      : (0, l.jsx)(C, { paymentModalStepProps: r, returnStep: n, returnStepIfNoPaymentSources: i });
+  }
+}

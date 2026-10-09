@@ -1,0 +1,36 @@
+/* Recovered shipped factory. Module 505779.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 11728132..11728773
+ * Raw property SHA-256: 87efcb6669a51abd5ea1d3966450010bbbba6092a81e0e7dc527f732939b252d
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { V: () => r, p: () => a });
+  var i,
+    r =
+      (((i = {})[(i.OFFICIAL = 1)] = "OFFICIAL"),
+      (i[(i.WIKIA = 2)] = "WIKIA"),
+      (i[(i.WIKIPEDIA = 3)] = "WIKIPEDIA"),
+      (i[(i.FACEBOOK = 4)] = "FACEBOOK"),
+      (i[(i.TWITTER = 5)] = "TWITTER"),
+      (i[(i.TWITCH = 6)] = "TWITCH"),
+      (i[(i.INSTAGRAM = 8)] = "INSTAGRAM"),
+      (i[(i.YOUTUBE = 9)] = "YOUTUBE"),
+      (i[(i.IPHONE = 10)] = "IPHONE"),
+      (i[(i.IPAD = 11)] = "IPAD"),
+      (i[(i.ANDROID = 12)] = "ANDROID"),
+      (i[(i.STEAM = 13)] = "STEAM"),
+      (i[(i.REDDIT = 14)] = "REDDIT"),
+      (i[(i.ITCH = 15)] = "ITCH"),
+      (i[(i.EPICGAMES = 16)] = "EPICGAMES"),
+      (i[(i.GOG = 17)] = "GOG"),
+      (i[(i.DISCORD = 18)] = "DISCORD"),
+      (i[(i.BLUESKY = 19)] = "BLUESKY"),
+      (i[(i.BATTLENET = 20)] = "BATTLENET"),
+      (i[(i.RIOT = 21)] = "RIOT"),
+      (i[(i.ROBLOX = 22)] = "ROBLOX"),
+      (i[(i.MINECRAFT = 23)] = "MINECRAFT"),
+      i);
+  let a = [1, 4, 5, 8, 9, 19, 14, 6];
+}

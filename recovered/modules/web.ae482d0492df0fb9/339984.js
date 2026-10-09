@@ -1,0 +1,79 @@
+/* Recovered shipped factory. Module 339984.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 5613298..5614328
+ * Raw property SHA-256: 0aa06996fcc31e960de33ba4be4e48d99443c1f0b436189bed9bf0d23343bf08
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    AB: () => T,
+    CK: () => A,
+    G9: () => y,
+    HL: () => s,
+    Ip: () => l,
+    Jz: () => C,
+    PS: () => h,
+    PU: () => _,
+    Uw: () => m,
+    Wz: () => E,
+    Xb: () => c,
+    aG: () => f,
+    cN: () => u,
+    eJ: () => R,
+    ge: () => S,
+    lA: () => v,
+    lF: () => I,
+    nI: () => o,
+    ny: () => g,
+    pj: () => N,
+    pr: () => O,
+    sW: () => L,
+    wL: () => p,
+    yZ: () => d,
+    yi: () => D,
+  });
+  var i,
+    r,
+    a = n(577718),
+    s =
+      (((i = {}).AVATAR = "AVATAR"),
+      (i.BANNER = "BANNER"),
+      (i.GUILD_BANNER = "GUILD_BANNER"),
+      (i.VIDEO_BACKGROUND = "VIDEO_BACKGROUND"),
+      (i.SCHEDULED_EVENT_IMAGE = "SCHEDULED_EVENT_IMAGE"),
+      (i.HOME_HEADER = "HOME_HEADER"),
+      (i.AVATAR_DECORATION = "AVATAR_DECORATION"),
+      (i.GUILD_ICON = "GUILD_ICON"),
+      (i.PERSONAL_WIDGET_COVER = "PERSONAL_WIDGET_COVER"),
+      (i.PERSONAL_WIDGET_FIELD = "PERSONAL_WIDGET_FIELD"),
+      i);
+  let l = 432,
+    o = 2400,
+    d = 848,
+    c = 2400,
+    u = 1350,
+    _ = 2400,
+    E = 960,
+    A = 2400,
+    h = 600,
+    f = 2400,
+    I = 1350,
+    p = 17 / 6,
+    T = 16 / 9,
+    m = 2.5,
+    g = 4,
+    S = 16 / 9,
+    N = 432 / (17 / 6),
+    C = 432 / (16 / 9),
+    O = 172.8,
+    R = 108,
+    L = 432 / (16 / 9),
+    y = a.Im.width / a.Im.height,
+    D = l / y;
+  var v =
+    (((r = {})[(r.CROP_ANIMATED_IMAGE_START = 0)] = "CROP_ANIMATED_IMAGE_START"),
+    (r[(r.CROP_ANIMATED_IMAGE_COMPLETE = 1)] = "CROP_ANIMATED_IMAGE_COMPLETE"),
+    (r[(r.CROP_ANIMATED_IMAGE_ERROR = 2)] = "CROP_ANIMATED_IMAGE_ERROR"),
+    r);
+}

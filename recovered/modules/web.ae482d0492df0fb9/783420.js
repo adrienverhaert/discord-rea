@@ -1,0 +1,101 @@
+/* Recovered shipped factory. Module 783420.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 6859159..6861028
+ * Raw property SHA-256: 32357f960ed33600ded33da5bfd7ce77ace75581d405ef3c199be6d19e23b7b9
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => I });
+  var i = n(477900);
+  n(582128);
+  var r = n(17928),
+    a = n(192308),
+    s = n(688810),
+    l = n(822123),
+    o = n(75678),
+    d = n(976860),
+    c = n(780964),
+    u = n(766075),
+    _ = n(287809),
+    E = n(166403),
+    A = n(732280),
+    h = n(202541),
+    f = n(652215);
+  function I(e) {
+    let {
+        onClick: t,
+        subscriptionTier: I,
+        postSuccessGuild: p,
+        onSubscribeModalClose: T,
+        premiumModalAnalyticsLocation: m,
+        applicationId: g,
+        giftMessage: S,
+        confirmationFooter: N,
+        isGift: C,
+        initialPlanId: O = null,
+        shouldDisallowPlanSelection: R = !1,
+        children: L,
+      } = e,
+      y = (0, r.bG)([_.default], () => _.default.getCurrentUser()),
+      D = (0, r.bG)([E.A], () => E.A.getPremiumTypeSubscription()),
+      { analyticsLocations: v } = (0, s.Ay)(),
+      b = (0, A.V)(),
+      M = !C && null != b && null != I && h.kb[b.trialId].skus.includes(I);
+    return L({
+      onClick: function (e) {
+        if ((e.preventDefault(), null == y))
+          return void (0, d.pX)(f.BVt.LOGIN, { source: "premium_subscribe_button" });
+        if ((t?.(e), D?.status === f.Dmq.ACCOUNT_HOLD)) {
+          ((0, l.xf)(), (0, u.openUserSettings)(c.X.NITRO_PANEL), T?.(!1));
+          return;
+        }
+        if (!y.isClaimed())
+          return void (0, a.openModalLazy)(async () => {
+            let { default: e } = await Promise.all([
+              n.e("671464"),
+              n.e("112206"),
+              n.e("709998"),
+              n.e("480388"),
+            ]).then(n.bind(n, 195759));
+            return (t) => {
+              let { onClose: n, ...r } = t;
+              return (0, i.jsx)(e, { ...r, onClose: n });
+            };
+          });
+        if (!y.verified)
+          return void (0, a.openModalLazy)(async () => {
+            let { default: e } = await Promise.all([
+              n.e("928873"),
+              n.e("874913"),
+              n.e("112206"),
+              n.e("590406"),
+            ]).then(n.bind(n, 661925));
+            return (t) => {
+              let { onClose: n, ...r } = t;
+              return (0, i.jsx)(e, { ...r, onClose: n });
+            };
+          });
+        let r = M ? b.subscriptionTrial?.id : null,
+          s = f.AnalyticsObjectTypes.BUY;
+        null != r ? (s = f.AnalyticsObjectTypes.TRIAL) : C && (s = f.AnalyticsObjectTypes.GIFT);
+        let _ = {
+          isGift: C,
+          initialPlanId: O,
+          subscriptionTier: I,
+          analyticsLocations: v,
+          analyticsObject: { object: f.ZSU.BUTTON_CTA, objectType: s, ...m },
+          trialId: r,
+          postSuccessGuild: p,
+          onClose: T,
+          applicationId: g,
+          giftMessage: S,
+          confirmationFooter: N,
+        };
+        R && null != O
+          ? (0, o.A)({ ..._, initialPlanId: O, shouldDisallowPlanSelection: !0 })
+          : (0, o.A)(_);
+      },
+    });
+  }
+}

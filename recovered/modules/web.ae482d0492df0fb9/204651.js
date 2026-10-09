@@ -1,0 +1,203 @@
+/* Recovered shipped factory. Module 204651.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8401993..8404705
+ * Raw property SHA-256: 6fe0eb651556eb4d730513a17fb0174c43359c57a5696def650e10b759587a9c
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { l: () => L, A: () => C });
+  var i = n(477900),
+    r = n(582128),
+    a = n(503698),
+    s = n.n(a),
+    l = n(319354),
+    o = n(84571),
+    d = n(862482),
+    c = n(866665),
+    u = n(939249),
+    _ = n(241524),
+    E = n(147925),
+    A = n(461782),
+    h = n(447404),
+    f = n(17928),
+    I = n(462887),
+    p = n(736653),
+    T = n(198052),
+    m = n(309010),
+    g = n(652215),
+    S = n(660183),
+    N = n(609142);
+  function C(e) {
+    let {
+        label: t,
+        onClick: n,
+        onKeyDown: r,
+        onMouseEnter: a,
+        onMouseLeave: u,
+        onContextMenu: _,
+        className: E,
+        wrapperClassName: A,
+        iconClassName: f,
+        iconColor: I = "currentColor",
+        iconComponent: p,
+        themeable: T = !1,
+        disabled: m = !1,
+        isActive: g = !1,
+        tooltipPosition: S = "top",
+        shouldShowTooltip: C = !0,
+        forceTooltipOpen: O = !1,
+        buttonRef: R,
+        grow: L,
+        "aria-label": y,
+        look: D,
+        buttonText: v,
+        size: b,
+        color: M,
+      } = e,
+      P = (0, o.O)(t);
+    return (0, i.jsx)(h.A, {
+      children: (0, i.jsx)(c.m, {
+        position: S,
+        __unsupportedReactNodeAsText: t,
+        ariaHidden: !0,
+        shouldShow: C,
+        forceOpen: O,
+        children: (0, i.jsxs)(d.$n, {
+          "data-migration-pending": !0,
+          look: D ?? d.$n.Looks.BLANK,
+          size: b ?? d.$n.Sizes.NONE,
+          color: M,
+          onKeyDown: (e) => {
+            r?.(e);
+          },
+          onMouseDown: (e) => {
+            e.preventDefault();
+          },
+          onClick: n,
+          onMouseEnter: a,
+          onMouseLeave: u,
+          onContextMenu: _ ?? void 0,
+          onFocus: (e) => {
+            a?.(e);
+          },
+          onBlur: u,
+          disabled: m,
+          innerClassName: s()(N.NL, { [N.eq]: null != v }),
+          className: s()({ [N.vu]: g }, E),
+          wrapperClassName: A,
+          buttonRef: R,
+          grow: L,
+          "aria-label": y ?? P,
+          children: [
+            (0, i.jsx)(p, {
+              size: l.E.md,
+              className: s()(f, { [N.pd]: null == v, [N.IW]: T, [N.vu]: g }),
+              color: I,
+            }),
+            v,
+          ],
+        }),
+      }),
+    });
+  }
+  let O = {
+      disconnect: N.Zf,
+      join: N.fj,
+      red: N.wv,
+      white: N.ON,
+      green: N.wL,
+      yellow: N.D9,
+      primaryDark: N.Zq,
+      primaryLight: N.Zq,
+      activeLight: N.H3,
+      premiumGradient: N.ck,
+    },
+    R = {
+      disconnect: N.Zf,
+      join: N.fj,
+      red: N.Xr,
+      white: N.ON,
+      green: N.Vu,
+      yellow: N.D9,
+      primaryDark: N.Zq,
+      primaryLight: N.Zq,
+      activeLight: N.H3,
+      premiumGradient: N.ck,
+    };
+  function L(e) {
+    let t,
+      n,
+      a,
+      {
+        ref: l,
+        color: o,
+        caretColor: d,
+        caretAriaLabel: c,
+        isActive: L = !1,
+        className: y,
+        iconClassName: D,
+        onPopoutClick: v,
+        popoutOpen: b = !1,
+        popoutDisabled: M = !1,
+        isTrayButton: P,
+        applyStyles: U = !1,
+        ...w
+      } = e,
+      G =
+        ((t = (0, f.bG)([m.Ay], () => m.Ay.getVoiceChannelId())),
+        (n = (0, f.bG)([T.A], () => (null != t ? T.A.getMode(t) : null))),
+        (a = (0, p.Ay)()),
+        null != o
+          ? o
+          : n === g._Of.VOICE && (0, I.q)(a)
+            ? L
+              ? "activeLight"
+              : "primaryLight"
+            : L
+              ? "white"
+              : "primaryDark"),
+      x = (0, _.A)("(max-width: 456px)"),
+      k = r.useRef(null),
+      F = r.useContext(A.vG);
+    r.useEffect(() => {
+      null != k.current && (F ? k.current.pause() : k.current.play());
+    }, [F]);
+    let B = w.onContextMenu ?? v,
+      V = null == v && !P,
+      H = null != v && !P,
+      j = (0, i.jsx)(C, {
+        ...w,
+        grow: !1,
+        onContextMenu: B,
+        iconClassName: s()(D, N.LF, V && N.Ns),
+        className: s()(
+          x || U ? y : null,
+          L && N.vu,
+          N.wh,
+          R[G],
+          V && N.Sy,
+          P && null != v && !x && N.hA,
+        ),
+      });
+    return x
+      ? j
+      : (0, i.jsxs)("div", {
+          ref: l,
+          className: s()(N.re, b && N.q6, y, H && [N.TD, O[G]]),
+          children: [
+            j,
+            null != v
+              ? (0, i.jsx)(h.A, {
+                  children: (0, i.jsx)(u.D, {
+                    "aria-label": c ?? S.intl.string(S.t.PdRCRg),
+                    onClick: M ? void 0 : v,
+                    className: s()(N.cd, P && N.Ml, R[d ?? G], b && [N.q6, N.vu], M && N.r9),
+                    children: (0, i.jsx)(E.A, { className: s()(N.gG, b && N.ho, M && N.r9) }),
+                  }),
+                })
+              : null,
+          ],
+        });
+  }
+}

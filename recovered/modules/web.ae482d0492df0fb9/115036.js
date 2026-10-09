@@ -1,0 +1,64 @@
+/* Recovered shipped factory. Module 115036.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 8832651..8833686
+ * Raw property SHA-256: 0cfd52775e90cb4a10580c4db111887d778028fe711dc8c3116d2abb458cb0c6
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  let i, r;
+  n.d(t, { A: () => g });
+  var a = n(132500),
+    s = n(17928),
+    l = n(506774),
+    o = n(451988),
+    d = n(73153),
+    c = n(6981),
+    u = n(353835),
+    _ = n(723702),
+    E = n(536194);
+  let A = "BrowserHandoffStore",
+    h = !1,
+    f = new o.Ep();
+  function I() {
+    null != i && null != r && (window.open(`${i}&key=${r}`), u.A.focus(null, !0));
+  }
+  function p() {
+    ((r = null), f.stop(), (h = !1), l.w.set(A, h));
+  }
+  function T() {
+    p();
+  }
+  class m extends s.Ay.Store {
+    static displayName = "BrowserHandoffStore";
+    initialize() {
+      !1 !== l.w.get(A) &&
+        (h = _.isPlatformEmbedded && "stable" === window.GLOBAL_ENV.RELEASE_CHANNEL);
+    }
+    isHandoffAvailable() {
+      return !E.P.isDisallowPopupsSet() && h;
+    }
+    get key() {
+      return r;
+    }
+  }
+  let g = new m(d.h, {
+    RPC_SERVER_READY: function (e) {
+      ((i = `${location.protocol}//${location.host}/handoff?rpc=${e.port}`), I());
+    },
+    BROWSER_HANDOFF_BEGIN: function (e) {
+      if (null != r) return !1;
+      ((r = (0, a.A)()), f.start(e.timeout, () => (0, c.mZ)()), I());
+    },
+    BROWSER_HANDOFF_FROM_APP: function (e) {
+      let { handoffKey: t, handoffToken: n, timeout: i } = e;
+      if (null == t || null == n) return !1;
+      ((h = !0), f.start(i, () => (0, c.mZ)()));
+    },
+    BROWSER_HANDOFF_UNAVAILABLE: p,
+    LOGIN: T,
+    LOGIN_SUCCESS: T,
+    LOGOUT: T,
+    REGISTER: T,
+  });
+}

@@ -1,0 +1,142 @@
+/* Recovered shipped factory. Module 809871.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 4627382..4630556
+ * Raw property SHA-256: 7cafd47ec1991f2f47e9d57bb4b57c7750739c7f7a5db51bacef40f66ad99c72
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => N });
+  var i = n(739187),
+    r = n(857250),
+    a = n(97483),
+    s = n(73153),
+    l = n(574172),
+    o = n(869146),
+    d = n(625180),
+    c = n(991690),
+    u = n(439372),
+    _ = n(957292),
+    E = n(308277),
+    A = n(174459),
+    h = n(91242),
+    f = n(652215);
+  class I extends u.A {
+    static displayName = "FramesManager";
+    actions = {
+      RPC_APP_DISCONNECTED: (e) => {
+        this.handleRPCDisconnect(e);
+      },
+      FRAME_LAUNCH: (e) => {
+        let { applicationId: t, analyticsContext: n } = e;
+        (0, _.Pd)(t, n);
+      },
+      FRAME_LAUNCH_FAIL: (e) => {
+        let { applicationId: t, error: n, analyticsContext: i } = e;
+        (0, _.ms)(t, n, i);
+      },
+      FRAME_STOP: (e) => {
+        let { applicationId: t } = e;
+        (0, _.iG)(t);
+      },
+      VOICE_CHANNEL_SELECT: (e) => {
+        this.handleVoiceChannelSelect(e);
+      },
+      CHANNEL_DELETE: (e) => {
+        let { channel: t } = e;
+        for (let e of h.A.getFramesForChannel(t.id)) this.leaveFrame(e.id);
+      },
+      GUILD_DELETE: (e) => {
+        let { guild: t } = e;
+        if (!("unavailable" in t) || !0 !== t.unavailable)
+          for (let e of h.A.getAllFrames())
+            e.surface.type !== c.U.MAIN &&
+              e.surface.type !== c.U.OVERLAY &&
+              e.surface.guildId === t.id &&
+              this.leaveFrame(e.id);
+      },
+      CHANNEL_UPDATES: (e) => {
+        let { channels: t } = e;
+        for (let e of t)
+          for (let t of h.A.getFramesForChannel(e.id))
+            t.applicationId !== e.application_id && this.leaveFrame(t.id);
+      },
+    };
+    handleVoiceChannelSelect = (e) => {
+      let { channelId: t, currentVoiceChannelId: n } = e;
+      if (null != n && n !== t)
+        for (let e of h.A.getFramesForSurface({ type: c.U.VOICE_CHANNEL, channelId: n }))
+          this.leaveFrame(e.id);
+    };
+    handleRPCDisconnect = (e) => {
+      let { reason: t } = e;
+      if (null == t || !(0, E.A)(e)) return;
+      let n = h.A.getFrameByEmbeddedContext(e.context, e.source.iframeId);
+      null != n &&
+        (this.leaveFrame(n.id),
+        t.code !== f.YI$.CLOSE_NORMAL &&
+          (A.default.track(f.HAw.ACTIVITY_CLOSED_RPC_ERROR, {
+            rpc_close_code: t.code,
+            rpc_message: t.message,
+            application_id: n.applicationId,
+          }),
+          this.showRPCDisconnectErrorUI(t)));
+    };
+    leaveFrame(e) {
+      let t = h.A.getFrame(e);
+      null != t &&
+        s.h.dispatch({ type: "FRAME_STOP", applicationId: t.applicationId, frameId: t.id });
+    }
+  }
+  var p = n(165610),
+    T = n(392164),
+    m = n(660183);
+  let g = !1,
+    S = !1,
+    N = new (class extends I {
+      static displayName = "FramesWebManager";
+      _initialize() {
+        (super._initialize(),
+          o.A.addChangeListener(this.handlePopoutWindowUpdate),
+          s.h.subscribe("POPOUT_WINDOW_OPEN", this.handlePopoutWindowOpen),
+          s.h.subscribe("FRAME_LAUNCH", this.handleFrameLaunch),
+          s.h.subscribe("LOGOUT", this.handleLogout));
+      }
+      _terminate() {
+        (super._terminate(),
+          o.A.removeChangeListener(this.handlePopoutWindowUpdate),
+          s.h.unsubscribe("POPOUT_WINDOW_OPEN", this.handlePopoutWindowOpen),
+          s.h.unsubscribe("FRAME_LAUNCH", this.handleFrameLaunch),
+          s.h.unsubscribe("LOGOUT", this.handleLogout));
+      }
+      handlePopoutWindowOpen = (e) => {
+        let { key: t } = e;
+        t === f.MLl.ACTIVITY_POPOUT && (S = !1);
+      };
+      handlePopoutWindowUpdate = () => {
+        let e = g,
+          t = o.A.getWindowOpen(f.MLl.ACTIVITY_POPOUT);
+        if ((!e || t || S || d.A.clearMainFrameSlot(), (g = t), !o.A.getWindowOpen(T.f)))
+          for (let e of h.A.getFramesForSurface(p.ZN))
+            (0, p.zB)(e) === T.f && this.leaveFrame(e.id);
+      };
+      handleLogout = () => {
+        for (let e of h.A.getFramesForSurface(p.ZN)) this.leaveFrame(e.id);
+      };
+      handleFrameLaunch = (e) => {
+        let { frameId: t, hostWindowKey: n } = e;
+        n !== T.f || o.A.getWindowOpen(T.f) || this.leaveFrame(t);
+      };
+      popInFrame = () => {
+        ((S = !0), l.close(f.MLl.ACTIVITY_POPOUT));
+        let e = h.A.getMainFrame();
+        null != e &&
+          (e.intent === p.sV.MAIN ? d.A.resetFrameLayoutModes(e.id) : d.A.clearMainFrameSlot());
+      };
+      showRPCDisconnectErrorUI(e) {
+        let { code: t, message: n } = e,
+          s = `${m.intl.formatToPlainString(m.t.hbiAO6, { code: t })}: ${n}`;
+        (0, i.P)((0, r.o)(s, a.Ck.FAILURE));
+      }
+    })();
+}

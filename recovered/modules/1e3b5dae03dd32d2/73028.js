@@ -1,0 +1,57 @@
+/* Recovered shipped factory. Module 73028.
+ * Source: recovered/web/assets/1e3b5dae03dd32d2.js
+ * UTF-16 property offsets: 95..872
+ * Raw property SHA-256: e8337900e0fa37e1bade7b4556f5f2643aafaed9af4c88e715dcb4403719502b
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (n, t, e) {
+  e.d(t, { U: () => r });
+  var i = e(477900);
+  e(582128);
+  var a = e(192308),
+    o = e(157559),
+    s = e(818348),
+    l = e(660183);
+  function r(n, t) {
+    let r = `group-dm-edit-modal-${n}`,
+      c = !1;
+    function d(n) {
+      c = n;
+    }
+    function u() {
+      c
+        ? o.A.show({
+            title: l.intl.string(l.t.pvRCSu),
+            body: l.intl.string(l.t.DRi46S),
+            confirmText: l.intl.string(l.t["6GQDFu"]),
+            confirmVariant: "critical-primary",
+            cancelText: l.intl.string(l.t.DmDzZB),
+            onConfirm: () => (0, a.closeModal)(r),
+            onCancel: s.tE,
+          })
+        : (0, a.closeModal)(r);
+    }
+    (0, a.openModalLazy)(
+      async () => {
+        let { default: a } = await Promise.all([
+          e.e("638781"),
+          e.e("55994"),
+          e.e("841567"),
+          e.e("188941"),
+          e.e("958428"),
+          e.e("695067"),
+          e.e("442455"),
+        ]).then(e.bind(e, 66442));
+        return (e) =>
+          (0, i.jsx)(a, {
+            closeOrShowDiscardChangesAlert: u,
+            setHasPendingChanges: d,
+            channelId: n,
+            location: t,
+            ...e,
+          });
+      },
+      { modalKey: r, onCloseRequest: u },
+    );
+  }
+}

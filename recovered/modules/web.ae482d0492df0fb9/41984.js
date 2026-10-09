@@ -1,0 +1,106 @@
+/* Recovered shipped factory. Module 41984.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 6214275..6217131
+ * Raw property SHA-256: 22ac820c4b17dcc23a09b16a825dc9ec1840aab8eacc83b6540cb212b86daa3e
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, {
+    AR: () => m,
+    B9: () => I,
+    Ue: () => A,
+    V6: () => E,
+    sf: () => T,
+    su: () => _,
+    x7: () => h,
+    y7: () => f,
+    yp: () => p,
+  });
+  var i,
+    r,
+    a,
+    s,
+    l,
+    o,
+    d,
+    c,
+    u,
+    _ = (((i = {}).TRACK_FOCUS = "track_focus"), (i.UNTRACK_FOCUS = "untrack_focus"), i),
+    E =
+      (((r = {}).UNSET = "UNSET"),
+      (r.IN_PROCESS_V2 = "IN_PROCESS_V2"),
+      (r.OUT_OF_PROCESS_V3 = "OUT_OF_PROCESS_V3"),
+      (r.OUT_OF_PROCESS_V3_LIMITED_INTERACTION = "OUT_OF_PROCESS_V3_LIMITED_INTERACTION"),
+      r),
+    A =
+      (((a = {})[(a.Disabled = 0)] = "Disabled"),
+      (a[(a.Hook = 1)] = "Hook"),
+      (a[(a.OutOfProcess = 2)] = "OutOfProcess"),
+      (a[(a.OutOfProcessLimitedInteraction = 3)] = "OutOfProcessLimitedInteraction"),
+      a),
+    h =
+      (((s = {}).ClickZones = "click_zones"),
+      (s.WidgetAreas = "widget_areas"),
+      (s.WindowContainer = "window_container"),
+      (s.DisabledGPUBoost = "disabled_gpu_boost"),
+      (s.ForceGPUBoost = "force_gpu_boost"),
+      (s.TrackFocusPIDs = "track_focus_pids"),
+      (s.OverlayRafManagerForceEnabled = "overlay_raf_manager_force_enabled"),
+      (s.LegacyOverlayLogging = "legacy_overlay_logging"),
+      s),
+    f =
+      (((l = {}).HARDWARE_ACCELERATED_GPU_SCHEDULING_ENABLED =
+        "HARDWARE_ACCELERATED_GPU_SCHEDULING_ENABLED"),
+      (l.OVERLAY_UNLOCKED = "OVERLAY_UNLOCKED"),
+      (l.OVERLAY_VIDEO_STREAM_RENDERING = "OVERLAY_VIDEO_STREAM_RENDERING"),
+      (l.OVERLAY_RENDERING = "OVERLAY_RENDERING"),
+      (l.DEV_FORCED_GPU_BOOST = "DEV_FORCED_GPU_BOOST"),
+      l),
+    I =
+      (((o = {}).INCOMING_DM_MESSAGE = "INCOMING_DM_MESSAGE"),
+      (o.INCOMING_MENTION_MESSAGE = "INCOMING_MENTION_MESSAGE"),
+      (o.FRIENDS_WIDGET_CLICK = "FRIENDS_WIDGET_CLICK"),
+      (o.MANUAL = "MANUAL"),
+      (o.NOTIFICATION_CLICK = "NOTIFICATION_CLICK"),
+      (o.AUTOMATIC_CHANNEL_SELECT = "AUTOMATIC_CHANNEL_SELECT"),
+      o),
+    p =
+      (((d = {}).LAUNCHER = "LAUNCHER"),
+      (d.LIBRARY_APPLICATION = "LIBRARY_APPLICATION"),
+      (d.USER_OVERRIDE = "USER_OVERRIDE"),
+      (d.DATABASE = "DATABASE"),
+      (d.DEFAULT = "DEFAULT"),
+      (d.OOP_DEFAULT = "OOP_DEFAULT"),
+      (d.OOP_DEFAULT_DATABASE = "OOP_DEFAULT_DATABASE"),
+      (d.DEV_OVERRIDE = "DEV_OVERRIDE"),
+      (d.LEGACY_ENABLED = "LEGACY_ENABLED"),
+      (d.NO_OUT_OF_PROCESS_SUPPORT = "NO_OUT_OF_PROCESS_SUPPORT"),
+      (d.FULL_SCREEN_TYPE = "FULL_SCREEN_TYPE"),
+      (d.NO_TRACKED_GAME = "NO_TRACKED_GAME"),
+      (d.GLOBAL_OVERLAY_LOCK_FAILED = "GLOBAL_OVERLAY_LOCK_FAILED"),
+      (d.UNKNOWN = "UNKNOWN"),
+      d),
+    T =
+      (((c = {}).SCREEN_TYPE_RESOLUTION = "screen_type_resolution"),
+      (c.MODULE_TRACKING = "module_tracking"),
+      (c.OVERLAY_RENDERING = "overlay_rendering"),
+      c),
+    m =
+      (((u = {}).INITIALIZING = "initializing"),
+      (u.OVERLAY_DISABLED = "overlay_disabled"),
+      (u.OVERLAY_TEARING_DOWN = "overlay_tearing_down"),
+      (u.WAITING_FOR_SCREEN_TYPE_RESOLUTION = "waiting_for_screen_type_resolution"),
+      (u.WAITING_FOR_MODULE_TRACKING = "waiting_for_module_tracking"),
+      (u.WAITING_FOR_OVERLAY_OPEN = "waiting_for_overlay_open"),
+      (u.WAITING_FOR_POPOUT_OPEN = "waiting_for_popout_open"),
+      (u.WAITING_FOR_MODULE_POPOUT_CAPTURE = "waiting_for_module_popout_capture"),
+      (u.WAITING_FOR_REACT_INITIALIZATION = "waiting_for_react_initialization"),
+      (u.WAITING_FOR_PID_FOCUS = "waiting_for_pid_focus"),
+      (u.WAITING_FOR_SUCCESSFUL_SHOW = "waiting_for_successful_show"),
+      (u.OVERLAY_RENDERING = "overlay_rendering"),
+      (u.OVERLAY_CRASHED = "overlay_crashed"),
+      (u.OVERLAY_CRASHED_DISABLED = "overlay_crashed_disabled"),
+      (u.GAME_UNTRACKED = "game_untracked"),
+      u);
+}

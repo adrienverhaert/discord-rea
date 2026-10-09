@@ -1,0 +1,45 @@
+/* Recovered shipped factory. Module 181774.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 3875648..3876608
+ * Raw property SHA-256: e3d4d99c589c5158c03700ff80e498de0dab773b34711606d958de6fb2409f78
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { EZ: () => o, Rc: () => l, ao: () => s });
+  var i = n(635358);
+  n(205693);
+  var r = n(531260),
+    a = n(58703);
+  function s(e, t) {
+    let n = {};
+    return (
+      null != t && (n.tab = t),
+      null == e ||
+        (!0 === e.noCache && (n.no_cache = !0),
+        !0 === e.includeUnpublished && (n.include_unpublished = !0),
+        !0 === e.includeBundles && (n.include_bundles = !0),
+        !0 === e.includeDynamicBlocks && (n.include_dynamic_blocks = !0),
+        null != e.countryCode && "" !== e.countryCode && (n.country_code = e.countryCode),
+        null !== e.paymentGateway && (n.payment_gateway = e.paymentGateway),
+        e.variantsReturnStyle === i.g.VARIANTS_GROUP &&
+          (n.variants_return_style = i.g.VARIANTS_GROUP),
+        null != e.shopHomeConfig && (n.shop_home_config = e.shopHomeConfig),
+        null != e.skipNumCategories && (n.skip_num_categories = e.skipNumCategories)),
+      n
+    );
+  }
+  function l(e) {
+    if (null != e) return `${e}?width=100&height=195`;
+  }
+  function o() {
+    let e = (0, r.A)({ forceFetch: !0 }),
+      t = (0, a.i$)(e.endsAt, "L");
+    return {
+      isLoading: !e.fetched,
+      isFractionalPremiumActive: e.isFractionalPremiumActive,
+      expiresAt: t,
+    };
+  }
+  n(753070);
+}

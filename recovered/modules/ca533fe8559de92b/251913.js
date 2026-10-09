@@ -1,0 +1,49 @@
+/* Recovered shipped factory. Module 251913.
+ * Source: recovered/web/assets/ca533fe8559de92b.js
+ * UTF-16 property offsets: 365865..366836
+ * Raw property SHA-256: 631a86cfa220a240c72c8fbca335fbae4419419e8c507f2d01dd78775e59cd10
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  n.d(t, { QR: () => h, b: () => m, oc: () => p });
+  var l,
+    i = n(582128),
+    r = n(17928),
+    a = n(451988),
+    s = n(277984),
+    o = n(642639),
+    u = n(595528),
+    c = n(166532),
+    d = n(566980),
+    p =
+      (((l = {})[(l.PENDING = 1)] = "PENDING"),
+      (l[(l.ERROR = 2)] = "ERROR"),
+      (l[(l.NONE = 3)] = "NONE"),
+      (l[(l.CANCELLED = 4)] = "CANCELLED"),
+      l);
+  function m(e, t, n, l) {
+    let r = arguments.length > 4 && void 0 !== arguments[4] && arguments[4],
+      a = arguments.length > 5 ? arguments[5] : void 0,
+      s = arguments.length > 6 && void 0 !== arguments[6] && arguments[6];
+    i.useEffect(() => {
+      s ||
+        null == e ||
+        (1 === t && e !== c.pn.AWAITING_AUTHENTICATION
+          ? n(c.pn.AWAITING_AUTHENTICATION)
+          : e === c.pn.AWAITING_AUTHENTICATION &&
+            (2 === t || 4 === t
+              ? n(c.pn.REVIEW)
+              : 3 === t &&
+                (r ? (null != a ? a() : n(c.pn.REVIEW)) : (l(d.h.COMPLETED), n(c.pn.CONFIRM)))));
+    }, [e, t, n, l, r, a, s]);
+  }
+  function h(e) {
+    let t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
+      n = (0, o.t4)((e) => e.awaitingPaymentId),
+      l = (0, r.bG)([u.A], () => u.A.isConnected()),
+      c = i.useRef(new a.IX());
+    i.useEffect(() => {
+      t || l || null == n || 1 !== e ? c.current.stop() : c.current.start(5e3, () => (0, s.TK)(n));
+    }, [n, e, l, t]);
+  }
+}

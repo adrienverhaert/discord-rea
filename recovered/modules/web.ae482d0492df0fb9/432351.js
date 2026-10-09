@@ -1,0 +1,197 @@
+/* Recovered shipped factory. Module 432351.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 10601668..10605563
+ * Raw property SHA-256: 482c73c5b65584f05ea3bb89cee22e0033bcb522f49a2d394ddeaa0c27737217
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { A: () => o });
+  var i = n(972347),
+    r = n(651139),
+    a = n(731854);
+  function s(e) {
+    return null;
+  }
+  function l(e) {
+    return null;
+  }
+  class o extends i.A {
+    Video = s;
+    Camera = l;
+    destroy() {
+      (this.emit(r.b.Destroy), this.removeAllListeners());
+    }
+    interact() {}
+    supported() {
+      return __OVERLAY__;
+    }
+    supports(e) {
+      return e === a.O5.AUTO_ENABLE && __OVERLAY__;
+    }
+    connect(e, t, n) {
+      throw Error("NOT_IMPLEMENTED");
+    }
+    eachConnection() {}
+    enable() {
+      return Promise.resolve();
+    }
+    setAudioMixerOptions(e) {}
+    setInputVolume(e) {}
+    setOutputVolume(e) {}
+    getAudioInputDevices() {
+      return Promise.resolve([]);
+    }
+    setAudioInputDevice(e) {}
+    getAudioOutputDevices() {
+      return Promise.resolve([]);
+    }
+    setAudioOutputDevice(e) {}
+    getVideoInputDevices() {
+      return Promise.resolve([]);
+    }
+    setVideoInputDevice(e) {}
+    getVideoInputDeviceId() {
+      return a.qe;
+    }
+    setAsyncVideoInputDeviceInit(e) {}
+    getCodecCapabilities(e) {
+      e("");
+    }
+    getCodecSurvey() {
+      return Promise.reject(Error("getCodecSurvey is not implemented for MediaEngineDummy"));
+    }
+    getAudioSubsystem() {
+      return a.rB.STANDARD;
+    }
+    getAudioLayer() {
+      return "";
+    }
+    setGoLiveSource(e, t) {}
+    setClipsSource(e) {}
+    setClipsQualitySettings(e, t, n, i) {
+      return !1;
+    }
+    setDesktopSource(e) {
+      arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : a.x.DEFAULT;
+    }
+    setSoundshareSource(e, t, n) {}
+    getDesktopSource() {
+      return Promise.reject(Error("NO_STREAM"));
+    }
+    getScreenPreviews(e, t, n) {
+      return Promise.reject(Error("UNSUPPORTED"));
+    }
+    getWindowPreviews(e, t, n) {
+      return Promise.reject(Error("UNSUPPORTED"));
+    }
+    getSingleWindowPreview(e, t, n, i) {
+      return Promise.reject(Error("UNSUPPORTED"));
+    }
+    setClipsModulePath(e) {}
+    setClipsDataPath(e) {}
+    hasClipsV3Support() {
+      return !1;
+    }
+    setClipsV3MLEnabled(e) {}
+    setClipsRecordingEnabled(e) {}
+    setClipsUIActive(e) {}
+    setClipBufferLength(e) {}
+    getSystemSteadyClockNowMs() {
+      return null;
+    }
+    saveClipEx(e) {
+      return Promise.reject(Error("UNSUPPORTED"));
+    }
+    updateClipMetadata(e, t) {
+      return Promise.reject(Error("UNSUPPORTED"));
+    }
+    exportClipToFile(e, t, n) {
+      return Promise.reject(Error("UNSUPPORTED"));
+    }
+    setClipsPerfMonitoring(e, t, n) {
+      return Promise.reject(Error("UNSUPPORTED"));
+    }
+    saveScreenshot(e, t, n, i, r) {
+      return Promise.reject(Error("UNSUPPORTED"));
+    }
+    setAudioSubsystem(e) {}
+    queueAudioSubsystem(e) {}
+    setOffloadAdmControls(e) {}
+    updateFieldTrial(e, t) {}
+    getDebugLogging() {
+      return !1;
+    }
+    setDebugLogging(e) {}
+    writeAudioDebugState() {
+      return Promise.reject(Error("Audio debug state is not supported."));
+    }
+    setLoopback(e, t) {}
+    getLoopback() {
+      return !1;
+    }
+    setExperimentFlag(e, t) {}
+    startAecDump() {}
+    stopAecDump() {}
+    setAecDump(e) {}
+    startRecordingRawSamples(e) {}
+    stopRecordingRawSamples() {}
+    processBatchAudioFiles(e, t, n, i) {}
+    cancelBatchAudioProcessing() {}
+    createReplayConnection(e, t) {
+      throw Error("Connection replay is not supported.");
+    }
+    setOnVideoContainerResized(e) {}
+    setMaxSyncDelayOverride(e) {}
+    rankRtcRegions(e) {
+      return Promise.reject(Error("RTC region latency test is not supported."));
+    }
+    applyMediaFilterSettings(e) {
+      return Promise.resolve();
+    }
+    startLocalAudioRecording() {
+      return Promise.reject(Error("startLocalAudioRecording is not supported."));
+    }
+    stopLocalAudioRecording(e) {}
+    setHasFullbandPerformance(e) {}
+    setNcModels(e) {}
+    getSupportedSecureFramesProtocolVersion() {
+      return 0;
+    }
+    getSupportedBandwidthEstimationExperiments(e) {
+      e([]);
+    }
+    getMLSSigningKey(e, t) {
+      return Promise.reject(Error("NOT_IMPLEMENTED"));
+    }
+    setSidechainCompression(e) {}
+    setSidechainCompressionStrength(e) {}
+    setVoiceSampleRateCap(e) {}
+    setVoiceChannelCountCap(e) {}
+    getSystemMicrophoneMode() {
+      return Promise.resolve("");
+    }
+    showSystemCaptureConfigurationUI(e) {}
+    setNativeDesktopVideoSourcePickerActive(e) {}
+    presentNativeScreenSharePicker(e) {}
+    releaseNativeDesktopVideoSourcePickerStream() {}
+    setMaybePreprocessMute(e) {}
+    setAudioInputBypassSystemProcessing(e) {}
+    fetchAsyncResources(e) {
+      return Promise.resolve();
+    }
+    getDeviceOSVolume(e) {
+      return Promise.resolve(void 0);
+    }
+    getDeviceOSMuted(e) {
+      return Promise.resolve(void 0);
+    }
+    getDeviceAudioEffects(e) {
+      return Promise.reject(Error("Device audio effect querying not supported"));
+    }
+    getNoiseCancellationStats() {
+      return Promise.reject(Error("Dummy noise cancellation stats not supported"));
+    }
+    setNoiseCancellationEnableStats(e) {}
+  }
+}

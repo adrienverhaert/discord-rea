@@ -1,0 +1,211 @@
+/* Recovered shipped factory. Module 599941.
+ * Source: recovered/web/assets/ca533fe8559de92b.js
+ * UTF-16 property offsets: 261466..264923
+ * Raw property SHA-256: 6314788437d33ce95105df5af5f8002eb526b59c0bfe8f9309c28d562e88d8ca
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  (n.d(t, {
+    KE: () => g,
+    Tq: () => I,
+    XE: () => P,
+    Yc: () => A,
+    cY: () => m,
+    dB: () => h,
+    dL: () => v,
+    eb: () => S,
+    et: () => E,
+    hc: () => y,
+    uP: () => f,
+    uk: () => C,
+  }),
+    n(321073));
+  var l = n(582128),
+    i = n(17928),
+    r = n(724442),
+    a = n(608461),
+    s = n(595528);
+  n(403362);
+  var o = n(300233),
+    u = n(579908),
+    c = n(636194),
+    d = n(624456);
+  let p = [];
+  function m(e) {
+    let { includeSoftDeleted: t = !1, includeUnpublished: n = !0 } =
+      arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+    return (0, i.yK)(
+      [c.A],
+      () => {
+        if (null == e) return [];
+        let l = c.A.getSubscriptionGroupListing(e);
+        if (null == l) return [];
+        let i = [];
+        for (let e of l.subscription_listings_ids) {
+          let l = c.A.getSubscriptionListing(e);
+          null != l && (!l.soft_deleted || t) && (l.published || n) && i.push(l);
+        }
+        return i;
+      },
+      [e, t, n],
+    );
+  }
+  function h(e) {
+    return (0, i.bG)([c.A], () => (null != e ? c.A.getSubscriptionListing(e) : null));
+  }
+  function C(e) {
+    let t = (0, o.X)("useGroupListingsForGuild");
+    return (0, i.bG)([c.A], () =>
+      null != e && t ? c.A.getSubscriptionGroupListingsForGuild(e) : p,
+    );
+  }
+  function f(e) {
+    let t =
+      arguments.length > 1 && void 0 !== arguments[1]
+        ? arguments[1]
+        : { includeSoftDeleted: !1, sortDeletedListingsLast: !1 };
+    return (
+      !(function (e) {
+        let {
+            refetchOnMount: t = !1,
+            includeSoftDeleted: n = !0,
+            countryCode: a,
+            dontFetchWhileTrue: o,
+          } = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+          d = (0, i.bG)([s.A], () => s.A.isConnected()),
+          p = (0, i.bG)([c.A], () =>
+            null != e ? c.A.getSubscriptionGroupListingsForGuildFetchState(e) : c.e.FETCHED,
+          ),
+          m = l.useRef(t);
+        (l.useEffect(() => {
+          if (null == e || !d || !0 === o) return;
+          let l = c.A.getSubscriptionGroupListingsForGuildFetchState(e);
+          (t || l === c.e.NOT_FETCHED) &&
+            ((m.current = !1), u.WA(e, { includeSoftDeleted: n, countryCode: a }));
+        }, [d, e, n, t, a, o]),
+          (0, r.A)(m),
+          c.e.FETCHED);
+      })(e),
+      (0, i.yK)([c.A], () => {
+        let n = null != e ? c.A.getSubscriptionGroupListingsForGuild(e) : p,
+          l = [];
+        for (let e of n)
+          for (let n of e.subscription_listings_ids) {
+            let e = c.A.getSubscriptionListing(n);
+            null != e && (t.includeSoftDeleted || !e.soft_deleted) && l.push(e);
+          }
+        return t.includeSoftDeleted && t.sortDeletedListingsLast
+          ? [...l.filter((e) => !e.soft_deleted), ...l.filter((e) => e.soft_deleted)]
+          : l;
+      })
+    );
+  }
+  let S = (e) => {
+    let [t, n] = l.useState(!1),
+      r = l.useMemo(() => e.map(d.M), [e]),
+      a = (0, i.yK)([c.A], () => r.filter((e) => !c.A.getDidFetchListingForSubscriptionPlanId(e)), [
+        r,
+      ]);
+    return (
+      l.useEffect(() => {
+        !t &&
+          a.length > 0 &&
+          (n(!0),
+          Promise.all(a.map((e) => u._R(e)))
+            .catch(() => {})
+            .then(() => {
+              n(!1);
+            }));
+      }, [t, a]),
+      { loading: t }
+    );
+  };
+  function E() {
+    let [e, t] = l.useState(!1),
+      [n, i] = l.useState(null);
+    return {
+      error: n,
+      submitting: e,
+      deleteSubscriptionListing: async function (e, n, l) {
+        try {
+          return (t(!0), i(null), await u.H7(e, n, l), !0);
+        } catch (e) {
+          i(e);
+        } finally {
+          t(!1);
+        }
+      },
+    };
+  }
+  function y() {
+    let [e, t] = (0, a.A)(u.mK),
+      { loading: n, error: l } = t;
+    return { error: l, submitting: n, archiveSubscriptionListing: e };
+  }
+  function A() {
+    let [e, t] = l.useState(!1),
+      [n, i] = l.useState(null);
+    return {
+      error: n,
+      submitting: e,
+      publishSubscriptionListing: async function (e) {
+        let { guildId: n, groupListingId: l, listingId: r } = e;
+        try {
+          return (
+            t(!0),
+            i(null),
+            await u.vW({ guildId: n, groupListingId: l, listingId: r, data: { published: !0 } }),
+            !0
+          );
+        } catch (e) {
+          i(e);
+        } finally {
+          t(!1);
+        }
+      },
+      clearError: () => i(null),
+    };
+  }
+  function I(e) {
+    return (0, i.bG)([c.A], () => (null != e ? c.A.getSubscriptionSettings(e) : void 0));
+  }
+  function g() {
+    let [e, t] = l.useState(!1),
+      [n, i] = l.useState(null);
+    return {
+      loading: e,
+      updateSubscriptionsSettings: l.useCallback(async (e, n) => {
+        (t(!0), i(null));
+        try {
+          await u.DO(e, n);
+        } catch (e) {
+          i(e);
+        } finally {
+          t(!1);
+        }
+      }, []),
+      error: n,
+    };
+  }
+  function P() {
+    let [e, t] = l.useState(!1),
+      [n, i] = l.useState(null);
+    return {
+      loading: e,
+      fetchSubscriptionsSettings: l.useCallback(async (e) => {
+        (t(!0), i(null));
+        try {
+          await u.W5(e);
+        } catch (e) {
+          i(e);
+        } finally {
+          t(!1);
+        }
+      }, []),
+      error: n,
+    };
+  }
+  function v(e) {
+    return (0, i.bG)([c.A], () => (null != e ? c.A.getSubscriptionTrial(e) : null));
+  }
+}

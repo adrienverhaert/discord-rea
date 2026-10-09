@@ -1,0 +1,86 @@
+/* Recovered shipped factory. Module 639214.
+ * Source: recovered/web/assets/web.ae482d0492df0fb9.js
+ * UTF-16 property offsets: 7073678..7074988
+ * Raw property SHA-256: f0cb930ad29627537f6d6081c06c71a687d01df83753df43081ffd2dafd45bcd
+ * Wrapper export added for inspection; webpack imports are unresolved.
+ */
+export default function (e, t, n) {
+  "use strict";
+  n.d(t, { BM: () => f, L7: () => h, XM: () => p, jm: () => I, nq: () => E, zS: () => _ });
+  var i = n(587895),
+    r = n(765741),
+    a = n(985253),
+    s = n(977416),
+    l = n(792620),
+    o = n(814793),
+    d = n(190107),
+    c = n(652215),
+    u = n(818023);
+  function _(e, t) {
+    if (null == e) return !1;
+    if (
+      e.application_id === u.$W ||
+      e.platform === c.yTV.XBOX ||
+      (n = e).platform === c.yTV.PS4 ||
+      n.platform === c.yTV.PS5
+    ) {
+      var n,
+        r = e.name.toLowerCase();
+      let a = (0, l.F9)(t);
+      if (null == a) return !1;
+      let s = i.A.getApplication(a);
+      return null != s && r === s.name.toLowerCase();
+    }
+    return (
+      (null != t && t.id === d.gB && e.application_id === d.hK) ||
+      (null != e.application_id && A(e.application_id, t))
+    );
+  }
+  function E(e, t) {
+    for (let [n, i] of e) if (_(t, i) && !(0, s.Ic)(i)) return i;
+  }
+  function A(e, t) {
+    let n = (0, l._3)(t);
+    return null != n && n.some((t) => t === e);
+  }
+  function h(e, t) {
+    let n;
+    for (let [i, r] of e)
+      if (A(t, r) && !(0, s.Ic)(r)) {
+        n = r;
+        break;
+      }
+    return n;
+  }
+  function f(e, t) {
+    if (null == t || null == e) return null;
+    for (let n of t) {
+      let t = E(e, n);
+      if (null != t) return t;
+    }
+    return null;
+  }
+  function I(e, t) {
+    let n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+    return null == t
+      ? []
+      : Array.from(e.values()).filter((e) => {
+          let i = (0, l.TP)(e);
+          return (
+            null != e &&
+            (0, o.vA)(e) &&
+            !(0, s.Ic)(e) &&
+            i === t &&
+            i !== d.ej &&
+            (e.userStatus?.completedAt == null || n) &&
+            (e.userStatus?.enrolledAt == null || n)
+          );
+        });
+  }
+  function p(e, t) {
+    let n = (0, a.A)(t),
+      i = r.A.getApplicationIdForPID(e.pid);
+    if (null != i) for (let e of (0, a.A)(i)) n.add(e);
+    return n;
+  }
+}
