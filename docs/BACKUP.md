@@ -44,7 +44,7 @@ If you restore to a different path, reconfigure CMake caches before rebuilding.
 For Discord's preserved secondary worktree, repair absolute Git worktree links:
 
 ```powershell
-git -C C:\Restored\discord-rea worktree repair C:\Restored\discord-rea\.worktreesrontend
+git -C C:\Restored\discord-rea worktree repair C:\Restored\discord-rea\.worktrees\frontend
 ```
 
 Keep original copyright and license notices when using recovered or third-party files.
