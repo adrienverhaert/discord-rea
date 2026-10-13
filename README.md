@@ -81,3 +81,12 @@ Use `npm ci` and `npm run build` to create a fresh build after a normal Git clon
 
 See [restoration instructions](docs/BACKUP.md) for recovering every local file,
 checking hashes, and repairing worktree links after relocation.
+
+
+### Convenient preserved build download
+
+[Offline Vite frontend distribution](https://github.com/antonio-in-stem/discord-rea/releases/download/backup-2026-10-13/discord-offline-existing-dist.zip)
+is available separately from the complete backup. The ZIP contains the existing
+local build, a file manifest and English usage notes. Its uploaded bytes were
+downloaded and SHA-256 verified; see the release's `BUILD-VERIFICATION.json` and
+`BUILD-SHA256SUMS.txt`. No fresh rebuild is claimed.
