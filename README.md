@@ -68,3 +68,16 @@ Recovery parses the distributed code as text/AST; it does not evaluate the recov
 ## Ownership
 
 Recovered Discord code and assets retain their original ownership and notices. This private research repository does not relicense those materials, represent official Discord source, or claim affiliation. Authored gap-filling code is identified separately above.
+
+
+## Complete local backup and preserved build
+
+[The private backup release](https://github.com/antonio-in-stem/discord-rea/releases/tag/backup-2026-10-13)
+preserves the entire original local folder, including `dist/`, `node_modules/`,
+all Git history, and `.worktrees/frontend/` with its additional recovery evidence.
+Both original local branches already existed on GitHub before this backup.
+The existing Vite build is retained; no new build or test execution is claimed.
+Use `npm ci` and `npm run build` to create a fresh build after a normal Git clone.
+
+See [restoration instructions](docs/BACKUP.md) for recovering every local file,
+checking hashes, and repairing worktree links after relocation.
