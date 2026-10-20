@@ -9,7 +9,7 @@ export default defineConfig({
   expect: { timeout: 5000 },
   reporter: [
     ["list"],
-    ["json", { outputFile: "evidence/browser-test-results.json" }],
+    ["json", { outputFile: "test-results/browser-test-results.json" }],
   ],
   use: {
     baseURL: "http://127.0.0.1:5173",
