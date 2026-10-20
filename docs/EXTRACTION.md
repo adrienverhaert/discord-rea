@@ -1,29 +1,36 @@
-# Extraction and evidence ledger
+# Extraction notes
 
-## Artifact chain
+The starting installation was Discord **1.0.9261** for Windows. Its bootstrap and desktop core were extracted from ASAR archives; the core loads `https://discord.com/app`.
 
-1. Supplied executable: `Discord.exe`, Windows desktop version 1.0.9261.
-2. Sidecar `resources/app.asar`: bootstrap package, 11 regular members.
-3. Sidecar `modules/discord_desktop_core-1/discord_desktop_core/core.asar`: desktop core package, 5 regular members.
-4. Core JavaScript sets `WEBAPP_PATHS.APP = "/app"`, chooses `https://discord.com` for stable migration, constructs `URL_TO_LOAD`, and calls `mainWindow.loadURL(URL_TO_LOAD)`.
-5. A public, unauthenticated fetch of that actual endpoint returned HTML for web build 633029. The first capture downloaded all 660 distinct `/assets/` links present in that HTML, totaling 19,915,308 bytes: 346 JavaScript files, 313 stylesheets and one additional asset.
-6. Static interpretation of the runtime filename map followed the named GuildSidebar, Channel, ChannelSettings and GuildSettings loaders, adding 850 JavaScript chunks and bringing the capture to 1,510 assets / 26,098,093 bytes. Twelve referenced IDs have no standalone JavaScript filename in that map; they are recorded as unmapped rather than guessed.
-7. Statically parsed module tables and CSS declarations provide the source material for reconstruction. The executable itself is Electron's native host, not a container holding the entire chat application.
+The public endpoint returned web build **633029**. This is a live web deployment, not proof of what shipped on the desktop application's release date. The capture includes 1,510 assets; static extraction produced 13,436 readable module factories.
 
-The literal source and per-file hashes are preserved so this chain can be independently checked. No private Discord profile, token store, cache of messages, or account data was imported.
+## Verify the snapshot
 
-## REA analysis
+`npm run verify:sources` checks original file sizes and SHA-256 hashes, module source ranges, and generated JavaScript syntax.
 
-REA 6.0.0 analyzed the extracted desktop core as inert JavaScript.
+| Evidence | Records |
+| --- | --- |
+| `evidence/desktop-manifest.json` | Executable identity, ASAR members, and hashes |
+| `evidence/web-manifest.json` | Captured URLs, sizes, and hashes |
+| `evidence/lazy-feature-manifest.json` | Selected lazy chunk capture |
+| `evidence/module-index.json` | Module boundaries and dependencies |
+| `evidence/ui-source-map.json` | Visual artifacts reused by the app |
+| `evidence/source-map-probes.json` | Checked source-map URLs and responses |
 
-Evidence: `ev_cf63383e3c8d0cfeb0b09d6df508b98a058ab4a40d26cb03b1dc5c5feb27b1f2`.
+## Repeat the capture
 
-The report parsed 2 JavaScript files and package metadata, visited 258,628 AST nodes, and recorded 1,813 findings. It observed one BrowserWindow, one context bridge and 73 IPC operations; most IPC channels are dynamic. These are syntax observations, not proof that every branch executes. See the complete compressed Evidence for all limitations.
+Use a fresh branch because these commands replace the corresponding snapshot. Supply the root of an installation you are authorized to inspect.
 
-The first MCP attempt on the larger bootstrap graph exceeded the tool transport's response limit. The successful core analysis was run through the same installed REA CLI and written directly to disk. The complete JSON is compressed to remain below GitHub's per-file size limit; its uncompressed local working file is excluded from Git.
+```sh
+node scripts/extract-desktop.mjs "/path/to/Discord/app-1.0.9261"
+npm run capture:web
+npm run capture:lazy
+npm run recover:modules
+npm run verify:sources
+```
 
-## Verification boundary
+A new capture may select a different web deployment. Extraction parses bundles as text and syntax trees; it does not execute recovered webpack factories.
 
-The offline app uses synthetic local state and authored event handlers. Browser tests verify concrete local workflows and external-network isolation. They do not establish pixel-identical parity with every Discord route, experiment cohort, platform or authenticated account.
+## Limits
 
-All web resources are a capture of the live public deployment. Only referenced resources are claimed complete; additional lazy chunks, authenticated-only data and dynamically selected routes can remain unavailable.
+Readable factories are inspection artifacts, not the original TypeScript repository or standalone React components. The authored app supplies synthetic state and local event handlers. No account profile, token store, or message cache is needed. See [coverage](GAPS.md).

@@ -39,9 +39,9 @@ const test = base.extend({
 });
 
 async function screenshot(page, name) {
-  await mkdir("evidence/screenshots", { recursive: true });
+  await mkdir("test-results/screenshots", { recursive: true });
   await page.screenshot({
-    path: "evidence/screenshots/" + name + ".png",
+    path: "test-results/screenshots/" + name + ".png",
     fullPage: true,
   });
 }

@@ -9,3 +9,12 @@ evidence/rea-desktop-core.json
 /test-results/
 /playwright-report/
 
+.env
+.env.*
+!.env.example
+*.har
+*.pdb
+/evidence/browser-test-results.json
+/evidence/screenshots/
+/evidence/rea-*.json*
+
